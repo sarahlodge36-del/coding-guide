@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 23: Decisions and Loops</title>
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+
+    <!-- HEADER -->
+    <header class="chapter-header" style="border-bottom: 2px solid #00ff88;">
+      <a href="../index.html" class="home-btn" style="color: #00ff88;">← Home</a>
+      <div class="chapter-title">
+        <span class="chapter-label" style="color: #00ff88;">Chapter 23</span>
+        <h1 style="color: #00ff88;">Decisions and Loops</h1>
+      </div>
+      <div class="header-right">
+        <div class="chapter-nav">
+          <button class="nav-toggle" onclick="toggleNav()" style="border-color: #00ff88; color: #00ff88;">Chapters ▼</button>
+          <div class="nav-dropdown" id="navDropdown">
+            <a href="chapter20.html">Chapter 20 — The ABC of Programming</a>
+            <a href="chapter21.html">Chapter 21 — Basic JS Instructions</a>
+            <a href="chapter22.html">Chapter 22 — Functions, Methods and Objects</a>
+            <a href="chapter23.html">Chapter 23 — Decisions and Loops</a>
+            <a href="chapter24.html">Chapter 24 — Document Object Model</a>
+            <a href="chapter25.html">Chapter 25 — Events</a>
+          </div>
+        </div>
+        <div class="genie-container">
+          <img src="../images/xgenfutbot.png" alt="XGENFUTBOT" class="genie-icon" id="genieBtn" onclick="toggleGenie()" />
+          <div class="genie-bubble" id="genieBubble" style="border-color: #00ff88; color: #00ff88;">
+            <p>This is where JavaScript starts thinking. If this, do that. Otherwise, do this. Sound familiar? 😎</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CHAPTER CONTENT -->
+    <main class="chapter-content">
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Making Decisions</h2>
+        <p>Scripts often need to behave differently depending on the situation. Is the player's health above zero? Did they answer correctly? Is the inventory full? JavaScript uses conditional statements to make these kinds of decisions — checking whether something is true or false and running different code depending on the answer.</p>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Comparison Operators</h2>
+        <p>Before we look at if statements, we need to understand how JavaScript compares values. Comparison operators return either true or false.</p>
+        <ul class="content-list">
+          <li><code>===</code> — strict equality. Is this exactly equal to that? (same value AND same type)</li>
+          <li><code>!==</code> — strict inequality. Is this NOT equal to that?</li>
+          <li><code>&gt;</code> — is this greater than that?</li>
+          <li><code>&lt;</code> — is this less than that?</li>
+          <li><code>&gt;=</code> — is this greater than or equal to that?</li>
+          <li><code>&lt;=</code> — is this less than or equal to that?</li>
+        </ul>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>3 === 3    // true</code><br>
+          <code>3 === '3'  // false — different types</code><br>
+          <code>5 &gt; 3    // true</code><br>
+          <code>2 &lt; 1    // false</code>
+        </div>
+        <p>Always use === rather than == for comparisons in JavaScript. The double equals == does type coercion which can cause unexpected results. Strict equality === is safer and more predictable.</p>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Logical Operators</h2>
+        <p>Logical operators let you combine multiple conditions together.</p>
+        <ul class="content-list">
+          <li><code>&&</code> — AND. Both conditions must be true.</li>
+          <li><code>||</code> — OR. At least one condition must be true.</li>
+          <li><code>!</code> — NOT. Reverses a boolean — true becomes false, false becomes true.</li>
+        </ul>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>playerHealth &gt; 0 && playerScore &gt; 10  // true only if BOTH are true</code><br>
+          <code>playerHealth === 0 || gameOver         // true if EITHER is true</code><br>
+          <code>!gameOver                              // true if gameOver is false</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">if Statements</h2>
+        <p>An if statement evaluates a condition. If the condition is true, the code inside the curly braces runs. If it's false, the code is skipped.</p>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>if (playerHealth &gt; 0) {</code><br>
+          <code>&nbsp;&nbsp;showMessage('You are still in the game!');</code><br>
+          <code>}</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">if else Statements</h2>
+        <p>You can add an else block to handle what happens when the condition is false.</p>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>if (playerHealth &gt; 0) {</code><br>
+          <code>&nbsp;&nbsp;showMessage('You are still in the game!');</code><br>
+          <code>} else {</code><br>
+          <code>&nbsp;&nbsp;showMessage('Game over. Better luck next time!');</code><br>
+          <code>}</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">else if Statements</h2>
+        <p>You can chain multiple conditions together using else if.</p>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>if (playerHealth === 3) {</code><br>
+          <code>&nbsp;&nbsp;showMessage('Full health. Impressive.');</code><br>
+          <code>} else if (playerHealth === 2) {</code><br>
+          <code>&nbsp;&nbsp;showMessage('One life down. Stay sharp.');</code><br>
+          <code>} else if (playerHealth === 1) {</code><br>
+          <code>&nbsp;&nbsp;showMessage('Last life. No pressure.');</code><br>
+          <code>} else {</code><br>
+          <code>&nbsp;&nbsp;showMessage('Game over.');</code><br>
+          <code>}</code>
+        </div>
+        <p>JavaScript checks each condition in order from top to bottom and runs the first one that is true. Once it finds a match it stops checking — so order matters.</p>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Switch Statements</h2>
+        <p>A switch statement is useful when you have many conditions all checking the same variable. It's neater than a long chain of else if statements.</p>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>switch (currentRealm) {</code><br>
+          <code>&nbsp;&nbsp;case 1:</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;showMessage('You enter the HTML Vault.');</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;break;</code><br>
+          <code>&nbsp;&nbsp;case 2:</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;showMessage('You enter the CSS Labyrinth.');</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;break;</code><br>
+          <code>&nbsp;&nbsp;default:</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;showMessage('Unknown realm.');</code><br>
+          <code>}</code>
+        </div>
+        <p>The break keyword stops the switch statement from running into the next case. Always include it unless you specifically want multiple cases to run together.</p>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">For Loops</h2>
+        <p>A loop repeats a block of code a set number of times. A for loop has three parts — the initialiser (where you start), the condition (when to stop), and the update (what to change each time).</p>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>for (var i = 0; i &lt; 5; i++) {</code><br>
+          <code>&nbsp;&nbsp;console.log('Loop number ' + i);</code><br>
+          <code>}</code>
+        </div>
+        <p>This loop starts at 0, runs while i is less than 5, and adds 1 to i each time — so it runs 5 times total, with i being 0, 1, 2, 3, and 4.</p>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">While Loops</h2>
+        <p>A while loop keeps running as long as a condition is true. Be careful — if the condition never becomes false, the loop runs forever and crashes the browser!</p>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>while (playerHealth &gt; 0) {</code><br>
+          <code>&nbsp;&nbsp;// game keeps running while player has health</code><br>
+          <code>&nbsp;&nbsp;playerHealth--;</code><br>
+          <code>}</code>
+        </div>
+        <p>The -- operator subtracts 1 from a variable. The ++ operator adds 1. You'll see both constantly in loops.</p>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Looping Through Arrays</h2>
+        <p>One of the most common uses of loops is going through every item in an array.</p>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>var inventory = ['Structure Crystal', 'Style Gem', 'Logic Core'];</code><br><br>
+          <code>for (var i = 0; i &lt; inventory.length; i++) {</code><br>
+          <code>&nbsp;&nbsp;console.log(inventory[i]);</code><br>
+          <code>}</code>
+        </div>
+        <p>inventory.length gives you the number of items in the array. Using it in the loop condition means the loop always runs the right number of times even if the array changes.</p>
+      </section>
+
+    </main>
+
+    <!-- NOW LET'S BUILD -->
+    <section class="build-section" style="border-color: #00ff88;">
+      <div class="build-content">
+        <h2 style="color: #00ff88;">🔨 Now Let's Build!</h2>
+        <p>Open your Code Machine Quest CodePen. This is the big one — we're adding the actual game questions and branching logic. The game becomes fully playable from start to finish in this chapter.</p>
+
+        <div class="tip-box" style="border-color: #00ff88;">
+          <h3 style="color: #00ff88;">⚡ Complete Code for All Three Files</h3>
+          <p>This chapter adds a lot of new code. To make sure everything works correctly, below is the complete code for all three files — index.html, style.css, and script.js. You'll be replacing your old game code with the full new version in each one.</p>
+          <p style="margin-top: 10px;"><strong>One important rule before you start:</strong> in index.html, only replace what's <strong>between the &lt;body&gt; and &lt;/body&gt; tags</strong>. The skeleton around it — the DOCTYPE, the &lt;head&gt;, the stylesheet link, and the &lt;script src="./script.js"&gt; line at the bottom — stays exactly as it is. Delete those and your styling and JavaScript stop working.</p>
+        </div>
+
+        <h3 style="color: #00ff88; margin-top: 30px;">index.html — replace everything <em>inside the &lt;body&gt; tags</em> with this:</h3>
+        <p>Delete your old game code from between <code>&lt;body&gt;</code> and <code>&lt;/body&gt;</code> and type this in its place. Leave the rest of the file alone — including the <code>&lt;script src="./script.js"&gt;&lt;/script&gt;</code> line just before <code>&lt;/body&gt;</code>.</p>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>&lt;div id="game"&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;h1 id="title"&gt;THE CODE MACHINE QUEST&lt;/h1&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;p id="story"&gt;The legendary Code Machine has been dismantled. Five components are hidden across five dangerous digital realms. Only a coder who has mastered HTML and CSS is worthy of retrieving them.&lt;/p&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;div id="input-area"&gt;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" id="nameInput" placeholder="Enter your name..." /&gt;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;button id="startBtn"&gt;Begin the Quest&lt;/button&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;/div&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;div id="choices"&gt;&lt;/div&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;p id="message"&gt;&lt;/p&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;p id="stats"&gt;&lt;/p&gt;</code><br>
+          <code>&lt;/div&gt;</code>
+        </div>
+
+        <h3 style="color: #00ff88; margin-top: 30px;">style.css — replace everything with this:</h3>
+        <p>This file is all yours — select everything in it, delete it, and type this in:</p>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>body {</code><br>
+          <code>&nbsp;&nbsp;background-color: #0a0a0a;</code><br>
+          <code>&nbsp;&nbsp;color: #f0f0f0;</code><br>
+          <code>&nbsp;&nbsp;font-family: 'Courier New', monospace;</code><br>
+          <code>&nbsp;&nbsp;display: flex;</code><br>
+          <code>&nbsp;&nbsp;justify-content: center;</code><br>
+          <code>&nbsp;&nbsp;align-items: center;</code><br>
+          <code>&nbsp;&nbsp;min-height: 100vh;</code><br>
+          <code>&nbsp;&nbsp;margin: 0;</code><br>
+          <code>}</code><br><br>
+          <code>#game {</code><br>
+          <code>&nbsp;&nbsp;max-width: 600px;</code><br>
+          <code>&nbsp;&nbsp;width: 100%;</code><br>
+          <code>&nbsp;&nbsp;text-align: center;</code><br>
+          <code>&nbsp;&nbsp;padding: 40px;</code><br>
+          <code>&nbsp;&nbsp;border: 2px solid #00ff88;</code><br>
+          <code>&nbsp;&nbsp;border-radius: 15px;</code><br>
+          <code>&nbsp;&nbsp;box-shadow: 0 0 30px rgba(0,255,136,0.2);</code><br>
+          <code>}</code><br><br>
+          <code>h1 {</code><br>
+          <code>&nbsp;&nbsp;color: #00ff88;</code><br>
+          <code>&nbsp;&nbsp;font-size: 1.8rem;</code><br>
+          <code>&nbsp;&nbsp;letter-spacing: 3px;</code><br>
+          <code>&nbsp;&nbsp;text-shadow: 0 0 10px #00ff88;</code><br>
+          <code>&nbsp;&nbsp;margin-bottom: 20px;</code><br>
+          <code>}</code><br><br>
+          <code>#story {</code><br>
+          <code>&nbsp;&nbsp;color: #cccccc;</code><br>
+          <code>&nbsp;&nbsp;line-height: 1.6;</code><br>
+          <code>&nbsp;&nbsp;margin-bottom: 20px;</code><br>
+          <code>}</code><br><br>
+          <code>input {</code><br>
+          <code>&nbsp;&nbsp;background-color: #111111;</code><br>
+          <code>&nbsp;&nbsp;border: 2px solid #00ff88;</code><br>
+          <code>&nbsp;&nbsp;border-radius: 8px;</code><br>
+          <code>&nbsp;&nbsp;padding: 10px 15px;</code><br>
+          <code>&nbsp;&nbsp;color: #ffffff;</code><br>
+          <code>&nbsp;&nbsp;font-family: 'Courier New', monospace;</code><br>
+          <code>&nbsp;&nbsp;font-size: 1rem;</code><br>
+          <code>&nbsp;&nbsp;width: 200px;</code><br>
+          <code>&nbsp;&nbsp;margin: 10px;</code><br>
+          <code>}</code><br><br>
+          <code>button {</code><br>
+          <code>&nbsp;&nbsp;background-color: transparent;</code><br>
+          <code>&nbsp;&nbsp;border: 2px solid #00ff88;</code><br>
+          <code>&nbsp;&nbsp;border-radius: 8px;</code><br>
+          <code>&nbsp;&nbsp;padding: 10px 25px;</code><br>
+          <code>&nbsp;&nbsp;color: #00ff88;</code><br>
+          <code>&nbsp;&nbsp;font-family: 'Courier New', monospace;</code><br>
+          <code>&nbsp;&nbsp;font-size: 0.9rem;</code><br>
+          <code>&nbsp;&nbsp;cursor: pointer;</code><br>
+          <code>&nbsp;&nbsp;margin: 8px;</code><br>
+          <code>&nbsp;&nbsp;letter-spacing: 1px;</code><br>
+          <code>&nbsp;&nbsp;text-transform: uppercase;</code><br>
+          <code>&nbsp;&nbsp;display: block;</code><br>
+          <code>&nbsp;&nbsp;width: 100%;</code><br>
+          <code>}</code><br><br>
+          <code>button:hover {</code><br>
+          <code>&nbsp;&nbsp;background-color: #00ff88;</code><br>
+          <code>&nbsp;&nbsp;color: #000000;</code><br>
+          <code>}</code><br><br>
+          <code>#choices {</code><br>
+          <code>&nbsp;&nbsp;margin: 20px 0;</code><br>
+          <code>}</code><br><br>
+          <code>#message {</code><br>
+          <code>&nbsp;&nbsp;color: #00ff88;</code><br>
+          <code>&nbsp;&nbsp;font-size: 1rem;</code><br>
+          <code>&nbsp;&nbsp;margin-top: 20px;</code><br>
+          <code>&nbsp;&nbsp;min-height: 30px;</code><br>
+          <code>&nbsp;&nbsp;font-style: italic;</code><br>
+          <code>}</code><br><br>
+          <code>#stats {</code><br>
+          <code>&nbsp;&nbsp;color: #888888;</code><br>
+          <code>&nbsp;&nbsp;font-size: 0.8rem;</code><br>
+          <code>&nbsp;&nbsp;margin-top: 15px;</code><br>
+          <code>&nbsp;&nbsp;border-top: 1px solid #333333;</code><br>
+          <code>&nbsp;&nbsp;padding-top: 10px;</code><br>
+          <code>}</code>
+        </div>
+
+        <h3 style="color: #00ff88; margin-top: 30px;">script.js — replace everything with this:</h3>
+        <p>Same again — this file is all yours. Select everything, delete it, and type this in:</p>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>// ==============================</code><br>
+          <code>// GAME VARIABLES</code><br>
+          <code>// ==============================</code><br>
+          <code>var playerName = '';</code><br>
+          <code>var playerHealth = 3;</code><br>
+          <code>var playerScore = 0;</code><br>
+          <code>var inventory = [];</code><br>
+          <code>var currentRealm = 0;</code><br><br>
+          <code>// ==============================</code><br>
+          <code>// REALM DATA</code><br>
+          <code>// ==============================</code><br>
+          <code>var realms = [</code><br>
+          <code>&nbsp;&nbsp;{</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;name: 'The HTML Vault',</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;guardian: 'The Tag Keeper',</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;reward: 'Structure Crystal',</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;question: 'What does HTML stand for?',</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;options: ['Hypertext Markup Language', 'High Transfer Machine Language', 'Hypertext Making Language', 'Hyper Transfer Markup Language'],</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;correct: 0</code><br>
+          <code>&nbsp;&nbsp;},</code><br>
+          <code>&nbsp;&nbsp;{</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;name: 'The CSS Labyrinth',</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;guardian: 'The Style Witch',</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;reward: 'Style Gem',</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;question: 'Which CSS property makes text bold?',</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;options: ['font-style: bold', 'text-weight: bold', 'font-weight: bold', 'bold: true'],</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;correct: 2</code><br>
+          <code>&nbsp;&nbsp;},</code><br>
+          <code>&nbsp;&nbsp;{</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;name: 'The JavaScript Jungle',</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;guardian: 'The Logic Beast',</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;reward: 'Logic Core',</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;question: 'What is the correct way to declare a variable in JavaScript?',</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;options: ['variable name = 5', 'var name = 5', 'v name = 5', 'declare name = 5'],</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;correct: 1</code><br>
+          <code>&nbsp;&nbsp;},</code><br>
+          <code>&nbsp;&nbsp;{</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;name: 'The Server Caves',</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;guardian: 'The Dark Server',</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;reward: 'Power Cell',</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;question: 'What does DOM stand for?',</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;options: ['Document Object Model', 'Data Object Method', 'Document Oriented Markup', 'Dynamic Object Model'],</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;correct: 0</code><br>
+          <code>&nbsp;&nbsp;},</code><br>
+          <code>&nbsp;&nbsp;{</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;name: 'The Cloud Tower',</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;guardian: 'The Glitch',</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;reward: 'Cloud Key',</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;question: 'Which event fires when a user clicks a button?',</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;options: ['onpress', 'ontouch', 'click', 'onbutton'],</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;correct: 2</code><br>
+          <code>&nbsp;&nbsp;}</code><br>
+          <code>];</code><br><br>
+          <code>// ==============================</code><br>
+          <code>// FUNCTIONS</code><br>
+          <code>// ==============================</code><br><br>
+          <code>function showMessage(text) {</code><br>
+          <code>&nbsp;&nbsp;document.getElementById('message').textContent = text;</code><br>
+          <code>}</code><br><br>
+          <code>function showStory(text) {</code><br>
+          <code>&nbsp;&nbsp;document.getElementById('story').textContent = text;</code><br>
+          <code>}</code><br><br>
+          <code>function showStats() {</code><br>
+          <code>&nbsp;&nbsp;document.getElementById('stats').textContent = playerName + ' | Lives: ' + playerHealth + ' | Score: ' + playerScore + ' | Inventory: ' + (inventory.length === 0 ? 'empty' : inventory.join(', '));</code><br>
+          <code>}</code><br><br>
+          <code>function showChoices(choices) {</code><br>
+          <code>&nbsp;&nbsp;var choicesDiv = document.getElementById('choices');</code><br>
+          <code>&nbsp;&nbsp;choicesDiv.innerHTML = '';</code><br>
+          <code>&nbsp;&nbsp;for (var i = 0; i &lt; choices.length; i++) {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;var btn = document.createElement('button');</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;btn.textContent = choices[i];</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;btn.setAttribute('data-index', i);</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;choicesDiv.appendChild(btn);</code><br>
+          <code>&nbsp;&nbsp;}</code><br>
+          <code>}</code><br><br>
+          <code>function startGame() {</code><br>
+          <code>&nbsp;&nbsp;var nameInput = document.getElementById('nameInput').value;</code><br>
+          <code>&nbsp;&nbsp;if (nameInput === '') {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;showMessage('You need to enter your name, coder!');</code><br>
+          <code>&nbsp;&nbsp;} else {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;playerName = nameInput;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('input-area').style.display = 'none';</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;showStory('Welcome, ' + playerName + '. I am XGENFUTBOT — your guide, your conscience, and occasionally your biggest critic. The Code Machine has been dismantled and its five components scattered across five dangerous realms. You must retrieve them all. Do you have what it takes?');</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;showMessage('');</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;showStats();</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;showChoices(['I was born ready. Let\'s go.', 'I\'m terrified but let\'s do this anyway.']);</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('choices').setAttribute('data-mode', 'intro');</code><br>
+          <code>&nbsp;&nbsp;}</code><br>
+          <code>}</code><br><br>
+          <code>function enterRealm() {</code><br>
+          <code>&nbsp;&nbsp;var realm = realms[currentRealm];</code><br>
+          <code>&nbsp;&nbsp;showStory('You enter ' + realm.name + '. The ' + realm.guardian + ' blocks your path. "Answer my question and the ' + realm.reward + ' is yours," it growls.');</code><br>
+          <code>&nbsp;&nbsp;showMessage(realm.question);</code><br>
+          <code>&nbsp;&nbsp;showChoices(realm.options);</code><br>
+          <code>&nbsp;&nbsp;document.getElementById('choices').setAttribute('data-mode', 'question');</code><br>
+          <code>}</code><br><br>
+          <code>function handleAnswer(index) {</code><br>
+          <code>&nbsp;&nbsp;var realm = realms[currentRealm];</code><br>
+          <code>&nbsp;&nbsp;if (index === realm.correct) {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;inventory.push(realm.reward);</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;playerScore += 100;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;showStats();</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;currentRealm++;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;if (currentRealm &lt; realms.length) {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;showStory('Correct! The ' + realm.reward + ' is yours. XGENFUTBOT nods approvingly. "Not bad. But there are ' + (realms.length - currentRealm) + ' realm' + (realms.length - currentRealm === 1 ? '' : 's') + ' left. Don\'t celebrate yet."');</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;showMessage('');</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;showChoices(['Continue to the next realm']);</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('choices').setAttribute('data-mode', 'continue');</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;} else {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;endGame();</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;}</code><br>
+          <code>&nbsp;&nbsp;} else {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;playerHealth--;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;showStats();</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;if (playerHealth === 0) {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gameOver();</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;} else {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;showStory('Hmm — not quite. But that\'s completely fine. Nobody gets everything first time. The important thing is that now you\'ve seen the right answer, it\'ll stick. You have ' + playerHealth + ' ' + (playerHealth === 1 ? 'life' : 'lives') + ' remaining. Try again!');</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;showMessage(realm.question);</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;showChoices(realm.options);</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('choices').setAttribute('data-mode', 'question');</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;}</code><br>
+          <code>&nbsp;&nbsp;}</code><br>
+          <code>}</code><br><br>
+          <code>function gameOver() {</code><br>
+          <code>&nbsp;&nbsp;showStory('Hey — don\'t feel bad about this. Seriously. The fact that you got this far means you\'re already doing brilliantly. The section that tripped you up is worth one more read — not because you\'re behind, but because once it clicks it clicks forever.');</code><br>
+          <code>&nbsp;&nbsp;showMessage('XGENFUTBOT tips his fedora. "Every developer has been exactly where you are right now. Every single one."');</code><br>
+          <code>&nbsp;&nbsp;showChoices(['Try again from the beginning']);</code><br>
+          <code>&nbsp;&nbsp;document.getElementById('choices').setAttribute('data-mode', 'restart');</code><br>
+          <code>}</code><br><br>
+          <code>function endGame() {</code><br>
+          <code>&nbsp;&nbsp;var ending;</code><br>
+          <code>&nbsp;&nbsp;if (playerHealth === 3) {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;ending = 'PERFECT RUN! The Code Machine roars to life, all five components locked in. XGENFUTBOT does an actual victory dance. "I knew you had it. Full marks, full lives, full brilliance. You are ready for what comes next."';</code><br>
+          <code>&nbsp;&nbsp;} else if (playerHealth === 2) {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;ending = 'The Code Machine activates — a few sparks fly but it works. XGENFUTBOT nods. "Solid run. One stumble does not a failure make. You\'re ready."';</code><br>
+          <code>&nbsp;&nbsp;} else {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;ending = 'The Code Machine splutters to life. XGENFUTBOT raises an eyebrow. "It works. Barely. But it works. Go back and review the bits that caught you out — then you\'ll be genuinely ready."';</code><br>
+          <code>&nbsp;&nbsp;}</code><br>
+          <code>&nbsp;&nbsp;showStory(ending);</code><br>
+          <code>&nbsp;&nbsp;showMessage('🎉 Quest Complete! Final Score: ' + playerScore);</code><br>
+          <code>&nbsp;&nbsp;document.getElementById('choices').innerHTML = '';</code><br>
+          <code>}</code><br><br>
+          <code>// ==============================</code><br>
+          <code>// EVENT LISTENERS</code><br>
+          <code>// ==============================</code><br><br>
+          <code>document.getElementById('startBtn').addEventListener('click', startGame);</code><br><br>
+          <code>document.getElementById('choices').addEventListener('click', function(e) {</code><br>
+          <code>&nbsp;&nbsp;if (e.target.tagName !== 'BUTTON') return;</code><br>
+          <code>&nbsp;&nbsp;var mode = document.getElementById('choices').getAttribute('data-mode');</code><br>
+          <code>&nbsp;&nbsp;var index = parseInt(e.target.getAttribute('data-index'));</code><br>
+          <code>&nbsp;&nbsp;if (mode === 'intro') {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;enterRealm();</code><br>
+          <code>&nbsp;&nbsp;} else if (mode === 'question') {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;handleAnswer(index);</code><br>
+          <code>&nbsp;&nbsp;} else if (mode === 'continue') {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;enterRealm();</code><br>
+          <code>&nbsp;&nbsp;} else if (mode === 'restart') {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;playerHealth = 3;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;playerScore = 0;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;inventory = [];</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;currentRealm = 0;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;enterRealm();</code><br>
+          <code>&nbsp;&nbsp;}</code><br>
+          <code>});</code>
+        </div>
+
+        <p>Once all three files are done, test it — type your name, click Begin the Quest, make your intro choice, and you'll enter The HTML Vault. Answer all five realms correctly and you'll reach one of three different endings depending on your remaining lives. 🚀</p>
+
+        <div class="tip-box" style="border-color: #00ff88;">
+          <h3 style="color: #00ff88;">🛠️ Game not working? Check this first</h3>
+          <p>If the page has gone plain and unstyled, or the buttons do nothing, you've probably replaced too much in index.html. Check the file still starts with <code>&lt;!DOCTYPE html&gt;</code>, still has the <code>&lt;link&gt;</code> to style.css in the head, and still has <code>&lt;script src="./script.js"&gt;&lt;/script&gt;</code> just before <code>&lt;/body&gt;</code>. If any of those are missing, add them back and everything springs back to life.</p>
+        </div>
+
+        <div class="tip-box" style="border-color: #00ff88;">
+          <h3 style="color: #00ff88;">⚡ What just happened?</h3>
+          <p>That was a big chunk of code — and that's intentional. You've just seen how all the concepts from the last three chapters work together in a real project. Variables storing game state, functions doing specific jobs, if/else making decisions, a for loop building the choice buttons dynamically, and arrays storing all the realm data.</p>
+          <p style="margin-top: 10px;">Don't worry if you don't understand every single line right now. Play the game, read through the code, and notice the patterns. The next two chapters will make it all click into place.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- QUIZ SECTION -->
+    <section class="quiz-section">
+      <h2 style="color: #00ff88;">Chapter 23 Quiz</h2>
+      <p class="quiz-intro">Only move on when you can answer all of these confidently without looking!</p>
+
+      <div class="quiz-question">
+        <p class="question">1. Why should you use === instead of == for comparisons in JavaScript?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) === is faster to type</li>
+          <li onclick="checkAnswer(this, true)">b) === checks both value AND type, making it safer and more predictable than == which does type coercion</li>
+          <li onclick="checkAnswer(this, false)">c) == doesn't work in modern browsers</li>
+          <li onclick="checkAnswer(this, false)">d) There is no difference between === and ==</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">2. What does the && operator do?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Returns true if either condition is true</li>
+          <li onclick="checkAnswer(this, true)">b) Returns true only if both conditions are true</li>
+          <li onclick="checkAnswer(this, false)">c) Reverses a boolean value</li>
+          <li onclick="checkAnswer(this, false)">d) Adds two numbers together</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">3. What happens if you forget the break keyword in a switch statement?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) The switch statement won't run at all</li>
+          <li onclick="checkAnswer(this, true)">b) The code runs into the next case and keeps going until it finds a break or reaches the end</li>
+          <li onclick="checkAnswer(this, false)">c) JavaScript throws an error</li>
+          <li onclick="checkAnswer(this, false)">d) Nothing — break is optional and has no effect</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">4. In a for loop — for (var i = 0; i &lt; 5; i++) — what are the three parts?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) The variable, the function, and the return value</li>
+          <li onclick="checkAnswer(this, true)">b) The initialiser (where to start), the condition (when to stop), and the update (what to change each time)</li>
+          <li onclick="checkAnswer(this, false)">c) The selector, the property, and the value</li>
+          <li onclick="checkAnswer(this, false)">d) The array, the index, and the length</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">5. What does inventory.length return?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) The last item in the inventory array</li>
+          <li onclick="checkAnswer(this, false)">b) The first item in the inventory array</li>
+          <li onclick="checkAnswer(this, true)">c) The number of items in the inventory array</li>
+          <li onclick="checkAnswer(this, false)">d) The maximum size the array can be</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">6. What is the risk of a while loop?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) It can only run a maximum of 10 times</li>
+          <li onclick="checkAnswer(this, false)">b) It doesn't work with arrays</li>
+          <li onclick="checkAnswer(this, true)">c) If the condition never becomes false the loop runs forever and crashes the browser</li>
+          <li onclick="checkAnswer(this, false)">d) It is slower than a for loop</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+    </section>
+
+    <!-- NEXT CHAPTER -->
+    <section class="next-chapter" style="border-top: 2px solid #00ff88;">
+      <div class="coming-up">
+        <h3 style="color: #00ff88;">Coming Up Next — Chapter 24: Document Object Model</h3>
+        <p>In the next chapter we look at the DOM — how JavaScript reads and changes the actual content of your webpage. We'll give the game a proper styled interface with a health display, realm description panel, and inventory list.</p>
+      </div>
+      <a href="chapter24.html" class="next-btn" style="border-color: #00ff88; color: #00ff88;">Next Up: Document Object Model →</a>
+    </section>
+
+    <script>
+      localStorage.setItem('visited_' + location.pathname.split('/html/')[1].replace('.html', '') + '.html', 'true');
+function toggleGenie() {
+        const bubble = document.getElementById('genieBubble');
+        bubble.classList.toggle('visible');
+      }
+
+      function toggleNav() {
+        const dropdown = document.getElementById('navDropdown');
+        dropdown.classList.toggle('open');
+      }
+
+      document.addEventListener('click', function(e) {
+        const nav = document.querySelector('.chapter-nav');
+        if (nav && !nav.contains(e.target)) {
+          document.getElementById('navDropdown').classList.remove('open');
+        }
+      });
+
+      function checkAnswer(element, isCorrect) {
+        const options = element.parentElement.querySelectorAll('li');
+        options.forEach(option => {
+          option.style.pointerEvents = 'none';
+        });
+        if (isCorrect) {
+          element.classList.add('correct');
+        } else {
+          element.classList.add('incorrect');
+        }
+        const resetBtn = element.parentElement.nextElementSibling;
+        if (resetBtn && resetBtn.classList.contains('reset-btn')) {
+          resetBtn.style.display = 'inline-block';
+        }
+      }
+
+      function resetQuestion(button) {
+        const options = button.previousElementSibling.querySelectorAll('li');
+        options.forEach(option => {
+          option.classList.remove('correct', 'incorrect');
+          option.style.pointerEvents = 'auto';
+        });
+        button.style.display = 'none';
+      }
+    </script>
+
+  </body>
+</html>

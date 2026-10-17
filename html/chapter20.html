@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 20: The ABC of Programming</title>
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+
+    <!-- HEADER -->
+    <header class="chapter-header" style="border-bottom: 2px solid #00ff88;">
+      <a href="../index.html" class="home-btn" style="color: #00ff88;">← Home</a>
+      <div class="chapter-title">
+        <span class="chapter-label" style="color: #00ff88;">Chapter 20</span>
+        <h1 style="color: #00ff88;">The ABC of Programming</h1>
+      </div>
+      <div class="header-right">
+        <div class="chapter-nav">
+          <button class="nav-toggle" onclick="toggleNav()" style="border-color: #00ff88; color: #00ff88;">Chapters ▼</button>
+          <div class="nav-dropdown" id="navDropdown">
+            <a href="chapter20.html">Chapter 20 — The ABC of Programming</a>
+            <a href="chapter21.html">Chapter 21 — Basic JS Instructions</a>
+            <a href="chapter22.html">Chapter 22 — Functions, Methods and Objects</a>
+            <a href="chapter23.html">Chapter 23 — Decisions and Loops</a>
+            <a href="chapter24.html">Chapter 24 — Document Object Model</a>
+            <a href="chapter25.html">Chapter 25 — Events</a>
+          </div>
+        </div>
+        <div class="genie-container">
+          <img src="../images/xgenfutbot.png" alt="XGENFUTBOT" class="genie-icon" id="genieBtn" onclick="toggleGenie()" />
+          <div class="genie-bubble" id="genieBubble" style="border-color: #00ff88; color: #00ff88;">
+            <p>Welcome to JavaScript. This is where you stop describing things and start making them happen. 😎</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CHAPTER CONTENT -->
+    <main class="chapter-content">
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">What is a Script?</h2>
+        <p>A script is a series of instructions that a computer can follow to achieve a goal. Think of it like a recipe — each step needs to happen in the right order, and the computer follows each instruction precisely, one at a time.</p>
+        <p>Scripts can be short — just a few lines. Or they can be thousands of lines long. Either way, the computer reads them from top to bottom, doing exactly what each line says.</p>
+        <p>Unlike a recipe though, a script can make decisions. It can say "if this happens, do that — but if something else happens, do this instead." That ability to make decisions is what makes programming powerful.</p>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">How Do You Write a Script?</h2>
+        <p>Writing a script starts with stating your goal. Before you write a single line of code, ask yourself — what do I actually want this to do?</p>
+        <p>Then break that goal down into smaller tasks. And break those tasks down further into individual steps. Each step eventually becomes a line of code.</p>
+        <p>This process — breaking a big goal into smaller and smaller pieces until each piece is simple enough to write as a single instruction — is the core skill of programming. The code itself is almost secondary. The thinking comes first.</p>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">How Computers Think</h2>
+        <p>Computers are fast but they are also very literal. They do exactly what you tell them — nothing more, nothing less. If your instructions are unclear or have a mistake in them, the computer won't guess what you meant. It will either do the wrong thing or stop working entirely.</p>
+        <p>This is why programming feels hard at first. Not because the concepts are complicated, but because you have to be more precise than you're used to being. In everyday life, "make me a cup of tea" is a perfectly clear instruction. To a computer you'd need to specify: boil the kettle, get a mug, add a teabag, pour the water, wait, remove the teabag, add milk, stir. Every single step, in order, with nothing assumed.</p>
+        <p>The good news is that once you get used to thinking that way, it becomes second nature.</p>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">How HTML, CSS and JavaScript Work Together</h2>
+        <p>You've already learned two of the three languages that power every webpage. Here's how they fit together:</p>
+        <ul class="content-list">
+          <li><strong style="color: #ff2d78;">HTML</strong> — gives the page its structure and content. The bones.</li>
+          <li><strong style="color: #00d4ff;">CSS</strong> — controls how everything looks. The skin.</li>
+          <li><strong style="color: #00ff88;">JavaScript</strong> — makes the page respond and behave. The nervous system.</li>
+        </ul>
+        <p>All three live together. JavaScript sits alongside your HTML and CSS — either in a separate .js file linked to your HTML page, or written directly inside a script tag in your HTML.</p>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>&lt;script src="script.js"&gt;&lt;/script&gt;</code>
+        </div>
+        <p>That line goes just before the closing body tag — at the very bottom of your HTML, so the page loads first before the JavaScript runs.</p>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Objects, Properties and Methods</h2>
+        <p>JavaScript uses a concept called objects to represent things. An object is anything you can describe or interact with — a button, an image, a piece of text, even the whole browser window.</p>
+        <p>Every object has <strong>properties</strong> — characteristics that describe it. A hotel room object might have properties like room number, floor, and whether it has a sea view.</p>
+        <p>Every object also has <strong>methods</strong> — things it can do or things that can be done to it. A hotel room object might have methods like book(), cancel(), and checkIn().</p>
+        <p>You'll see this pattern everywhere in JavaScript. Don't worry about memorising it right now — just start recognising it when you see it.</p>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Events</h2>
+        <p>JavaScript responds to events. An event is something that happens — a user clicks a button, moves their mouse, presses a key, or a page finishes loading.</p>
+        <p>When an event happens, JavaScript can be written to respond to it. This is what makes pages interactive. The user does something — JavaScript notices — and something on the page changes.</p>
+        <p>Almost everything in JavaScript starts with an event of some kind. By the end of this section you'll be using events constantly.</p>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">A New Tool — CodePen</h2>
+        <p>From this chapter onwards we're using <strong>CodePen</strong> instead of Notepad. Go to <strong>codepen.io</strong> and create a free account before you start — it only takes a minute and means your work saves automatically every time you hit Ctrl+S. Without an account your work only lives in the browser tab — close it and it's gone.</p>
+        <p>Once you're signed in, create a new pen and you'll see three files down the left-hand side — <strong>index.html</strong>, <strong>style.css</strong>, and <strong>script.js</strong> — with a live preview on the right. Whatever you type appears instantly. No saving, no refreshing. Just immediate feedback.</p>
+        <div class="tip-box" style="border-color: #00ff88;">
+          <h3 style="color: #00ff88;">⚡ CodePen Quick Guide</h3>
+          <ul class="content-list">
+            <li><strong>index.html</strong> — CodePen has already filled this in with a starter skeleton: the DOCTYPE, html, head, and an empty body. You don't rewrite those. Your HTML goes <strong>inside the existing body tags</strong> — that's the part between <code>&lt;body&gt;</code> and <code>&lt;/body&gt;</code>.</li>
+            <li><strong>style.css</strong> — CodePen puts a little demo styling in here. Select it all, delete it, and write your own CSS rules. Nothing extra to set up — it's already linked to your HTML for you.</li>
+            <li><strong>script.js</strong> — this empty file is where all your JavaScript goes. It's already connected to your HTML too, so anything you write here runs on the page.</li>
+            <li>The <strong>preview panel</strong> — updates live as you type. If something goes wrong, check the browser console — click the Console button at the bottom of the screen.</li>
+          </ul>
+          <p style="margin-top: 10px;"><strong>One thing to check:</strong> scroll to the bottom of index.html and look for a line that says <code>&lt;script src="./script.js"&gt;&lt;/script&gt;</code> just before <code>&lt;/body&gt;</code>. CodePen usually adds this for you — it's the line that connects your JavaScript to the page. If it's missing, add it yourself, or your buttons won't do anything.</p>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- NOW LET'S BUILD -->
+    <section class="build-section" style="border-color: #00ff88;">
+      <div class="build-content">
+        <h2 style="color: #00ff88;">🔨 Now Let's Build!</h2>
+        <p>Open <strong>codepen.io</strong> in your browser and make sure you're signed in. Create a new pen — click <strong>New Pen</strong> from your dashboard. We're going to write your very first JavaScript — the opening screen of The Code Machine Quest.</p>
+
+        <div class="tip-box" style="border-color: #00ff88;">
+          <h3 style="color: #00ff88;">⚡ The Code Machine Quest</h3>
+          <p>Over the next 6 chapters you're going to build a fully playable text adventure game called <strong>The Code Machine Quest</strong>. The legendary Code Machine — capable of generating any website in existence — has been dismantled. Five components are hidden across five dangerous digital realms. You have to get them back.</p>
+          <p style="margin-top: 10px;">Each chapter adds a new feature to the game as you learn a new JavaScript concept. By Chapter 25 you'll have a fully working, fully playable game you built entirely from scratch.</p>
+          <p style="margin-top: 10px;">Let's start with the title screen. 🚀</p>
+        </div>
+
+        <p>Click <strong>index.html</strong> in CodePen. You'll see it already has a skeleton filled in for you. Find the <code>&lt;body&gt;</code> tags and type this <strong>inside them</strong> — between <code>&lt;body&gt;</code> and <code>&lt;/body&gt;</code>:</p>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>&lt;div id="game"&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;h1 id="title"&gt;THE CODE MACHINE QUEST&lt;/h1&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;p id="intro"&gt;The legendary Code Machine has been dismantled. Five components are hidden across five dangerous digital realms. Only a coder who has mastered HTML and CSS is worthy of retrieving them.&lt;/p&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;p&gt;What is your name, coder?&lt;/p&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;input type="text" id="nameInput" placeholder="Enter your name..." /&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;button id="startBtn"&gt;Begin the Quest&lt;/button&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;p id="message"&gt;&lt;/p&gt;</code><br>
+          <code>&lt;/div&gt;</code>
+        </div>
+
+        <p>Now click <strong>style.css</strong>. CodePen puts some demo styling in here by default — select it all, delete it, and type this in instead:</p>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>body {</code><br>
+          <code>&nbsp;&nbsp;background-color: #0a0a0a;</code><br>
+          <code>&nbsp;&nbsp;color: #f0f0f0;</code><br>
+          <code>&nbsp;&nbsp;font-family: 'Courier New', monospace;</code><br>
+          <code>&nbsp;&nbsp;display: flex;</code><br>
+          <code>&nbsp;&nbsp;justify-content: center;</code><br>
+          <code>&nbsp;&nbsp;align-items: center;</code><br>
+          <code>&nbsp;&nbsp;min-height: 100vh;</code><br>
+          <code>&nbsp;&nbsp;margin: 0;</code><br>
+          <code>}</code><br><br>
+          <code>#game {</code><br>
+          <code>&nbsp;&nbsp;max-width: 600px;</code><br>
+          <code>&nbsp;&nbsp;text-align: center;</code><br>
+          <code>&nbsp;&nbsp;padding: 40px;</code><br>
+          <code>&nbsp;&nbsp;border: 2px solid #00ff88;</code><br>
+          <code>&nbsp;&nbsp;border-radius: 15px;</code><br>
+          <code>&nbsp;&nbsp;box-shadow: 0 0 30px rgba(0,255,136,0.2);</code><br>
+          <code>}</code><br><br>
+          <code>h1 {</code><br>
+          <code>&nbsp;&nbsp;color: #00ff88;</code><br>
+          <code>&nbsp;&nbsp;font-size: 1.8rem;</code><br>
+          <code>&nbsp;&nbsp;letter-spacing: 3px;</code><br>
+          <code>&nbsp;&nbsp;text-shadow: 0 0 10px #00ff88;</code><br>
+          <code>}</code><br><br>
+          <code>input {</code><br>
+          <code>&nbsp;&nbsp;background-color: #111111;</code><br>
+          <code>&nbsp;&nbsp;border: 2px solid #00ff88;</code><br>
+          <code>&nbsp;&nbsp;border-radius: 8px;</code><br>
+          <code>&nbsp;&nbsp;padding: 10px 15px;</code><br>
+          <code>&nbsp;&nbsp;color: #ffffff;</code><br>
+          <code>&nbsp;&nbsp;font-family: 'Courier New', monospace;</code><br>
+          <code>&nbsp;&nbsp;font-size: 1rem;</code><br>
+          <code>&nbsp;&nbsp;width: 200px;</code><br>
+          <code>&nbsp;&nbsp;margin: 10px;</code><br>
+          <code>}</code><br><br>
+          <code>button {</code><br>
+          <code>&nbsp;&nbsp;background-color: transparent;</code><br>
+          <code>&nbsp;&nbsp;border: 2px solid #00ff88;</code><br>
+          <code>&nbsp;&nbsp;border-radius: 8px;</code><br>
+          <code>&nbsp;&nbsp;padding: 10px 25px;</code><br>
+          <code>&nbsp;&nbsp;color: #00ff88;</code><br>
+          <code>&nbsp;&nbsp;font-family: 'Courier New', monospace;</code><br>
+          <code>&nbsp;&nbsp;font-size: 1rem;</code><br>
+          <code>&nbsp;&nbsp;cursor: pointer;</code><br>
+          <code>&nbsp;&nbsp;margin: 10px;</code><br>
+          <code>&nbsp;&nbsp;letter-spacing: 2px;</code><br>
+          <code>&nbsp;&nbsp;text-transform: uppercase;</code><br>
+          <code>}</code><br><br>
+          <code>button:hover {</code><br>
+          <code>&nbsp;&nbsp;background-color: #00ff88;</code><br>
+          <code>&nbsp;&nbsp;color: #000000;</code><br>
+          <code>}</code><br><br>
+          <code>#message {</code><br>
+          <code>&nbsp;&nbsp;color: #00ff88;</code><br>
+          <code>&nbsp;&nbsp;font-size: 1.1rem;</code><br>
+          <code>&nbsp;&nbsp;margin-top: 20px;</code><br>
+          <code>&nbsp;&nbsp;min-height: 30px;</code><br>
+          <code>}</code>
+        </div>
+
+        <p>Now click <strong>script.js</strong> — this empty file is where your very first JavaScript goes. Type this in:</p>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>document.getElementById('startBtn').addEventListener('click', function() {</code><br>
+          <code>&nbsp;&nbsp;var name = document.getElementById('nameInput').value;</code><br>
+          <code>&nbsp;&nbsp;if (name === '') {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('message').textContent = 'You need to enter your name, coder!';</code><br>
+          <code>&nbsp;&nbsp;} else {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('message').textContent = 'Welcome, ' + name + '. XGENFUTBOT is watching. The quest begins...';</code><br>
+          <code>&nbsp;&nbsp;}</code><br>
+          <code>});</code>
+        </div>
+
+        <p>Type your name in the box and click the button. You should see a personalised message appear below it. That's JavaScript reading what you typed, checking it isn't empty, and writing a response back to the page.</p>
+        <p>That is your first working JavaScript. It's also the first screen of your adventure game. 🚀</p>
+
+        <div class="tip-box" style="border-color: #00ff88;">
+          <h3 style="color: #00ff88;">🛠️ Nothing showing up? Check this first</h3>
+          <p>If your page looks plain and unstyled, or the button does nothing when you click it, the usual cause is a missing link between the files. Scroll to the bottom of <strong>index.html</strong> and make sure this line is there, just before <code>&lt;/body&gt;</code>:</p>
+          <div class="code-block" style="border-color: #00ff88; margin-top: 10px;">
+            <code>&lt;script src="./script.js"&gt;&lt;/script&gt;</code>
+          </div>
+          <p style="margin-top: 10px;">That's the line that connects your JavaScript to the page. CodePen usually adds it for you, but if it's missing, add it yourself and everything springs to life.</p>
+        </div>
+
+        <div class="full-code">
+          <h3 style="color: #00ff88;">✅ Your CodePen should look like this in the preview:</h3>
+          <div class="browser-preview">
+            <div class="browser-bar">
+              <span class="browser-dot"></span>
+              <span class="browser-dot"></span>
+              <span class="browser-dot"></span>
+              <span class="browser-url">codepen.io — The Code Machine Quest</span>
+            </div>
+            <div class="browser-content" style="background-color: #0a0a0a; display: flex; justify-content: center; padding: 20px;">
+              <div style="max-width: 300px; text-align: center; border: 2px solid #00ff88; border-radius: 10px; padding: 20px; box-shadow: 0 0 20px rgba(0,255,136,0.2);">
+                <h1 style="color: #00ff88; font-family: 'Courier New', monospace; font-size: 1rem; letter-spacing: 2px; text-shadow: 0 0 8px #00ff88;">THE CODE MACHINE QUEST</h1>
+                <p style="color: #f0f0f0; font-family: 'Courier New', monospace; font-size: 0.7rem; margin-bottom: 10px;">The legendary Code Machine has been dismantled...</p>
+                <p style="color: #f0f0f0; font-family: 'Courier New', monospace; font-size: 0.75rem;">What is your name, coder?</p>
+                <input type="text" placeholder="Enter your name..." style="background-color: #111111; border: 1px solid #00ff88; border-radius: 5px; padding: 5px 8px; color: #ffffff; font-size: 0.7rem; width: 140px; font-family: 'Courier New', monospace;" disabled />
+                <br>
+                <button style="background-color: transparent; border: 1px solid #00ff88; border-radius: 5px; padding: 5px 12px; color: #00ff88; font-family: 'Courier New', monospace; font-size: 0.65rem; margin-top: 8px; letter-spacing: 1px;">BEGIN THE QUEST</button>
+                <p style="color: #00ff88; font-family: 'Courier New', monospace; font-size: 0.7rem; margin-top: 10px;">Welcome, Sarah. XGENFUTBOT is watching...</p>
+              </div>
+            </div>
+          </div>
+          <p class="preview-note">👆 This is what your game title screen should look like in CodePen!</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- QUIZ SECTION -->
+    <section class="quiz-section">
+      <h2 style="color: #00ff88;">Chapter 20 Quiz</h2>
+      <p class="quiz-intro">Only move on when you can answer all of these confidently without looking!</p>
+
+      <div class="quiz-question">
+        <p class="question">1. What is a script?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) A type of HTML element</li>
+          <li onclick="checkAnswer(this, false)">b) A CSS file</li>
+          <li onclick="checkAnswer(this, true)">c) A series of instructions that a computer can follow to achieve a goal</li>
+          <li onclick="checkAnswer(this, false)">d) A way of styling a webpage</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">2. Where should your JavaScript script tag sit in your HTML?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Inside the head element</li>
+          <li onclick="checkAnswer(this, false)">b) At the very top of the page before the DOCTYPE</li>
+          <li onclick="checkAnswer(this, true)">c) Just before the closing body tag at the bottom of the page</li>
+          <li onclick="checkAnswer(this, false)">d) It doesn't matter where it goes</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">3. What is the difference between a property and a method on an object?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) There is no difference</li>
+          <li onclick="checkAnswer(this, true)">b) A property describes the object; a method is something the object can do</li>
+          <li onclick="checkAnswer(this, false)">c) A method describes the object; a property is something the object can do</li>
+          <li onclick="checkAnswer(this, false)">d) Properties are for CSS; methods are for JavaScript</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">4. What is an event in JavaScript?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) A type of variable</li>
+          <li onclick="checkAnswer(this, false)">b) A CSS animation</li>
+          <li onclick="checkAnswer(this, true)">c) Something that happens that JavaScript can respond to — like a click or a keypress</li>
+          <li onclick="checkAnswer(this, false)">d) A function that runs automatically</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">5. What are the three languages that work together to build a webpage?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) HTML, Python, and CSS</li>
+          <li onclick="checkAnswer(this, false)">b) CSS, jQuery, and JavaScript</li>
+          <li onclick="checkAnswer(this, true)">c) HTML, CSS, and JavaScript</li>
+          <li onclick="checkAnswer(this, false)">d) HTML, JavaScript, and PHP</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+    </section>
+
+    <!-- NEXT CHAPTER -->
+    <section class="next-chapter" style="border-top: 2px solid #00ff88;">
+      <div class="coming-up">
+        <h3 style="color: #00ff88;">Coming Up Next — Chapter 21: Basic JavaScript Instructions</h3>
+        <p>In the next chapter we look at variables, data types, and the basic building blocks of JavaScript. We'll also add the player stats to the game — name, health, score, and inventory.</p>
+      </div>
+      <a href="chapter21.html" class="next-btn" style="border-color: #00ff88; color: #00ff88;">Next Up: Basic JS Instructions →</a>
+    </section>
+
+    <script>
+      localStorage.setItem('visited_' + location.pathname.split('/html/')[1].replace('.html', '') + '.html', 'true');
+function toggleGenie() {
+        const bubble = document.getElementById('genieBubble');
+        bubble.classList.toggle('visible');
+      }
+
+      function toggleNav() {
+        const dropdown = document.getElementById('navDropdown');
+        dropdown.classList.toggle('open');
+      }
+
+      document.addEventListener('click', function(e) {
+        const nav = document.querySelector('.chapter-nav');
+        if (nav && !nav.contains(e.target)) {
+          document.getElementById('navDropdown').classList.remove('open');
+        }
+      });
+
+      function checkAnswer(element, isCorrect) {
+        const options = element.parentElement.querySelectorAll('li');
+        options.forEach(option => {
+          option.style.pointerEvents = 'none';
+        });
+        if (isCorrect) {
+          element.classList.add('correct');
+        } else {
+          element.classList.add('incorrect');
+        }
+        const resetBtn = element.parentElement.nextElementSibling;
+        if (resetBtn && resetBtn.classList.contains('reset-btn')) {
+          resetBtn.style.display = 'inline-block';
+        }
+      }
+
+      function resetQuestion(button) {
+        const options = button.previousElementSibling.querySelectorAll('li');
+        options.forEach(option => {
+          option.classList.remove('correct', 'incorrect');
+          option.style.pointerEvents = 'auto';
+        });
+        button.style.display = 'none';
+      }
+    </script>
+
+  </body>
+</html>

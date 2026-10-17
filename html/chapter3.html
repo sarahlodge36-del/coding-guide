@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 3: Lists</title>
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+
+    <!-- HEADER -->
+    <header class="chapter-header">
+      <a href="../index.html" class="home-btn">← Home</a>
+      <div class="chapter-title">
+        <span class="chapter-label">Chapter 3</span>
+        <h1>Lists</h1>
+      </div>
+      <div class="header-right">
+        <div class="chapter-nav">
+          <button class="nav-toggle" onclick="toggleNav()">Chapters ▼</button>
+          <div class="nav-dropdown" id="navDropdown">
+            <a href="chapter1.html">Chapter 1 — HTML</a>
+            <a href="chapter2.html">Chapter 2 — Text</a>
+            <a href="chapter3.html">Chapter 3 — Lists</a>
+            <a href="chapter4.html">Chapter 4 — Links</a>
+            <a href="chapter5.html">Chapter 5 — Images</a>
+            <a href="chapter6.html">Chapter 6 — Tables</a>
+            <a href="chapter7.html">Chapter 7 — Forms</a>
+            <a href="chapter8.html">Chapter 8 — Extra Markup</a>
+            <a href="chapter9.html">Chapter 9 — Video and Audio</a>
+            <hr style="border-color: #333333;">
+            <a href="cheatsheet-basic.html">HTML Cheat Sheet</a>
+          </div>
+        </div>
+        <div class="genie-container">
+          <img src="../images/xgenfutbot.png" alt="XGENFUTBOT" class="genie-icon" id="genieBtn" onclick="toggleGenie()" />
+          <div class="genie-bubble" id="genieBubble">
+            <p>Three chapters in and still watching. You know the drill. No moving on until every answer is locked in. 👀</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CHAPTER CONTENT -->
+    <main class="chapter-content">
+
+      <section class="content-section">
+        <h2>Three Types of List</h2>
+        <p>When thinking about lists in HTML we have 3 types. Let's take a look at each one.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Ordered Lists</h2>
+        <p>An ordered list is where each item in the list is numbered. This is useful for things like steps in a recipe or instructions where the order matters. We need 2 tags — ol to wrap the whole list and li which means list item.</p>
+        <div class="code-block">
+          <code>&lt;ol&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;li&gt;Cut onions into squares&lt;/li&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;li&gt;Add them to the pan with the chicken&lt;/li&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;li&gt;Cook for 10 minutes&lt;/li&gt;</code><br>
+          <code>&lt;/ol&gt;</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Unordered Lists</h2>
+        <p>An unordered list usually begins with a bullet point rather than a number. Use this when the order doesn't matter.</p>
+        <div class="code-block">
+          <code>&lt;ul&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;li&gt;Apples&lt;/li&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;li&gt;Oranges&lt;/li&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;li&gt;Pears&lt;/li&gt;</code><br>
+          <code>&lt;/ul&gt;</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Definition Lists</h2>
+        <p>A definition list is made up of a set of terms along with the definition for each of those items. Inside the dl element you will often see pairs of dt and dd elements.</p>
+        <ul class="content-list">
+          <li><code>&lt;dt&gt;</code> — contains the term being defined</li>
+          <li><code>&lt;dd&gt;</code> — contains the definition</li>
+        </ul>
+        <div class="code-block">
+          <code>&lt;dl&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;dt&gt;Tuna pasta bake&lt;/dt&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;dd&gt;Tuna mixed with pasta, cheese and mayo&lt;/dd&gt;</code><br>
+          <code>&lt;/dl&gt;</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Nested Lists</h2>
+        <p>You can put a second list inside a li element to create a sub-list or nested list. This is useful when you have items that belong under a main item.</p>
+        <div class="code-block">
+          <code>&lt;ul&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;li&gt;Fruit</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Apples&lt;/li&gt;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Oranges&lt;/li&gt;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;/li&gt;</code><br>
+          <code>&lt;/ul&gt;</code>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- NOW LET'S BUILD -->
+    <section class="build-section">
+      <div class="build-content">
+        <h2>🔨 Now Let's Build!</h2>
+        <p>Open your <strong>index.html</strong> file in Notepad. Add the following code after your existing content inside the body tags:</p>
+        <div class="code-block">
+          <code>&lt;h2&gt;My Favourite Things&lt;/h2&gt;</code><br>
+          <code>&lt;ul&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;li&gt;Coding&lt;/li&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;li&gt;Late nights&lt;/li&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;li&gt;Learning new things&lt;/li&gt;</code><br>
+          <code>&lt;/ul&gt;</code><br><br>
+          <code>&lt;h2&gt;How to Make Tea&lt;/h2&gt;</code><br>
+          <code>&lt;ol&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;li&gt;Boil the kettle&lt;/li&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;li&gt;Add a teabag to your mug&lt;/li&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;li&gt;Pour in the hot water&lt;/li&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;li&gt;Add milk and sugar to taste&lt;/li&gt;</code><br>
+          <code>&lt;/ol&gt;</code>
+        </div>
+        <p>Save and refresh your browser. You should see a bulleted list and a numbered list appearing on your page!</p>
+
+        <!-- BROWSER PREVIEW -->
+        <div class="browser-preview">
+          <div class="browser-bar">
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+            <span class="browser-url">file:///C:/Users/Home/index.html</span>
+          </div>
+          <div class="browser-content">
+            <h2 style="font-size: 1.2rem; color: #000000; font-family: serif; margin-bottom: 5px;">My Favourite Things</h2>
+            <ul style="color: #000000; font-family: serif; margin-left: 20px; margin-bottom: 10px;">
+              <li>Coding</li>
+              <li>Late nights</li>
+              <li>Learning new things</li>
+            </ul>
+            <h2 style="font-size: 1.2rem; color: #000000; font-family: serif; margin-bottom: 5px;">How to Make Tea</h2>
+            <ol style="color: #000000; font-family: serif; margin-left: 20px;">
+              <li>Boil the kettle</li>
+              <li>Add a teabag to your mug</li>
+              <li>Pour in the hot water</li>
+              <li>Add milk and sugar to taste</li>
+            </ol>
+          </div>
+        </div>
+        <p class="preview-note">👆 This is roughly what your page should look like now!</p>
+
+        <div class="full-code">
+          <h3>✅ Your full file should now look like this:</h3>
+          <div class="code-block">
+            <code>&lt;!DOCTYPE html&gt;</code><br>
+            <code>&lt;html&gt;</code><br>
+            <code>&nbsp;&nbsp;&lt;head&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;My First Webpage&lt;/title&gt;</code><br>
+            <code>&nbsp;&nbsp;&lt;/head&gt;</code><br>
+            <code>&nbsp;&nbsp;&lt;body&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Welcome to My Page&lt;/h1&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;I am learning to code and this is my first webpage!&lt;/p&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;About Me&lt;/h2&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;My name is &lt;strong&gt;[your name]&lt;/strong&gt; and I am learning HTML.&lt;/p&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;hr /&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;My Favourite Things&lt;/h2&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;I love &lt;em&gt;coding&lt;/em&gt; and late nights.&lt;/p&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Did you know water is H&lt;sub&gt;2&lt;/sub&gt;O?&lt;/p&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Coding&lt;/li&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Late nights&lt;/li&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Learning new things&lt;/li&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;How to Make Tea&lt;/h2&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;ol&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Boil the kettle&lt;/li&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Add a teabag to your mug&lt;/li&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Pour in the hot water&lt;/li&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Add milk and sugar to taste&lt;/li&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ol&gt;</code><br>
+            <code>&nbsp;&nbsp;&lt;/body&gt;</code><br>
+            <code>&lt;/html&gt;</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIZ SECTION -->
+    <section class="quiz-section">
+      <h2>Chapter 3 Quiz</h2>
+      <p class="quiz-intro">Only move on when you can answer all of these confidently without looking!</p>
+
+      <div class="quiz-question">
+        <p class="question">1. Which tag is used to create an ordered list?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) &lt;ul&gt;</li>
+          <li onclick="checkAnswer(this, false)">b) &lt;li&gt;</li>
+          <li onclick="checkAnswer(this, true)">c) &lt;ol&gt;</li>
+          <li onclick="checkAnswer(this, false)">d) &lt;list&gt;</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">2. What does &lt;li&gt; mean?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Large item</li>
+          <li onclick="checkAnswer(this, false)">b) Line indent</li>
+          <li onclick="checkAnswer(this, true)">c) List item</li>
+          <li onclick="checkAnswer(this, false)">d) Linked item</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">3. Which type of list would you use for a shopping list where the order doesn't matter?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Ordered list &lt;ol&gt;</li>
+          <li onclick="checkAnswer(this, false)">b) Definition list &lt;dl&gt;</li>
+          <li onclick="checkAnswer(this, false)">c) Numbered list &lt;nl&gt;</li>
+          <li onclick="checkAnswer(this, true)">d) Unordered list &lt;ul&gt;</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">4. In a definition list, which tag contains the term being defined?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) &lt;dd&gt;</li>
+          <li onclick="checkAnswer(this, false)">b) &lt;dl&gt;</li>
+          <li onclick="checkAnswer(this, true)">c) &lt;dt&gt;</li>
+          <li onclick="checkAnswer(this, false)">d) &lt;df&gt;</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+    </section>
+
+    <!-- NEXT CHAPTER -->
+    <section class="next-chapter">
+      <div class="coming-up">
+        <h3>Coming Up Next — Chapter 4: Links</h3>
+        <p>In the next chapter we look at how to create links — the thing that makes the web a web. Internal links, external links, email links and more.</p>
+      </div>
+      <a href="chapter4.html" class="next-btn">Next Up: Links →</a>
+    </section>
+
+    <script>
+      localStorage.setItem('visited_' + location.pathname.split('/html/')[1].replace('.html', '') + '.html', 'true');
+function toggleGenie() {
+        const bubble = document.getElementById('genieBubble');
+        bubble.classList.toggle('visible');
+      }
+
+      function toggleNav() {
+        const dropdown = document.getElementById('navDropdown');
+        dropdown.classList.toggle('open');
+      }
+
+      document.addEventListener('click', function(e) {
+        const nav = document.querySelector('.chapter-nav');
+        if (!nav.contains(e.target)) {
+          document.getElementById('navDropdown').classList.remove('open');
+        }
+      });
+
+      function checkAnswer(element, isCorrect) {
+        const options = element.parentElement.querySelectorAll('li');
+        options.forEach(option => {
+          option.style.pointerEvents = 'none';
+        });
+        if (isCorrect) {
+          element.classList.add('correct');
+        } else {
+          element.classList.add('incorrect');
+        }
+        const resetBtn = element.parentElement.nextElementSibling;
+        if (resetBtn && resetBtn.classList.contains('reset-btn')) {
+          resetBtn.style.display = 'inline-block';
+        }
+      }
+
+      function resetQuestion(button) {
+        const options = button.previousElementSibling.querySelectorAll('li');
+        options.forEach(option => {
+          option.classList.remove('correct', 'incorrect');
+          option.style.pointerEvents = 'auto';
+        });
+        button.style.display = 'none';
+      }
+    </script>
+
+  </body>
+</html>

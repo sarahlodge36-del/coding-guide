@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 1: HTML</title>
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+
+    <!-- HEADER -->
+    <header class="chapter-header">
+      <a href="../index.html" class="home-btn">← Home</a>
+      <div class="chapter-title">
+        <span class="chapter-label">Chapter 1</span>
+        <h1>HTML — Hypertext Markup Language</h1>
+      </div>
+      <div class="header-right">
+        <div class="chapter-nav">
+          <button class="nav-toggle" onclick="toggleNav()">Chapters ▼</button>
+          <div class="nav-dropdown" id="navDropdown">
+            <a href="chapter1.html">Chapter 1 — HTML</a>
+            <a href="chapter2.html">Chapter 2 — Text</a>
+            <a href="chapter3.html">Chapter 3 — Lists</a>
+            <a href="chapter4.html">Chapter 4 — Links</a>
+            <a href="chapter5.html">Chapter 5 — Images</a>
+            <a href="chapter6.html">Chapter 6 — Tables</a>
+            <a href="chapter7.html">Chapter 7 — Forms</a>
+            <a href="chapter8.html">Chapter 8 — Extra Markup</a>
+            <a href="chapter9.html">Chapter 9 — Video and Audio</a>
+            <hr style="border-color: #333333;">
+            <a href="cheatsheet-basic.html">HTML Cheat Sheet</a>
+          </div>
+        </div>
+        <div class="genie-container">
+          <img src="../images/xgenfutbot.png" alt="XGENFUTBOT" class="genie-icon" id="genieBtn" onclick="toggleGenie()" />
+          <div class="genie-bubble" id="genieBubble">
+            <p>Don't even think about moving on until you can answer every question without looking. I'm watching you. 👀</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CHAPTER CONTENT -->
+    <main class="chapter-content">
+
+      <section class="content-section">
+        <h2>What is HTML?</h2>
+        <p>HTML stands for Hypertext Markup Language. It is the language used to build webpages.</p>
+        <p>HTML uses tags — characters that sit inside angled brackets — to give the information they surround special meaning. Tags are often referred to as elements.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>HTML Elements</h2>
+        <p>Elements are characters that live inside angled brackets — these are called opening and closing tags. Each element tells the browser something about the information that sits between the opening and closing tag.</p>
+        <div class="code-block">
+          <code>&lt;body&gt; hi &lt;/body&gt;</code>
+        </div>
+        <p>Tags act like containers. Here are some of the most common ones:</p>
+        <ul class="content-list">
+          <li><code>&lt;html&gt;</code> — tells the browser this is HTML code</li>
+          <li><code>&lt;body&gt;</code> — content shown inside the main browser window</li>
+          <li><code>&lt;h1&gt;</code> — main heading</li>
+          <li><code>&lt;h2&gt;</code> — subheading</li>
+          <li><code>&lt;p&gt;</code> — paragraph</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Body, Head and Title</h2>
+        <p>The body element is shown inside the main browser window. The <code>&lt;head&gt;</code> element sits before the body and contains info about the page. Inside the head you will usually find a <code>&lt;title&gt;</code> tag — this appears at the top of the browser, above where you type the URL.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Closing Tags</h2>
+        <p>Every opening tag needs a closing tag. The closing tag has a forward slash before the element name.</p>
+        <div class="code-block">
+          <code>&lt;/html&gt; &lt;/body&gt; &lt;/h1&gt; &lt;/p&gt;</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Attributes</h2>
+        <p>Attributes provide additional info about the contents of an element. They appear on the opening tag and are made up of two parts — a name and a value, separated by an equals sign.</p>
+        <div class="code-block">
+          <code>&lt;p lang="en-us"&gt; text here &lt;/p&gt;</code>
+        </div>
+        <p>The attribute name is <strong>lang</strong> and the value is <strong>en-us</strong> — meaning US English. The value always sits inside quotation marks.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Fun Fact</h2>
+        <p>The Hypertext part of HTML refers to the fact that HTML allows you to create links that let users move to another page. The Markup Language part means it allows you to annotate text — and those annotations give the contents of a document additional meaning.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Creating a Webpage on a PC</h2>
+        <p>Open Notepad (Start → All Programs → Accessories → Notepad). Type your code, then save as firstpage.html choosing All Files. Open it in your browser and it will open as a webpage.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Peek Behind Any Website</h2>
+        <p>Right-click on any webpage and select View Page Source (or press Ctrl+U). You'll see the actual HTML that built that page. Don't panic if it looks overwhelming — by the end of this guide it will make sense.</p>
+      </section>
+
+    </main>
+
+    <!-- NOW LET'S BUILD -->
+    <section class="build-section">
+      <div class="build-content">
+        <h2>🔨 Now Let's Build!</h2>
+
+        <!-- TOOLS EXPLANATION -->
+        <div class="tip-box">
+          <h3>⚡ Before We Start — Something Important!</h3>
+          <p>When building your webpage you will be using <strong>two different programs</strong> — and it's really important to understand the difference:</p>
+          <ul class="content-list">
+            <li><strong>Notepad</strong> — this is where you <strong>write and edit your code</strong>. Think of it as your workbench.</li>
+            <li><strong>Your Browser</strong> (Chrome, Edge, Firefox etc) — this is where you <strong>see the result</strong>. Think of it as your preview window.</li>
+          </ul>
+          <p>They are both looking at the <strong>same file</strong> — but doing completely different things with it. Notepad reads it as text. Your browser reads it as a webpage.</p>
+          <p>The workflow is simple:</p>
+          <ul class="content-list">
+            <li>1. Open your file in <strong>Notepad</strong> to write or change your code</li>
+            <li>2. <strong>Save</strong> the file in Notepad (Ctrl+S)</li>
+            <li>3. Open or <strong>refresh</strong> your browser (F5 or Ctrl+R) to see the changes</li>
+          </ul>
+          <p>That's it! Save in Notepad, refresh in browser. You'll be doing this hundreds of times so it'll become second nature very quickly 😄</p>
+          <p style="margin-top: 20px;"><strong>Not keen on Notepad?</strong> There's another option — <strong>CodePen</strong> (codepen.io). It's a free website where you type your HTML, CSS, and JavaScript and see the result update live, instantly, with no saving or refreshing required. Either tool works perfectly fine for this guide — pick whichever one feels more comfortable to you. Just know that later on, when we reach the JavaScript section, we'll be using CodePen — so if you start there now, you'll already feel right at home.</p>
+          <p style="margin-top: 15px;"><strong>One more thing</strong> — if you ever get properly stuck and want to talk something through rather than just look up an answer, I personally use Claude (the AI assistant) when I want to actually understand something rather than just copy it. It's not a requirement for this guide and there's no pressure to use it — just sharing what works for me. 😄</p>
+        </div>
+
+        <p>Open Notepad on your PC and type out the following code. Don't copy and paste — type it out. Your fingers need to learn this too!</p>
+        <p>Save the file as <strong>index.html</strong> — remember to choose All Files when saving in Notepad. This is the file we will be adding to all the way through the guide so keep it safe!</p>
+        <div class="code-block">
+          <code>&lt;!DOCTYPE html&gt;</code><br>
+          <code>&lt;html&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;head&gt;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;My First Webpage&lt;/title&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;/head&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;body&gt;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Welcome to My Page&lt;/h1&gt;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;I am learning to code and this is my first webpage!&lt;/p&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;/body&gt;</code><br>
+          <code>&lt;/html&gt;</code>
+        </div>
+        <p>Now open your browser and drag your index.html file into it — or right click the file and choose Open With and select your browser. You should see your webpage appear!</p>
+
+        <!-- BROWSER PREVIEW -->
+        <div class="browser-preview">
+          <div class="browser-bar">
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+            <span class="browser-url">file:///C:/Users/Home/index.html</span>
+          </div>
+          <div class="browser-content">
+            <h1 style="font-size: 1.5rem; color: #000000; font-family: serif; margin-bottom: 10px;">Welcome to My Page</h1>
+            <p style="color: #000000; font-family: serif;">I am learning to code and this is my first webpage!</p>
+          </div>
+        </div>
+        <p class="preview-note">👆 This is roughly what your page should look like in the browser. Plain and simple — but it's real and it's yours!</p>
+
+        <div class="full-code">
+          <h3>✅ Your file should now look like this:</h3>
+          <div class="code-block">
+            <code>&lt;!DOCTYPE html&gt;</code><br>
+            <code>&lt;html&gt;</code><br>
+            <code>&nbsp;&nbsp;&lt;head&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;My First Webpage&lt;/title&gt;</code><br>
+            <code>&nbsp;&nbsp;&lt;/head&gt;</code><br>
+            <code>&nbsp;&nbsp;&lt;body&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Welcome to My Page&lt;/h1&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;I am learning to code and this is my first webpage!&lt;/p&gt;</code><br>
+            <code>&nbsp;&nbsp;&lt;/body&gt;</code><br>
+            <code>&lt;/html&gt;</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIZ SECTION -->
+    <section class="quiz-section">
+      <h2>Chapter 1 Quiz</h2>
+      <p class="quiz-intro">Only move on when you can answer all of these confidently without looking!</p>
+
+      <div class="quiz-question">
+        <p class="question">1. What does HTML stand for?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) High Text Marking Language</li>
+          <li onclick="checkAnswer(this, true)">b) Hypertext Markup Language</li>
+          <li onclick="checkAnswer(this, false)">c) Hypertext Making Language</li>
+          <li onclick="checkAnswer(this, false)">d) High Transfer Markup Language</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">2. What do you call the characters that sit inside angled brackets?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Attributes</li>
+          <li onclick="checkAnswer(this, true)">b) Elements/tags</li>
+          <li onclick="checkAnswer(this, false)">c) Values</li>
+          <li onclick="checkAnswer(this, false)">d) Properties</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">3. Which tag means main heading?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) &lt;head&gt;</li>
+          <li onclick="checkAnswer(this, false)">b) &lt;h2&gt;</li>
+          <li onclick="checkAnswer(this, true)">c) &lt;h1&gt;</li>
+          <li onclick="checkAnswer(this, false)">d) &lt;heading&gt;</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">4. Where does the head element sit?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) After the body</li>
+          <li onclick="checkAnswer(this, true)">b) Before the body</li>
+          <li onclick="checkAnswer(this, false)">c) Inside the body</li>
+          <li onclick="checkAnswer(this, false)">d) It doesn't matter</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">5. What two things does an attribute need?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) A tag and a value</li>
+          <li onclick="checkAnswer(this, true)">b) A name and a value</li>
+          <li onclick="checkAnswer(this, false)">c) A name and a tag</li>
+          <li onclick="checkAnswer(this, false)">d) A bracket and a name</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+    </section>
+
+    <!-- NEXT CHAPTER -->
+    <section class="next-chapter">
+      <div class="coming-up">
+        <h3>Coming Up Next — Chapter 2: Text</h3>
+        <p>In the next chapter we look at how to format and style the words on your page — headings, paragraphs, bold, italic and more.</p>
+      </div>
+      <a href="chapter2.html" class="next-btn">Next Up: Text →</a>
+    </section>
+
+    <script>
+      localStorage.setItem('visited_' + location.pathname.split('/html/')[1].replace('.html', '') + '.html', 'true');
+function toggleGenie() {
+        const bubble = document.getElementById('genieBubble');
+        bubble.classList.toggle('visible');
+      }
+
+      function toggleNav() {
+        const dropdown = document.getElementById('navDropdown');
+        dropdown.classList.toggle('open');
+      }
+
+      document.addEventListener('click', function(e) {
+        const nav = document.querySelector('.chapter-nav');
+        if (!nav.contains(e.target)) {
+          document.getElementById('navDropdown').classList.remove('open');
+        }
+      });
+
+      function checkAnswer(element, isCorrect) {
+        const options = element.parentElement.querySelectorAll('li');
+        options.forEach(option => {
+          option.style.pointerEvents = 'none';
+        });
+        if (isCorrect) {
+          element.classList.add('correct');
+        } else {
+          element.classList.add('incorrect');
+        }
+        const resetBtn = element.parentElement.nextElementSibling;
+        if (resetBtn && resetBtn.classList.contains('reset-btn')) {
+          resetBtn.style.display = 'inline-block';
+        }
+      }
+
+      function resetQuestion(button) {
+        const options = button.previousElementSibling.querySelectorAll('li');
+        options.forEach(option => {
+          option.classList.remove('correct', 'incorrect');
+          option.style.pointerEvents = 'auto';
+        });
+        button.style.display = 'none';
+      }
+    </script>
+
+  </body>
+</html>

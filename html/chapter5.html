@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 5: Images</title>
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+
+    <!-- HEADER -->
+    <header class="chapter-header">
+      <a href="../index.html" class="home-btn">← Home</a>
+      <div class="chapter-title">
+        <span class="chapter-label">Chapter 5</span>
+        <h1>Images</h1>
+      </div>
+      <div class="header-right">
+        <div class="chapter-nav">
+          <button class="nav-toggle" onclick="toggleNav()">Chapters ▼</button>
+          <div class="nav-dropdown" id="navDropdown">
+            <a href="chapter1.html">Chapter 1 — HTML</a>
+            <a href="chapter2.html">Chapter 2 — Text</a>
+            <a href="chapter3.html">Chapter 3 — Lists</a>
+            <a href="chapter4.html">Chapter 4 — Links</a>
+            <a href="chapter5.html">Chapter 5 — Images</a>
+            <a href="chapter6.html">Chapter 6 — Tables</a>
+            <a href="chapter7.html">Chapter 7 — Forms</a>
+            <a href="chapter8.html">Chapter 8 — Extra Markup</a>
+            <a href="chapter9.html">Chapter 9 — Video and Audio</a>
+            <hr style="border-color: #333333;">
+            <a href="cheatsheet-basic.html">HTML Cheat Sheet</a>
+          </div>
+        </div>
+        <div class="genie-container">
+          <img src="../images/xgenfutbot.png" alt="XGENFUTBOT" class="genie-icon" id="genieBtn" onclick="toggleGenie()" />
+          <div class="genie-bubble" id="genieBubble">
+            <p>Five chapters in. Impressive. But don't get cocky — quiz first, next chapter after. 👀</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CHAPTER CONTENT -->
+    <main class="chapter-content">
+
+      <section class="content-section">
+        <h2>Why Add Images?</h2>
+        <p>There are many reasons why you might want to add an image to a web page — a logo, photograph, illustration, diagram, or chart. Taking time to get your images right will make your site look more attractive and professional.</p>
+        <p>Images should be relevant, convey information, convey the right mood, be instantly recognisable, and fit the colour palette of your site. Remember — all images are subject to copyright.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Storing Images on Your Site</h2>
+        <p>Create a dedicated images folder for all the images your site uses. This keeps things organised and makes your file paths easier to manage.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Adding Images</h2>
+        <p>We use the img tag to add images. It is an empty element — it has no closing tag. It needs at least two attributes: src and alt.</p>
+        <ul class="content-list">
+          <li><code>src</code> — tells the browser where to find the image</li>
+          <li><code>alt</code> — provides a text description for screen readers and search engines</li>
+          <li><code>title</code> — provides additional info shown as a tooltip on hover</li>
+        </ul>
+        <div class="code-block">
+          <code>&lt;img src="images/cat.jpg"</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp; alt="A ginger cat sitting on a windowsill"</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp; title="Our cat Marmalade" /&gt;</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Height and Width</h2>
+        <p>You can set the size of an image using the width and height attributes. Values are in pixels.</p>
+        <div class="code-block">
+          <code>&lt;img src="images/cat.jpg"</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp; alt="A ginger cat"</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp; width="400"</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp; height="300" /&gt;</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Where to Place Images in Your Code</h2>
+        <ul class="content-list">
+          <li>Before a paragraph — the paragraph starts on a new line after the image</li>
+          <li>Inside the start of a paragraph — the first row of text aligns with the bottom of the image</li>
+          <li>In the middle of a paragraph — the image sits between the words</li>
+        </ul>
+        <p>Remember — block elements always appear on a new line. Inline elements sit within a block element and do not start on a new line. Images are inline elements by default.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Three Rules for Creating Images</h2>
+        <ul class="content-list">
+          <li>Save in the right format</li>
+          <li>Save at the right size</li>
+          <li>Measure in pixels</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Image Formats</h2>
+        <ul class="content-list">
+          <li><strong>JPEG</strong> — best for photographs or images with many colours</li>
+          <li><strong>GIF</strong> — best for flat colours, logos, and illustrations</li>
+          <li><strong>PNG</strong> — best for flat colours or when transparency is needed</li>
+        </ul>
+      </section>
+
+    </main>
+
+    <!-- NOW LET'S BUILD -->
+    <section class="build-section">
+      <div class="build-content">
+        <h2>🔨 Now Let's Build!</h2>
+        <p>Open your <strong>index.html</strong> file in Notepad. First create an <strong>images</strong> folder in the same place as your index.html file. Find a photo you like and save it into that images folder as <strong>myphoto.jpg</strong>.</p>
+        <p>Then add the following code after your existing content inside the body tags:</p>
+        <div class="code-block">
+          <code>&lt;h2&gt;A Photo I Like&lt;/h2&gt;</code><br>
+          <code>&lt;img src="images/myphoto.jpg"</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp; alt="A photo I chose"</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp; width="400"</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp; height="300" /&gt;</code>
+        </div>
+        <p>Save and refresh your browser. You should see your image appearing on the page! If it doesn't show up check the file name matches exactly — including the extension.</p>
+
+        <!-- BROWSER PREVIEW -->
+        <div class="browser-preview">
+          <div class="browser-bar">
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+            <span class="browser-url">file:///C:/Users/Home/index.html</span>
+          </div>
+          <div class="browser-content">
+            <h2 style="font-size: 1.2rem; color: #000000; font-family: serif; margin-bottom: 5px;">A Photo I Like</h2>
+            <div style="width: 200px; height: 150px; background-color: #dddddd; border: 1px solid #999999; display: flex; align-items: center; justify-content: center;">
+              <p style="color: #666666; font-family: serif; font-size: 0.8rem; text-align: center;">Your image<br>appears here</p>
+            </div>
+          </div>
+        </div>
+        <p class="preview-note">👆 Your image should appear where the grey box is!</p>
+
+        <div class="full-code">
+          <h3>✅ Your full file should now look like this:</h3>
+          <div class="code-block">
+            <code>&lt;!DOCTYPE html&gt;</code><br>
+            <code>&lt;html&gt;</code><br>
+            <code>&nbsp;&nbsp;&lt;head&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;My First Webpage&lt;/title&gt;</code><br>
+            <code>&nbsp;&nbsp;&lt;/head&gt;</code><br>
+            <code>&nbsp;&nbsp;&lt;body&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1 id="top"&gt;Welcome to My Page&lt;/h1&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;I am learning to code and this is my first webpage!&lt;/p&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;About Me&lt;/h2&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;My name is &lt;strong&gt;[your name]&lt;/strong&gt; and I am learning HTML.&lt;/p&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;hr /&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;My Favourite Things&lt;/h2&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;I love &lt;em&gt;coding&lt;/em&gt; and late nights.&lt;/p&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Did you know water is H&lt;sub&gt;2&lt;/sub&gt;O?&lt;/p&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Coding&lt;/li&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Late nights&lt;/li&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Learning new things&lt;/li&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;How to Make Tea&lt;/h2&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;ol&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Boil the kettle&lt;/li&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Add a teabag to your mug&lt;/li&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Pour in the hot water&lt;/li&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Add milk and sugar to taste&lt;/li&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ol&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Useful Links&lt;/h2&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;&lt;a href="http://www.w3schools.com"&gt;W3Schools&lt;/a&gt; — free HTML tutorials&lt;/p&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;&lt;a href="http://www.freecodecamp.org"&gt;freeCodeCamp&lt;/a&gt; — free coding challenges&lt;/p&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;&lt;a href="mailto:your@email.com"&gt;Contact Me&lt;/a&gt;&lt;/p&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;&lt;a href="#top"&gt;Back to top&lt;/a&gt;&lt;/p&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;A Photo I Like&lt;/h2&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="images/myphoto.jpg" alt="A photo I chose" width="400" height="300" /&gt;</code><br>
+            <code>&nbsp;&nbsp;&lt;/body&gt;</code><br>
+            <code>&lt;/html&gt;</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIZ SECTION -->
+    <section class="quiz-section">
+      <h2>Chapter 5 Quiz</h2>
+      <p class="quiz-intro">Only move on when you can answer all of these confidently without looking!</p>
+
+      <div class="quiz-question">
+        <p class="question">1. Which tag is used to add an image to a webpage?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) &lt;image&gt;</li>
+          <li onclick="checkAnswer(this, true)">b) &lt;img&gt;</li>
+          <li onclick="checkAnswer(this, false)">c) &lt;pic&gt;</li>
+          <li onclick="checkAnswer(this, false)">d) &lt;src&gt;</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">2. What does the alt attribute do?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Sets the size of the image</li>
+          <li onclick="checkAnswer(this, false)">b) Links the image to another page</li>
+          <li onclick="checkAnswer(this, true)">c) Provides a text description of the image</li>
+          <li onclick="checkAnswer(this, false)">d) Changes the image format</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">3. Which image format is best for photographs?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) GIF</li>
+          <li onclick="checkAnswer(this, false)">b) PNG</li>
+          <li onclick="checkAnswer(this, true)">c) JPEG</li>
+          <li onclick="checkAnswer(this, false)">d) SVG</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">4. What is the correct way to measure images for the web?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Centimetres</li>
+          <li onclick="checkAnswer(this, false)">b) Inches</li>
+          <li onclick="checkAnswer(this, true)">c) Pixels</li>
+          <li onclick="checkAnswer(this, false)">d) Millimetres</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">5. Where should you store your images on your website?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) In the same folder as your HTML files</li>
+          <li onclick="checkAnswer(this, true)">b) In a dedicated images folder</li>
+          <li onclick="checkAnswer(this, false)">c) On a different website</li>
+          <li onclick="checkAnswer(this, false)">d) It doesn't matter where you store them</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+    </section>
+
+    <!-- NEXT CHAPTER -->
+    <section class="next-chapter">
+      <div class="coming-up">
+        <h3>Coming Up Next — Chapter 6: Tables</h3>
+        <p>In the next chapter we look at how to create tables in HTML — rows, columns, headings, and how to span cells across multiple rows and columns.</p>
+      </div>
+      <a href="chapter6.html" class="next-btn">Next Up: Tables →</a>
+    </section>
+
+    <script>
+      localStorage.setItem('visited_' + location.pathname.split('/html/')[1].replace('.html', '') + '.html', 'true');
+function toggleGenie() {
+        const bubble = document.getElementById('genieBubble');
+        bubble.classList.toggle('visible');
+      }
+
+      function toggleNav() {
+        const dropdown = document.getElementById('navDropdown');
+        dropdown.classList.toggle('open');
+      }
+
+      document.addEventListener('click', function(e) {
+        const nav = document.querySelector('.chapter-nav');
+        if (!nav.contains(e.target)) {
+          document.getElementById('navDropdown').classList.remove('open');
+        }
+      });
+
+      function checkAnswer(element, isCorrect) {
+        const options = element.parentElement.querySelectorAll('li');
+        options.forEach(option => {
+          option.style.pointerEvents = 'none';
+        });
+        if (isCorrect) {
+          element.classList.add('correct');
+        } else {
+          element.classList.add('incorrect');
+        }
+        const resetBtn = element.parentElement.nextElementSibling;
+        if (resetBtn && resetBtn.classList.contains('reset-btn')) {
+          resetBtn.style.display = 'inline-block';
+        }
+      }
+
+      function resetQuestion(button) {
+        const options = button.previousElementSibling.querySelectorAll('li');
+        options.forEach(option => {
+          option.classList.remove('correct', 'incorrect');
+          option.style.pointerEvents = 'auto';
+        });
+        button.style.display = 'none';
+      }
+    </script>
+
+  </body>
+</html>

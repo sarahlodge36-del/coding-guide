@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced CSS</title>
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+
+    <!-- HEADER -->
+    <header class="chapter-header" style="border-bottom: 2px solid #00d4ff;">
+      <a href="../index.html" class="home-btn" style="color: #00d4ff;">← Home</a>
+      <div class="chapter-title">
+        <span class="chapter-label" style="color: #00d4ff;">CSS</span>
+        <h1 style="color: #00d4ff;">Beyond the Basics</h1>
+      </div>
+      <div class="genie-container">
+        <img src="../images/xgenfutbot.png" alt="XGENFUTBOT" class="genie-icon" id="genieBtn" onclick="toggleGenie()" />
+        <div class="genie-bubble" id="genieBubble" style="border-color: #00d4ff; color: #00d4ff;">
+          <p>Flexbox. Grid. Animations. This is where CSS stops being a tool and starts being an art form. 😎</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- CONTENT -->
+    <main class="chapter-content">
+
+      <section class="content-section">
+        <h2 style="color: #00d4ff;">CSS Has Grown Up</h2>
+        <p>The CSS you learned in Chapters 10 to 19 covers the foundations — colour, text, boxes, layout with floats, and positioning. But modern CSS is significantly more powerful than that. Flexbox and Grid alone have transformed how layouts are built. Animations, custom properties, and responsive design techniques have made CSS into a genuinely sophisticated language.</p>
+        <p>This page is an overview of what's waiting for you beyond the basics. Some of these are covered in detail in the paid section of this guide. All of them are worth knowing exist.</p>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00d4ff;">Flexbox</h2>
+        <p>Flexbox is a layout method that makes it easy to arrange elements in a row or column, align them, and distribute space between them. It replaced the old float-based layout technique for most use cases and is now the standard way to build navigation bars, card layouts, and any horizontal or vertical arrangement of elements.</p>
+        <div class="code-block" style="border-color: #00d4ff;">
+          <code>.container {</code><br>
+          <code>&nbsp;&nbsp;display: flex;</code><br>
+          <code>&nbsp;&nbsp;justify-content: space-between;  /* horizontal alignment */</code><br>
+          <code>&nbsp;&nbsp;align-items: center;             /* vertical alignment */</code><br>
+          <code>&nbsp;&nbsp;gap: 20px;                       /* space between items */</code><br>
+          <code>}</code>
+        </div>
+        <p>Key flexbox properties:</p>
+        <ul class="content-list">
+          <li><code>display: flex</code> — turns an element into a flex container</li>
+          <li><code>flex-direction: row / column</code> — arranges children horizontally or vertically</li>
+          <li><code>justify-content</code> — aligns children along the main axis</li>
+          <li><code>align-items</code> — aligns children along the cross axis</li>
+          <li><code>flex-wrap: wrap</code> — allows children to wrap onto multiple lines</li>
+          <li><code>gap</code> — sets the space between flex children</li>
+          <li><code>flex: 1</code> — on a child, makes it grow to fill available space</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00d4ff;">CSS Grid</h2>
+        <p>CSS Grid is a two-dimensional layout system — it lets you control both rows and columns at the same time. Where Flexbox is great for one-dimensional layouts (a row OR a column), Grid is designed for two-dimensional layouts (rows AND columns simultaneously).</p>
+        <div class="code-block" style="border-color: #00d4ff;">
+          <code>.grid-container {</code><br>
+          <code>&nbsp;&nbsp;display: grid;</code><br>
+          <code>&nbsp;&nbsp;grid-template-columns: 1fr 1fr 1fr;  /* three equal columns */</code><br>
+          <code>&nbsp;&nbsp;grid-template-rows: auto;             /* rows size to content */</code><br>
+          <code>&nbsp;&nbsp;gap: 20px;</code><br>
+          <code>}</code>
+        </div>
+        <p>Key grid properties:</p>
+        <ul class="content-list">
+          <li><code>display: grid</code> — turns an element into a grid container</li>
+          <li><code>grid-template-columns</code> — defines the number and size of columns</li>
+          <li><code>grid-template-rows</code> — defines the number and size of rows</li>
+          <li><code>fr</code> — a fractional unit — 1fr means one share of available space</li>
+          <li><code>gap</code> — space between grid cells</li>
+          <li><code>grid-column: 1 / 3</code> — makes an item span across columns</li>
+          <li><code>repeat(3, 1fr)</code> — shorthand for repeating column definitions</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00d4ff;">Media Queries and Responsive Design</h2>
+        <p>A media query applies CSS rules only when certain conditions are met — most commonly when the browser window is a certain width. This is the foundation of responsive design — making your page look good on any screen size.</p>
+        <div class="code-block" style="border-color: #00d4ff;">
+          <code>/* Default styles — mobile first */</code><br>
+          <code>.container {</code><br>
+          <code>&nbsp;&nbsp;flex-direction: column;</code><br>
+          <code>}</code><br><br>
+          <code>/* Tablet and above */</code><br>
+          <code>@media (min-width: 768px) {</code><br>
+          <code>&nbsp;&nbsp;.container {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;flex-direction: row;</code><br>
+          <code>&nbsp;&nbsp;}</code><br>
+          <code>}</code><br><br>
+          <code>/* Desktop and above */</code><br>
+          <code>@media (min-width: 1024px) {</code><br>
+          <code>&nbsp;&nbsp;.container {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;max-width: 1200px;</code><br>
+          <code>&nbsp;&nbsp;}</code><br>
+          <code>}</code>
+        </div>
+        <p>The mobile first approach — writing default styles for small screens and then adding styles for larger screens using min-width — is considered best practice. It forces you to prioritise content and results in cleaner code.</p>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00d4ff;">CSS Custom Properties — Variables</h2>
+        <p>CSS variables let you store values in one place and reuse them throughout your stylesheet. If you want to change your brand colour you change it once in one place rather than hunting through hundreds of lines of CSS.</p>
+        <div class="code-block" style="border-color: #00d4ff;">
+          <code>:root {</code><br>
+          <code>&nbsp;&nbsp;--primary: #ff2d78;</code><br>
+          <code>&nbsp;&nbsp;--secondary: #00d4ff;</code><br>
+          <code>&nbsp;&nbsp;--bg: #0a0a0a;</code><br>
+          <code>&nbsp;&nbsp;--text: #f0f0f0;</code><br>
+          <code>&nbsp;&nbsp;--spacing: 20px;</code><br>
+          <code>}</code><br><br>
+          <code>h1 { color: var(--primary); }</code><br>
+          <code>body { background-color: var(--bg); }</code><br>
+          <code>.card { padding: var(--spacing); }</code>
+        </div>
+        <p>Variables are declared on the :root selector (which targets the html element) so they're available everywhere. JavaScript can also read and change CSS variables — making them a powerful bridge between your styles and your scripts.</p>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00d4ff;">Transitions</h2>
+        <p>CSS transitions make property changes animate smoothly rather than jumping instantly. You define which property to animate, how long it should take, and the timing function.</p>
+        <div class="code-block" style="border-color: #00d4ff;">
+          <code>button {</code><br>
+          <code>&nbsp;&nbsp;background-color: transparent;</code><br>
+          <code>&nbsp;&nbsp;transition: background-color 0.3s ease;</code><br>
+          <code>}</code><br><br>
+          <code>button:hover {</code><br>
+          <code>&nbsp;&nbsp;background-color: #ff2d78;</code><br>
+          <code>}</code>
+        </div>
+        <p>You can transition multiple properties at once by separating them with commas, or use transition: all 0.3s ease to transition everything — though all can be inefficient on complex pages.</p>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00d4ff;">Animations and Keyframes</h2>
+        <p>While transitions animate between two states, animations can go through multiple stages and run automatically without user interaction.</p>
+        <div class="code-block" style="border-color: #00d4ff;">
+          <code>@keyframes pulse {</code><br>
+          <code>&nbsp;&nbsp;0% &nbsp;&nbsp;{ opacity: 1; transform: scale(1); }</code><br>
+          <code>&nbsp;&nbsp;50% &nbsp;{ opacity: 0.5; transform: scale(1.05); }</code><br>
+          <code>&nbsp;&nbsp;100% { opacity: 1; transform: scale(1); }</code><br>
+          <code>}</code><br><br>
+          <code>.glow-element {</code><br>
+          <code>&nbsp;&nbsp;animation: pulse 2s ease infinite;</code><br>
+          <code>}</code>
+        </div>
+        <p>Key animation properties:</p>
+        <ul class="content-list">
+          <li><code>animation-name</code> — which keyframe to use</li>
+          <li><code>animation-duration</code> — how long one cycle takes</li>
+          <li><code>animation-timing-function</code> — ease, linear, ease-in-out etc</li>
+          <li><code>animation-iteration-count</code> — how many times to run (or infinite)</li>
+          <li><code>animation-delay</code> — wait before starting</li>
+          <li><code>animation-direction</code> — normal, reverse, alternate</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00d4ff;">Pseudo-Elements — ::before and ::after</h2>
+        <p>Pseudo-elements let you insert content before or after an element's content using CSS alone — no extra HTML needed. They're incredibly useful for decorative elements, badges, and visual effects.</p>
+        <div class="code-block" style="border-color: #00d4ff;">
+          <code>.card::before {</code><br>
+          <code>&nbsp;&nbsp;content: '⚡';          /* required — even if empty */</code><br>
+          <code>&nbsp;&nbsp;display: block;</code><br>
+          <code>&nbsp;&nbsp;font-size: 2rem;</code><br>
+          <code>&nbsp;&nbsp;margin-bottom: 10px;</code><br>
+          <code>}</code><br><br>
+          <code>.required-field::after {</code><br>
+          <code>&nbsp;&nbsp;content: ' *';</code><br>
+          <code>&nbsp;&nbsp;color: #ff2d78;</code><br>
+          <code>}</code>
+        </div>
+        <p>The content property is required on pseudo-elements even if it's empty — content: '' is valid and commonly used when you just want to add a styled box rather than text.</p>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00d4ff;">CSS calc()</h2>
+        <p>calc() lets you perform calculations in CSS — mixing different units together in ways that aren't otherwise possible.</p>
+        <div class="code-block" style="border-color: #00d4ff;">
+          <code>.sidebar {</code><br>
+          <code>&nbsp;&nbsp;width: calc(100% - 300px);  /* full width minus sidebar */</code><br>
+          <code>}</code><br><br>
+          <code>.hero {</code><br>
+          <code>&nbsp;&nbsp;height: calc(100vh - 80px);  /* full viewport minus header */</code><br>
+          <code>}</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00d4ff;">clamp() — Fluid Typography</h2>
+        <p>clamp() lets you set a value that scales fluidly between a minimum and maximum. It's particularly useful for font sizes that should be smaller on mobile and larger on desktop without needing media queries.</p>
+        <div class="code-block" style="border-color: #00d4ff;">
+          <code>h1 {</code><br>
+          <code>&nbsp;&nbsp;font-size: clamp(1.5rem, 5vw, 3rem);</code><br>
+          <code>&nbsp;&nbsp;/* minimum 1.5rem, scales with viewport, maximum 3rem */</code><br>
+          <code>}</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00d4ff;">Advanced Selectors</h2>
+        <p>CSS has a rich set of selectors beyond the basics you've already learned.</p>
+        <ul class="content-list">
+          <li><code>p:first-child</code> — targets a p that is the first child of its parent</li>
+          <li><code>p:last-child</code> — targets the last child</li>
+          <li><code>p:nth-child(2)</code> — targets the second child</li>
+          <li><code>p:nth-child(odd)</code> — targets odd numbered children</li>
+          <li><code>p:not(.special)</code> — targets p elements that don't have the class special</li>
+          <li><code>input:checked</code> — targets checkboxes and radio buttons that are checked</li>
+          <li><code>p + p</code> — adjacent sibling — targets a p directly after another p</li>
+          <li><code>p ~ p</code> — general sibling — targets all p elements after another p</li>
+          <li><code>div > p</code> — direct child — targets p elements that are direct children of a div</li>
+        </ul>
+      </section>
+
+      <div class="tip-box" style="border-color: #00d4ff;">
+        <h3 style="color: #00d4ff;">⚡ What's in the Paid Section?</h3>
+        <p>The paid section goes deep into all of these topics — full Flexbox and Grid projects, a complete responsive design module, CSS architecture (BEM methodology, organising large stylesheets), CSS preprocessors like Sass, and advanced animation techniques. You'll also build multiple fully responsive layouts from scratch.</p>
+      </div>
+
+    </main>
+
+    <!-- NEXT STEPS -->
+    <section class="next-chapter" style="border-top: 2px solid #00d4ff;">
+      <div class="coming-up">
+        <h3 style="color: #00d4ff;">Take the Reference Sheet With You</h3>
+        <p>The advanced CSS cheat sheet covers everything on this page in a quick reference format.</p>
+      </div>
+      <a href="cheatsheet-advanced-css.html" class="next-btn" style="border-color: #00d4ff; color: #00d4ff;">Advanced CSS Cheat Sheet →</a>
+      <a href="js-advanced.html" class="next-btn" style="margin-left: 20px; border-color: #00ff88; color: #00ff88;">Advanced JavaScript →</a>
+    </section>
+
+    <script>
+      localStorage.setItem('visited_' + location.pathname.split('/html/')[1].replace('.html', '') + '.html', 'true');
+function toggleGenie() {
+        const bubble = document.getElementById('genieBubble');
+        bubble.classList.toggle('visible');
+      }
+    </script>
+
+  </body>
+</html>

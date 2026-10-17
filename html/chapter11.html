@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 11: Colour</title>
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+
+    <!-- HEADER -->
+    <header class="chapter-header">
+      <a href="../index.html" class="home-btn">← Home</a>
+      <div class="chapter-title">
+        <span class="chapter-label">Chapter 11</span>
+        <h1>Colour</h1>
+      </div>
+      <div class="header-right">
+        <div class="chapter-nav">
+          <button class="nav-toggle" onclick="toggleNav()">Chapters ▼</button>
+          <div class="nav-dropdown" id="navDropdown">
+            <a href="chapter10.html">Chapter 10 — Introducing CSS</a>
+            <a href="chapter11.html">Chapter 11 — Colour</a>
+            <a href="chapter12.html">Chapter 12 — Text</a>
+            <a href="chapter13.html">Chapter 13 — Boxes</a>
+            <a href="chapter14.html">Chapter 14 — Lists, Tables and Forms</a>
+            <a href="chapter15.html">Chapter 15 — Layout</a>
+            <a href="chapter16.html">Chapter 16 — Images</a>
+            <a href="chapter17.html">Chapter 17 — HTML5 Layout</a>
+            <a href="chapter18.html">Chapter 18 — Process and Design</a>
+            <a href="chapter19.html">Chapter 19 — Practical Information</a>
+            <hr style="border-color: #333333;">
+            <a href="css-cheatsheet.html">CSS Cheat Sheet</a>
+            <a href="css-final-quiz.html">CSS Final Quiz</a>
+          </div>
+        </div>
+        <div class="genie-container">
+          <img src="../images/xgenfutbot.png" alt="XGENFUTBOT" class="genie-icon" id="genieBtn" onclick="toggleGenie()" />
+          <div class="genie-bubble" id="genieBubble">
+            <p>Colour can really bring your pages to life. Let's stop pretending grey is a personality. 😎</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CHAPTER CONTENT -->
+    <main class="chapter-content">
+
+      <section class="content-section">
+        <h2>Colour Can Really Bring Your Pages to Life</h2>
+        <p>The right colour choices set the mood, guide the eye, and make your content easier to read. Get it wrong and your page looks amateurish — or worse, unreadable.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Foreground Colour</h2>
+        <p>The color property sets the colour of the text inside an element. You can specify any colour in CSS in one of three ways.</p>
+        <p><strong>RGB values</strong> express a colour as a mix of red, green, and blue. Each value sits between 0 and 255.</p>
+        <div class="code-block">
+          <code>p { color: rgb(100,100,90); }</code>
+        </div>
+        <p><strong>Hex codes</strong> are six-digit codes representing the same red, green, and blue values, but written in hexadecimal. They're preceded by a # symbol.</p>
+        <div class="code-block">
+          <code>h2 { color: #ee3e80; }</code>
+        </div>
+        <p><strong>Colour names</strong> — there are 147 predefined colour names that browsers recognise. They're fine for quick testing but limited, and nobody's memorising 147 names.</p>
+        <div class="code-block">
+          <code>h1 { color: DarkCyan; }</code>
+        </div>
+        <p>You can also add comments to your CSS files using /* */. Anything between those symbols is ignored by the browser — useful for labelling sections of a long stylesheet.</p>
+        <div class="code-block">
+          <code>/* this is a comment */</code><br>
+          <code>h1 { color: DarkCyan; }</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Background Colour</h2>
+        <p>CSS treats every HTML element as if it sits inside a box, and background-color sets the colour of that box. You specify it the same three ways — RGB, hex, or colour name.</p>
+        <div class="code-block">
+          <code>body { background-color: rgb(200,200,200); }</code><br>
+          <code>h1 &nbsp;{ background-color: DarkCyan; }</code><br>
+          <code>h2 &nbsp;{ background-color: #ee3e80; }</code><br>
+          <code>p &nbsp;&nbsp;{ background-color: white; }</code>
+        </div>
+        <p>If you don't set a background colour, it defaults to transparent — which usually means the browser's default white shows through, but don't rely on that since users can change their browser's default background. If you want white, set it explicitly.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Understanding Colour</h2>
+        <p>Every colour on a computer screen is created by mixing amounts of red, green, and blue — just like a television screen. Monitors are made up of thousands of tiny squares called pixels, and when the screen is off it's black because no light is being emitted. When it's on, each pixel can be a different colour, and those pixels together create the image you see.</p>
+        <p>To find the colour you want, use a colour picker — image editing tools like Photoshop and GIMP have them built in, and there are free ones online too. The colour picker will show you the RGB values and the hex code for whatever colour you land on.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Hue, Saturation and Brightness</h2>
+        <p>These are terms you'll come across when working with colour.</p>
+        <p>Hue is closest to the everyday idea of colour — red, blue, green and so on.</p>
+        <p>Saturation is the amount of grey in a colour. At maximum saturation there's no grey at all. At minimum saturation the colour is mostly grey.</p>
+        <p>Brightness refers to how much black is in a colour. Maximum brightness means no black; minimum brightness means the colour is very dark.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Contrast</h2>
+        <p>When picking your foreground and background colours, contrast matters. Low contrast makes text hard to read — and it's a real problem for anyone with a visual impairment or colour blindness, or anyone using their phone in daylight.</p>
+        <p>High contrast makes text easy to read, but too much contrast for long stretches of text can actually make it harder on the eyes too. For bodies of text, a medium contrast — dark grey on white, or off-white on dark — tends to work better than pure black on pure white.</p>
+        <p>If you're using light text on a dark background, consider increasing the line height and font weight slightly to help with readability.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Opacity and RGBA</h2>
+        <p>CSS3 introduced the opacity property, which lets you make an element (and all its children) semi-transparent. The value is a number between 0.0 and 1.0 — so 0.5 is 50% opacity and 0.15 is 15%.</p>
+        <div class="code-block">
+          <code>p { background-color: rgb(0,0,0); opacity: 0.5; }</code>
+        </div>
+        <p>rgba works like rgb but adds a fourth value — the alpha — to control opacity. Unlike opacity, it only affects the element itself, not its children.</p>
+        <div class="code-block">
+          <code>p { background-color: rgba(0,0,0,0.5); }</code>
+        </div>
+        <p>Because older browsers may not support rgba, it's good practice to write a fallback first using a plain RGB or hex value. The browser will use the rgba rule if it understands it, and fall back to the solid colour if not.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>HSL and HSLA</h2>
+        <p>CSS3 also introduced a new way to specify colours using hue, saturation, and lightness — HSL.</p>
+        <p>Hue is expressed as an angle between 0 and 360 degrees (think of a colour wheel). Saturation is a percentage — 100% is full colour, 0% is grey. Lightness is also a percentage — 0% is black, 100% is white, and 50% is normal.</p>
+        <div class="code-block">
+          <code>body { background-color: hsl(0, 0%, 78%); }</code>
+        </div>
+        <p>HSLA adds a fourth value for transparency (alpha), just like rgba.</p>
+        <div class="code-block">
+          <code>p { background-color: hsla(0, 100%, 100%, 0.5); }</code>
+        </div>
+        <p>Because older browsers don't support HSL and HSLA, write a fallback hex or RGB value before the HSL rule so those browsers still get something sensible.</p>
+      </section>
+
+    </main>
+
+    <!-- NOW LET'S BUILD -->
+    <section class="build-section">
+      <div class="build-content">
+        <h2>🔨 Now Let's Build!</h2>
+        <p>Open your <strong>styles.css</strong> file in Notepad. We're going to give your page some actual colour. Add this to your stylesheet:</p>
+        <div class="code-block">
+          <code>body {</code><br>
+          <code>&nbsp;&nbsp;font-family: Arial, sans-serif;</code><br>
+          <code>&nbsp;&nbsp;background-color: #1a1a1a;</code><br>
+          <code>&nbsp;&nbsp;color: #f0f0f0;</code><br>
+          <code>}</code><br><br>
+          <code>h1 {</code><br>
+          <code>&nbsp;&nbsp;color: #ee3e80;</code><br>
+          <code>}</code><br><br>
+          <code>h2 {</code><br>
+          <code>&nbsp;&nbsp;color: #00d4ff;</code><br>
+          <code>}</code>
+        </div>
+        <p>Save and refresh your browser. Your page should now have a dark background with light text, a pink h1 heading, and blue h2 headings. Notice the contrast — light text on a dark background is easy on the eye when done properly!</p>
+
+        <!-- BROWSER PREVIEW -->
+        <div class="browser-preview">
+          <div class="browser-bar">
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+            <span class="browser-url">file:///C:/Users/Home/index.html</span>
+          </div>
+          <div class="browser-content" style="background-color: #1a1a1a;">
+            <h1 style="font-size: 1.5rem; color: #ee3e80; font-family: Arial, sans-serif; margin-bottom: 10px;">Welcome to My Page</h1>
+            <p style="color: #f0f0f0; font-family: Arial, sans-serif; margin-bottom: 10px;">I am learning to code and this is my first webpage!</p>
+            <h2 style="font-size: 1.2rem; color: #00d4ff; font-family: Arial, sans-serif;">About Me</h2>
+          </div>
+        </div>
+        <p class="preview-note">👆 From plain black on white to a proper colour scheme. This is starting to feel like a real website!</p>
+
+        <div class="full-code">
+          <h3>✅ Your styles.css file should now look like this:</h3>
+          <div class="code-block">
+            <code>body {</code><br>
+            <code>&nbsp;&nbsp;font-family: Arial, sans-serif;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;background-color: #1a1a1a;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;color: #f0f0f0;</code><br>
+            <code>}</code><br><br>
+            <code>h1 {</code><br>
+            <code>&nbsp;&nbsp;color: #ee3e80;</code><br>
+            <code>}</code><br><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">h2 {</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;color: #00d4ff;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">}</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIZ SECTION -->
+    <section class="quiz-section">
+      <h2>Chapter 11 Quiz</h2>
+      <p class="quiz-intro">Only move on when you can answer all of these confidently without looking!</p>
+
+      <div class="quiz-question">
+        <p class="question">1. Which CSS property sets the colour of text inside an element?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) background-color</li>
+          <li onclick="checkAnswer(this, false)">b) font-color</li>
+          <li onclick="checkAnswer(this, true)">c) color</li>
+          <li onclick="checkAnswer(this, false)">d) text-color</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">2. Which of these is a valid hex colour code?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) rgb(255,0,0)</li>
+          <li onclick="checkAnswer(this, false)">b) hsl(0,100%,50%)</li>
+          <li onclick="checkAnswer(this, true)">c) #ee3e80</li>
+          <li onclick="checkAnswer(this, false)">d) DarkCyan</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">3. What does the opacity property affect?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Only the background colour of an element</li>
+          <li onclick="checkAnswer(this, true)">b) The element and all its child elements</li>
+          <li onclick="checkAnswer(this, false)">c) Only the text inside an element</li>
+          <li onclick="checkAnswer(this, false)">d) Only the element itself, not its children</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">4. What is the difference between opacity and rgba?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) There is no difference</li>
+          <li onclick="checkAnswer(this, true)">b) opacity affects the element and its children; rgba only affects the element itself</li>
+          <li onclick="checkAnswer(this, false)">c) rgba affects the element and its children; opacity only affects the element itself</li>
+          <li onclick="checkAnswer(this, false)">d) opacity only works on images</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">5. In HSL colour, what does the S stand for and how is it measured?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Size, measured in pixels</li>
+          <li onclick="checkAnswer(this, false)">b) Shade, measured in degrees</li>
+          <li onclick="checkAnswer(this, true)">c) Saturation, measured as a percentage</li>
+          <li onclick="checkAnswer(this, false)">d) Saturation, measured between 0 and 255</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">6. Why should you write a fallback colour before using rgba or HSL values?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Because rgba and HSL look better with a fallback</li>
+          <li onclick="checkAnswer(this, true)">b) Because older browsers may not support them and will use the fallback instead</li>
+          <li onclick="checkAnswer(this, false)">c) Because the browser always uses the first rule it finds</li>
+          <li onclick="checkAnswer(this, false)">d) Because rgba and HSL don't work in modern browsers</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">7. Which of the following would give you a semi-transparent black background using rgba?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) background-color: rgb(0,0,0);</li>
+          <li onclick="checkAnswer(this, false)">b) background-color: rgba(0,0,0,1);</li>
+          <li onclick="checkAnswer(this, true)">c) background-color: rgba(0,0,0,0.5);</li>
+          <li onclick="checkAnswer(this, false)">d) background-color: hsl(0,0%,0%);</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+    </section>
+
+    <!-- NEXT CHAPTER -->
+    <section class="next-chapter">
+      <div class="coming-up">
+        <h3>Coming Up Next — Chapter 12: Text</h3>
+        <p>In the next chapter we look at typefaces, font sizes, weight, spacing, alignment, and CSS3 effects like text-shadow.</p>
+      </div>
+      <a href="chapter12.html" class="next-btn" style="border-color: #00d4ff; color: #00d4ff;">Next Up: Text →</a>
+    </section>
+
+    <script>
+      localStorage.setItem('visited_' + location.pathname.split('/html/')[1].replace('.html', '') + '.html', 'true');
+function toggleGenie() {
+        const bubble = document.getElementById('genieBubble');
+        bubble.classList.toggle('visible');
+      }
+
+      function toggleNav() {
+        const dropdown = document.getElementById('navDropdown');
+        dropdown.classList.toggle('open');
+      }
+
+      document.addEventListener('click', function(e) {
+        const nav = document.querySelector('.chapter-nav');
+        if (!nav.contains(e.target)) {
+          document.getElementById('navDropdown').classList.remove('open');
+        }
+      });
+
+      function checkAnswer(element, isCorrect) {
+        const options = element.parentElement.querySelectorAll('li');
+        options.forEach(option => {
+          option.style.pointerEvents = 'none';
+        });
+        if (isCorrect) {
+          element.classList.add('correct');
+        } else {
+          element.classList.add('incorrect');
+        }
+        const resetBtn = element.parentElement.nextElementSibling;
+        if (resetBtn && resetBtn.classList.contains('reset-btn')) {
+          resetBtn.style.display = 'inline-block';
+        }
+      }
+
+      function resetQuestion(button) {
+        const options = button.previousElementSibling.querySelectorAll('li');
+        options.forEach(option => {
+          option.classList.remove('correct', 'incorrect');
+          option.style.pointerEvents = 'auto';
+        });
+        button.style.display = 'none';
+      }
+    </script>
+
+  </body>
+</html>

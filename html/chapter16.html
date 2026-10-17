@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 16: Images</title>
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+
+    <!-- HEADER -->
+    <header class="chapter-header">
+      <a href="../index.html" class="home-btn">← Home</a>
+      <div class="chapter-title">
+        <span class="chapter-label">Chapter 16</span>
+        <h1>Images</h1>
+      </div>
+      <div class="header-right">
+        <div class="chapter-nav">
+          <button class="nav-toggle" onclick="toggleNav()">Chapters ▼</button>
+          <div class="nav-dropdown" id="navDropdown">
+            <a href="chapter10.html">Chapter 10 — Introducing CSS</a>
+            <a href="chapter11.html">Chapter 11 — Colour</a>
+            <a href="chapter12.html">Chapter 12 — Text</a>
+            <a href="chapter13.html">Chapter 13 — Boxes</a>
+            <a href="chapter14.html">Chapter 14 — Lists, Tables and Forms</a>
+            <a href="chapter15.html">Chapter 15 — Layout</a>
+            <a href="chapter16.html">Chapter 16 — Images</a>
+            <a href="chapter17.html">Chapter 17 — HTML5 Layout</a>
+            <a href="chapter18.html">Chapter 18 — Process and Design</a>
+            <a href="chapter19.html">Chapter 19 — Practical Information</a>
+            <hr style="border-color: #333333;">
+            <a href="css-cheatsheet.html">CSS Cheat Sheet</a>
+            <a href="css-final-quiz.html">CSS Final Quiz</a>
+          </div>
+        </div>
+        <div class="genie-container">
+          <img src="../images/xgenfutbot.png" alt="XGENFUTBOT" class="genie-icon" id="genieBtn" onclick="toggleGenie()" />
+          <div class="genie-bubble" id="genieBubble">
+            <p>Controlling images with CSS instead of HTML attributes. Same goal, smarter route. 😎</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CHAPTER CONTENT -->
+    <main class="chapter-content">
+
+      <section class="content-section">
+        <h2>Controlling Images with CSS</h2>
+        <p>Controlling the size and alignment of your images using CSS keeps all the presentation rules in your stylesheet and out of your HTML markup — which is exactly where they should be. You can also achieve some really interesting effects using background images.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Controlling Size — width, height</h2>
+        <p>Rather than setting width and height directly on the img tag in your HTML, you can control image size in your CSS using a class name.</p>
+        <div class="code-block">
+          <code>img.large {</code><br>
+          <code>&nbsp;&nbsp;width: 500px;</code><br>
+          <code>}</code><br><br>
+          <code>img.small {</code><br>
+          <code>&nbsp;&nbsp;width: 100px;</code><br>
+          <code>}</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Aligning Images — float</h2>
+        <p>The float property is the standard way to align images left or right so that text flows around them.</p>
+        <div class="code-block">
+          <code>img.align-left {</code><br>
+          <code>&nbsp;&nbsp;float: left;</code><br>
+          <code>&nbsp;&nbsp;margin-right: 10px;</code><br>
+          <code>}</code>
+        </div>
+        <p>Always add a margin to the side the text will flow along, otherwise the text will sit right up against the image with no breathing room.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Centering Images</h2>
+        <p>Images are inline elements by default, so to centre one you first need to turn it into a block level element, then use margin: 0 auto.</p>
+        <div class="code-block">
+          <code>img.center {</code><br>
+          <code>&nbsp;&nbsp;display: block;</code><br>
+          <code>&nbsp;&nbsp;margin: 0 auto;</code><br>
+          <code>}</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Background Image — background-image</h2>
+        <p>The background-image property lets you place an image behind any HTML element — the whole page, a single div, a heading, anything.</p>
+        <div class="code-block">
+          <code>body {</code><br>
+          <code>&nbsp;&nbsp;background-image: url("images/pattern.gif");</code><br>
+          <code>}</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Repeating Images — background-repeat</h2>
+        <p>By default a background image will repeat to fill the entire element. You can control this with background-repeat.</p>
+        <div class="code-block">
+          <code>body { background-repeat: repeat; }</code><br>
+          <code>body { background-repeat: no-repeat; }</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Background Position — background-position</h2>
+        <p>When an image isn't being repeated, you can control where it sits within its element using background-position.</p>
+        <div class="code-block">
+          <code>body { background-position: center top; }</code><br>
+          <code>body { background-position: right bottom; }</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>CSS3 Gradients — background-image</h2>
+        <p>CSS3 lets you create gradients directly in CSS without needing an image file at all. A linear gradient goes from one colour to another in a straight line.</p>
+        <div class="code-block">
+          <code>div {</code><br>
+          <code>&nbsp;&nbsp;background-image: linear-gradient(#ffffff, #ee3e80);</code><br>
+          <code>}</code>
+        </div>
+        <p>You actually saw this in action on the Welcome to CSS page — that blue to pink gradient box was exactly this in action!</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Contrast of Background Images</h2>
+        <p>If you want to place text over a background image, contrast is critical. A busy or bright image will make text almost impossible to read. There are a few ways to handle this — use a low contrast image, add a semi-transparent overlay between the image and the text using rgba, or apply a CSS filter to reduce the image's contrast.</p>
+      </section>
+
+    </main>
+
+    <!-- NOW LET'S BUILD -->
+    <section class="build-section">
+      <div class="build-content">
+        <h2>🔨 Now Let's Build!</h2>
+        <p>Open your <strong>styles.css</strong> file in Notepad. We're going to give your photo some proper sizing and alignment. Add this to your stylesheet:</p>
+        <div class="code-block">
+          <code>img {</code><br>
+          <code>&nbsp;&nbsp;max-width: 100%;</code><br>
+          <code>&nbsp;&nbsp;border-radius: 10px;</code><br>
+          <code>&nbsp;&nbsp;display: block;</code><br>
+          <code>&nbsp;&nbsp;margin: 15px auto;</code><br>
+          <code>&nbsp;&nbsp;box-shadow: 0px 0px 15px rgba(0,212,255,0.3);</code><br>
+          <code>}</code>
+        </div>
+        <p>Save and refresh your browser. Your photo should now be centred, have soft rounded corners, and a subtle glowing shadow around it!</p>
+
+        <!-- BROWSER PREVIEW -->
+        <div class="browser-preview">
+          <div class="browser-bar">
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+            <span class="browser-url">file:///C:/Users/Home/index.html</span>
+          </div>
+          <div class="browser-content" style="background-color: #1a1a1a;">
+            <div style="width: 180px; height: 130px; background-color: #dddddd; border: 1px solid #999999; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin: 15px auto; box-shadow: 0px 0px 15px rgba(0,212,255,0.3);">
+              <p style="color: #666666; font-family: Arial, sans-serif; font-size: 0.75rem; text-align: center;">Your image<br>now centred<br>with a glow</p>
+            </div>
+          </div>
+        </div>
+        <p class="preview-note">👆 From a plain unstyled image to something that looks intentional and polished!</p>
+
+        <div class="full-code">
+          <h3>✅ Your styles.css file should now look like this (newest additions highlighted):</h3>
+          <div class="code-block">
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">img {</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;max-width: 100%;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;border-radius: 10px;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;display: block;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;margin: 15px auto;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;box-shadow: 0px 0px 15px rgba(0,212,255,0.3);</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">}</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIZ SECTION -->
+    <section class="quiz-section">
+      <h2>Chapter 16 Quiz</h2>
+      <p class="quiz-intro">Only move on when you can answer all of these confidently without looking!</p>
+
+      <div class="quiz-question">
+        <p class="question">1. Why is it better to control image size in CSS rather than in the HTML?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) CSS makes images load faster</li>
+          <li onclick="checkAnswer(this, true)">b) It keeps all presentation rules in the stylesheet and out of the HTML markup</li>
+          <li onclick="checkAnswer(this, false)">c) HTML can't set image sizes</li>
+          <li onclick="checkAnswer(this, false)">d) CSS image sizes are more accurate</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">2. How do you float an image to the left so text flows around it?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) text-align: left</li>
+          <li onclick="checkAnswer(this, false)">b) position: left</li>
+          <li onclick="checkAnswer(this, true)">c) float: left</li>
+          <li onclick="checkAnswer(this, false)">d) align: left</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">3. What two things do you need to do to centre an image using CSS?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Set float to none and margin to auto</li>
+          <li onclick="checkAnswer(this, true)">b) Set display to block and margin to 0 auto</li>
+          <li onclick="checkAnswer(this, false)">c) Set position to center and width to 50%</li>
+          <li onclick="checkAnswer(this, false)">d) Set text-align to center and display to inline</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">4. What does background-repeat: no-repeat do?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Repeats the image both horizontally and vertically</li>
+          <li onclick="checkAnswer(this, false)">b) Repeats the image vertically only</li>
+          <li onclick="checkAnswer(this, true)">c) Shows the image once only</li>
+          <li onclick="checkAnswer(this, false)">d) Repeats the image horizontally only</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">5. Why is contrast important when placing text over a background image?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) It makes the page load faster</li>
+          <li onclick="checkAnswer(this, true)">b) Low contrast between text and image makes the text hard or impossible to read</li>
+          <li onclick="checkAnswer(this, false)">c) High contrast causes images to pixelate</li>
+          <li onclick="checkAnswer(this, false)">d) Contrast only matters for background colours not images</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+    </section>
+
+    <!-- NEXT CHAPTER -->
+    <section class="next-chapter">
+      <div class="coming-up">
+        <h3>Coming Up Next — Chapter 17: HTML5 Layout</h3>
+        <p>In the next chapter we look at the HTML5 layout elements — header, nav, section, article, aside, figure and footer — and how they offer meaningful alternatives to the div element.</p>
+      </div>
+      <a href="chapter17.html" class="next-btn" style="border-color: #00d4ff; color: #00d4ff;">Next Up: HTML5 Layout →</a>
+    </section>
+
+    <script>
+      localStorage.setItem('visited_' + location.pathname.split('/html/')[1].replace('.html', '') + '.html', 'true');
+function toggleGenie() {
+        const bubble = document.getElementById('genieBubble');
+        bubble.classList.toggle('visible');
+      }
+
+      function toggleNav() {
+        const dropdown = document.getElementById('navDropdown');
+        dropdown.classList.toggle('open');
+      }
+
+      document.addEventListener('click', function(e) {
+        const nav = document.querySelector('.chapter-nav');
+        if (!nav.contains(e.target)) {
+          document.getElementById('navDropdown').classList.remove('open');
+        }
+      });
+
+      function checkAnswer(element, isCorrect) {
+        const options = element.parentElement.querySelectorAll('li');
+        options.forEach(option => {
+          option.style.pointerEvents = 'none';
+        });
+        if (isCorrect) {
+          element.classList.add('correct');
+        } else {
+          element.classList.add('incorrect');
+        }
+        const resetBtn = element.parentElement.nextElementSibling;
+        if (resetBtn && resetBtn.classList.contains('reset-btn')) {
+          resetBtn.style.display = 'inline-block';
+        }
+      }
+
+      function resetQuestion(button) {
+        const options = button.previousElementSibling.querySelectorAll('li');
+        options.forEach(option => {
+          option.classList.remove('correct', 'incorrect');
+          option.style.pointerEvents = 'auto';
+        });
+        button.style.display = 'none';
+      }
+    </script>
+
+  </body>
+</html>

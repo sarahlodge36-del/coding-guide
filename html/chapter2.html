@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 2: Text</title>
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+
+    <!-- HEADER -->
+    <header class="chapter-header">
+      <a href="../index.html" class="home-btn">← Home</a>
+      <div class="chapter-title">
+        <span class="chapter-label">Chapter 2</span>
+        <h1>Text</h1>
+      </div>
+      <div class="header-right">
+        <div class="chapter-nav">
+          <button class="nav-toggle" onclick="toggleNav()">Chapters ▼</button>
+          <div class="nav-dropdown" id="navDropdown">
+            <a href="chapter1.html">Chapter 1 — HTML</a>
+            <a href="chapter2.html">Chapter 2 — Text</a>
+            <a href="chapter3.html">Chapter 3 — Lists</a>
+            <a href="chapter4.html">Chapter 4 — Links</a>
+            <a href="chapter5.html">Chapter 5 — Images</a>
+            <a href="chapter6.html">Chapter 6 — Tables</a>
+            <a href="chapter7.html">Chapter 7 — Forms</a>
+            <a href="chapter8.html">Chapter 8 — Extra Markup</a>
+            <a href="chapter9.html">Chapter 9 — Video and Audio</a>
+            <hr style="border-color: #333333;">
+            <a href="cheatsheet-basic.html">HTML Cheat Sheet</a>
+          </div>
+        </div>
+        <div class="genie-container">
+          <img src="../images/xgenfutbot.png" alt="XGENFUTBOT" class="genie-icon" id="genieBtn" onclick="toggleGenie()" />
+          <div class="genie-bubble" id="genieBubble">
+            <p>Still here watching you. Don't even think about moving on until every question is nailed. 👀</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CHAPTER CONTENT -->
+    <main class="chapter-content">
+
+      <section class="content-section">
+        <h2>First Things First</h2>
+        <p>Before we go into text structure, there are a couple of things to bear in mind. Tags known as markup provide extra meaning to your content — this allows the browser to show the user the appropriate structure.</p>
+        <p>There are two types of markup:</p>
+        <ul class="content-list">
+          <li><strong>Structural markup</strong> — elements we use to describe headings and paragraphs</li>
+          <li><strong>Semantic markup</strong> — provides extra info such as where emphasis is placed in a sentence, a quotation, or the meaning of acronyms</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Headings</h2>
+        <p>Headings are different sizes. We use them to give information about the rest of the text. h1 is the largest and h6 is the smallest.</p>
+        <div class="code-block">
+          <code>&lt;h1&gt; This is the main heading &lt;/h1&gt;</code><br>
+          <code>&lt;h2&gt; This heading is a bit smaller &lt;/h2&gt;</code><br>
+          <code>&lt;h3&gt; This is smaller than h2 &lt;/h3&gt;</code><br>
+          <code>&lt;h4&gt; Much smaller &lt;/h4&gt;</code><br>
+          <code>&lt;h5&gt; Even smaller &lt;/h5&gt;</code><br>
+          <code>&lt;h6&gt; Smallest &lt;/h6&gt;</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Paragraphs</h2>
+        <p>A paragraph is one or more sentences that form a self contained unit. The p tag wraps around each paragraph like this:</p>
+        <div class="code-block">
+          <code>&lt;p&gt; The cat sat on the mat with his blue toy. &lt;/p&gt;</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Bold and Italic</h2>
+        <p>To make text appear bold we use the b tag. For italic we use the i tag.</p>
+        <div class="code-block">
+          <code>&lt;p&gt; I like a bold appearance &lt;b&gt; like this &lt;/b&gt; &lt;/p&gt;</code><br>
+          <code>&lt;p&gt; I like an italic appearance &lt;i&gt; like this &lt;/i&gt; &lt;/p&gt;</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Superscript and Subscript</h2>
+        <p>sup is used for superscript — characters that should sit above the line such as suffixes or mathematical concepts like raising a number to a power.</p>
+        <p>sub is used for subscript — characters that sit below the line, commonly used for footnotes and chemical formulas such as H₂O.</p>
+        <div class="code-block">
+          <code>&lt;p&gt; On the 10&lt;sup&gt;th&lt;/sup&gt; of September &lt;/p&gt;</code><br>
+          <code>&lt;p&gt; The amount of CO&lt;sub&gt;2&lt;/sub&gt; in the air &lt;/p&gt;</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>White Space</h2>
+        <p>When a browser comes across two or more spaces next to each other it only displays one space. When it comes across a line break it also treats it as a single space. This is called white space collapsing.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Line Breaks and Horizontal Rules</h2>
+        <p>br adds a line break in the middle of a paragraph. hr creates a break between themes. These are empty elements with only one tag.</p>
+        <div class="code-block">
+          <code>&lt;br /&gt; — line break</code><br>
+          <code>&lt;hr /&gt; — horizontal rule</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Semantic Markup</h2>
+        <ul class="content-list">
+          <li><code>&lt;strong&gt;</code> — indicates that the content is important</li>
+          <li><code>&lt;em&gt;</code> — adds emphasis that subtly changes the meaning</li>
+          <li><code>&lt;blockquote&gt;</code> — for longer quotes that take up an entire paragraph</li>
+          <li><code>&lt;q&gt;</code> — for shorter quotes within a paragraph</li>
+          <li><code>&lt;abbr&gt;</code> — lets you provide the full meaning as a tooltip on hover</li>
+          <li><code>&lt;cite&gt;</code> — used to indicate where a citation is from</li>
+          <li><code>&lt;dfn&gt;</code> — used to indicate the defining instance of a new term</li>
+          <li><code>&lt;address&gt;</code> — used for contact details for the author of the page</li>
+          <li><code>&lt;ins&gt;</code> — shows content inserted into a document, usually underlined</li>
+          <li><code>&lt;del&gt;</code> — shows text deleted from a document, usually with a line through it</li>
+          <li><code>&lt;s&gt;</code> — means something is no longer relevant but cannot be deleted</li>
+        </ul>
+      </section>
+
+    </main>
+
+    <!-- NOW LET'S BUILD -->
+    <section class="build-section">
+      <div class="build-content">
+        <h2>🔨 Now Let's Build!</h2>
+        <p>Open your <strong>index.html</strong> file in Notepad — the same file we started in Chapter 1. We're going to add some text formatting to it. Add the highlighted code to your body section:</p>
+        <div class="code-block">
+          <code>&lt;h2&gt;About Me&lt;/h2&gt;</code><br>
+          <code>&lt;p&gt;My name is &lt;strong&gt;[your name]&lt;/strong&gt; and I am learning HTML.&lt;/p&gt;</code><br>
+          <code>&lt;hr /&gt;</code><br>
+          <code>&lt;h2&gt;My Favourite Things&lt;/h2&gt;</code><br>
+          <code>&lt;p&gt;I love &lt;em&gt;coding&lt;/em&gt; and late nights.&lt;/p&gt;</code><br>
+          <code>&lt;p&gt;Did you know water is H&lt;sub&gt;2&lt;/sub&gt;O?&lt;/p&gt;</code>
+        </div>
+        <p>Save in Notepad and refresh your browser. You should see bold text, italic text, a horizontal rule dividing sections, and a subscript in the chemical formula!</p>
+
+        <!-- BROWSER PREVIEW -->
+        <div class="browser-preview">
+          <div class="browser-bar">
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+            <span class="browser-url">file:///C:/Users/Home/index.html</span>
+          </div>
+          <div class="browser-content">
+            <h1 style="font-size: 1.5rem; color: #000000; font-family: serif; margin-bottom: 10px;">Welcome to My Page</h1>
+            <p style="color: #000000; font-family: serif;">I am learning to code and this is my first webpage!</p>
+            <h2 style="font-size: 1.2rem; color: #000000; font-family: serif; margin: 10px 0 5px 0;">About Me</h2>
+            <p style="color: #000000; font-family: serif;"><strong>Sarah</strong> and I am learning HTML.</p>
+            <hr style="border: 1px solid #000000; margin: 10px 0;">
+            <h2 style="font-size: 1.2rem; color: #000000; font-family: serif; margin: 10px 0 5px 0;">My Favourite Things</h2>
+            <p style="color: #000000; font-family: serif;">I love <em>coding</em> and late nights.</p>
+            <p style="color: #000000; font-family: serif;">Did you know water is H<sub>2</sub>O?</p>
+          </div>
+        </div>
+        <p class="preview-note">👆 This is roughly what your page should look like now!</p>
+
+        <div class="full-code">
+          <h3>✅ Your full file should now look like this:</h3>
+          <div class="code-block">
+            <code>&lt;!DOCTYPE html&gt;</code><br>
+            <code>&lt;html&gt;</code><br>
+            <code>&nbsp;&nbsp;&lt;head&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;My First Webpage&lt;/title&gt;</code><br>
+            <code>&nbsp;&nbsp;&lt;/head&gt;</code><br>
+            <code>&nbsp;&nbsp;&lt;body&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Welcome to My Page&lt;/h1&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;I am learning to code and this is my first webpage!&lt;/p&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;About Me&lt;/h2&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;My name is &lt;strong&gt;[your name]&lt;/strong&gt; and I am learning HTML.&lt;/p&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;hr /&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;My Favourite Things&lt;/h2&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;I love &lt;em&gt;coding&lt;/em&gt; and late nights.&lt;/p&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Did you know water is H&lt;sub&gt;2&lt;/sub&gt;O?&lt;/p&gt;</code><br>
+            <code>&nbsp;&nbsp;&lt;/body&gt;</code><br>
+            <code>&lt;/html&gt;</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIZ SECTION -->
+    <section class="quiz-section">
+      <h2>Chapter 2 Quiz</h2>
+      <p class="quiz-intro">Only move on when you can answer all of these confidently without looking!</p>
+
+      <div class="quiz-question">
+        <p class="question">1. Which tag is used for the largest heading?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) &lt;h6&gt;</li>
+          <li onclick="checkAnswer(this, false)">b) &lt;h3&gt;</li>
+          <li onclick="checkAnswer(this, true)">c) &lt;h1&gt;</li>
+          <li onclick="checkAnswer(this, false)">d) &lt;heading&gt;</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">2. What does &lt;br /&gt; do?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Makes text bold</li>
+          <li onclick="checkAnswer(this, false)">b) Creates a horizontal line</li>
+          <li onclick="checkAnswer(this, true)">c) Adds a line break</li>
+          <li onclick="checkAnswer(this, false)">d) Starts a new paragraph</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">3. Which tag would you use to show a chemical formula like H₂O?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) &lt;sup&gt;</li>
+          <li onclick="checkAnswer(this, false)">b) &lt;small&gt;</li>
+          <li onclick="checkAnswer(this, true)">c) &lt;sub&gt;</li>
+          <li onclick="checkAnswer(this, false)">d) &lt;em&gt;</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">4. What is the difference between &lt;strong&gt; and &lt;b&gt;?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) There is no difference</li>
+          <li onclick="checkAnswer(this, true)">b) &lt;strong&gt; means the content is important, &lt;b&gt; just makes it visually bold</li>
+          <li onclick="checkAnswer(this, false)">c) &lt;b&gt; means the content is important, &lt;strong&gt; just makes it visually bold</li>
+          <li onclick="checkAnswer(this, false)">d) &lt;strong&gt; is for headings only</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">5. Which tag would you use for a long quote that takes up a whole paragraph?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) &lt;q&gt;</li>
+          <li onclick="checkAnswer(this, false)">b) &lt;quote&gt;</li>
+          <li onclick="checkAnswer(this, false)">c) &lt;cite&gt;</li>
+          <li onclick="checkAnswer(this, true)">d) &lt;blockquote&gt;</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+    </section>
+
+    <!-- NEXT CHAPTER -->
+    <section class="next-chapter">
+      <div class="coming-up">
+        <h3>Coming Up Next — Chapter 3: Lists</h3>
+        <p>In the next chapter we look at ordered lists, unordered lists, and definition lists — and how to nest them inside each other.</p>
+      </div>
+      <a href="chapter3.html" class="next-btn">Next Up: Lists →</a>
+    </section>
+
+    <script>
+      localStorage.setItem('visited_' + location.pathname.split('/html/')[1].replace('.html', '') + '.html', 'true');
+function toggleGenie() {
+        const bubble = document.getElementById('genieBubble');
+        bubble.classList.toggle('visible');
+      }
+
+      function toggleNav() {
+        const dropdown = document.getElementById('navDropdown');
+        dropdown.classList.toggle('open');
+      }
+
+      document.addEventListener('click', function(e) {
+        const nav = document.querySelector('.chapter-nav');
+        if (!nav.contains(e.target)) {
+          document.getElementById('navDropdown').classList.remove('open');
+        }
+      });
+
+      function checkAnswer(element, isCorrect) {
+        const options = element.parentElement.querySelectorAll('li');
+        options.forEach(option => {
+          option.style.pointerEvents = 'none';
+        });
+        if (isCorrect) {
+          element.classList.add('correct');
+        } else {
+          element.classList.add('incorrect');
+        }
+        const resetBtn = element.parentElement.nextElementSibling;
+        if (resetBtn && resetBtn.classList.contains('reset-btn')) {
+          resetBtn.style.display = 'inline-block';
+        }
+      }
+
+      function resetQuestion(button) {
+        const options = button.previousElementSibling.querySelectorAll('li');
+        options.forEach(option => {
+          option.classList.remove('correct', 'incorrect');
+          option.style.pointerEvents = 'auto';
+        });
+        button.style.display = 'none';
+      }
+    </script>
+
+  </body>
+</html>

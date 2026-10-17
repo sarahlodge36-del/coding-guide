@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 9: Video and Audio</title>
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+
+    <!-- HEADER -->
+    <header class="chapter-header">
+      <a href="../index.html" class="home-btn">← Home</a>
+      <div class="chapter-title">
+        <span class="chapter-label">Chapter 9</span>
+        <h1>Video and Audio</h1>
+      </div>
+      <div class="header-right">
+        <div class="chapter-nav">
+          <button class="nav-toggle" onclick="toggleNav()">Chapters ▼</button>
+          <div class="nav-dropdown" id="navDropdown">
+            <a href="chapter1.html">Chapter 1 — HTML</a>
+            <a href="chapter2.html">Chapter 2 — Text</a>
+            <a href="chapter3.html">Chapter 3 — Lists</a>
+            <a href="chapter4.html">Chapter 4 — Links</a>
+            <a href="chapter5.html">Chapter 5 — Images</a>
+            <a href="chapter6.html">Chapter 6 — Tables</a>
+            <a href="chapter7.html">Chapter 7 — Forms</a>
+            <a href="chapter8.html">Chapter 8 — Extra Markup</a>
+            <a href="chapter9.html">Chapter 9 — Video and Audio</a>
+            <hr style="border-color: #333333;">
+            <a href="cheatsheet-basic.html">HTML Cheat Sheet</a>
+          </div>
+        </div>
+        <div class="genie-container">
+          <img src="../images/xgenfutbot.png" alt="XGENFUTBOT" class="genie-icon" id="genieBtn" onclick="toggleGenie()" />
+          <div class="genie-bubble" id="genieBubble">
+            <p>Last HTML chapter. You've come a long way. Finish strong — quiz before you move on. 👀</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CHAPTER CONTENT -->
+    <main class="chapter-content">
+
+      <section class="content-section">
+        <h2>A Quick Note on Flash</h2>
+        <p>If you've ever come across old websites with animations, video players or interactive games, there's a good chance they were built using Flash. For many years Flash was the main way to add video and audio to websites. However Flash is now completely defunct — all major browsers dropped support for it in 2020 and it no longer works anywhere. The good news is that HTML5 gives us much better built-in tools for video and audio anyway.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Adding Video to Your Page</h2>
+        <p>When it comes to adding video to your site you have two main options — use a hosted service like YouTube or Vimeo, or host the video yourself using the HTML5 video element.</p>
+        <p>The easiest way is to upload your video to YouTube or Vimeo and use the embed code they provide. You simply paste it into your HTML and the video player appears on your page. No need to worry about file formats or encoding — they handle all of that for you.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>HTML5 Video</h2>
+        <p>HTML5 introduced the video element which lets you host video directly on your own site. The browser provides its own built-in player.</p>
+        <ul class="content-list">
+          <li><code>src</code> — the path to your video file</li>
+          <li><code>poster</code> — an image to show while the video loads or before the user hits play</li>
+          <li><code>width</code> and <code>height</code> — the size of the player in pixels</li>
+          <li><code>controls</code> — tells the browser to show its built-in play/pause controls</li>
+          <li><code>autoplay</code> — starts playing automatically. Use sparingly!</li>
+          <li><code>loop</code> — starts again from the beginning once it finishes</li>
+          <li><code>preload</code> — none, auto, or metadata</li>
+        </ul>
+        <div class="code-block">
+          <code>&lt;video src="video/puppy.mp4"</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; poster="images/puppy.jpg"</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width="400"</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; height="300"</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; controls&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;p&gt;Your browser does not support this video.&lt;/p&gt;</code><br>
+          <code>&lt;/video&gt;</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Video Formats</h2>
+        <p>Not all browsers support the same video formats, so it's best practice to provide your video in more than one format. The two main formats to cover are MP4 and WebM. Always put MP4 first.</p>
+        <div class="code-block">
+          <code>&lt;video poster="images/puppy.jpg" width="400" height="320" controls&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;source src="video/puppy.mp4" type="video/mp4" /&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;source src="video/puppy.webm" type="video/webm" /&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;p&gt;Your browser does not support this video.&lt;/p&gt;</code><br>
+          <code>&lt;/video&gt;</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>HTML5 Audio</h2>
+        <p>The audio element works in the same way as video but for sound files. The most widely supported format is MP3.</p>
+        <div class="code-block">
+          <code>&lt;audio controls&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;source src="audio/test-audio.mp3" /&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;source src="audio/test-audio.ogg" /&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;p&gt;Your browser does not support this audio.&lt;/p&gt;</code><br>
+          <code>&lt;/audio&gt;</code>
+        </div>
+        <p>As with video you can use multiple source elements to provide the audio in different formats. MP3 has the widest support so always include that one.</p>
+      </section>
+
+    </main>
+
+    <!-- NOW LET'S BUILD -->
+    <section class="build-section">
+      <div class="build-content">
+        <h2>🔨 Now Let's Build!</h2>
+        <p>Open your <strong>index.html</strong> file in Notepad. For this chapter we're going to add a video section. If you don't have a video file handy, use a YouTube embed instead — go to any YouTube video, click Share, then Embed, and copy the iframe code they give you.</p>
+        <p>Add this inside your content div:</p>
+        <div class="code-block">
+          <code>&lt;h2&gt;A Video I Like&lt;/h2&gt;</code><br>
+          <code>&lt;!-- paste your YouTube embed code here --&gt;</code><br>
+          <code>&lt;!-- OR if you have a video file: --&gt;</code><br>
+          <code>&lt;video width="400" height="300" controls&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;source src="video/myvideo.mp4" type="video/mp4" /&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;p&gt;Your browser does not support this video.&lt;/p&gt;</code><br>
+          <code>&lt;/video&gt;</code>
+        </div>
+        <p>Save and refresh your browser. 🚀</p>
+        <div class="full-code">
+          <h3>🎉 Your HTML page is now complete!</h3>
+          <p style="color: #00ff88; font-style: italic; margin-bottom: 0;">You have successfully built a full HTML webpage from scratch across 9 chapters. You have headings, paragraphs, lists, links, images, a table, a form, and video. Save it somewhere safe — we'll be adding CSS to it in the next section. Well done! 🎉</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIZ SECTION -->
+    <section class="quiz-section">
+      <h2>Chapter 9 Quiz</h2>
+      <p class="quiz-intro">Last HTML quiz! Only move on when you can answer all of these confidently without looking!</p>
+
+      <div class="quiz-question">
+        <p class="question">1. Which HTML5 element is used to add video to a web page?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) &lt;media&gt;</li>
+          <li onclick="checkAnswer(this, false)">b) &lt;film&gt;</li>
+          <li onclick="checkAnswer(this, true)">c) &lt;video&gt;</li>
+          <li onclick="checkAnswer(this, false)">d) &lt;player&gt;</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">2. What does the poster attribute do on a video element?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Adds a title above the video</li>
+          <li onclick="checkAnswer(this, true)">b) Shows an image while the video loads or before it plays</li>
+          <li onclick="checkAnswer(this, false)">c) Sets the width of the player</li>
+          <li onclick="checkAnswer(this, false)">d) Loops the video automatically</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">3. What does the controls attribute do?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Sets the volume level</li>
+          <li onclick="checkAnswer(this, false)">b) Prevents the video from playing automatically</li>
+          <li onclick="checkAnswer(this, true)">c) Tells the browser to show its built-in play/pause controls</li>
+          <li onclick="checkAnswer(this, false)">d) Specifies the video format</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">4. Why should you provide video in more than one format?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) To make the file size smaller</li>
+          <li onclick="checkAnswer(this, true)">b) Because different browsers support different video formats</li>
+          <li onclick="checkAnswer(this, false)">c) Because MP4 doesn't work on any browser</li>
+          <li onclick="checkAnswer(this, false)">d) It doesn't matter — one format is fine</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">5. Which element do you use inside video or audio to specify multiple file formats?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) &lt;file&gt;</li>
+          <li onclick="checkAnswer(this, false)">b) &lt;format&gt;</li>
+          <li onclick="checkAnswer(this, false)">c) &lt;src&gt;</li>
+          <li onclick="checkAnswer(this, true)">d) &lt;source&gt;</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+    </section>
+
+    <!-- NEXT STEPS -->
+    <section class="next-chapter">
+      <div class="coming-up">
+        <h3>HTML Section Complete! 🎉</h3>
+        <p>You've built a fully structured webpage from scratch using nothing but HTML. Before you move on to CSS, check out the advanced HTML page to see what's waiting beyond the basics — then test yourself with the final quiz!</p>
+      </div>
+      <a href="cheatsheet-basic.html" class="next-btn" style="margin-right: 20px;">HTML Cheat Sheet →</a>
+      <a href="html-advanced.html" class="next-btn" style="margin-right: 20px; border-color: #ff2d78; color: #ff2d78;">Advanced HTML →</a>
+      <a href="html-final-quiz.html" class="next-btn" style="margin-right: 20px; border-color: #00ff88; color: #00ff88;">HTML Final Quiz →</a>
+      <a href="cssintro.html" class="next-btn" style="border-color: #00d4ff; color: #00d4ff;">Next Up: CSS →</a>
+    </section>
+
+    <script>
+      localStorage.setItem('visited_' + location.pathname.split('/html/')[1].replace('.html', '') + '.html', 'true');
+function toggleGenie() {
+        const bubble = document.getElementById('genieBubble');
+        bubble.classList.toggle('visible');
+      }
+
+      function toggleNav() {
+        const dropdown = document.getElementById('navDropdown');
+        dropdown.classList.toggle('open');
+      }
+
+      document.addEventListener('click', function(e) {
+        const nav = document.querySelector('.chapter-nav');
+        if (!nav.contains(e.target)) {
+          document.getElementById('navDropdown').classList.remove('open');
+        }
+      });
+
+      function checkAnswer(element, isCorrect) {
+        const options = element.parentElement.querySelectorAll('li');
+        options.forEach(option => {
+          option.style.pointerEvents = 'none';
+        });
+        if (isCorrect) {
+          element.classList.add('correct');
+        } else {
+          element.classList.add('incorrect');
+        }
+        const resetBtn = element.parentElement.nextElementSibling;
+        if (resetBtn && resetBtn.classList.contains('reset-btn')) {
+          resetBtn.style.display = 'inline-block';
+        }
+      }
+
+      function resetQuestion(button) {
+        const options = button.previousElementSibling.querySelectorAll('li');
+        options.forEach(option => {
+          option.classList.remove('correct', 'incorrect');
+          option.style.pointerEvents = 'auto';
+        });
+        button.style.display = 'none';
+      }
+    </script>
+
+  </body>
+</html>

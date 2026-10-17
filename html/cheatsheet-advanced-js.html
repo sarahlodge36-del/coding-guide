@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced JavaScript Cheat Sheet</title>
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+
+    <!-- HEADER -->
+    <header class="chapter-header" style="border-bottom: 2px solid #00ff88;">
+      <a href="../index.html" class="home-btn" style="color: #00ff88;">← Home</a>
+      <div class="chapter-title">
+        <span class="chapter-label" style="color: #00ff88;">JavaScript</span>
+        <h1 style="color: #00ff88;">Advanced Cheat Sheet</h1>
+      </div>
+      <div class="genie-container">
+        <img src="../images/xgenfutbot.png" alt="XGENFUTBOT" class="genie-icon" id="genieBtn" onclick="toggleGenie()" />
+        <div class="genie-bubble" id="genieBubble" style="border-color: #00ff88; color: #00ff88;">
+          <p>Modern JavaScript reference. This is the good stuff. 😎</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- CHEAT SHEET CONTENT -->
+    <main class="chapter-content">
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">ES6 Variables</h2>
+        <ul class="content-list">
+          <li><code>let name = 'Sarah';</code> — block scoped, can be changed</li>
+          <li><code>const name = 'Sarah';</code> — block scoped, cannot be reassigned</li>
+          <li><code>var name = 'Sarah';</code> — function scoped, legacy</li>
+          <li>Prefer const by default, use let when the value needs to change, avoid var in modern code</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Arrow Functions</h2>
+        <ul class="content-list">
+          <li><code>const greet = (name) => { return 'Hello ' + name; }</code> — full arrow function</li>
+          <li><code>const greet = name => 'Hello ' + name;</code> — implicit return, no braces needed</li>
+          <li><code>const greet = () => 'Hello!';</code> — no parameters</li>
+          <li><code>const add = (a, b) => a + b;</code> — multiple parameters</li>
+          <li><code>arr.forEach(item => console.log(item));</code> — as a callback</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Template Literals</h2>
+        <ul class="content-list">
+          <li><code>`Hello ${name}!`</code> — embeds a variable in a string</li>
+          <li><code>`${2 + 2}`</code> — embeds an expression</li>
+          <li><code>`${isLoggedIn ? 'Welcome' : 'Please log in'}`</code> — embeds a ternary</li>
+          <li>Use backticks ` not quotes</li>
+          <li>Can span multiple lines without escape characters</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Destructuring</h2>
+        <ul class="content-list">
+          <li><code>const [a, b, c] = [1, 2, 3];</code> — array destructuring</li>
+          <li><code>const [first, ...rest] = [1, 2, 3, 4];</code> — rest in destructuring</li>
+          <li><code>const { name, age } = person;</code> — object destructuring</li>
+          <li><code>const { name: playerName } = person;</code> — rename while destructuring</li>
+          <li><code>const { name = 'Unknown' } = person;</code> — default value</li>
+          <li><code>function greet({ name, age }) { }</code> — destructuring in parameters</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Spread and Rest</h2>
+        <ul class="content-list">
+          <li><code>[...arr1, ...arr2]</code> — merges two arrays</li>
+          <li><code>[...arr]</code> — copies an array</li>
+          <li><code>{ ...obj1, ...obj2 }</code> — merges two objects</li>
+          <li><code>{ ...obj, name: 'Sarah' }</code> — copies object and overrides a property</li>
+          <li><code>Math.max(...numbers)</code> — spreads array as function arguments</li>
+          <li><code>function log(...args) { }</code> — rest collects all arguments into array</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Array Methods</h2>
+        <ul class="content-list">
+          <li><code>arr.map(item => item * 2)</code> — transforms every item, returns new array</li>
+          <li><code>arr.filter(item => item > 10)</code> — returns items that pass the test</li>
+          <li><code>arr.reduce((total, item) => total + item, 0)</code> — reduces to single value</li>
+          <li><code>arr.find(item => item.id === 5)</code> — returns first matching item</li>
+          <li><code>arr.findIndex(item => item.id === 5)</code> — returns index of first match</li>
+          <li><code>arr.some(item => item > 10)</code> — true if any item passes</li>
+          <li><code>arr.every(item => item > 0)</code> — true if all items pass</li>
+          <li><code>arr.includes('value')</code> — true if value exists in array</li>
+          <li><code>arr.flat()</code> — flattens nested arrays one level</li>
+          <li><code>arr.sort((a, b) => a - b)</code> — sorts numerically ascending</li>
+          <li><code>arr.sort((a, b) => b - a)</code> — sorts numerically descending</li>
+          <li><code>[...new Set(arr)]</code> — removes duplicates from array</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Objects</h2>
+        <ul class="content-list">
+          <li><code>Object.keys(obj)</code> — returns array of property names</li>
+          <li><code>Object.values(obj)</code> — returns array of property values</li>
+          <li><code>Object.entries(obj)</code> — returns array of [key, value] pairs</li>
+          <li><code>Object.assign({}, obj1, obj2)</code> — merges objects</li>
+          <li><code>Object.freeze(obj)</code> — prevents object from being modified</li>
+          <li><code>'name' in obj</code> — checks if property exists</li>
+          <li><code>const key = 'name'; obj[key]</code> — dynamic property access</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Promises</h2>
+        <ul class="content-list">
+          <li><code>new Promise((resolve, reject) => { })</code> — creates a promise</li>
+          <li><code>promise.then(data => { })</code> — runs when promise resolves</li>
+          <li><code>promise.catch(error => { })</code> — runs when promise rejects</li>
+          <li><code>promise.finally(() => { })</code> — runs regardless of outcome</li>
+          <li><code>Promise.all([p1, p2, p3])</code> — resolves when all promises resolve</li>
+          <li><code>Promise.race([p1, p2])</code> — resolves when first promise resolves</li>
+          <li><code>Promise.allSettled([p1, p2])</code> — resolves when all settle</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Fetch API</h2>
+        <ul class="content-list">
+          <li><code>fetch('url')</code> — makes a GET request, returns a promise</li>
+          <li><code>fetch('url').then(r => r.json())</code> — parses JSON response</li>
+          <li><code>fetch('url').then(r => r.text())</code> — parses text response</li>
+          <li><code>response.ok</code> — true if status code is 200-299</li>
+          <li><code>response.status</code> — the HTTP status code</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">async / await</h2>
+        <ul class="content-list">
+          <li><code>async function name() { }</code> — declares an async function</li>
+          <li><code>const name = async () => { }</code> — async arrow function</li>
+          <li><code>const data = await fetch('url');</code> — waits for promise to resolve</li>
+          <li><code>await</code> can only be used inside an async function</li>
+          <li><code>try { await ... } catch (e) { }</code> — error handling with async/await</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Error Handling</h2>
+        <ul class="content-list">
+          <li><code>try { } catch (error) { }</code> — catches errors</li>
+          <li><code>try { } catch (error) { } finally { }</code> — finally always runs</li>
+          <li><code>error.message</code> — the error message</li>
+          <li><code>error.name</code> — the error type</li>
+          <li><code>throw new Error('Something went wrong');</code> — throws a custom error</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">localStorage</h2>
+        <ul class="content-list">
+          <li><code>localStorage.setItem('key', 'value');</code> — saves a string</li>
+          <li><code>localStorage.getItem('key');</code> — reads a value</li>
+          <li><code>localStorage.removeItem('key');</code> — removes one item</li>
+          <li><code>localStorage.clear();</code> — removes everything</li>
+          <li><code>localStorage.setItem('key', JSON.stringify(obj));</code> — saves an object</li>
+          <li><code>JSON.parse(localStorage.getItem('key'));</code> — reads an object</li>
+          <li>localStorage persists after the browser is closed</li>
+          <li>sessionStorage works the same but clears when the tab closes</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Modules</h2>
+        <ul class="content-list">
+          <li><code>export function greet() { }</code> — named export</li>
+          <li><code>export const name = 'Sarah';</code> — named export of a variable</li>
+          <li><code>export default function greet() { }</code> — default export</li>
+          <li><code>import { greet } from './module.js';</code> — named import</li>
+          <li><code>import greet from './module.js';</code> — default import</li>
+          <li><code>import * as utils from './utils.js';</code> — imports everything</li>
+          <li><code>&lt;script type="module" src="main.js"&gt;&lt;/script&gt;</code> — enables modules in HTML</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Useful Tricks</h2>
+        <ul class="content-list">
+          <li><code>condition ? 'yes' : 'no'</code> — ternary operator</li>
+          <li><code>value ?? 'default'</code> — nullish coalescing</li>
+          <li><code>obj?.name</code> — optional chaining</li>
+          <li><code>!!value</code> — converts any value to boolean</li>
+          <li><code>+value</code> — converts string to number</li>
+          <li><code>`${value}`</code> — converts anything to string</li>
+          <li><code>setTimeout(() => { }, 1000);</code> — runs after delay in ms</li>
+          <li><code>setInterval(() => { }, 1000);</code> — runs repeatedly every ms</li>
+          <li><code>clearTimeout(id);</code> — cancels a timeout</li>
+          <li><code>clearInterval(id);</code> — cancels an interval</li>
+          <li><code>JSON.stringify(obj);</code> — converts object to JSON string</li>
+          <li><code>JSON.parse(str);</code> — converts JSON string to object</li>
+          <li><code>console.log();</code> — logs to console</li>
+          <li><code>console.error();</code> — logs error to console</li>
+          <li><code>console.table(arr);</code> — displays array as a table in console</li>
+        </ul>
+      </section>
+
+    </main>
+
+    <!-- NEXT STEPS -->
+    <section class="next-chapter" style="border-top: 2px solid #00ff88;">
+      <div class="coming-up">
+        <h3 style="color: #00ff88;">Ready for the Grand Finale?</h3>
+        <p>30 questions covering HTML, CSS, and JavaScript. Get a perfect score and something special happens. You've got this. 😄</p>
+      </div>
+      <a href="final-quiz.html" class="next-btn" style="border-color: #ff2d78; color: #ff2d78;">Grand Finale Quiz →</a>
+    </section>
+
+    <script>
+      localStorage.setItem('visited_' + location.pathname.split('/html/')[1].replace('.html', '') + '.html', 'true');
+function toggleGenie() {
+        const bubble = document.getElementById('genieBubble');
+        bubble.classList.toggle('visible');
+      }
+    </script>
+
+  </body>
+</html>

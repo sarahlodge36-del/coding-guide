@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How the Web Works</title>
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+
+    <!-- HEADER -->
+    <header class="chapter-header">
+      <a href="../index.html" class="home-btn">← Home</a>
+      <div class="chapter-title">
+        <span class="chapter-label">Before We Begin</span>
+        <h1>How the Web Works</h1>
+      </div>
+      <div class="genie-container">
+        <img src="../images/xgenfutbot.png" alt="XGENFUTBOT" class="genie-icon" id="genieBtn" onclick="toggleGenie()" />
+        <div class="genie-bubble" id="genieBubble">
+          <p>Before we write a single line of code — let's understand what we're actually building for. This bit matters. 👀</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- CONTENT -->
+    <main class="chapter-content">
+
+      <section class="content-section">
+        <h2>How Does the Web Actually Work?</h2>
+        <p>Before we start writing code it helps to understand what's actually happening when someone visits a website. You don't need to know all the technical details — but having a basic picture in your head will make everything else make more sense.</p>
+        <p>When you type a web address into your browser and hit Enter, a lot of things happen very quickly behind the scenes. Let's walk through it.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Browsers</h2>
+        <p>A browser is the program you use to access the web. Chrome, Edge, Firefox, Safari — they're all browsers. When you visit a website, the browser sends a request to a web server asking for the page. The server sends back the HTML, CSS, and JavaScript files that make up that page, and the browser reads those files and turns them into the webpage you see on screen.</p>
+        <p>This is why what you're learning matters — you're learning to write the files that browsers read. The browser is your audience. Everything you code is ultimately written for the browser to interpret and display.</p>
+        <p>Different browsers can display things slightly differently, which is why developers always test their sites in more than one browser.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Web Servers</h2>
+        <p>A web server is a computer that is permanently connected to the internet and stores website files. When you type a web address, your request travels across the internet to that server, the server finds the right files, and sends them back to your browser.</p>
+        <p>Web servers run specialised software that handles thousands of requests at once — from people all over the world, all asking to see the same website at the same time.</p>
+        <p>When you're building your site locally on your computer, your own machine is acting as a kind of web server — just one that only you can access. When you're ready to share your site with the world, you upload your files to a real web server and anyone can access them.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>DNS — Domain Name System</h2>
+        <p>Every computer connected to the internet has a unique numerical address called an IP address — something like 142.250.187.46. When you type google.com into your browser, how does your computer know which server to connect to?</p>
+        <p>That's where DNS comes in. DNS stands for Domain Name System and it works a bit like a giant phone book for the internet. When you type a web address, your computer contacts a DNS server which looks up that domain name and returns the IP address of the web server where that site lives. Your browser then connects to that IP address and requests the page.</p>
+        <p>The whole process happens in milliseconds — so fast you never notice it. But every single time you visit a website, DNS is working in the background to make it happen.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Devices</h2>
+        <p>People access the web from all kinds of devices — desktop computers, laptops, tablets, mobile phones, smart TVs, game consoles, and more. Each device has a different screen size, different processing power, and sometimes a different browser.</p>
+        <p>This is something you need to think about as a web developer. A page that looks great on a large desktop monitor might be unusable on a small phone screen. A design that works perfectly in Chrome might look broken in an older browser.</p>
+        <p>This is why responsive design exists — building pages that adapt to whatever device they're being viewed on. We'll cover this properly in the CSS section, but it's good to have it in the back of your mind from the start.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Screen Readers</h2>
+        <p>A screen reader is software that reads the content of a webpage out loud for people who are blind or visually impaired. Screen readers don't see the page visually — they read through the HTML and announce what each element is and what it contains.</p>
+        <p>This is why writing good HTML matters beyond just making things look right in a browser. The way you structure your HTML — using proper headings, descriptive alt text on images, labels on form fields — directly affects whether someone using a screen reader can understand and navigate your page.</p>
+        <p>Accessibility isn't an optional extra. It's part of writing good code. Throughout this guide we'll make sure everything we build works for everyone — not just sighted users on desktop computers.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Putting It All Together</h2>
+        <p>So when someone visits your website here's what actually happens:</p>
+        <ul class="content-list">
+          <li>They type your web address into their browser</li>
+          <li>Their computer contacts a DNS server to find your web server's IP address</li>
+          <li>Their browser sends a request to your web server</li>
+          <li>Your web server sends back your HTML, CSS, and JavaScript files</li>
+          <li>Their browser reads those files and displays your webpage</li>
+          <li>The whole thing happens in a fraction of a second</li>
+        </ul>
+        <p>Every website on the internet works this way — from a simple personal page to Google, Amazon, or the BBC. The scale is different but the process is the same.</p>
+        <p>Now you know what's happening under the hood — let's start building. 🚀</p>
+      </section>
+
+    </main>
+
+    <!-- NEXT -->
+    <section class="next-chapter">
+      <div class="coming-up">
+        <h3>Coming Up — Chapter 1: HTML</h3>
+        <p>Now that you know how the web works it's time to start building. Chapter 1 introduces HTML — the language that gives every webpage its structure.</p>
+      </div>
+      <a href="chapter1.html" class="next-btn">Start Chapter 1: HTML →</a>
+    </section>
+
+    <script>
+      localStorage.setItem('visited_' + location.pathname.split('/html/')[1].replace('.html', '') + '.html', 'true');
+function toggleGenie() {
+        const bubble = document.getElementById('genieBubble');
+        bubble.classList.toggle('visible');
+      }
+    </script>
+
+  </body>
+</html>

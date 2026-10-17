@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Final Quiz</title>
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+
+    <!-- HEADER -->
+    <header class="chapter-header">
+      <a href="../index.html" class="home-btn">← Home</a>
+      <div class="chapter-title">
+        <span class="chapter-label">CSS Section</span>
+        <h1>Final Quiz</h1>
+      </div>
+      <div class="header-right">
+        <div class="chapter-nav">
+          <button class="nav-toggle" onclick="toggleNav()">Chapters ▼</button>
+          <div class="nav-dropdown" id="navDropdown">
+            <a href="chapter10.html">Chapter 10 — Introducing CSS</a>
+            <a href="chapter11.html">Chapter 11 — Colour</a>
+            <a href="chapter12.html">Chapter 12 — Text</a>
+            <a href="chapter13.html">Chapter 13 — Boxes</a>
+            <a href="chapter14.html">Chapter 14 — Lists, Tables and Forms</a>
+            <a href="chapter15.html">Chapter 15 — Layout</a>
+            <a href="chapter16.html">Chapter 16 — Images</a>
+            <a href="chapter17.html">Chapter 17 — HTML5 Layout</a>
+            <a href="chapter18.html">Chapter 18 — Process and Design</a>
+            <a href="chapter19.html">Chapter 19 — Practical Information</a>
+            <hr style="border-color: #333333;">
+            <a href="css-cheatsheet.html">CSS Cheat Sheet</a>
+            <a href="css-final-quiz.html">CSS Final Quiz</a>
+          </div>
+        </div>
+        <div class="genie-container">
+          <img src="../images/xgenfutbot.png" alt="XGENFUTBOT" class="genie-icon" id="genieBtn" onclick="toggleGenie()" />
+          <div class="genie-bubble" id="genieBubble">
+            <p>Everything from Chapters 10 to 19. No peeking. You know how this works by now. 👀</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- INTRO -->
+    <main class="chapter-content">
+      <section class="content-section">
+        <h2>The CSS Final Quiz</h2>
+        <p>You've completed all 10 CSS chapters. This quiz covers everything from introducing CSS all the way through to practical information. There are 25 questions covering the full CSS section.</p>
+        <p>Same rules as always — no looking back at the chapters. If you get one wrong, make a note of it, go back and review that chapter, then come back and try again. Only move on to JavaScript when you can get through this quiz confidently without looking.</p>
+        <p>Good luck. XGENFUTBOT is watching. 👀</p>
+      </section>
+    </main>
+
+    <!-- QUIZ -->
+    <section class="quiz-section">
+      <h2>CSS Final Quiz — 25 Questions</h2>
+      <p class="quiz-intro">Answer all 25 questions. If you get any wrong go back and review that chapter before moving on!</p>
+
+      <!-- CHAPTER 10 -->
+      <div class="quiz-question">
+        <p class="question">1. What are the two parts of a CSS rule?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) A property and a value</li>
+          <li onclick="checkAnswer(this, true)">b) A selector and a declaration</li>
+          <li onclick="checkAnswer(this, false)">c) A tag and an attribute</li>
+          <li onclick="checkAnswer(this, false)">d) A class and an id</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">2. What is the difference between an external and an internal stylesheet?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) There is no difference</li>
+          <li onclick="checkAnswer(this, true)">b) External CSS is in a separate file linked with link; internal CSS sits inside a style element in the head</li>
+          <li onclick="checkAnswer(this, false)">c) Internal CSS is in a separate file; external CSS sits in the HTML</li>
+          <li onclick="checkAnswer(this, false)">d) External CSS only works on one page</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">3. When two CSS rules conflict, what decides which one wins?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) The one that comes first always wins</li>
+          <li onclick="checkAnswer(this, true)">b) The cascade — last rule wins unless a more specific rule applies</li>
+          <li onclick="checkAnswer(this, false)">c) The one with the most properties wins</li>
+          <li onclick="checkAnswer(this, false)">d) The browser always uses the external stylesheet over internal</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <!-- CHAPTER 11 -->
+      <div class="quiz-question">
+        <p class="question">4. What are the three ways to specify colour in CSS?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Pixels, ems, and percentages</li>
+          <li onclick="checkAnswer(this, true)">b) RGB values, hex codes, and colour names</li>
+          <li onclick="checkAnswer(this, false)">c) HSL, RGBA, and opacity</li>
+          <li onclick="checkAnswer(this, false)">d) Background, foreground, and border</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">5. What is the difference between opacity and rgba?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) There is no difference</li>
+          <li onclick="checkAnswer(this, true)">b) opacity affects the element and all its children; rgba only affects the element itself</li>
+          <li onclick="checkAnswer(this, false)">c) rgba affects everything; opacity only affects text</li>
+          <li onclick="checkAnswer(this, false)">d) opacity only works on images</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <!-- CHAPTER 12 -->
+      <div class="quiz-question">
+        <p class="question">6. What is a font stack and why do you use one?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) A folder where fonts are stored on the server</li>
+          <li onclick="checkAnswer(this, true)">b) A list of fonts in order of preference so the browser always has a fallback if the first font isn't installed</li>
+          <li onclick="checkAnswer(this, false)">c) A way of making text bold and italic at the same time</li>
+          <li onclick="checkAnswer(this, false)">d) A CSS property for controlling font size</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">7. What does line-height control?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) The space between individual letters</li>
+          <li onclick="checkAnswer(this, true)">b) The vertical gap between lines of text</li>
+          <li onclick="checkAnswer(this, false)">c) The maximum width of a line of text</li>
+          <li onclick="checkAnswer(this, false)">d) The indent of the first line of a paragraph</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">8. In what order should link pseudo-classes be written to work correctly?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) hover, link, active, visited</li>
+          <li onclick="checkAnswer(this, true)">b) link, visited, hover, active</li>
+          <li onclick="checkAnswer(this, false)">c) active, hover, visited, link</li>
+          <li onclick="checkAnswer(this, false)">d) visited, link, active, hover</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <!-- CHAPTER 13 -->
+      <div class="quiz-question">
+        <p class="question">9. What is the difference between padding and margin?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) There is no difference</li>
+          <li onclick="checkAnswer(this, true)">b) Padding is the space between the content and the border; margin is the space outside the border</li>
+          <li onclick="checkAnswer(this, false)">c) Margin is inside the border; padding is outside</li>
+          <li onclick="checkAnswer(this, false)">d) Padding only works on block elements</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">10. How do you centre a block element on the page?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Set text-align to center</li>
+          <li onclick="checkAnswer(this, true)">b) Set a width and both left and right margins to auto</li>
+          <li onclick="checkAnswer(this, false)">c) Set display to center</li>
+          <li onclick="checkAnswer(this, false)">d) Set position to center</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <!-- CHAPTER 14 -->
+      <div class="quiz-question">
+        <p class="question">11. What does border-collapse: collapse do on a table?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Removes all borders from the table</li>
+          <li onclick="checkAnswer(this, true)">b) Merges adjacent cell borders so there is no gap between them</li>
+          <li onclick="checkAnswer(this, false)">c) Makes the table collapse to zero height</li>
+          <li onclick="checkAnswer(this, false)">d) Hides empty cells</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">12. Why use input[type="submit"] rather than just input when styling a submit button?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) It is the only way to style a submit button</li>
+          <li onclick="checkAnswer(this, true)">b) It targets only the submit button without affecting every other input on the page</li>
+          <li onclick="checkAnswer(this, false)">c) It makes the button load faster</li>
+          <li onclick="checkAnswer(this, false)">d) It works in older browsers</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <!-- CHAPTER 15 -->
+      <div class="quiz-question">
+        <p class="question">13. What is the difference between relative and absolute positioning?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) There is no difference</li>
+          <li onclick="checkAnswer(this, true)">b) Relative moves an element from where it would have been and keeps its space; absolute takes it completely out of normal flow</li>
+          <li onclick="checkAnswer(this, false)">c) Absolute keeps its space; relative takes it out of flow</li>
+          <li onclick="checkAnswer(this, false)">d) Relative positioning only works on images</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">14. What does position: fixed do?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Fixes an element relative to its parent</li>
+          <li onclick="checkAnswer(this, false)">b) Prevents an element from moving</li>
+          <li onclick="checkAnswer(this, true)">c) Keeps an element in the same position in the browser window even when the user scrolls</li>
+          <li onclick="checkAnswer(this, false)">d) Removes an element from the page</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">15. What must you always set on a floated element?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) A height</li>
+          <li onclick="checkAnswer(this, true)">b) A width</li>
+          <li onclick="checkAnswer(this, false)">c) A margin</li>
+          <li onclick="checkAnswer(this, false)">d) A z-index</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <!-- CHAPTER 16 -->
+      <div class="quiz-question">
+        <p class="question">16. What two things do you need to centre an image using CSS?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) float: none and text-align: center</li>
+          <li onclick="checkAnswer(this, true)">b) display: block and margin: 0 auto</li>
+          <li onclick="checkAnswer(this, false)">c) position: center and width: 50%</li>
+          <li onclick="checkAnswer(this, false)">d) align: center and display: inline</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">17. What does max-width: 100% do on an image?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Makes the image fill the full screen</li>
+          <li onclick="checkAnswer(this, true)">b) Prevents the image from ever being wider than its container</li>
+          <li onclick="checkAnswer(this, false)">c) Sets the image to 100 pixels wide</li>
+          <li onclick="checkAnswer(this, false)">d) Hides the image on small screens</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <!-- CHAPTER 17 -->
+      <div class="quiz-question">
+        <p class="question">18. What is the main difference between a div and an HTML5 semantic element like header or section?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Semantic elements load faster</li>
+          <li onclick="checkAnswer(this, true)">b) Semantic elements describe the kind of content they contain, making the markup more meaningful to browsers, developers, and screen readers</li>
+          <li onclick="checkAnswer(this, false)">c) Divs cannot be styled with CSS</li>
+          <li onclick="checkAnswer(this, false)">d) There is no difference</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">19. What is the purpose of the figcaption element?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) It replaces the alt attribute on images</li>
+          <li onclick="checkAnswer(this, true)">b) It provides a visible caption for the content inside a figure element</li>
+          <li onclick="checkAnswer(this, false)">c) It adds a border around an image</li>
+          <li onclick="checkAnswer(this, false)">d) It links an image to another page</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <!-- CHAPTER 18 -->
+      <div class="quiz-question">
+        <p class="question">20. What is a wireframe?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) The final visual design of a page including colours and fonts</li>
+          <li onclick="checkAnswer(this, true)">b) A simple sketch of a page's layout showing structure without any visual design decisions</li>
+          <li onclick="checkAnswer(this, false)">c) A CSS layout technique</li>
+          <li onclick="checkAnswer(this, false)">d) A type of site map</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">21. What is visual hierarchy?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) The order CSS rules are applied</li>
+          <li onclick="checkAnswer(this, true)">b) Organising content so visitors eyes are drawn to the most important things first</li>
+          <li onclick="checkAnswer(this, false)">c) The heading structure from h1 to h6</li>
+          <li onclick="checkAnswer(this, false)">d) A float-based layout technique</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <!-- CHAPTER 19 -->
+      <div class="quiz-question">
+        <p class="question">22. What does SEO stand for?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Site Engine Output</li>
+          <li onclick="checkAnswer(this, false)">b) Structured Element Ordering</li>
+          <li onclick="checkAnswer(this, true)">c) Search Engine Optimisation</li>
+          <li onclick="checkAnswer(this, false)">d) Server Error Output</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">23. What does FTP stand for and what is it used for?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Fast Transfer Protocol — used for speeding up websites</li>
+          <li onclick="checkAnswer(this, true)">b) File Transfer Protocol — used for moving files from your computer to a web server</li>
+          <li onclick="checkAnswer(this, false)">c) File Transfer Page — used for creating web pages</li>
+          <li onclick="checkAnswer(this, false)">d) Fast Transfer Page — used for backing up files</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <!-- GENERAL -->
+      <div class="quiz-question">
+        <p class="question">24. Which CSS property would you use to make an element stay visible in the same position even when the user scrolls?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) position: absolute</li>
+          <li onclick="checkAnswer(this, false)">b) position: relative</li>
+          <li onclick="checkAnswer(this, true)">c) position: fixed</li>
+          <li onclick="checkAnswer(this, false)">d) position: static</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">25. You want your page to never stretch wider than 800px but still be centred on larger screens. Which CSS would you use?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) width: 800px; float: center;</li>
+          <li onclick="checkAnswer(this, false)">b) width: 800px; text-align: center;</li>
+          <li onclick="checkAnswer(this, true)">c) max-width: 800px; margin: 0 auto;</li>
+          <li onclick="checkAnswer(this, false)">d) min-width: 800px; margin: auto;</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+    </section>
+
+    <!-- NEXT STEPS -->
+    <section class="next-chapter">
+      <div class="coming-up">
+        <h3>CSS Section Complete! 🎉</h3>
+        <p>If you answered all 25 questions confidently without looking then you are genuinely ready for JavaScript. This is where your pages stop being static and start actually doing things. Let's go!</p>
+      </div>
+      <a href="welcome-to-js.html" class="next-btn" style="border-color: #00ff88; color: #00ff88;">Start JavaScript →</a>
+    </section>
+
+    <script>
+      localStorage.setItem('visited_' + location.pathname.split('/html/')[1].replace('.html', '') + '.html', 'true');
+function toggleGenie() {
+        const bubble = document.getElementById('genieBubble');
+        bubble.classList.toggle('visible');
+      }
+
+      function toggleNav() {
+        const dropdown = document.getElementById('navDropdown');
+        dropdown.classList.toggle('open');
+      }
+
+      document.addEventListener('click', function(e) {
+        const nav = document.querySelector('.chapter-nav');
+        if (!nav.contains(e.target)) {
+          document.getElementById('navDropdown').classList.remove('open');
+        }
+      });
+
+      function checkAnswer(element, isCorrect) {
+        const options = element.parentElement.querySelectorAll('li');
+        options.forEach(option => {
+          option.style.pointerEvents = 'none';
+        });
+        if (isCorrect) {
+          element.classList.add('correct');
+        } else {
+          element.classList.add('incorrect');
+        }
+        const resetBtn = element.parentElement.nextElementSibling;
+        if (resetBtn && resetBtn.classList.contains('reset-btn')) {
+          resetBtn.style.display = 'inline-block';
+        }
+      }
+
+      function resetQuestion(button) {
+        const options = button.previousElementSibling.querySelectorAll('li');
+        options.forEach(option => {
+          option.classList.remove('correct', 'incorrect');
+          option.style.pointerEvents = 'auto';
+        });
+        button.style.display = 'none';
+      }
+    </script>
+
+  </body>
+</html>

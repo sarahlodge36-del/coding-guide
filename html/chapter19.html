@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 19: Practical Information</title>
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+
+    <!-- HEADER -->
+    <header class="chapter-header">
+      <a href="../index.html" class="home-btn">← Home</a>
+      <div class="chapter-title">
+        <span class="chapter-label">Chapter 19</span>
+        <h1>Practical Information</h1>
+      </div>
+      <div class="header-right">
+        <div class="chapter-nav">
+          <button class="nav-toggle" onclick="toggleNav()">Chapters ▼</button>
+          <div class="nav-dropdown" id="navDropdown">
+            <a href="chapter10.html">Chapter 10 — Introducing CSS</a>
+            <a href="chapter11.html">Chapter 11 — Colour</a>
+            <a href="chapter12.html">Chapter 12 — Text</a>
+            <a href="chapter13.html">Chapter 13 — Boxes</a>
+            <a href="chapter14.html">Chapter 14 — Lists, Tables and Forms</a>
+            <a href="chapter15.html">Chapter 15 — Layout</a>
+            <a href="chapter16.html">Chapter 16 — Images</a>
+            <a href="chapter17.html">Chapter 17 — HTML5 Layout</a>
+            <a href="chapter18.html">Chapter 18 — Process and Design</a>
+            <a href="chapter19.html">Chapter 19 — Practical Information</a>
+            <hr style="border-color: #333333;">
+            <a href="css-cheatsheet.html">CSS Cheat Sheet</a>
+            <a href="css-final-quiz.html">CSS Final Quiz</a>
+          </div>
+        </div>
+        <div class="genie-container">
+          <img src="../images/xgenfutbot.png" alt="XGENFUTBOT" class="genie-icon" id="genieBtn" onclick="toggleGenie()" />
+          <div class="genie-bubble" id="genieBubble">
+            <p>You've built it. Now let's talk about getting it out there into the world. 😎</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CHAPTER CONTENT -->
+    <main class="chapter-content">
+
+      <section class="content-section">
+        <h2>Getting Your Site Out There</h2>
+        <p>You've spent the last 19 chapters learning how to build a website. This final chapter is about what happens next — getting your site onto the internet, making sure people can find it, and understanding the basics of how the web works from a practical standpoint.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Search Engine Optimisation — SEO</h2>
+        <p>SEO stands for Search Engine Optimisation. It's the practice of helping search engines like Google understand what your site is about so it appears in relevant search results.</p>
+        <p>There are two types of SEO work — on-page and off-page.</p>
+        <p><strong>On-page SEO</strong> is about the content and structure of your actual pages. The key areas to focus on as a beginner are:</p>
+        <ul class="content-list">
+          <li><strong>Page title</strong> — the text in your title tag. This appears in search results and browser tabs. It's one of the most important on-page signals.</li>
+          <li><strong>URL</strong> — short, descriptive, and readable URLs help both users and search engines understand what a page is about.</li>
+          <li><strong>Headings</strong> — search engines give extra weight to text in heading tags. Use them to clearly describe what each section contains.</li>
+          <li><strong>Text</strong> — use words people would actually type into a search engine when describing your content.</li>
+          <li><strong>Link text</strong> — the words inside your a tags. "Click here" tells search engines nothing. "HTML beginner tutorial" tells them exactly what the linked page is about.</li>
+          <li><strong>Image alt text</strong> — search engines can't see images but they can read alt text. Use it to describe images clearly and naturally.</li>
+          <li><strong>Meta description</strong> — appears under your page title in search results. Write one that makes people actually want to click.</li>
+        </ul>
+        <p><strong>Off-page SEO</strong> is mostly about links from other websites pointing to yours. Focus on on-page SEO first.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Analytics — Understanding Your Visitors</h2>
+        <p>Once your site is live, you'll want to understand who's visiting it and how they're using it. Google Analytics is the most widely used free tool for this.</p>
+        <p>Once installed it gives you data on:</p>
+        <ul class="content-list">
+          <li>How many people visit your site and when</li>
+          <li>Where they come from — search, social media, direct, or other sites</li>
+          <li>Which pages they visit and in what order</li>
+          <li>How long they spend on each page</li>
+          <li>What device and browser they're using</li>
+          <li>Where they drop off and leave</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Domain Names</h2>
+        <p>A domain name is your web address — the thing people type in to find your site. Domain names are registered through a domain registrar — popular ones include GoDaddy, Namecheap, and Google Domains. You pay an annual fee to keep your domain, typically between £10 and £30 per year.</p>
+        <p>Tips for choosing a domain name:</p>
+        <ul class="content-list">
+          <li>Keep it short and easy to spell</li>
+          <li>Avoid hyphens and numbers if possible</li>
+          <li>.com is still the most trusted extension globally</li>
+          <li>Get your name as a domain as early as you can — good names go quickly</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Web Hosting</h2>
+        <p>To put your site on the internet, your files need to live on a web server. You rent space on that server from a web hosting company.</p>
+        <ul class="content-list">
+          <li><strong>Shared hosting</strong> — your files share a server with many other websites. Cheapest option, fine for small sites.</li>
+          <li><strong>Virtual Private Server (VPS)</strong> — you get a dedicated portion of a server. More control and better performance.</li>
+          <li><strong>Dedicated server</strong> — you rent an entire physical server. Expensive, but maximum control.</li>
+          <li><strong>Cloud hosting</strong> — your site runs across multiple servers. Flexible and scalable.</li>
+        </ul>
+        <p>For a beginner personal site, shared hosting or a platform like Netlify is completely sufficient and often free.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>FTP and Third-Party Tools</h2>
+        <p>FTP stands for File Transfer Protocol. It's a way of transferring files from your computer to a web server. To use FTP you need an FTP client — FileZilla is the most popular free one.</p>
+        <p>In the paid section of this guide we'll use Netlify instead of FTP — which is even simpler. You drag your project folder into the browser and it deploys instantly. But it's worth understanding FTP because you'll come across it in real web development work.</p>
+      </section>
+
+    </main>
+
+    <!-- NOW LET'S BUILD -->
+    <section class="build-section">
+      <div class="build-content">
+        <h2>🔨 Now Let's Build!</h2>
+        <p>Like Chapter 18, this chapter doesn't have a CSS build section. Instead, there are two practical things worth doing right now.</p>
+
+        <div class="tip-box">
+          <h3>⚡ Task 1 — Add a Meta Description to Your Page</h3>
+          <p>Open your <strong>index.html</strong> in Notepad and add this inside your head tags:</p>
+          <div class="code-block">
+            <code>&lt;meta name="description" content="I am learning HTML and CSS and this is my first webpage." /&gt;</code>
+          </div>
+          <p>Save and refresh. You won't see it on the page — it lives in the head. But search engines will read it.</p>
+        </div>
+
+        <div class="tip-box" style="margin-top: 20px;">
+          <h3>⚡ Task 2 — Think About Your Domain Name</h3>
+          <p>You don't need to buy one right now but start thinking about it. Go to namecheap.com or godaddy.com and search a few options — it's free to search, you only pay if you buy.</p>
+          <p>For a personal portfolio, yourfirstname-lastname.com or yourfirstnamelastname.com is always a solid starting point.</p>
+        </div>
+
+        <div class="full-code" style="margin-top: 30px;">
+          <h3>✅ Your index.html head section should now look like this:</h3>
+          <div class="code-block">
+            <code>&lt;head&gt;</code><br>
+            <code>&nbsp;&nbsp;&lt;title&gt;My First Webpage&lt;/title&gt;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;&lt;meta name="description" content="I am learning HTML and CSS and this is my first webpage." /&gt;</code><br>
+            <code>&nbsp;&nbsp;&lt;link href="css/styles.css" type="text/css" rel="stylesheet" /&gt;</code><br>
+            <code>&lt;/head&gt;</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIZ SECTION -->
+    <section class="quiz-section">
+      <h2>Chapter 19 Quiz</h2>
+      <p class="quiz-intro">Last CSS chapter quiz! Only move on when you can answer all of these confidently without looking!</p>
+
+      <div class="quiz-question">
+        <p class="question">1. What does SEO stand for?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Site Engine Output</li>
+          <li onclick="checkAnswer(this, false)">b) Structured Element Ordering</li>
+          <li onclick="checkAnswer(this, true)">c) Search Engine Optimisation</li>
+          <li onclick="checkAnswer(this, false)">d) Server Error Output</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">2. Which of these is the most important on-page SEO element?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) The background colour of the page</li>
+          <li onclick="checkAnswer(this, false)">b) The number of images on the page</li>
+          <li onclick="checkAnswer(this, true)">c) The page title in the title tag</li>
+          <li onclick="checkAnswer(this, false)">d) The font size of the body text</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">3. What does Google Analytics tell you?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) How to improve your CSS</li>
+          <li onclick="checkAnswer(this, true)">b) Data about who visits your site, where they come from, and how they use it</li>
+          <li onclick="checkAnswer(this, false)">c) How to register a domain name</li>
+          <li onclick="checkAnswer(this, false)">d) Whether your HTML is valid</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">4. What is web hosting?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) The software used to build websites</li>
+          <li onclick="checkAnswer(this, true)">b) Renting space on a web server so your files are accessible on the internet</li>
+          <li onclick="checkAnswer(this, false)">c) A type of domain name</li>
+          <li onclick="checkAnswer(this, false)">d) A way of transferring files to a server</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">5. What does FTP stand for and what is it used for?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) File Transfer Page — used for creating web pages</li>
+          <li onclick="checkAnswer(this, true)">b) File Transfer Protocol — used for moving files from your computer to a web server</li>
+          <li onclick="checkAnswer(this, false)">c) Fast Transfer Protocol — used for speeding up websites</li>
+          <li onclick="checkAnswer(this, false)">d) File Transfer Page — used for backing up website files</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">6. Why is link text important for SEO?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) It makes links look more attractive</li>
+          <li onclick="checkAnswer(this, false)">b) It has no effect on SEO</li>
+          <li onclick="checkAnswer(this, true)">c) Search engines use it to understand what the linked page is about</li>
+          <li onclick="checkAnswer(this, false)">d) It controls how fast the linked page loads</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+    </section>
+
+    <!-- NEXT STEPS -->
+    <section class="next-chapter">
+      <div class="coming-up">
+        <h3>CSS Section Complete! 🎉</h3>
+        <p>You've built a fully structured, properly styled webpage from scratch. Before you move on to JavaScript, check out the advanced CSS page to see what's waiting beyond the basics — then test yourself with the final quiz!</p>
+      </div>
+      <a href="css-cheatsheet.html" class="next-btn" style="margin-right: 20px; border-color: #00ff88; color: #00ff88;">CSS Cheat Sheet →</a>
+      <a href="css-advanced.html" class="next-btn" style="margin-right: 20px; border-color: #00d4ff; color: #00d4ff;">Advanced CSS →</a>
+      <a href="css-final-quiz.html" class="next-btn" style="margin-right: 20px; border-color: #ff2d78; color: #ff2d78;">CSS Final Quiz →</a>
+      <a href="welcome-to-js.html" class="next-btn" style="border-color: #00ff88; color: #00ff88;">Next Up: JavaScript →</a>
+    </section>
+
+    <script>
+      localStorage.setItem('visited_' + location.pathname.split('/html/')[1].replace('.html', '') + '.html', 'true');
+function toggleGenie() {
+        const bubble = document.getElementById('genieBubble');
+        bubble.classList.toggle('visible');
+      }
+
+      function toggleNav() {
+        const dropdown = document.getElementById('navDropdown');
+        dropdown.classList.toggle('open');
+      }
+
+      document.addEventListener('click', function(e) {
+        const nav = document.querySelector('.chapter-nav');
+        if (!nav.contains(e.target)) {
+          document.getElementById('navDropdown').classList.remove('open');
+        }
+      });
+
+      function checkAnswer(element, isCorrect) {
+        const options = element.parentElement.querySelectorAll('li');
+        options.forEach(option => {
+          option.style.pointerEvents = 'none';
+        });
+        if (isCorrect) {
+          element.classList.add('correct');
+        } else {
+          element.classList.add('incorrect');
+        }
+        const resetBtn = element.parentElement.nextElementSibling;
+        if (resetBtn && resetBtn.classList.contains('reset-btn')) {
+          resetBtn.style.display = 'inline-block';
+        }
+      }
+
+      function resetQuestion(button) {
+        const options = button.previousElementSibling.querySelectorAll('li');
+        options.forEach(option => {
+          option.classList.remove('correct', 'incorrect');
+          option.style.pointerEvents = 'auto';
+        });
+        button.style.display = 'none';
+      }
+    </script>
+
+  </body>
+</html>

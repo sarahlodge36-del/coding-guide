@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 18: Process and Design</title>
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+
+    <!-- HEADER -->
+    <header class="chapter-header">
+      <a href="../index.html" class="home-btn">← Home</a>
+      <div class="chapter-title">
+        <span class="chapter-label">Chapter 18</span>
+        <h1>Process and Design</h1>
+      </div>
+      <div class="header-right">
+        <div class="chapter-nav">
+          <button class="nav-toggle" onclick="toggleNav()">Chapters ▼</button>
+          <div class="nav-dropdown" id="navDropdown">
+            <a href="chapter10.html">Chapter 10 — Introducing CSS</a>
+            <a href="chapter11.html">Chapter 11 — Colour</a>
+            <a href="chapter12.html">Chapter 12 — Text</a>
+            <a href="chapter13.html">Chapter 13 — Boxes</a>
+            <a href="chapter14.html">Chapter 14 — Lists, Tables and Forms</a>
+            <a href="chapter15.html">Chapter 15 — Layout</a>
+            <a href="chapter16.html">Chapter 16 — Images</a>
+            <a href="chapter17.html">Chapter 17 — HTML5 Layout</a>
+            <a href="chapter18.html">Chapter 18 — Process and Design</a>
+            <a href="chapter19.html">Chapter 19 — Practical Information</a>
+            <hr style="border-color: #333333;">
+            <a href="css-cheatsheet.html">CSS Cheat Sheet</a>
+            <a href="css-final-quiz.html">CSS Final Quiz</a>
+          </div>
+        </div>
+        <div class="genie-container">
+          <img src="../images/xgenfutbot.png" alt="XGENFUTBOT" class="genie-icon" id="genieBtn" onclick="toggleGenie()" />
+          <div class="genie-bubble" id="genieBubble">
+            <p>Before you build anything real, think about who it's actually for. Spoiler: it's not for you. 😎</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CHAPTER CONTENT -->
+    <main class="chapter-content">
+
+      <section class="content-section">
+        <h2>Why Plan Before You Build?</h2>
+        <p>Most people jump straight into building without thinking clearly about who their site is for and what those people actually need from it. The result is usually a site that makes perfect sense to the person who built it and nobody else.</p>
+        <p>This chapter is about thinking like a designer — understanding your audience, organising your content logically, and making deliberate choices about how your page looks and feels before you write a single line of code.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Who Is Your Site For?</h2>
+        <p>Every website is built for a target audience. Understanding who those people are — what they want, how they think, what they already know — shapes every decision you make about content, structure, and design.</p>
+        <p>Ask yourself these questions about your target visitors:</p>
+        <ul class="content-list">
+          <li>Are they individuals or organisations?</li>
+          <li>What is their age range?</li>
+          <li>Are they familiar with this topic or complete beginners?</li>
+          <li>How much time do they have?</li>
+          <li>What device are they likely to be using?</li>
+        </ul>
+        <p>The more specifically you can answer these questions, the easier every subsequent design decision becomes.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Why Are They Coming to Your Site?</h2>
+        <p>People visit websites with a goal in mind. Understanding that goal — and making it as easy as possible for them to achieve it — is the whole job of design.</p>
+        <p>Goals can be divided into two types. Some visitors have specific goals — they want to find a phone number, check a price, complete a task. Others have general motivations — they want to be entertained, learn something, or browse. Both are valid but they need different things from your site.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>What Are They Trying to Achieve?</h2>
+        <p>To work out what your visitors are trying to do, write down a list of reasons why people would come to your site. For each goal, think about what information they need, what action they want to complete, and what would make them leave satisfied.</p>
+        <p>This exercise often reveals that you've been prioritising content that matters to you rather than content that matters to your users — a really common mistake, especially on early projects.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>What Information Do They Need?</h2>
+        <p>Once you know who your visitors are and what they want, you can work out what information you need to provide. You don't need to include everything — only the information that helps your visitors achieve their goals.</p>
+        <p>Ask yourself for each piece of content: does this help the visitor? If yes, keep it. If not, cut it. Simple pages with focused content convert better than busy pages with everything on them.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Site Maps</h2>
+        <p>A site map is a diagram of the pages that will make up your website, showing how they're grouped and linked together. It helps you plan the structure before you build anything.</p>
+        <p>Start by listing all the content your site needs, then group related content together. Each group typically becomes a page or section. Draw lines between pages to show how they'll link to each other.</p>
+        <p>Even a simple site benefits from a rough site map — it stops you building pages you don't need and forgetting pages you do.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Wireframes</h2>
+        <p>A wireframe is a simple sketch of the layout of each page — where the navigation goes, where the main content sits, where images appear, where calls to action live. It's done without any colour, font choices, or visual design — just boxes and labels.</p>
+        <p>Wireframes are useful because they let you test the structure and layout of a page without getting distracted by visual decisions. It's much easier to move a box in a sketch than to rebuild a section of CSS.</p>
+        <p>You don't need special software for wireframes. A pencil and paper works perfectly well, and most professionals still start there.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Visual Hierarchy</h2>
+        <p>Visual hierarchy is about organising and prioritising content so that visitors' eyes are drawn to the most important things first. Most people scan web pages rather than read them word for word — visual hierarchy is how you guide that scan.</p>
+        <p>The key tools for creating visual hierarchy are size (bigger things draw the eye first), colour and contrast (bright or contrasting elements stand out), style (bold or italic text draws attention), and images (the eye is naturally drawn to faces and photography).</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Grouping and Similarity</h2>
+        <p>When design elements are placed next to each other, we naturally assume they're related. This principle can be used deliberately to help users understand the structure of your content without needing to read every word.</p>
+        <p>Grouping related items together using proximity (putting them close to each other), closure (using a border or background colour to define a region), or continuance (aligning elements so the eye naturally moves from one to the next) makes a page feel organised and easy to scan.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Designing for Navigation</h2>
+        <p>Good navigation helps users understand where they are, how to get to where they want to go, and what else is available on your site. Poor navigation is one of the most common reasons people leave a site.</p>
+        <p>Good navigation is concise — too many options overwhelm users. It's clear — visitors should be able to tell immediately where each link leads. It's consistent — the navigation should appear in the same place on every page. And it should indicate clearly where the user currently is within the site.</p>
+      </section>
+
+    </main>
+
+    <!-- NOW LET'S BUILD -->
+    <section class="build-section">
+      <div class="build-content">
+        <h2>🔨 Now Let's Build!</h2>
+        <p>This chapter doesn't have a CSS build section — it's a thinking chapter, not a coding chapter. But here's a practical exercise instead.</p>
+        <div class="tip-box">
+          <h3>⚡ Exercise — Plan Your Own Site</h3>
+          <p>Before we move into Chapter 19, take 10 minutes and do this properly:</p>
+          <ul class="content-list">
+            <li><strong>1. Define your audience</strong> — who would visit your personal site? What do they want from it?</li>
+            <li><strong>2. List your pages</strong> — what pages does your site need? Home, About, Projects, Contact?</li>
+            <li><strong>3. Sketch a wireframe</strong> — grab a piece of paper and sketch roughly where things should sit on your homepage. Where does your name go? Your navigation? Your main content?</li>
+            <li><strong>4. Think about hierarchy</strong> — what's the most important thing on each page? Is that thing the most visually prominent?</li>
+          </ul>
+          <p>You don't need to show anyone this. It's just for you — but doing it now means the final chapter will make much more sense, and any site you build after this guide will be better for it.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIZ SECTION -->
+    <section class="quiz-section">
+      <h2>Chapter 18 Quiz</h2>
+      <p class="quiz-intro">Only move on when you can answer all of these confidently without looking!</p>
+
+      <div class="quiz-question">
+        <p class="question">1. What is the main purpose of identifying your target audience before building a site?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) To decide which programming language to use</li>
+          <li onclick="checkAnswer(this, true)">b) So every decision about content, structure, and design can be made with that audience in mind</li>
+          <li onclick="checkAnswer(this, false)">c) To work out how many pages to build</li>
+          <li onclick="checkAnswer(this, false)">d) To choose a colour scheme</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">2. What is a site map?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) A page that lists every link on your site for search engines</li>
+          <li onclick="checkAnswer(this, true)">b) A diagram showing all the pages of a site and how they're grouped and linked together</li>
+          <li onclick="checkAnswer(this, false)">c) A CSS layout technique</li>
+          <li onclick="checkAnswer(this, false)">d) A navigation menu</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">3. What is the purpose of a wireframe?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) To show the final visual design of a page including colours and fonts</li>
+          <li onclick="checkAnswer(this, true)">b) To sketch the structure and layout of a page without visual design decisions getting in the way</li>
+          <li onclick="checkAnswer(this, false)">c) To test the CSS of a page before it goes live</li>
+          <li onclick="checkAnswer(this, false)">d) To plan the colour scheme of a site</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">4. What is visual hierarchy?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) The order in which CSS rules are applied</li>
+          <li onclick="checkAnswer(this, true)">b) Organising and prioritising content so visitors' eyes are drawn to the most important things first</li>
+          <li onclick="checkAnswer(this, false)">c) The heading structure of a page from h1 to h6</li>
+          <li onclick="checkAnswer(this, false)">d) A layout technique using floats</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">5. Which of these is NOT a quality of good navigation?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Concise — not too many options</li>
+          <li onclick="checkAnswer(this, false)">b) Clear — visitors can tell where each link leads</li>
+          <li onclick="checkAnswer(this, false)">c) Consistent — appears in the same place on every page</li>
+          <li onclick="checkAnswer(this, true)">d) Comprehensive — includes a link to every single page on the site</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">6. What does grouping related content together help visitors do?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Load the page faster</li>
+          <li onclick="checkAnswer(this, true)">b) Understand the structure of the page without having to read every word</li>
+          <li onclick="checkAnswer(this, false)">c) Find the navigation more easily</li>
+          <li onclick="checkAnswer(this, false)">d) See the page on mobile devices</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+    </section>
+
+    <!-- NEXT CHAPTER -->
+    <section class="next-chapter">
+      <div class="coming-up">
+        <h3>Coming Up Next — Chapter 19: Practical Information</h3>
+        <p>In the final CSS chapter we look at the practical side of getting your site live — SEO basics, Google Analytics, domain names, hosting, and FTP.</p>
+      </div>
+      <a href="chapter19.html" class="next-btn" style="border-color: #00d4ff; color: #00d4ff;">Next Up: Practical Information →</a>
+    </section>
+
+    <script>
+      localStorage.setItem('visited_' + location.pathname.split('/html/')[1].replace('.html', '') + '.html', 'true');
+function toggleGenie() {
+        const bubble = document.getElementById('genieBubble');
+        bubble.classList.toggle('visible');
+      }
+
+      function toggleNav() {
+        const dropdown = document.getElementById('navDropdown');
+        dropdown.classList.toggle('open');
+      }
+
+      document.addEventListener('click', function(e) {
+        const nav = document.querySelector('.chapter-nav');
+        if (!nav.contains(e.target)) {
+          document.getElementById('navDropdown').classList.remove('open');
+        }
+      });
+
+      function checkAnswer(element, isCorrect) {
+        const options = element.parentElement.querySelectorAll('li');
+        options.forEach(option => {
+          option.style.pointerEvents = 'none';
+        });
+        if (isCorrect) {
+          element.classList.add('correct');
+        } else {
+          element.classList.add('incorrect');
+        }
+        const resetBtn = element.parentElement.nextElementSibling;
+        if (resetBtn && resetBtn.classList.contains('reset-btn')) {
+          resetBtn.style.display = 'inline-block';
+        }
+      }
+
+      function resetQuestion(button) {
+        const options = button.previousElementSibling.querySelectorAll('li');
+        options.forEach(option => {
+          option.classList.remove('correct', 'incorrect');
+          option.style.pointerEvents = 'auto';
+        });
+        button.style.display = 'none';
+      }
+    </script>
+
+  </body>
+</html>

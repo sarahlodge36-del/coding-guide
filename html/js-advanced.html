@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced JavaScript</title>
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+
+    <!-- HEADER -->
+    <header class="chapter-header" style="border-bottom: 2px solid #00ff88;">
+      <a href="../index.html" class="home-btn" style="color: #00ff88;">← Home</a>
+      <div class="chapter-title">
+        <span class="chapter-label" style="color: #00ff88;">JavaScript</span>
+        <h1 style="color: #00ff88;">Beyond the Basics</h1>
+      </div>
+      <div class="genie-container">
+        <img src="../images/xgenfutbot.png" alt="XGENFUTBOT" class="genie-icon" id="genieBtn" onclick="toggleGenie()" />
+        <div class="genie-bubble" id="genieBubble" style="border-color: #00ff88; color: #00ff88;">
+          <p>Modern JavaScript is a different beast. Cleaner, faster, more powerful. Let me show you what's out there. 😎</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- CONTENT -->
+    <main class="chapter-content">
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">ES6 and Beyond</h2>
+        <p>The JavaScript you learned in Chapters 20 to 25 is solid, foundational JavaScript. But the language has evolved significantly since then. ES6 — also known as ECMAScript 2015 — introduced a wave of new features that made JavaScript cleaner, more expressive, and more powerful. Almost everything you'll read in modern JavaScript tutorials and job descriptions uses these features.</p>
+        <p>This page is an overview of what's waiting beyond the basics. These are the features you'll encounter in the wild and study in depth in the paid section of this guide.</p>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Arrow Functions</h2>
+        <p>Arrow functions are a shorter, cleaner way to write functions. Instead of the function keyword you use an arrow =>.</p>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>// Traditional function</code><br>
+          <code>function greet(name) {</code><br>
+          <code>&nbsp;&nbsp;return 'Hello ' + name;</code><br>
+          <code>}</code><br><br>
+          <code>// Arrow function — same thing</code><br>
+          <code>const greet = (name) => {</code><br>
+          <code>&nbsp;&nbsp;return 'Hello ' + name;</code><br>
+          <code>};</code><br><br>
+          <code>// Even shorter — implicit return for single expressions</code><br>
+          <code>const greet = name => 'Hello ' + name;</code>
+        </div>
+        <p>Arrow functions are everywhere in modern JavaScript. They're especially common as callback functions passed into array methods and event listeners.</p>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Template Literals</h2>
+        <p>Template literals are a better way to build strings. Instead of concatenating with + you use backticks and embed expressions directly inside the string using ${}.</p>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>// Old way — concatenation</code><br>
+          <code>var message = 'Welcome, ' + playerName + '. Lives: ' + playerHealth;</code><br><br>
+          <code>// New way — template literal</code><br>
+          <code>const message = `Welcome, ${playerName}. Lives: ${playerHealth}`;</code><br><br>
+          <code>// Can span multiple lines</code><br>
+          <code>const html = `</code><br>
+          <code>&nbsp;&nbsp;&lt;div class="card"&gt;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;${title}&lt;/h2&gt;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;${description}&lt;/p&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;/div&gt;</code><br>
+          <code>`;</code>
+        </div>
+        <p>Template literals make string building dramatically cleaner. Once you use them you'll never want to go back to concatenation.</p>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Destructuring</h2>
+        <p>Destructuring lets you unpack values from arrays or objects into individual variables in a single clean statement.</p>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>// Array destructuring</code><br>
+          <code>const [first, second, third] = ['HTML', 'CSS', 'JavaScript'];</code><br>
+          <code>console.log(first);   // 'HTML'</code><br>
+          <code>console.log(second);  // 'CSS'</code><br><br>
+          <code>// Object destructuring</code><br>
+          <code>const player = { name: 'Sarah', health: 3, score: 100 };</code><br>
+          <code>const { name, health, score } = player;</code><br>
+          <code>console.log(name);    // 'Sarah'</code><br>
+          <code>console.log(health);  // 3</code>
+        </div>
+        <p>Destructuring is particularly useful when working with data from APIs — you'll often destructure the response object to pull out just the properties you need.</p>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Spread and Rest Operators</h2>
+        <p>The spread operator (...) expands an array or object into individual elements. The rest operator uses the same syntax but collects multiple elements into an array.</p>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>// Spread — expanding an array</code><br>
+          <code>const htmlItems = ['h1', 'p', 'div'];</code><br>
+          <code>const cssItems = ['color', 'margin'];</code><br>
+          <code>const allItems = [...htmlItems, ...cssItems];</code><br><br>
+          <code>// Spread — copying an object</code><br>
+          <code>const player = { name: 'Sarah', health: 3 };</code><br>
+          <code>const updatedPlayer = { ...player, health: 2 };</code><br><br>
+          <code>// Rest — collecting remaining arguments</code><br>
+          <code>function logAll(first, ...rest) {</code><br>
+          <code>&nbsp;&nbsp;console.log(first);</code><br>
+          <code>&nbsp;&nbsp;console.log(rest);</code><br>
+          <code>}</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Array Methods — map, filter, reduce</h2>
+        <p>These three array methods are some of the most powerful and commonly used tools in modern JavaScript. They replace many use cases for traditional for loops.</p>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>const scores = [100, 200, 50, 300, 75];</code><br><br>
+          <code>// map — transforms every item and returns a new array</code><br>
+          <code>const doubled = scores.map(score => score * 2);</code><br><br>
+          <code>// filter — returns only items that pass a test</code><br>
+          <code>const highScores = scores.filter(score => score >= 100);</code><br><br>
+          <code>// reduce — combines all items into a single value</code><br>
+          <code>const total = scores.reduce((sum, score) => sum + score, 0);</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">The Fetch API and Promises</h2>
+        <p>The Fetch API is how JavaScript retrieves data from external sources — APIs, databases, other servers — without reloading the page. It returns a Promise — an object representing a value that will be available in the future.</p>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>fetch('https://api.example.com/data')</code><br>
+          <code>&nbsp;&nbsp;.then(response => response.json())</code><br>
+          <code>&nbsp;&nbsp;.then(data => {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;console.log(data);</code><br>
+          <code>&nbsp;&nbsp;})</code><br>
+          <code>&nbsp;&nbsp;.catch(error => {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;console.log('Something went wrong:', error);</code><br>
+          <code>&nbsp;&nbsp;});</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">async / await</h2>
+        <p>async/await is a cleaner way to work with Promises. Instead of chaining .then() you can write asynchronous code that reads like regular synchronous code.</p>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>async function getData() {</code><br>
+          <code>&nbsp;&nbsp;try {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;const response = await fetch('https://api.example.com/data');</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;const data = await response.json();</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;console.log(data);</code><br>
+          <code>&nbsp;&nbsp;} catch (error) {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;console.log('Something went wrong:', error);</code><br>
+          <code>&nbsp;&nbsp;}</code><br>
+          <code>}</code><br><br>
+          <code>getData();</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Error Handling — try / catch</h2>
+        <p>The try/catch statement lets you handle errors gracefully rather than letting them crash your script.</p>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>try {</code><br>
+          <code>&nbsp;&nbsp;var result = JSON.parse(someData);</code><br>
+          <code>&nbsp;&nbsp;console.log(result);</code><br>
+          <code>} catch (error) {</code><br>
+          <code>&nbsp;&nbsp;console.log('Failed to parse data:', error.message);</code><br>
+          <code>} finally {</code><br>
+          <code>&nbsp;&nbsp;console.log('Done.');</code><br>
+          <code>}</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">localStorage</h2>
+        <p>localStorage lets you store data in the browser that persists even after the page is closed and reopened.</p>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>localStorage.setItem('playerName', 'Sarah');</code><br>
+          <code>var name = localStorage.getItem('playerName');</code><br>
+          <code>localStorage.removeItem('playerName');</code><br>
+          <code>localStorage.clear();</code><br><br>
+          <code>// Storing objects</code><br>
+          <code>localStorage.setItem('player', JSON.stringify(player));</code><br>
+          <code>var saved = JSON.parse(localStorage.getItem('player'));</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">JavaScript Modules</h2>
+        <p>As your JavaScript grows it becomes important to split it into separate files — modules. Each module exports the functions and variables it wants to share, and other modules import what they need.</p>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>// game.js — exporting</code><br>
+          <code>export function startGame() { ... }</code><br>
+          <code>export const gameName = 'The Code Machine Quest';</code><br><br>
+          <code>// main.js — importing</code><br>
+          <code>import { startGame, gameName } from './game.js';</code><br>
+          <code>startGame();</code>
+        </div>
+      </section>
+
+      <div class="tip-box" style="border-color: #00ff88;">
+        <h3 style="color: #00ff88;">⚡ What's in the Paid Section?</h3>
+        <p>The paid JavaScript section covers all of these topics in depth with full projects — building a weather app with the Fetch API, a local storage game save system, a module-based application structure, and an introduction to React which uses almost all of these modern JavaScript features constantly. jQuery, AJAX, and working with real-world APIs are also covered in full.</p>
+      </div>
+
+    </main>
+
+    <!-- NEXT STEPS -->
+    <section class="next-chapter" style="border-top: 2px solid #00ff88;">
+      <div class="coming-up">
+        <h3 style="color: #00ff88;">Take the Reference Sheet With You</h3>
+        <p>The advanced JavaScript cheat sheet covers everything on this page in a quick reference format. Then head to the Grand Finale Quiz!</p>
+      </div>
+      <a href="cheatsheet-advanced-js.html" class="next-btn" style="margin-right: 20px; border-color: #00ff88; color: #00ff88;">Advanced JS Cheat Sheet →</a>
+      <a href="final-quiz.html" class="next-btn" style="border-color: #ff2d78; color: #ff2d78;">Grand Finale Quiz →</a>
+    </section>
+
+    <script>
+      localStorage.setItem('visited_' + location.pathname.split('/html/')[1].replace('.html', '') + '.html', 'true');
+function toggleGenie() {
+        const bubble = document.getElementById('genieBubble');
+        bubble.classList.toggle('visible');
+      }
+    </script>
+
+  </body>
+</html>

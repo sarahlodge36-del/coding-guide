@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to CSS</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+      .css-glow-text {
+        text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff;
+      }
+      .css-preview-btn {
+        display: inline-block;
+        padding: 12px 30px;
+        background-color: transparent;
+        border: 2px solid #00d4ff;
+        color: #00d4ff;
+        font-family: 'Courier New', monospace;
+        font-weight: bold;
+        letter-spacing: 2px;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: all 0.4s ease;
+        cursor: pointer;
+      }
+      .css-preview-btn:hover {
+        background-color: #00d4ff;
+        color: #000000;
+        box-shadow: 0 0 20px #00d4ff;
+        transform: scale(1.05);
+      }
+      .gradient-box {
+        background: linear-gradient(135deg, #00d4ff, #0a0a0a);
+        border-radius: 15px;
+        padding: 20px;
+        margin: 20px 0;
+        border: 1px solid #00d4ff;
+      }
+      .preview-tag {
+        display: inline-block;
+        background-color: #00d4ff;
+        color: #000000;
+        font-size: 0.7rem;
+        padding: 2px 10px;
+        border-radius: 20px;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- HEADER -->
+    <header class="chapter-header" style="border-bottom: 2px solid #00d4ff;">
+      <a href="../index.html" class="home-btn" style="color: #00d4ff;">← Home</a>
+      <div class="chapter-title">
+        <span class="chapter-label" style="color: #00d4ff;">New Section</span>
+        <h1 class="css-glow-text">Welcome to CSS</h1>
+      </div>
+      <div class="genie-container">
+        <img src="../images/xgenfutbot.png" alt="XGENFUTBOT" class="genie-icon" id="genieBtn" onclick="toggleGenie()" />
+        <div class="genie-bubble" id="genieBubble" style="border-color: #00d4ff; color: #00d4ff;">
+          <p>You survived HTML. Now we make it look like you actually meant to build a website. 😎</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- CONTENT -->
+    <main class="chapter-content">
+
+      <section class="content-section">
+        <h2 style="color: #00d4ff;">You Made It</h2>
+        <p>You've just finished building a complete HTML webpage from scratch — headings, paragraphs, lists, links, images, a table, a form, video. That's a real achievement and you should feel genuinely proud of it.</p>
+        <p>But let's be honest — right now your page probably looks a bit... plain. Black text on a white background, default fonts, no spacing, nothing lining up the way you'd want. That's completely normal. That's what plain HTML looks like. And that's exactly where CSS comes in.</p>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00d4ff;">What's About to Change</h2>
+        <p>CSS stands for Cascading Style Sheets. While HTML gave your page its structure and content, CSS is what makes it actually look like something. Colour, spacing, fonts, layout, borders, backgrounds, animations — all of it lives in CSS.</p>
+        <p>This is genuinely the moment where your page transforms. The exact same HTML you've already written is about to look completely different once we start styling it. Same structure underneath — totally different experience on top.</p>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00d4ff;">A Little Sneak Peek</h2>
+        <p>Before we even start, here are a few small examples of what CSS can actually do. You haven't learnt any of this yet — but by the end of this section you'll understand exactly how every single one of these works.</p>
+
+        <div class="gradient-box">
+          <span class="preview-tag">CSS PREVIEW</span>
+          <p style="color: #ffffff; margin: 0;">This box has a gradient background — a smooth blend between two colours. One CSS property. That's it.</p>
+        </div>
+
+        <p style="margin-top: 20px;">This button changes colour, glows, and grows slightly when you hover over it:</p>
+        <button class="css-preview-btn">Hover Over Me</button>
+
+        <p style="margin-top: 25px;">And see how the heading "You Made It" above has a soft glow around the text? That's a single line of CSS too.</p>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00d4ff;">What to Expect in This Section</h2>
+        <p>The CSS section follows the exact same format you're already used to — one chapter at a time, content followed by a Now Let's Build section, then a quiz, then a Next Up button. By now you know the drill.</p>
+        <p>We'll work through colour, text styling, boxes, lists and tables, forms, layout, images, HTML5 layout elements, and finally a look at process and design. By the end you'll have taken the exact page you built in HTML and turned it into something that actually looks like a real website.</p>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00d4ff;">One Thing to Remember</h2>
+        <p>Don't rush this section. CSS is where a lot of beginners start skipping ahead because the changes feel exciting and they want to see results fast. Resist that. The same rule applies as always — only move on when you can answer the questions confidently without looking. The understanding matters more than the speed.</p>
+      </section>
+
+    </main>
+
+    <!-- NEXT -->
+    <section class="next-chapter" style="border-top: 2px solid #00d4ff;">
+      <div class="coming-up">
+        <h3 style="color: #00d4ff;">Coming Up — Chapter 10: Introducing CSS</h3>
+        <p>Time to see CSS in action for the first time. Let's make this page come alive.</p>
+      </div>
+      <a href="chapter10.html" class="next-btn" style="border-color: #00d4ff; color: #00d4ff;">Start Chapter 10: Introducing CSS →</a>
+    </section>
+
+    <script>
+      localStorage.setItem('visited_' + location.pathname.split('/html/')[1].replace('.html', '') + '.html', 'true');
+function toggleGenie() {
+        const bubble = document.getElementById('genieBubble');
+        bubble.classList.toggle('visible');
+      }
+    </script>
+
+  </body>
+</html>

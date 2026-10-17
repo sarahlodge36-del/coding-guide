@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 12: Text</title>
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+
+    <!-- HEADER -->
+    <header class="chapter-header">
+      <a href="../index.html" class="home-btn">← Home</a>
+      <div class="chapter-title">
+        <span class="chapter-label">Chapter 12</span>
+        <h1>Text</h1>
+      </div>
+      <div class="header-right">
+        <div class="chapter-nav">
+          <button class="nav-toggle" onclick="toggleNav()">Chapters ▼</button>
+          <div class="nav-dropdown" id="navDropdown">
+            <a href="chapter10.html">Chapter 10 — Introducing CSS</a>
+            <a href="chapter11.html">Chapter 11 — Colour</a>
+            <a href="chapter12.html">Chapter 12 — Text</a>
+            <a href="chapter13.html">Chapter 13 — Boxes</a>
+            <a href="chapter14.html">Chapter 14 — Lists, Tables and Forms</a>
+            <a href="chapter15.html">Chapter 15 — Layout</a>
+            <a href="chapter16.html">Chapter 16 — Images</a>
+            <a href="chapter17.html">Chapter 17 — HTML5 Layout</a>
+            <a href="chapter18.html">Chapter 18 — Process and Design</a>
+            <a href="chapter19.html">Chapter 19 — Practical Information</a>
+            <hr style="border-color: #333333;">
+            <a href="css-cheatsheet.html">CSS Cheat Sheet</a>
+            <a href="css-final-quiz.html">CSS Final Quiz</a>
+          </div>
+        </div>
+        <div class="genie-container">
+          <img src="../images/xgenfutbot.png" alt="XGENFUTBOT" class="genie-icon" id="genieBtn" onclick="toggleGenie()" />
+          <div class="genie-bubble" id="genieBubble">
+            <p>Fonts, spacing, alignment — the difference between looking professional and looking like a ransom note. 😎</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CHAPTER CONTENT -->
+    <main class="chapter-content">
+
+      <section class="content-section">
+        <h2>Two Groups of Text Properties</h2>
+        <p>The properties that allow you to control the appearance of text can be split into two groups — those that directly affect the font itself (the typeface, whether it's bold or italic, and the size), and those that affect the text regardless of font (colour, spacing between letters and words). Getting your text right has a huge impact on how readable your pages are.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Typeface Terminology</h2>
+        <p>Before we get into the CSS properties, it helps to know a few terms.</p>
+        <p><strong>Serif</strong> fonts have small decorative strokes at the ends of the main strokes of each letter. They're traditionally considered easier to read in print. Georgia and Times New Roman are serif fonts.</p>
+        <p><strong>Sans-serif</strong> fonts don't have those extra strokes — the edges are clean and straight. Arial and Verdana are sans-serif. They tend to be cleaner on screens.</p>
+        <p><strong>Monospace</strong> fonts give every character the same width. Courier is the classic example. They're commonly used for displaying code.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Specifying Typefaces — font-family</h2>
+        <p>When you specify a font in CSS, the user's computer needs to have that font installed. If it doesn't, the browser falls back to a default. Because of this you can't just pick any font you like — you need to choose fonts that are likely to be installed, or use a font stack.</p>
+        <p>A font stack is a list of fonts in order of preference. The browser uses the first one it finds installed, and falls back to the next if it can't.</p>
+        <div class="code-block">
+          <code>body { font-family: Georgia, "Times New Roman", serif; }</code>
+        </div>
+        <p>The last value in the stack should always be a generic family name — serif, sans-serif, or monospace — as a final fallback.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Units of Type Size</h2>
+        <p>There are several ways to specify font size in CSS.</p>
+        <p><strong>Pixels</strong> give you precise control and are the most common choice for screen design.</p>
+        <p><strong>Percentages</strong> are relative to the default browser font size (usually 16px). So 75% would be 12px and 200% would be 32px.</p>
+        <p><strong>Ems</strong> are also relative — 1em equals the current font size of the element. They're useful for scalable, accessible designs.</p>
+        <div class="code-block">
+          <code>body { font-size: 16px; }</code><br>
+          <code>h1 &nbsp;&nbsp;{ font-size: 200%; }</code><br>
+          <code>p &nbsp;&nbsp;&nbsp;{ font-size: 1.2em; }</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Bold — font-weight</h2>
+        <div class="code-block">
+          <code>p { font-weight: bold; }</code>
+        </div>
+        <p>The font-weight property makes text bold. Values are bold or normal.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Italic — font-style</h2>
+        <div class="code-block">
+          <code>p { font-style: italic; }</code>
+        </div>
+        <p>Values are italic, oblique, or normal.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Upper and Lower Case — text-transform</h2>
+        <div class="code-block">
+          <code>h1 { text-transform: uppercase; }</code><br>
+          <code>p &nbsp;{ text-transform: lowercase; }</code><br>
+          <code>h2 { text-transform: capitalize; }</code>
+        </div>
+        <p>capitalize makes the first letter of each word a capital.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Underline and Strike — text-decoration</h2>
+        <div class="code-block">
+          <code>a &nbsp;{ text-decoration: none; }</code><br>
+          <code>h1 { text-decoration: underline; }</code><br>
+          <code>p &nbsp;{ text-decoration: line-through; }</code>
+        </div>
+        <p>Other values include overline and blink (though blink is best avoided — nobody wants flashing text).</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Leading — line-height</h2>
+        <p>Leading (pronounced "ledding") is the typographer's term for the vertical gap between lines of text. In CSS it's controlled with line-height. A value of around 1.4 to 1.5 times the font size is generally comfortable to read.</p>
+        <div class="code-block">
+          <code>p { line-height: 1.5em; }</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Letter and Word Spacing</h2>
+        <p>Kerning is the term for the space between individual letters. In CSS you control this with letter-spacing. You can also adjust the gap between words with word-spacing.</p>
+        <div class="code-block">
+          <code>h1 { letter-spacing: 0.2em; }</code><br>
+          <code>p &nbsp;{ word-spacing: 1em; }</code>
+        </div>
+        <p>These are best used sparingly — a subtle tweak rather than a dramatic change.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Alignment — text-align</h2>
+        <div class="code-block">
+          <code>h1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ text-align: left; }</code><br>
+          <code>p &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ text-align: center; }</code><br>
+          <code>.outro { text-align: right; }</code>
+        </div>
+        <p>justify spreads text so both edges of each line are straight, like a newspaper column. Be careful with it on the web — it can create awkward gaps between words.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>CSS3: Drop Shadow — text-shadow</h2>
+        <p>CSS3 introduced text-shadow which adds a shadow behind text. It takes up to four values: horizontal offset, vertical offset, blur radius, and colour.</p>
+        <div class="code-block">
+          <code>h1 {</code><br>
+          <code>&nbsp;&nbsp;text-shadow: 2px 2px 5px #666666;</code><br>
+          <code>}</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Styling Links — :link, :visited</h2>
+        <p>These pseudo-classes let you style links depending on whether they've been visited or not.</p>
+        <div class="code-block">
+          <code>a:link &nbsp;&nbsp;&nbsp;{ color: deeppink; }</code><br>
+          <code>a:visited { color: grey; }</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Responding to Users — :hover, :active, :focus</h2>
+        <p>:hover applies when the user moves their mouse over an element. :active applies when an element is being clicked. :focus applies when an element has keyboard focus.</p>
+        <div class="code-block">
+          <code>a:hover &nbsp;&nbsp;{ color: deeppink; }</code><br>
+          <code>a:active &nbsp;{ color: darkcyan; }</code><br>
+          <code>input:focus { background-color: lightyellow; }</code>
+        </div>
+        <p>When using all of them on links, they should be written in this order: link, visited, hover, active — otherwise they may not work as expected.</p>
+      </section>
+
+    </main>
+
+    <!-- NOW LET'S BUILD -->
+    <section class="build-section">
+      <div class="build-content">
+        <h2>🔨 Now Let's Build!</h2>
+        <p>Open your <strong>styles.css</strong> file in Notepad. We're going to properly style your text. Add this to your stylesheet:</p>
+        <div class="code-block">
+          <code>body {</code><br>
+          <code>&nbsp;&nbsp;font-family: Arial, Verdana, sans-serif;</code><br>
+          <code>&nbsp;&nbsp;background-color: #1a1a1a;</code><br>
+          <code>&nbsp;&nbsp;color: #f0f0f0;</code><br>
+          <code>&nbsp;&nbsp;line-height: 1.5em;</code><br>
+          <code>}</code><br><br>
+          <code>h1 {</code><br>
+          <code>&nbsp;&nbsp;color: #ee3e80;</code><br>
+          <code>&nbsp;&nbsp;text-transform: uppercase;</code><br>
+          <code>&nbsp;&nbsp;letter-spacing: 0.1em;</code><br>
+          <code>&nbsp;&nbsp;text-shadow: 2px 2px 5px #000000;</code><br>
+          <code>}</code><br><br>
+          <code>a:link {</code><br>
+          <code>&nbsp;&nbsp;color: #00d4ff;</code><br>
+          <code>&nbsp;&nbsp;text-decoration: none;</code><br>
+          <code>}</code><br><br>
+          <code>a:hover {</code><br>
+          <code>&nbsp;&nbsp;text-decoration: underline;</code><br>
+          <code>}</code>
+        </div>
+        <p>Save and refresh your browser. Your heading should now have a drop shadow and be in capitals with extra letter spacing, your text should be more comfortable to read with the added line height, and your links should be blue with an underline appearing only when you hover over them!</p>
+
+        <!-- BROWSER PREVIEW -->
+        <div class="browser-preview">
+          <div class="browser-bar">
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+            <span class="browser-url">file:///C:/Users/Home/index.html</span>
+          </div>
+          <div class="browser-content" style="background-color: #1a1a1a;">
+            <h1 style="font-size: 1.5rem; color: #ee3e80; font-family: Arial, sans-serif; text-transform: uppercase; letter-spacing: 0.1em; text-shadow: 2px 2px 5px #000000; margin-bottom: 10px;">Welcome to My Page</h1>
+            <p style="color: #f0f0f0; font-family: Arial, sans-serif; line-height: 1.5em; margin-bottom: 10px;">I am learning to code and this is my first webpage!</p>
+            <p style="color: #f0f0f0; font-family: Arial, sans-serif;"><a href="#" style="color: #00d4ff; text-decoration: none;">Useful Links</a></p>
+          </div>
+        </div>
+        <p class="preview-note">👆 Look at that heading! Capitals, spacing, and a subtle shadow — proper typography now.</p>
+
+        <div class="full-code">
+          <h3>✅ Your styles.css file should now look like this:</h3>
+          <div class="code-block">
+            <code>body {</code><br>
+            <code>&nbsp;&nbsp;font-family: Arial, Verdana, sans-serif;</code><br>
+            <code>&nbsp;&nbsp;background-color: #1a1a1a;</code><br>
+            <code>&nbsp;&nbsp;color: #f0f0f0;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;line-height: 1.5em;</code><br>
+            <code>}</code><br><br>
+            <code>h1 {</code><br>
+            <code>&nbsp;&nbsp;color: #ee3e80;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;text-transform: uppercase;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;letter-spacing: 0.1em;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;text-shadow: 2px 2px 5px #000000;</code><br>
+            <code>}</code><br><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">a:link {</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;color: #00d4ff;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;text-decoration: none;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">}</code><br><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">a:hover {</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;text-decoration: underline;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">}</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIZ SECTION -->
+    <section class="quiz-section">
+      <h2>Chapter 12 Quiz</h2>
+      <p class="quiz-intro">Only move on when you can answer all of these confidently without looking!</p>
+
+      <div class="quiz-question">
+        <p class="question">1. What is the CSS property used to specify a typeface?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) font-type</li>
+          <li onclick="checkAnswer(this, true)">b) font-family</li>
+          <li onclick="checkAnswer(this, false)">c) typeface</li>
+          <li onclick="checkAnswer(this, false)">d) font-face</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">2. What is a font stack?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) A folder where fonts are stored</li>
+          <li onclick="checkAnswer(this, true)">b) A list of fonts in order of preference so the browser always has a fallback</li>
+          <li onclick="checkAnswer(this, false)">c) A way of making text bold</li>
+          <li onclick="checkAnswer(this, false)">d) A unit of font size</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">3. Which unit of font size is relative to the current font size of the element?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) px</li>
+          <li onclick="checkAnswer(this, false)">b) pt</li>
+          <li onclick="checkAnswer(this, false)">c) %</li>
+          <li onclick="checkAnswer(this, true)">d) em</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">4. What does line-height control?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) The space between individual letters</li>
+          <li onclick="checkAnswer(this, false)">b) The length of a line of text</li>
+          <li onclick="checkAnswer(this, true)">c) The vertical gap between lines of text</li>
+          <li onclick="checkAnswer(this, false)">d) The indentation of the first line</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">5. What is the correct order for writing link pseudo-classes so they work properly?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) hover, link, active, visited</li>
+          <li onclick="checkAnswer(this, false)">b) visited, link, hover, active</li>
+          <li onclick="checkAnswer(this, true)">c) link, visited, hover, active</li>
+          <li onclick="checkAnswer(this, false)">d) active, hover, visited, link</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">6. Which CSS3 property adds a shadow behind text?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) box-shadow</li>
+          <li onclick="checkAnswer(this, false)">b) font-shadow</li>
+          <li onclick="checkAnswer(this, true)">c) text-shadow</li>
+          <li onclick="checkAnswer(this, false)">d) drop-shadow</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">7. What does the :focus pseudo-class do?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Styles a link that has been visited</li>
+          <li onclick="checkAnswer(this, false)">b) Styles an element when it is being clicked</li>
+          <li onclick="checkAnswer(this, true)">c) Styles an element when it has keyboard focus</li>
+          <li onclick="checkAnswer(this, false)">d) Styles the first letter of a paragraph</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+    </section>
+
+    <!-- NEXT CHAPTER -->
+    <section class="next-chapter">
+      <div class="coming-up">
+        <h3>Coming Up Next — Chapter 13: Boxes</h3>
+        <p>In the next chapter we look at how to control the size, borders, margins, and padding of every box on your page.</p>
+      </div>
+      <a href="chapter13.html" class="next-btn" style="border-color: #00d4ff; color: #00d4ff;">Next Up: Boxes →</a>
+    </section>
+
+    <script>
+      localStorage.setItem('visited_' + location.pathname.split('/html/')[1].replace('.html', '') + '.html', 'true');
+function toggleGenie() {
+        const bubble = document.getElementById('genieBubble');
+        bubble.classList.toggle('visible');
+      }
+
+      function toggleNav() {
+        const dropdown = document.getElementById('navDropdown');
+        dropdown.classList.toggle('open');
+      }
+
+      document.addEventListener('click', function(e) {
+        const nav = document.querySelector('.chapter-nav');
+        if (!nav.contains(e.target)) {
+          document.getElementById('navDropdown').classList.remove('open');
+        }
+      });
+
+      function checkAnswer(element, isCorrect) {
+        const options = element.parentElement.querySelectorAll('li');
+        options.forEach(option => {
+          option.style.pointerEvents = 'none';
+        });
+        if (isCorrect) {
+          element.classList.add('correct');
+        } else {
+          element.classList.add('incorrect');
+        }
+        const resetBtn = element.parentElement.nextElementSibling;
+        if (resetBtn && resetBtn.classList.contains('reset-btn')) {
+          resetBtn.style.display = 'inline-block';
+        }
+      }
+
+      function resetQuestion(button) {
+        const options = button.previousElementSibling.querySelectorAll('li');
+        options.forEach(option => {
+          option.classList.remove('correct', 'incorrect');
+          option.style.pointerEvents = 'auto';
+        });
+        button.style.display = 'none';
+      }
+    </script>
+
+  </body>
+</html>

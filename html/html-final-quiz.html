@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Final Quiz</title>
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+
+    <!-- HEADER -->
+    <header class="chapter-header">
+      <a href="../index.html" class="home-btn">← Home</a>
+      <div class="chapter-title">
+        <span class="chapter-label">HTML Section</span>
+        <h1>Final Quiz</h1>
+      </div>
+      <div class="header-right">
+        <div class="chapter-nav">
+          <button class="nav-toggle" onclick="toggleNav()">Chapters ▼</button>
+          <div class="nav-dropdown" id="navDropdown">
+            <a href="chapter1.html">Chapter 1 — HTML</a>
+            <a href="chapter2.html">Chapter 2 — Text</a>
+            <a href="chapter3.html">Chapter 3 — Lists</a>
+            <a href="chapter4.html">Chapter 4 — Links</a>
+            <a href="chapter5.html">Chapter 5 — Images</a>
+            <a href="chapter6.html">Chapter 6 — Tables</a>
+            <a href="chapter7.html">Chapter 7 — Forms</a>
+            <a href="chapter8.html">Chapter 8 — Extra Markup</a>
+            <a href="chapter9.html">Chapter 9 — Video and Audio</a>
+            <hr style="border-color: #333333;">
+            <a href="cheatsheet-basic.html">HTML Cheat Sheet</a>
+          </div>
+        </div>
+        <div class="genie-container">
+          <img src="../images/xgenfutbot.png" alt="XGENFUTBOT" class="genie-icon" id="genieBtn" onclick="toggleGenie()" />
+          <div class="genie-bubble" id="genieBubble">
+            <p>This is the big one. Everything from Chapters 1 to 9. No peeking. I mean it. 👀</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- INTRO -->
+    <main class="chapter-content">
+      <section class="content-section">
+        <h2>The HTML Final Quiz</h2>
+        <p>You've completed all 9 HTML chapters. This quiz covers everything — from basic structure all the way through to video and audio. There are 25 questions covering the full HTML section.</p>
+        <p>The rules are simple — no looking back at the chapters. If you get one wrong, make a note of it, go back and review that chapter, then come back and try again. Only move on to CSS when you can get through this quiz confidently without looking.</p>
+        <p>Good luck. XGENFUTBOT is watching. 👀</p>
+      </section>
+    </main>
+
+    <!-- QUIZ -->
+    <section class="quiz-section">
+      <h2>HTML Final Quiz — 25 Questions</h2>
+      <p class="quiz-intro">Answer all 25 questions. If you get any wrong go back and review that chapter before moving on!</p>
+
+      <div class="quiz-question">
+        <p class="question">1. What does HTML stand for?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) High Text Marking Language</li>
+          <li onclick="checkAnswer(this, true)">b) Hypertext Markup Language</li>
+          <li onclick="checkAnswer(this, false)">c) Hypertext Making Language</li>
+          <li onclick="checkAnswer(this, false)">d) High Transfer Markup Language</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">2. Every opening tag needs a closing tag. How do you write a closing tag?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) By adding an asterisk before the element name</li>
+          <li onclick="checkAnswer(this, true)">b) By adding a forward slash before the element name</li>
+          <li onclick="checkAnswer(this, false)">c) By adding a hyphen before the element name</li>
+          <li onclick="checkAnswer(this, false)">d) Closing tags are optional</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">3. What two things does an attribute need?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) A tag and a value</li>
+          <li onclick="checkAnswer(this, true)">b) A name and a value</li>
+          <li onclick="checkAnswer(this, false)">c) A name and a tag</li>
+          <li onclick="checkAnswer(this, false)">d) A bracket and a name</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">4. What is the difference between structural markup and semantic markup?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) There is no difference</li>
+          <li onclick="checkAnswer(this, true)">b) Structural markup describes headings and paragraphs; semantic markup provides extra meaning like emphasis or quotations</li>
+          <li onclick="checkAnswer(this, false)">c) Semantic markup describes headings; structural markup provides extra meaning</li>
+          <li onclick="checkAnswer(this, false)">d) Structural markup is for CSS; semantic markup is for HTML</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">5. What is white space collapsing?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) When the browser removes all spaces from the page</li>
+          <li onclick="checkAnswer(this, true)">b) When the browser treats multiple spaces or line breaks as a single space</li>
+          <li onclick="checkAnswer(this, false)">c) When text wraps onto the next line</li>
+          <li onclick="checkAnswer(this, false)">d) When a paragraph collapses to zero height</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">6. Which tag would you use for a short inline quote within a paragraph?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) &lt;blockquote&gt;</li>
+          <li onclick="checkAnswer(this, true)">b) &lt;q&gt;</li>
+          <li onclick="checkAnswer(this, false)">c) &lt;cite&gt;</li>
+          <li onclick="checkAnswer(this, false)">d) &lt;quote&gt;</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">7. Which type of list would you use for a recipe where the order of steps matters?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Unordered list &lt;ul&gt;</li>
+          <li onclick="checkAnswer(this, true)">b) Ordered list &lt;ol&gt;</li>
+          <li onclick="checkAnswer(this, false)">c) Definition list &lt;dl&gt;</li>
+          <li onclick="checkAnswer(this, false)">d) Any list type works</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">8. In a definition list, what is the difference between dt and dd?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) There is no difference</li>
+          <li onclick="checkAnswer(this, true)">b) dt contains the term being defined; dd contains the definition</li>
+          <li onclick="checkAnswer(this, false)">c) dd contains the term; dt contains the definition</li>
+          <li onclick="checkAnswer(this, false)">d) dt is for ordered lists; dd is for unordered lists</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">9. What is the difference between an absolute URL and a relative URL?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) There is no difference</li>
+          <li onclick="checkAnswer(this, true)">b) An absolute URL is the full web address; a relative URL is a shorthand that just uses the file name</li>
+          <li onclick="checkAnswer(this, false)">c) A relative URL is the full web address; an absolute URL uses just the file name</li>
+          <li onclick="checkAnswer(this, false)">d) Absolute URLs only work on external sites</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">10. How do you create a link to a specific part of the same page?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Use href="@sectionname"</li>
+          <li onclick="checkAnswer(this, true)">b) Add id="name" to the target element and use href="#name" on the link</li>
+          <li onclick="checkAnswer(this, false)">c) Use href="*sectionname"</li>
+          <li onclick="checkAnswer(this, false)">d) You can't link to specific parts of a page</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">11. Why is the alt attribute on an image important?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) It sets the size of the image</li>
+          <li onclick="checkAnswer(this, true)">b) It provides a text description for screen readers and search engines</li>
+          <li onclick="checkAnswer(this, false)">c) It links the image to another page</li>
+          <li onclick="checkAnswer(this, false)">d) It controls the image format</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">12. Which image format is best for logos and illustrations with flat colours?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) JPEG</li>
+          <li onclick="checkAnswer(this, true)">b) GIF</li>
+          <li onclick="checkAnswer(this, false)">c) BMP</li>
+          <li onclick="checkAnswer(this, false)">d) TIFF</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">13. What is the correct order of tags to build a table row with two cells?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) &lt;table&gt;&lt;td&gt;&lt;tr&gt;</li>
+          <li onclick="checkAnswer(this, true)">b) &lt;tr&gt;&lt;td&gt;Cell 1&lt;/td&gt;&lt;td&gt;Cell 2&lt;/td&gt;&lt;/tr&gt;</li>
+          <li onclick="checkAnswer(this, false)">c) &lt;td&gt;&lt;tr&gt;Cell 1&lt;/tr&gt;&lt;/td&gt;</li>
+          <li onclick="checkAnswer(this, false)">d) &lt;row&gt;&lt;cell&gt;Cell 1&lt;/cell&gt;&lt;/row&gt;</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">14. What does rowspan do?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Makes a cell stretch across multiple columns</li>
+          <li onclick="checkAnswer(this, true)">b) Makes a cell stretch down across multiple rows</li>
+          <li onclick="checkAnswer(this, false)">c) Creates a new row in the table</li>
+          <li onclick="checkAnswer(this, false)">d) Spans the entire table width</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">15. What is the difference between the get and post methods on a form?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) There is no difference</li>
+          <li onclick="checkAnswer(this, true)">b) Get adds values to the URL and is for simple retrieval; post sends values in headers and is for sensitive data or long forms</li>
+          <li onclick="checkAnswer(this, false)">c) Post adds values to the URL; get sends values in headers</li>
+          <li onclick="checkAnswer(this, false)">d) Get is for file uploads; post is for text inputs</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">16. Why do all radio buttons in the same group need to share the same name attribute?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) They don't — each needs a unique name</li>
+          <li onclick="checkAnswer(this, true)">b) So the browser knows they belong together and only one can be selected at a time</li>
+          <li onclick="checkAnswer(this, false)">c) So they all look the same visually</li>
+          <li onclick="checkAnswer(this, false)">d) The name attribute is optional on radio buttons</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">17. What is the purpose of the fieldset and legend elements?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) To style the form with CSS</li>
+          <li onclick="checkAnswer(this, true)">b) Fieldset groups related form controls together; legend gives the group a caption</li>
+          <li onclick="checkAnswer(this, false)">c) Legend groups form controls; fieldset gives the group a caption</li>
+          <li onclick="checkAnswer(this, false)">d) They are used to submit the form</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">18. What is the difference between a block level element and an inline element?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) There is no difference</li>
+          <li onclick="checkAnswer(this, true)">b) Block level elements start on a new line; inline elements sit within the flow of text</li>
+          <li onclick="checkAnswer(this, false)">c) Inline elements start on a new line; block elements sit within the text flow</li>
+          <li onclick="checkAnswer(this, false)">d) Block elements are for CSS only</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">19. What is the purpose of the span element?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) To group block level elements</li>
+          <li onclick="checkAnswer(this, true)">b) To wrap inline content so it can be targeted with CSS — it has no visual effect on its own</li>
+          <li onclick="checkAnswer(this, false)">c) To create a line break</li>
+          <li onclick="checkAnswer(this, false)">d) To add a border around text</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">20. Why do we use escape characters like &amp;lt; and &amp;gt;?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) To make text bold</li>
+          <li onclick="checkAnswer(this, true)">b) Because the browser would try to read &lt; and &gt; as HTML tags — escape characters let us display them as text</li>
+          <li onclick="checkAnswer(this, false)">c) To add extra spacing between words</li>
+          <li onclick="checkAnswer(this, false)">d) They are only needed in CSS</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">21. Why was Flash abandoned and what replaced it?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Flash was too expensive and was replaced by JavaScript</li>
+          <li onclick="checkAnswer(this, true)">b) All major browsers dropped support for Flash in 2020 — HTML5 video and audio elements replaced it</li>
+          <li onclick="checkAnswer(this, false)">c) Flash is still widely used today</li>
+          <li onclick="checkAnswer(this, false)">d) Flash was replaced by CSS animations only</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">22. What does the preload attribute on a video element do?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) It plays the video automatically</li>
+          <li onclick="checkAnswer(this, true)">b) It tells the browser what to do when the page loads — none, auto, or metadata</li>
+          <li onclick="checkAnswer(this, false)">c) It loops the video</li>
+          <li onclick="checkAnswer(this, false)">d) It sets the video quality</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">23. Which element contains information about the page that is not shown in the browser window?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) &lt;body&gt;</li>
+          <li onclick="checkAnswer(this, true)">b) &lt;head&gt;</li>
+          <li onclick="checkAnswer(this, false)">c) &lt;header&gt;</li>
+          <li onclick="checkAnswer(this, false)">d) &lt;meta&gt;</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">24. What does the id attribute do?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) It adds a class to an element for CSS styling</li>
+          <li onclick="checkAnswer(this, true)">b) It gives an element a unique identifier that can be used for CSS targeting or page anchors</li>
+          <li onclick="checkAnswer(this, false)">c) It identifies the type of element</li>
+          <li onclick="checkAnswer(this, false)">d) It is the same as the class attribute</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">25. You want to display the text "Use the &lt;p&gt; tag for paragraphs" on a webpage. What do you need to use?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Just type it normally — the browser will handle it</li>
+          <li onclick="checkAnswer(this, true)">b) Escape characters — &amp;lt;p&amp;gt; so the browser doesn't treat it as an actual tag</li>
+          <li onclick="checkAnswer(this, false)">c) Put it inside a code tag and it will display automatically</li>
+          <li onclick="checkAnswer(this, false)">d) You can't display HTML tags as text</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+    </section>
+
+    <!-- NEXT STEPS -->
+    <section class="next-chapter">
+      <div class="coming-up">
+        <h3>HTML Section Complete! 🎉</h3>
+        <p>If you answered all 25 questions confidently without looking then you are ready for CSS. This is where your page goes from plain and boring to something that actually looks amazing. Get ready!</p>
+      </div>
+      <a href="cssintro.html" class="next-btn" style="border-color: #00d4ff; color: #00d4ff;">Start CSS →</a>
+    </section>
+
+    <script>
+      localStorage.setItem('visited_' + location.pathname.split('/html/')[1].replace('.html', '') + '.html', 'true');
+function toggleGenie() {
+        const bubble = document.getElementById('genieBubble');
+        bubble.classList.toggle('visible');
+      }
+
+      function toggleNav() {
+        const dropdown = document.getElementById('navDropdown');
+        dropdown.classList.toggle('open');
+      }
+
+      document.addEventListener('click', function(e) {
+        const nav = document.querySelector('.chapter-nav');
+        if (!nav.contains(e.target)) {
+          document.getElementById('navDropdown').classList.remove('open');
+        }
+      });
+
+      function checkAnswer(element, isCorrect) {
+        const options = element.parentElement.querySelectorAll('li');
+        options.forEach(option => {
+          option.style.pointerEvents = 'none';
+        });
+        if (isCorrect) {
+          element.classList.add('correct');
+        } else {
+          element.classList.add('incorrect');
+        }
+        const resetBtn = element.parentElement.nextElementSibling;
+        if (resetBtn && resetBtn.classList.contains('reset-btn')) {
+          resetBtn.style.display = 'inline-block';
+        }
+      }
+
+      function resetQuestion(button) {
+        const options = button.previousElementSibling.querySelectorAll('li');
+        options.forEach(option => {
+          option.classList.remove('correct', 'incorrect');
+          option.style.pointerEvents = 'auto';
+        });
+        button.style.display = 'none';
+      }
+    </script>
+
+  </body>
+</html>

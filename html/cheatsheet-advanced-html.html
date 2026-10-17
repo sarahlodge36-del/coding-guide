@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced HTML Cheat Sheet</title>
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+
+    <!-- HEADER -->
+    <header class="chapter-header">
+      <a href="../index.html" class="home-btn">← Home</a>
+      <div class="chapter-title">
+        <span class="chapter-label">HTML</span>
+        <h1>Advanced Cheat Sheet</h1>
+      </div>
+      <div class="genie-container">
+        <img src="../images/xgenfutbot.png" alt="XGENFUTBOT" class="genie-icon" id="genieBtn" onclick="toggleGenie()" />
+        <div class="genie-bubble" id="genieBubble">
+          <p>The advanced reference sheet. Keep this one close. 😎</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- CHEAT SHEET CONTENT -->
+    <main class="chapter-content">
+
+      <section class="content-section">
+        <h2>Advanced Semantic Elements</h2>
+        <ul class="content-list">
+          <li><code>&lt;main&gt;</code> — the primary content of the page. Only one per page.</li>
+          <li><code>&lt;time datetime="2024-01-15"&gt;</code> — marks up dates and times in a machine readable way</li>
+          <li><code>&lt;mark&gt;</code> — highlights text</li>
+          <li><code>&lt;details&gt;</code> — collapsible section, no JavaScript needed</li>
+          <li><code>&lt;summary&gt;</code> — the visible heading of a details element</li>
+          <li><code>&lt;dialog&gt;</code> — a built-in modal dialog element</li>
+          <li><code>&lt;progress value="70" max="100"&gt;</code> — a built-in progress bar</li>
+          <li><code>&lt;meter min="0" max="100" value="75"&gt;</code> — a scalar measurement within a range</li>
+          <li><code>&lt;template&gt;</code> — holds HTML that is not rendered but can be cloned by JavaScript</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>ARIA Attributes</h2>
+        <ul class="content-list">
+          <li><code>role="button"</code> — tells screen readers an element behaves like a button</li>
+          <li><code>role="navigation"</code> — identifies a navigation landmark</li>
+          <li><code>role="alert"</code> — announces dynamic content to screen readers immediately</li>
+          <li><code>aria-label="Close menu"</code> — provides a text label for elements with no visible text</li>
+          <li><code>aria-hidden="true"</code> — hides decorative elements from screen readers</li>
+          <li><code>aria-expanded="false"</code> — whether a collapsible element is open or closed</li>
+          <li><code>aria-live="polite"</code> — announces dynamic content changes politely</li>
+          <li><code>aria-live="assertive"</code> — announces changes immediately interrupting other content</li>
+          <li><code>aria-describedby="id"</code> — links an element to a description elsewhere on the page</li>
+          <li><code>aria-required="true"</code> — tells screen readers a field is required</li>
+          <li><code>aria-disabled="true"</code> — tells screen readers an element is disabled</li>
+          <li><code>tabindex="0"</code> — makes a non-interactive element focusable via keyboard</li>
+          <li><code>tabindex="-1"</code> — removes an element from the tab order</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Meta Tags</h2>
+        <ul class="content-list">
+          <li><code>&lt;meta name="description" content="..."&gt;</code> — page description for search results</li>
+          <li><code>&lt;meta name="robots" content="index, follow"&gt;</code> — search engine indexing instructions</li>
+          <li><code>&lt;meta name="author" content="Sarah"&gt;</code> — page author</li>
+          <li><code>&lt;meta name="theme-color" content="#0a0a0a"&gt;</code> — browser chrome colour on mobile</li>
+          <li><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code> — responsive scaling</li>
+          <li><code>&lt;link rel="canonical" href="https://yoursite.com/page"&gt;</code> — definitive URL for the page</li>
+          <li><code>&lt;link rel="icon" href="favicon.ico"&gt;</code> — page favicon</li>
+          <li><code>&lt;link rel="preload" href="font.woff2" as="font"&gt;</code> — preloads a resource for performance</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Open Graph Tags</h2>
+        <ul class="content-list">
+          <li><code>&lt;meta property="og:title" content="Page Title"&gt;</code> — title shown in social media previews</li>
+          <li><code>&lt;meta property="og:description" content="..."&gt;</code> — description in social media previews</li>
+          <li><code>&lt;meta property="og:image" content="https://..."&gt;</code> — preview image</li>
+          <li><code>&lt;meta property="og:url" content="https://..."&gt;</code> — canonical URL</li>
+          <li><code>&lt;meta property="og:type" content="website"&gt;</code> — type of content</li>
+          <li><code>&lt;meta name="twitter:card" content="summary_large_image"&gt;</code> — Twitter card type</li>
+          <li><code>&lt;meta name="twitter:title" content="Page Title"&gt;</code> — Twitter specific title</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Advanced Form Attributes</h2>
+        <ul class="content-list">
+          <li><code>required</code> — prevents form submission if field is empty</li>
+          <li><code>placeholder="hint text"</code> — shows hint text inside the input</li>
+          <li><code>autocomplete="email"</code> — hints to browser what to autofill</li>
+          <li><code>pattern="[0-9]{5}"</code> — validates input against a regular expression</li>
+          <li><code>min="0" max="100"</code> — minimum and maximum values on number inputs</li>
+          <li><code>step="5"</code> — increment step for number inputs</li>
+          <li><code>disabled</code> — disables an input</li>
+          <li><code>readonly</code> — makes an input read only</li>
+          <li><code>autofocus</code> — automatically focuses this input on page load</li>
+          <li><code>multiple</code> — allows multiple file uploads or email addresses</li>
+          <li><code>type="email"</code> — validates email format</li>
+          <li><code>type="tel"</code> — shows numeric keyboard on mobile</li>
+          <li><code>type="date"</code> — shows a date picker</li>
+          <li><code>type="range"</code> — shows a slider</li>
+          <li><code>type="color"</code> — shows a colour picker</li>
+          <li><code>type="search"</code> — search input with clear button</li>
+          <li><code>type="number"</code> — numeric input with up/down arrows</li>
+          <li><code>type="file"</code> — file upload input</li>
+          <li><code>type="hidden"</code> — hidden field, not shown to user</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Data Attributes</h2>
+        <ul class="content-list">
+          <li><code>data-index="0"</code> — stores custom data on an element</li>
+          <li><code>data-mode="question"</code> — any name after data- is valid</li>
+          <li><code>element.getAttribute('data-index')</code> — reads a data attribute</li>
+          <li><code>element.setAttribute('data-index', 1)</code> — sets a data attribute</li>
+          <li><code>element.dataset.index</code> — reads via the dataset property</li>
+          <li><code>element.dataset.mode = 'answer'</code> — sets via the dataset property</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Responsive Images</h2>
+        <ul class="content-list">
+          <li><code>srcset="photo-400.jpg 400w, photo-800.jpg 800w"</code> — provides multiple image sizes</li>
+          <li><code>sizes="(max-width: 600px) 400px, 800px"</code> — tells browser which size to use</li>
+          <li><code>&lt;picture&gt;</code> — container for multiple image sources</li>
+          <li><code>&lt;source media="(min-width: 800px)" srcset="large.jpg"&gt;</code> — source inside picture</li>
+          <li><code>loading="lazy"</code> — defers loading images until they're near the viewport</li>
+          <li><code>decoding="async"</code> — allows browser to decode image asynchronously</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>iframes</h2>
+        <ul class="content-list">
+          <li><code>&lt;iframe src="url"&gt;&lt;/iframe&gt;</code> — embeds another page</li>
+          <li><code>width="560" height="315"</code> — sets iframe dimensions</li>
+          <li><code>allowfullscreen</code> — allows fullscreen mode</li>
+          <li><code>allow="autoplay"</code> — grants specific permissions</li>
+          <li><code>sandbox</code> — restricts iframe capabilities for security</li>
+          <li><code>title="Video description"</code> — required for accessibility</li>
+          <li><code>loading="lazy"</code> — defers loading until near the viewport</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>HTML Entities</h2>
+        <ul class="content-list">
+          <li><code>&amp;lt;</code> — &lt;</li>
+          <li><code>&amp;gt;</code> — &gt;</li>
+          <li><code>&amp;amp;</code> — &amp;</li>
+          <li><code>&amp;copy;</code> — ©</li>
+          <li><code>&amp;reg;</code> — ®</li>
+          <li><code>&amp;trade;</code> — ™</li>
+          <li><code>&amp;nbsp;</code> — non-breaking space</li>
+          <li><code>&amp;mdash;</code> — em dash —</li>
+          <li><code>&amp;ndash;</code> — en dash –</li>
+          <li><code>&amp;laquo;</code> — «</li>
+          <li><code>&amp;raquo;</code> — »</li>
+          <li><code>&amp;euro;</code> — €</li>
+          <li><code>&amp;pound;</code> — £</li>
+          <li><code>&amp;hearts;</code> — ♥</li>
+          <li><code>&amp;star;</code> — ★</li>
+          <li><code>&amp;check;</code> — ✓</li>
+        </ul>
+      </section>
+
+    </main>
+
+    <!-- NEXT STEPS -->
+    <section class="next-chapter">
+      <div class="coming-up">
+        <h3>Next Advanced Reference</h3>
+        <p>Head to the advanced CSS cheat sheet for a complete reference of modern CSS techniques.</p>
+      </div>
+      <a href="cheatsheet-advanced-css.html" class="next-btn" style="border-color: #00d4ff; color: #00d4ff;">Advanced CSS Cheat Sheet →</a>
+    </section>
+
+    <script>
+      localStorage.setItem('visited_' + location.pathname.split('/html/')[1].replace('.html', '') + '.html', 'true');
+function toggleGenie() {
+        const bubble = document.getElementById('genieBubble');
+        bubble.classList.toggle('visible');
+      }
+    </script>
+
+  </body>
+</html>

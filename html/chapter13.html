@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 13: Boxes</title>
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+
+    <!-- HEADER -->
+    <header class="chapter-header">
+      <a href="../index.html" class="home-btn">← Home</a>
+      <div class="chapter-title">
+        <span class="chapter-label">Chapter 13</span>
+        <h1>Boxes</h1>
+      </div>
+      <div class="header-right">
+        <div class="chapter-nav">
+          <button class="nav-toggle" onclick="toggleNav()">Chapters ▼</button>
+          <div class="nav-dropdown" id="navDropdown">
+            <a href="chapter10.html">Chapter 10 — Introducing CSS</a>
+            <a href="chapter11.html">Chapter 11 — Colour</a>
+            <a href="chapter12.html">Chapter 12 — Text</a>
+            <a href="chapter13.html">Chapter 13 — Boxes</a>
+            <a href="chapter14.html">Chapter 14 — Lists, Tables and Forms</a>
+            <a href="chapter15.html">Chapter 15 — Layout</a>
+            <a href="chapter16.html">Chapter 16 — Images</a>
+            <a href="chapter17.html">Chapter 17 — HTML5 Layout</a>
+            <a href="chapter18.html">Chapter 18 — Process and Design</a>
+            <a href="chapter19.html">Chapter 19 — Practical Information</a>
+            <hr style="border-color: #333333;">
+            <a href="css-cheatsheet.html">CSS Cheat Sheet</a>
+            <a href="css-final-quiz.html">CSS Final Quiz</a>
+          </div>
+        </div>
+        <div class="genie-container">
+          <img src="../images/xgenfutbot.png" alt="XGENFUTBOT" class="genie-icon" id="genieBtn" onclick="toggleGenie()" />
+          <div class="genie-bubble" id="genieBubble">
+            <p>Everything's a box. Even I'm secretly a box. Don't think about it too hard. 😎</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CHAPTER CONTENT -->
+    <main class="chapter-content">
+
+      <section class="content-section">
+        <h2>Every Element Lives in a Box</h2>
+        <p>At the beginning of this section on CSS, you saw how CSS treats each HTML element as if it lives in its own box. In this chapter we look at how to control the appearance of those boxes — their size, their borders, and the space around and inside them.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Box Dimensions — width, height</h2>
+        <p>By default a box is sized just big enough to hold its contents. You can override this using the width and height properties. Values can be given in pixels, percentages, or ems.</p>
+        <div class="code-block">
+          <code>div {</code><br>
+          <code>&nbsp;&nbsp;width: 300px;</code><br>
+          <code>&nbsp;&nbsp;height: 150px;</code><br>
+          <code>}</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Border, Margin and Padding</h2>
+        <p>Every box has three properties that can be adjusted to control the space around it.</p>
+        <p><strong>Border</strong> — sits between the margin and the padding. You can set its width, style, and colour.</p>
+        <p><strong>Margin</strong> — the gap between the border of one box and the border of the next. Margins are transparent.</p>
+        <p><strong>Padding</strong> — the space between the content of a box and its border. Padding is also transparent, but it will reveal the background colour of the box.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Border Style and Colour</h2>
+        <p>border-style controls the appearance of the border line.</p>
+        <div class="code-block">
+          <code>p.one &nbsp;&nbsp;{ border-style: solid; }</code><br>
+          <code>p.two &nbsp;&nbsp;{ border-style: dotted; }</code><br>
+          <code>p.three { border-style: dashed; }</code>
+        </div>
+        <p>border-color sets the colour of the border using RGB, hex, or colour names.</p>
+        <div class="code-block">
+          <code>p { border-color: #ee3e80; }</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Shorthand Border</h2>
+        <p>You can combine width, style, and colour into a single border property.</p>
+        <div class="code-block">
+          <code>p {</code><br>
+          <code>&nbsp;&nbsp;border: 3px dotted #ee3e80;</code><br>
+          <code>}</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Padding</h2>
+        <p>The padding property sets the space between the content of a box and its border.</p>
+        <div class="code-block">
+          <code>p {</code><br>
+          <code>&nbsp;&nbsp;padding: 10px;</code><br>
+          <code>}</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Margin</h2>
+        <p>The margin property controls the gap between boxes.</p>
+        <div class="code-block">
+          <code>p {</code><br>
+          <code>&nbsp;&nbsp;margin: 20px;</code><br>
+          <code>}</code>
+        </div>
+        <p>If the left and right margins are both set to auto the box will sit centrally within its containing element — which brings us neatly to the next bit.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Centering Content</h2>
+        <p>To centre a box on the page, set a width and then set the left and right margins to auto. Without a width set, the box would stretch to fill the full width of the page and centering would have no effect.</p>
+        <div class="code-block">
+          <code>p {</code><br>
+          <code>&nbsp;&nbsp;width: 300px;</code><br>
+          <code>&nbsp;&nbsp;margin: 0px auto;</code><br>
+          <code>}</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>CSS3: Round Corners — border-radius</h2>
+        <p>CSS3 lets you round the corners of any box using border-radius. The value is the radius of the curve — the larger the value, the more rounded the corner.</p>
+        <div class="code-block">
+          <code>p {</code><br>
+          <code>&nbsp;&nbsp;border-radius: 10px;</code><br>
+          <code>}</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>CSS3: Box Shadow — box-shadow</h2>
+        <p>Works similarly to text-shadow but applies to the whole box. Takes horizontal offset, vertical offset, blur, and colour.</p>
+        <div class="code-block">
+          <code>div {</code><br>
+          <code>&nbsp;&nbsp;box-shadow: 5px 5px 10px #666666;</code><br>
+          <code>}</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Changing Inline/Block — display</h2>
+        <p>The display property lets you change whether an element behaves as block level or inline, or hides it entirely.</p>
+        <div class="code-block">
+          <code>li { display: inline; }</code><br>
+          <code>a &nbsp;{ display: block; }</code><br>
+          <code>p &nbsp;{ display: none; }</code>
+        </div>
+        <p>inline-block is particularly handy — it lets elements sit next to each other like inline elements, but still lets you set width and height like block elements.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Overflowing Content — overflow</h2>
+        <p>If the content inside a box is larger than the box itself, you need to tell the browser what to do with it using the overflow property.</p>
+        <div class="code-block">
+          <code>p { overflow: hidden; }</code><br>
+          <code>p.two { overflow: scroll; }</code>
+        </div>
+        <p>hidden simply hides any content that doesn't fit inside the box. scroll adds a scrollbar so the user can scroll to see the rest of the content.</p>
+      </section>
+
+    </main>
+
+    <!-- NOW LET'S BUILD -->
+    <section class="build-section">
+      <div class="build-content">
+        <h2>🔨 Now Let's Build!</h2>
+        <p>Open your <strong>styles.css</strong> file in Notepad. We're going to box off some sections of your page properly. Add this to your stylesheet:</p>
+        <div class="code-block">
+          <code>#header {</code><br>
+          <code>&nbsp;&nbsp;padding: 20px;</code><br>
+          <code>&nbsp;&nbsp;border-bottom: 3px solid #ee3e80;</code><br>
+          <code>}</code><br><br>
+          <code>#content {</code><br>
+          <code>&nbsp;&nbsp;max-width: 700px;</code><br>
+          <code>&nbsp;&nbsp;margin: 20px auto;</code><br>
+          <code>&nbsp;&nbsp;padding: 20px;</code><br>
+          <code>&nbsp;&nbsp;border-radius: 10px;</code><br>
+          <code>&nbsp;&nbsp;box-shadow: 0px 0px 15px rgba(0,212,255,0.3);</code><br>
+          <code>}</code><br><br>
+          <code>#footer {</code><br>
+          <code>&nbsp;&nbsp;padding: 15px;</code><br>
+          <code>&nbsp;&nbsp;text-align: center;</code><br>
+          <code>&nbsp;&nbsp;border-top: 1px solid #444444;</code><br>
+          <code>}</code>
+        </div>
+        <p>Save and refresh your browser. Those div sections you wrapped in Chapter 8 — header, content, footer — now have real structure!</p>
+
+        <!-- BROWSER PREVIEW -->
+        <div class="browser-preview">
+          <div class="browser-bar">
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+            <span class="browser-url">file:///C:/Users/Home/index.html</span>
+          </div>
+          <div class="browser-content" style="background-color: #1a1a1a;">
+            <div style="padding: 12px; border-bottom: 3px solid #ee3e80;">
+              <h1 style="font-size: 1.3rem; color: #ee3e80; font-family: Arial, sans-serif; text-transform: uppercase; letter-spacing: 0.1em; margin: 0;">Welcome to My Page</h1>
+            </div>
+            <div style="max-width: 90%; margin: 15px auto; padding: 15px; border-radius: 10px; box-shadow: 0px 0px 15px rgba(0,212,255,0.3); background-color: #222222;">
+              <p style="color: #f0f0f0; font-family: Arial, sans-serif; margin: 0;">I am learning to code and this is my first webpage!</p>
+            </div>
+            <div style="padding: 10px; text-align: center; border-top: 1px solid #444444;">
+              <p style="color: #888888; font-family: Arial, sans-serif; font-size: 0.8rem; margin: 0;">© My First Webpage 2024</p>
+            </div>
+          </div>
+        </div>
+        <p class="preview-note">👆 Header, boxed content, footer — your page now has proper structure and depth!</p>
+
+        <div class="full-code">
+          <h3>✅ Your styles.css file should now look like this (newest additions highlighted):</h3>
+          <div class="code-block">
+            <code>body {</code><br>
+            <code>&nbsp;&nbsp;font-family: Arial, Verdana, sans-serif;</code><br>
+            <code>&nbsp;&nbsp;background-color: #1a1a1a;</code><br>
+            <code>&nbsp;&nbsp;color: #f0f0f0;</code><br>
+            <code>&nbsp;&nbsp;line-height: 1.5em;</code><br>
+            <code>}</code><br><br>
+            <code>h1 {</code><br>
+            <code>&nbsp;&nbsp;color: #ee3e80;</code><br>
+            <code>&nbsp;&nbsp;text-transform: uppercase;</code><br>
+            <code>&nbsp;&nbsp;letter-spacing: 0.1em;</code><br>
+            <code>&nbsp;&nbsp;text-shadow: 2px 2px 5px #000000;</code><br>
+            <code>}</code><br><br>
+            <code>a:link {</code><br>
+            <code>&nbsp;&nbsp;color: #00d4ff;</code><br>
+            <code>&nbsp;&nbsp;text-decoration: none;</code><br>
+            <code>}</code><br><br>
+            <code>a:hover {</code><br>
+            <code>&nbsp;&nbsp;text-decoration: underline;</code><br>
+            <code>}</code><br><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">#header {</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;padding: 20px;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;border-bottom: 3px solid #ee3e80;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">}</code><br><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">#content {</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;max-width: 700px;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;margin: 20px auto;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;padding: 20px;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;border-radius: 10px;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;box-shadow: 0px 0px 15px rgba(0,212,255,0.3);</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">}</code><br><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">#footer {</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;padding: 15px;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;text-align: center;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;border-top: 1px solid #444444;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">}</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIZ SECTION -->
+    <section class="quiz-section">
+      <h2>Chapter 13 Quiz</h2>
+      <p class="quiz-intro">Only move on when you can answer all of these confidently without looking!</p>
+
+      <div class="quiz-question">
+        <p class="question">1. What is the difference between padding and margin?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) There is no difference</li>
+          <li onclick="checkAnswer(this, true)">b) Padding is the space between the content and the border; margin is the space between the border and the next element</li>
+          <li onclick="checkAnswer(this, false)">c) Margin is the space between the content and the border; padding is the space between the border and the next element</li>
+          <li onclick="checkAnswer(this, false)">d) Padding only works on block elements</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">2. How do you centre a box on the page using CSS?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Set text-align to center</li>
+          <li onclick="checkAnswer(this, false)">b) Set padding to auto</li>
+          <li onclick="checkAnswer(this, true)">c) Set a width and both left and right margins to auto</li>
+          <li onclick="checkAnswer(this, false)">d) Set display to center</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">3. What does overflow: scroll do?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Hides any content that doesn't fit in the box</li>
+          <li onclick="checkAnswer(this, false)">b) Removes the box from the page</li>
+          <li onclick="checkAnswer(this, true)">c) Adds a scrollbar so the user can see the rest of the content</li>
+          <li onclick="checkAnswer(this, false)">d) Stretches the box to fit the content</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">4. What does border-radius do?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Adds a shadow behind the box</li>
+          <li onclick="checkAnswer(this, false)">b) Sets the thickness of the border</li>
+          <li onclick="checkAnswer(this, true)">c) Rounds the corners of a box</li>
+          <li onclick="checkAnswer(this, false)">d) Adds an image as a border</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">5. What does inline-block do that regular inline doesn't?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Makes an element invisible</li>
+          <li onclick="checkAnswer(this, false)">b) Removes the element from the page flow</li>
+          <li onclick="checkAnswer(this, true)">c) Lets elements sit next to each other while still allowing width and height to be set</li>
+          <li onclick="checkAnswer(this, false)">d) Makes the element take up the full width of the page</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">6. When you give four values to padding or margin, what order do they go in?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Left, right, top, bottom</li>
+          <li onclick="checkAnswer(this, false)">b) Top, bottom, left, right</li>
+          <li onclick="checkAnswer(this, true)">c) Top, right, bottom, left</li>
+          <li onclick="checkAnswer(this, false)">d) Right, left, top, bottom</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+    </section>
+
+    <!-- NEXT CHAPTER -->
+    <section class="next-chapter">
+      <div class="coming-up">
+        <h3>Coming Up Next — Chapter 14: Lists, Tables and Forms</h3>
+        <p>In the next chapter we look at CSS properties built specifically for styling lists, tables, and form controls.</p>
+      </div>
+      <a href="chapter14.html" class="next-btn" style="border-color: #00d4ff; color: #00d4ff;">Next Up: Lists, Tables and Forms →</a>
+    </section>
+
+    <script>
+      localStorage.setItem('visited_' + location.pathname.split('/html/')[1].replace('.html', '') + '.html', 'true');
+function toggleGenie() {
+        const bubble = document.getElementById('genieBubble');
+        bubble.classList.toggle('visible');
+      }
+
+      function toggleNav() {
+        const dropdown = document.getElementById('navDropdown');
+        dropdown.classList.toggle('open');
+      }
+
+      document.addEventListener('click', function(e) {
+        const nav = document.querySelector('.chapter-nav');
+        if (!nav.contains(e.target)) {
+          document.getElementById('navDropdown').classList.remove('open');
+        }
+      });
+
+      function checkAnswer(element, isCorrect) {
+        const options = element.parentElement.querySelectorAll('li');
+        options.forEach(option => {
+          option.style.pointerEvents = 'none';
+        });
+        if (isCorrect) {
+          element.classList.add('correct');
+        } else {
+          element.classList.add('incorrect');
+        }
+        const resetBtn = element.parentElement.nextElementSibling;
+        if (resetBtn && resetBtn.classList.contains('reset-btn')) {
+          resetBtn.style.display = 'inline-block';
+        }
+      }
+
+      function resetQuestion(button) {
+        const options = button.previousElementSibling.querySelectorAll('li');
+        options.forEach(option => {
+          option.classList.remove('correct', 'incorrect');
+          option.style.pointerEvents = 'auto';
+        });
+        button.style.display = 'none';
+      }
+    </script>
+
+  </body>
+</html>

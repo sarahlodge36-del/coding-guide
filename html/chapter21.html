@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 21: Basic JavaScript Instructions</title>
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+
+    <!-- HEADER -->
+    <header class="chapter-header" style="border-bottom: 2px solid #00ff88;">
+      <a href="../index.html" class="home-btn" style="color: #00ff88;">← Home</a>
+      <div class="chapter-title">
+        <span class="chapter-label" style="color: #00ff88;">Chapter 21</span>
+        <h1 style="color: #00ff88;">Basic JavaScript Instructions</h1>
+      </div>
+      <div class="header-right">
+        <div class="chapter-nav">
+          <button class="nav-toggle" onclick="toggleNav()" style="border-color: #00ff88; color: #00ff88;">Chapters ▼</button>
+          <div class="nav-dropdown" id="navDropdown">
+            <a href="chapter20.html">Chapter 20 — The ABC of Programming</a>
+            <a href="chapter21.html">Chapter 21 — Basic JS Instructions</a>
+            <a href="chapter22.html">Chapter 22 — Functions, Methods and Objects</a>
+            <a href="chapter23.html">Chapter 23 — Decisions and Loops</a>
+            <a href="chapter24.html">Chapter 24 — Document Object Model</a>
+            <a href="chapter25.html">Chapter 25 — Events</a>
+          </div>
+        </div>
+        <div class="genie-container">
+          <img src="../images/xgenfutbot.png" alt="XGENFUTBOT" class="genie-icon" id="genieBtn" onclick="toggleGenie()" />
+          <div class="genie-bubble" id="genieBubble" style="border-color: #00ff88; color: #00ff88;">
+            <p>Variables. This is where JavaScript starts remembering things. Pay attention. 😎</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CHAPTER CONTENT -->
+    <main class="chapter-content">
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Statements</h2>
+        <p>A script is a series of instructions that a computer can follow one by one. Each individual instruction is called a <strong>statement</strong>. Statements should end with a semicolon — this tells the browser that the statement is complete and a new one can start.</p>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>var today = new Date();</code><br>
+          <code>var hourNow = today.getHours();</code><br>
+          <code>var greeting;</code>
+        </div>
+        <p>Each of those lines is a separate statement. The semicolons at the end are like full stops in a sentence — they tell JavaScript where one instruction ends and the next begins.</p>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Comments</h2>
+        <p>Just like HTML and CSS, JavaScript lets you add comments — notes that the browser ignores but that help you and other developers understand what the code does.</p>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>// This is a single line comment</code><br><br>
+          <code>/* This is a multi-line comment</code><br>
+          <code>&nbsp;&nbsp; it can span several lines</code><br>
+          <code>&nbsp;&nbsp; like this */</code>
+        </div>
+        <p>Get into the habit of writing comments as you go. Your future self will thank you when you come back to old code and have no idea what it does.</p>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Variables</h2>
+        <p>A variable is a way of storing information so you can use it later. Think of it like a labelled box — you put something inside it and give the box a name so you can find it again.</p>
+        <p>Before you can use a variable in JavaScript you need to declare it using the <code>var</code> keyword. You can declare a variable and assign a value to it at the same time, or declare it first and assign the value later.</p>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>var playerName = 'Sarah';</code><br>
+          <code>var playerHealth = 3;</code><br>
+          <code>var playerScore = 0;</code>
+        </div>
+        <p>The equals sign here doesn't mean "is equal to" — it means "store this value in this variable." That's called <strong>assignment</strong>.</p>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">var, let and const</h2>
+        <p>You'll see three ways of declaring variables in JavaScript — var, let, and const. Here's the simple version of what each one means:</p>
+        <ul class="content-list">
+          <li><code>var</code> — the original way. Works everywhere. Can be changed and redeclared. Used in older code.</li>
+          <li><code>let</code> — the modern way for variables that will change. Can be changed but not redeclared in the same scope.</li>
+          <li><code>const</code> — for values that will never change. If you try to change a const variable JavaScript will throw an error.</li>
+        </ul>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>let playerName = 'Sarah';  // will change when user types their name</code><br>
+          <code>let playerHealth = 3;      // will change as lives are lost</code><br>
+          <code>const gameName = 'The Code Machine Quest';  // never changes</code>
+        </div>
+        <p>In this guide we'll use <code>var</code> to keep things simple and consistent. Just know that in modern JavaScript you'll see <code>let</code> and <code>const</code> more often.</p>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Data Types</h2>
+        <p>JavaScript variables can hold different types of data. The three most common ones you'll use are:</p>
+        <ul class="content-list">
+          <li><strong>Strings</strong> — text, always wrapped in quotes. Single or double quotes both work.</li>
+          <li><strong>Numbers</strong> — any number, with or without a decimal point. No quotes needed.</li>
+          <li><strong>Booleans</strong> — true or false. Just those two values. No quotes.</li>
+        </ul>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>var playerName = 'Sarah';    // string</code><br>
+          <code>var playerHealth = 3;        // number</code><br>
+          <code>var gameOver = false;        // boolean</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Arrays</h2>
+        <p>An array is a special type of variable that stores a list of values rather than just one. Each item in the array is called an element. Arrays are written using square brackets with each item separated by a comma.</p>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>var inventory = [];                          // empty inventory</code><br>
+          <code>var inventory = ['Structure Crystal'];       // one item</code><br>
+          <code>var inventory = ['Structure Crystal', 'Style Gem'];  // two items</code>
+        </div>
+        <p>Each item in an array has an index number — its position in the list. The first item is always index 0, the second is index 1, and so on. This catches a lot of beginners out — it starts at 0, not 1!</p>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>var inventory = ['Structure Crystal', 'Style Gem', 'Logic Core'];</code><br>
+          <code>inventory[0];  // 'Structure Crystal'</code><br>
+          <code>inventory[1];  // 'Style Gem'</code><br>
+          <code>inventory[2];  // 'Logic Core'</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Expressions and Operators</h2>
+        <p>An expression evaluates into a single value. The simplest expressions just assign a value to a variable. More complex ones use operators to work something out.</p>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>var area = 3 * 2;        // multiplication — result is 6</code><br>
+          <code>var total = 10 + 5;      // addition — result is 15</code><br>
+          <code>var greeting = 'Hello ' + playerName;  // string concatenation</code>
+        </div>
+        <p>That last one — joining strings together using + — is called <strong>concatenation</strong>. You'll use it all the time in JavaScript to build messages and display content.</p>
+      </section>
+
+    </main>
+
+    <!-- NOW LET'S BUILD -->
+    <section class="build-section" style="border-color: #00ff88;">
+      <div class="build-content">
+        <h2 style="color: #00ff88;">🔨 Now Let's Build!</h2>
+        <p>Open your Code Machine Quest CodePen from Chapter 20. We're going to add proper player variables to the game so JavaScript can start keeping track of who the player is and how they're doing.</p>
+        <p>In the <strong>JS panel</strong>, add these variables at the very top — before any other code:</p>
+
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>// Game variables</code><br>
+          <code>var playerName = '';</code><br>
+          <code>var playerHealth = 3;</code><br>
+          <code>var playerScore = 0;</code><br>
+          <code>var inventory = [];</code><br>
+          <code>var currentRealm = 0;</code><br><br>
+          <code>// Game name — this never changes</code><br>
+          <code>var gameName = 'The Code Machine Quest';</code>
+        </div>
+
+        <p>Now update the button click code so it saves the player's name into the variable properly:</p>
+
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>document.getElementById('startBtn').addEventListener('click', function() {</code><br>
+          <code>&nbsp;&nbsp;var nameInput = document.getElementById('nameInput').value;</code><br>
+          <code>&nbsp;&nbsp;if (nameInput === '') {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('message').textContent = 'You need to enter your name, coder!';</code><br>
+          <code>&nbsp;&nbsp;} else {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;playerName = nameInput;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('message').textContent = 'Welcome, ' + playerName + '. Lives: ' + playerHealth + ' | Score: ' + playerScore;</code><br>
+          <code>&nbsp;&nbsp;}</code><br>
+          <code>});</code>
+        </div>
+
+        <p>Type your name and click Begin the Quest. You should now see your name, your starting health of 3, and your starting score of 0 appear below the button.</p>
+        <p>JavaScript is now storing your name in the playerName variable and using it to build the message. The game knows who you are. 🚀</p>
+
+        <!-- BROWSER PREVIEW -->
+        <div class="browser-preview">
+          <div class="browser-bar">
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+            <span class="browser-url">codepen.io — The Code Machine Quest</span>
+          </div>
+          <div class="browser-content" style="background-color: #0a0a0a; display: flex; justify-content: center; padding: 20px;">
+            <div style="max-width: 300px; text-align: center; border: 2px solid #00ff88; border-radius: 10px; padding: 20px; box-shadow: 0 0 20px rgba(0,255,136,0.2);">
+              <h1 style="color: #00ff88; font-family: 'Courier New', monospace; font-size: 1rem; letter-spacing: 2px; text-shadow: 0 0 8px #00ff88;">THE CODE MACHINE QUEST</h1>
+              <p style="color: #f0f0f0; font-family: 'Courier New', monospace; font-size: 0.7rem; margin-bottom: 10px;">What is your name, coder?</p>
+              <input type="text" value="Sarah" style="background-color: #111111; border: 1px solid #00ff88; border-radius: 5px; padding: 5px 8px; color: #ffffff; font-size: 0.7rem; width: 140px; font-family: 'Courier New', monospace;" disabled />
+              <br>
+              <button style="background-color: transparent; border: 1px solid #00ff88; border-radius: 5px; padding: 5px 12px; color: #00ff88; font-family: 'Courier New', monospace; font-size: 0.65rem; margin-top: 8px; letter-spacing: 1px;">BEGIN THE QUEST</button>
+              <p style="color: #00ff88; font-family: 'Courier New', monospace; font-size: 0.7rem; margin-top: 10px;">Welcome, Sarah. Lives: 3 | Score: 0</p>
+            </div>
+          </div>
+        </div>
+        <p class="preview-note">👆 Your game should now show your name, lives, and score after clicking the button!</p>
+
+        <div class="full-code">
+          <h3 style="color: #00ff88;">✅ Your full JS panel should now look like this:</h3>
+          <div class="code-block" style="border-color: #00ff88;">
+            <code>// Game variables</code><br>
+            <code>var playerName = '';</code><br>
+            <code>var playerHealth = 3;</code><br>
+            <code>var playerScore = 0;</code><br>
+            <code>var inventory = [];</code><br>
+            <code>var currentRealm = 0;</code><br><br>
+            <code>// Game name — this never changes</code><br>
+            <code>var gameName = 'The Code Machine Quest';</code><br><br>
+            <code>// Start button</code><br>
+            <code>document.getElementById('startBtn').addEventListener('click', function() {</code><br>
+            <code>&nbsp;&nbsp;var nameInput = document.getElementById('nameInput').value;</code><br>
+            <code>&nbsp;&nbsp;if (nameInput === '') {</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('message').textContent = 'You need to enter your name, coder!';</code><br>
+            <code>&nbsp;&nbsp;} else {</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;playerName = nameInput;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('message').textContent = 'Welcome, ' + playerName + '. Lives: ' + playerHealth + ' | Score: ' + playerScore;</code><br>
+            <code>&nbsp;&nbsp;}</code><br>
+            <code>});</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIZ SECTION -->
+    <section class="quiz-section">
+      <h2 style="color: #00ff88;">Chapter 21 Quiz</h2>
+      <p class="quiz-intro">Only move on when you can answer all of these confidently without looking!</p>
+
+      <div class="quiz-question">
+        <p class="question">1. What is a variable?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) A type of HTML element</li>
+          <li onclick="checkAnswer(this, false)">b) A CSS property</li>
+          <li onclick="checkAnswer(this, true)">c) A way of storing information so you can use it later</li>
+          <li onclick="checkAnswer(this, false)">d) A JavaScript error</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">2. What is the difference between a string, a number, and a boolean?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) There is no difference — they are all the same</li>
+          <li onclick="checkAnswer(this, true)">b) A string is text in quotes; a number is a numeric value; a boolean is true or false</li>
+          <li onclick="checkAnswer(this, false)">c) A boolean is text; a string is true or false; a number is a decimal</li>
+          <li onclick="checkAnswer(this, false)">d) Numbers and booleans need quotes; strings don't</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">3. What index number is the first item in an array?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) 1</li>
+          <li onclick="checkAnswer(this, true)">b) 0</li>
+          <li onclick="checkAnswer(this, false)">c) It depends on the array</li>
+          <li onclick="checkAnswer(this, false)">d) There is no index number</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">4. What does concatenation mean in JavaScript?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Subtracting one number from another</li>
+          <li onclick="checkAnswer(this, false)">b) Declaring a variable</li>
+          <li onclick="checkAnswer(this, true)">c) Joining strings together using the + operator</li>
+          <li onclick="checkAnswer(this, false)">d) Storing a value in a const variable</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">5. What is the difference between var, let, and const?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) They are all identical — it doesn't matter which one you use</li>
+          <li onclick="checkAnswer(this, true)">b) var is the original way; let is modern and can be changed; const is for values that never change</li>
+          <li onclick="checkAnswer(this, false)">c) const can be changed; let cannot</li>
+          <li onclick="checkAnswer(this, false)">d) var is for strings only; let is for numbers; const is for booleans</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">6. In the game we just built, what does the inventory variable store?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) The player's name</li>
+          <li onclick="checkAnswer(this, false)">b) The player's health</li>
+          <li onclick="checkAnswer(this, true)">c) A list of items the player has collected — starting as an empty array</li>
+          <li onclick="checkAnswer(this, false)">d) The current realm number</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+    </section>
+
+    <!-- NEXT CHAPTER -->
+    <section class="next-chapter" style="border-top: 2px solid #00ff88;">
+      <div class="coming-up">
+        <h3 style="color: #00ff88;">Coming Up Next — Chapter 22: Functions, Methods and Objects</h3>
+        <p>In the next chapter we look at functions — reusable blocks of code that do a specific job. We'll use them to build the realm navigation system for the game.</p>
+      </div>
+      <a href="chapter22.html" class="next-btn" style="border-color: #00ff88; color: #00ff88;">Next Up: Functions, Methods and Objects →</a>
+    </section>
+
+    <script>
+      localStorage.setItem('visited_' + location.pathname.split('/html/')[1].replace('.html', '') + '.html', 'true');
+function toggleGenie() {
+        const bubble = document.getElementById('genieBubble');
+        bubble.classList.toggle('visible');
+      }
+
+      function toggleNav() {
+        const dropdown = document.getElementById('navDropdown');
+        dropdown.classList.toggle('open');
+      }
+
+      document.addEventListener('click', function(e) {
+        const nav = document.querySelector('.chapter-nav');
+        if (nav && !nav.contains(e.target)) {
+          document.getElementById('navDropdown').classList.remove('open');
+        }
+      });
+
+      function checkAnswer(element, isCorrect) {
+        const options = element.parentElement.querySelectorAll('li');
+        options.forEach(option => {
+          option.style.pointerEvents = 'none';
+        });
+        if (isCorrect) {
+          element.classList.add('correct');
+        } else {
+          element.classList.add('incorrect');
+        }
+        const resetBtn = element.parentElement.nextElementSibling;
+        if (resetBtn && resetBtn.classList.contains('reset-btn')) {
+          resetBtn.style.display = 'inline-block';
+        }
+      }
+
+      function resetQuestion(button) {
+        const options = button.previousElementSibling.querySelectorAll('li');
+        options.forEach(option => {
+          option.classList.remove('correct', 'incorrect');
+          option.style.pointerEvents = 'auto';
+        });
+        button.style.display = 'none';
+      }
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced HTML</title>
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+
+    <!-- HEADER -->
+    <header class="chapter-header">
+      <a href="../index.html" class="home-btn">← Home</a>
+      <div class="chapter-title">
+        <span class="chapter-label">HTML</span>
+        <h1>Beyond the Basics</h1>
+      </div>
+      <div class="genie-container">
+        <img src="../images/xgenfutbot.png" alt="XGENFUTBOT" class="genie-icon" id="genieBtn" onclick="toggleGenie()" />
+        <div class="genie-bubble" id="genieBubble">
+          <p>You know the basics. Now let's show you how deep the rabbit hole goes. 😎</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- CONTENT -->
+    <main class="chapter-content">
+
+      <section class="content-section">
+        <h2>You Know More Than You Think</h2>
+        <p>The HTML you've learned in Chapters 1 to 9 covers everything you need to build real, working webpages. But HTML goes further than the basics — and knowing what exists beyond them makes you a better developer even before you learn it in depth.</p>
+        <p>This page is an overview of the intermediate and advanced HTML concepts you'll encounter as you progress. Some of these are covered in the paid section of this guide. Others you may pick up through practice and reading. Either way — this is what's out there.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Semantic HTML — Going Deeper</h2>
+        <p>You've already met the main semantic elements — header, nav, main, section, article, aside, footer. But there are more, and using them properly makes a real difference to accessibility and SEO.</p>
+        <ul class="content-list">
+          <li><code>&lt;main&gt;</code> — there should only ever be one main element per page. It contains the primary content of the page.</li>
+          <li><code>&lt;time datetime="2024-01-15"&gt;</code> — marks up dates and times in a machine-readable way</li>
+          <li><code>&lt;mark&gt;</code> — highlights text as if with a highlighter pen</li>
+          <li><code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> — creates a collapsible section without any JavaScript</li>
+          <li><code>&lt;dialog&gt;</code> — a built-in modal dialog element</li>
+          <li><code>&lt;progress&gt;</code> — a built-in progress bar</li>
+          <li><code>&lt;meter&gt;</code> — represents a scalar measurement within a known range</li>
+        </ul>
+        <div class="code-block">
+          <code>&lt;details&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;summary&gt;Click to expand&lt;/summary&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;p&gt;Hidden content that appears on click — no JavaScript needed!&lt;/p&gt;</code><br>
+          <code>&lt;/details&gt;</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>ARIA and Accessibility</h2>
+        <p>ARIA stands for Accessible Rich Internet Applications. It's a set of attributes you can add to HTML elements to make them more accessible to screen readers and assistive technologies — especially for interactive content that HTML alone can't fully describe.</p>
+        <ul class="content-list">
+          <li><code>role="button"</code> — tells screen readers an element behaves like a button</li>
+          <li><code>aria-label="Close menu"</code> — provides a text label for elements with no visible text</li>
+          <li><code>aria-hidden="true"</code> — hides decorative elements from screen readers</li>
+          <li><code>aria-expanded="false"</code> — tells screen readers whether a collapsible section is open or closed</li>
+          <li><code>aria-live="polite"</code> — tells screen readers to announce dynamic content changes</li>
+        </ul>
+        <div class="code-block">
+          <code>&lt;button aria-label="Close navigation menu" aria-expanded="false"&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;span aria-hidden="true"&gt;✕&lt;/span&gt;</code><br>
+          <code>&lt;/button&gt;</code>
+        </div>
+        <p>The first rule of ARIA is: don't use ARIA if you can use native HTML instead. A real button element is always better than a div with role="button". Use ARIA to fill the gaps, not to replace good HTML.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Meta Tags — Beyond the Basics</h2>
+        <p>You've already used the description meta tag. There are several more worth knowing about.</p>
+        <ul class="content-list">
+          <li><code>&lt;meta name="robots" content="index, follow"&gt;</code> — tells search engines whether to index the page</li>
+          <li><code>&lt;meta name="author" content="Sarah"&gt;</code> — names the page author</li>
+          <li><code>&lt;meta name="theme-color" content="#0a0a0a"&gt;</code> — sets the browser chrome colour on mobile</li>
+          <li><code>&lt;link rel="canonical" href="https://yoursite.com/page"&gt;</code> — tells search engines which is the definitive version of a page</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Open Graph Tags</h2>
+        <p>Open Graph tags control how your page appears when shared on social media — the image, title, and description that appear in a Twitter or Facebook preview card.</p>
+        <div class="code-block">
+          <code>&lt;meta property="og:title" content="My Coding Guide" /&gt;</code><br>
+          <code>&lt;meta property="og:description" content="Learn HTML, CSS and JavaScript from scratch." /&gt;</code><br>
+          <code>&lt;meta property="og:image" content="https://yoursite.com/preview.jpg" /&gt;</code><br>
+          <code>&lt;meta property="og:url" content="https://yoursite.com" /&gt;</code>
+        </div>
+        <p>These are worth adding to any page you want to share. The difference between a page with and without Open Graph tags when shared on social media is significant.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Advanced Form Attributes</h2>
+        <p>Form inputs have a lot more attributes than the basics covered in Chapter 7.</p>
+        <ul class="content-list">
+          <li><code>required</code> — prevents the form from submitting if the field is empty</li>
+          <li><code>placeholder="Enter your email"</code> — shows hint text inside the input</li>
+          <li><code>autocomplete="email"</code> — hints to the browser what kind of data to autofill</li>
+          <li><code>pattern="[0-9]{5}"</code> — validates input against a regular expression</li>
+          <li><code>min="0" max="100"</code> — sets minimum and maximum values on number inputs</li>
+          <li><code>type="email"</code> — validates email format automatically on mobile</li>
+          <li><code>type="tel"</code> — shows a numeric keyboard on mobile</li>
+          <li><code>type="date"</code> — shows a date picker</li>
+          <li><code>type="range"</code> — shows a slider</li>
+          <li><code>type="color"</code> — shows a colour picker</li>
+        </ul>
+        <div class="code-block">
+          <code>&lt;input</code><br>
+          <code>&nbsp;&nbsp;type="email"</code><br>
+          <code>&nbsp;&nbsp;placeholder="your@email.com"</code><br>
+          <code>&nbsp;&nbsp;required</code><br>
+          <code>&nbsp;&nbsp;autocomplete="email"</code><br>
+          <code>/&gt;</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Data Attributes</h2>
+        <p>Data attributes let you store custom data on HTML elements — information that isn't visible on the page but that JavaScript can read. You've already used these in the adventure game!</p>
+        <div class="code-block">
+          <code>&lt;button data-index="0" data-mode="question"&gt;Answer A&lt;/button&gt;</code>
+        </div>
+        <p>Any attribute starting with data- is a valid data attribute. You can name them anything you like after the hyphen. JavaScript reads them using getAttribute('data-index') or the dataset property.</p>
+        <div class="code-block">
+          <code>var btn = document.querySelector('button');</code><br>
+          <code>btn.dataset.index;  // '0'</code><br>
+          <code>btn.dataset.mode;   // 'question'</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Responsive Images — picture and srcset</h2>
+        <p>Rather than serving the same large image to every device, you can provide different image sizes for different screen sizes using srcset or the picture element.</p>
+        <div class="code-block">
+          <code>&lt;img</code><br>
+          <code>&nbsp;&nbsp;src="photo-800.jpg"</code><br>
+          <code>&nbsp;&nbsp;srcset="photo-400.jpg 400w, photo-800.jpg 800w, photo-1200.jpg 1200w"</code><br>
+          <code>&nbsp;&nbsp;sizes="(max-width: 600px) 400px, 800px"</code><br>
+          <code>&nbsp;&nbsp;alt="A photo"</code><br>
+          <code>/&gt;</code>
+        </div>
+        <p>The browser picks the most appropriate image based on the screen width. This saves bandwidth on mobile and improves page load speed significantly.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>iframes</h2>
+        <p>An iframe embeds another webpage inside your page. You've likely already used one without realising — YouTube embed codes use iframes.</p>
+        <div class="code-block">
+          <code>&lt;iframe</code><br>
+          <code>&nbsp;&nbsp;src="https://www.youtube.com/embed/VIDEO_ID"</code><br>
+          <code>&nbsp;&nbsp;width="560"</code><br>
+          <code>&nbsp;&nbsp;height="315"</code><br>
+          <code>&nbsp;&nbsp;allowfullscreen</code><br>
+          <code>&gt;&lt;/iframe&gt;</code>
+        </div>
+        <p>Be careful embedding third-party content — it can affect page performance and introduces security considerations.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>HTML Entities — Going Further</h2>
+        <p>You already know &amp;copy; and &amp;nbsp;. Here are some others worth having to hand.</p>
+        <ul class="content-list">
+          <li><code>&amp;mdash;</code> — em dash —</li>
+          <li><code>&amp;ndash;</code> — en dash –</li>
+          <li><code>&amp;laquo;</code> — left double angle quotation mark «</li>
+          <li><code>&amp;raquo;</code> — right double angle quotation mark »</li>
+          <li><code>&amp;trade;</code> — trademark symbol ™</li>
+          <li><code>&amp;reg;</code> — registered trademark ®</li>
+          <li><code>&amp;euro;</code> — euro sign €</li>
+          <li><code>&amp;pound;</code> — pound sign £</li>
+          <li><code>&amp;hearts;</code> — heart ♥</li>
+        </ul>
+      </section>
+
+      <div class="tip-box">
+        <h3>⚡ What's in the Paid Section?</h3>
+        <p>The paid section of this guide goes much deeper into advanced HTML — including a full module on accessibility best practices, SEO optimisation techniques, HTML email structure, and how HTML works alongside back-end templating languages like PHP. You'll also get the advanced HTML cheat sheet below as a free resource to take with you.</p>
+      </div>
+
+    </main>
+
+    <!-- NEXT STEPS -->
+    <section class="next-chapter">
+      <div class="coming-up">
+        <h3>Take the Reference Sheet With You</h3>
+        <p>Download the advanced HTML cheat sheet — a comprehensive reference covering everything on this page and more.</p>
+      </div>
+      <a href="cheatsheet-advanced-html.html" class="next-btn">Advanced HTML Cheat Sheet →</a>
+      <a href="css-advanced.html" class="next-btn" style="margin-left: 20px; border-color: #00d4ff; color: #00d4ff;">Advanced CSS →</a>
+    </section>
+
+    <script>
+      localStorage.setItem('visited_' + location.pathname.split('/html/')[1].replace('.html', '') + '.html', 'true');
+function toggleGenie() {
+        const bubble = document.getElementById('genieBubble');
+        bubble.classList.toggle('visible');
+      }
+    </script>
+
+  </body>
+</html>

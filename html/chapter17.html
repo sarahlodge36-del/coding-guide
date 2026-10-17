@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 17: HTML5 Layout</title>
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+
+    <!-- HEADER -->
+    <header class="chapter-header">
+      <a href="../index.html" class="home-btn">← Home</a>
+      <div class="chapter-title">
+        <span class="chapter-label">Chapter 17</span>
+        <h1>HTML5 Layout</h1>
+      </div>
+      <div class="header-right">
+        <div class="chapter-nav">
+          <button class="nav-toggle" onclick="toggleNav()">Chapters ▼</button>
+          <div class="nav-dropdown" id="navDropdown">
+            <a href="chapter10.html">Chapter 10 — Introducing CSS</a>
+            <a href="chapter11.html">Chapter 11 — Colour</a>
+            <a href="chapter12.html">Chapter 12 — Text</a>
+            <a href="chapter13.html">Chapter 13 — Boxes</a>
+            <a href="chapter14.html">Chapter 14 — Lists, Tables and Forms</a>
+            <a href="chapter15.html">Chapter 15 — Layout</a>
+            <a href="chapter16.html">Chapter 16 — Images</a>
+            <a href="chapter17.html">Chapter 17 — HTML5 Layout</a>
+            <a href="chapter18.html">Chapter 18 — Process and Design</a>
+            <a href="chapter19.html">Chapter 19 — Practical Information</a>
+            <hr style="border-color: #333333;">
+            <a href="css-cheatsheet.html">CSS Cheat Sheet</a>
+            <a href="css-final-quiz.html">CSS Final Quiz</a>
+          </div>
+        </div>
+        <div class="genie-container">
+          <img src="../images/xgenfutbot.png" alt="XGENFUTBOT" class="genie-icon" id="genieBtn" onclick="toggleGenie()" />
+          <div class="genie-bubble" id="genieBubble">
+            <p>Remember semantic elements from Chapter 8? Let's actually use them properly now. 😎</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CHAPTER CONTENT -->
+    <main class="chapter-content">
+
+      <section class="content-section">
+        <h2>Why We're Coming Back to This</h2>
+        <p>Back in Chapter 8 you met semantic HTML5 elements — header, nav, main, section, article, and footer. They're covered properly here because now that you've seen how CSS controls layout, it's much easier to understand how these elements fit into a real page structure.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Traditional vs Semantic Structure</h2>
+        <p>Before HTML5, developers used div elements with id and class names to indicate the role of each section — div id="header", div id="nav", and so on. This worked, but it gave no real indication of what each section actually was just from looking at the tag itself.</p>
+        <p>The new HTML5 elements describe the kind of content they contain. They behave like divs by default — they don't do anything magical on their own — but they give your markup a clear, logical structure that's more meaningful to other developers, browsers, and screen readers.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Headers and Footers — header, footer</h2>
+        <p>header and footer can be used for the main header and footer of the page, but they can also be used inside individual article or section elements to give each one its own header or footer.</p>
+        <div class="code-block">
+          <code>&lt;header&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;h1&gt;Sarah's Coding Guide&lt;/h1&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;nav&gt;...&lt;/nav&gt;</code><br>
+          <code>&lt;/header&gt;</code><br><br>
+          <code>&lt;footer&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;p&gt;&amp;copy; My Site 2024&lt;/p&gt;</code><br>
+          <code>&lt;/footer&gt;</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Navigation — nav</h2>
+        <p>The nav element is used for the main blocks of navigation links on a page — things like the primary site menu. Not every group of links needs to be in a nav, just the major navigation blocks.</p>
+        <div class="code-block">
+          <code>&lt;nav&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;ul&gt;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;/ul&gt;</code><br>
+          <code>&lt;/nav&gt;</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Sections — section</h2>
+        <p>The section element groups related content together. Typically each section would have its own heading. It's not a generic wrapper like div — it's meant for thematically related groups of content.</p>
+        <div class="code-block">
+          <code>&lt;section&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;h2&gt;Most Popular&lt;/h2&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;p&gt;...&lt;/p&gt;</code><br>
+          <code>&lt;/section&gt;</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Articles — article</h2>
+        <p>The article element acts as a container for any section of a page that could stand alone — a blog post, a news story, a comment, a forum post. If you could imagine the content being republished independently, it belongs in an article.</p>
+        <div class="code-block">
+          <code>&lt;article&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;h2&gt;My First Blog Post&lt;/h2&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;p&gt;Today I learnt about HTML5...&lt;/p&gt;</code><br>
+          <code>&lt;/article&gt;</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Aside — aside</h2>
+        <p>The aside element has two uses. Inside an article it contains information related to that article but not essential to it — like a pull quote. Outside an article it acts as a container for content related to the whole page — like a sidebar of related links.</p>
+        <div class="code-block">
+          <code>&lt;aside&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;h2&gt;Related Topics&lt;/h2&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;ul&gt;...&lt;/ul&gt;</code><br>
+          <code>&lt;/aside&gt;</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Figures and Captions — figure, figcaption</h2>
+        <p>The figure element is used to contain any content that is referenced from the main flow of text — most commonly images, but also diagrams, code examples, or charts. The figcaption element sits inside figure and provides a caption for it.</p>
+        <div class="code-block">
+          <code>&lt;figure&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;img src="images/cat.jpg" alt="A ginger cat" /&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;figcaption&gt;Our cat Marmalade, age 3.&lt;/figcaption&gt;</code><br>
+          <code>&lt;/figure&gt;</code>
+        </div>
+        <p>You can include more than one image inside a single figure element as long as they all share the same caption. Using figure and figcaption together is better for accessibility than a plain img tag followed by a paragraph — screen readers understand the relationship between the two.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>div Isn't Going Anywhere</h2>
+        <p>The div element is still the right choice when you need a container purely for styling purposes and none of the semantic elements fit. Think of the new HTML5 elements as meaningful alternatives to div — use them when the content fits, use div when it doesn't.</p>
+      </section>
+
+    </main>
+
+    <!-- NOW LET'S BUILD -->
+    <section class="build-section">
+      <div class="build-content">
+        <h2>🔨 Now Let's Build!</h2>
+        <p>Open your <strong>index.html</strong> file in Notepad. We're going to upgrade those plain div elements from Chapter 8 into proper semantic HTML5 elements. Find your existing structure and update it:</p>
+        <div class="code-block">
+          <code>&lt;!-- change this --&gt;</code><br>
+          <code>&lt;div id="header"&gt;...&lt;/div&gt;</code><br><br>
+          <code>&lt;!-- to this --&gt;</code><br>
+          <code>&lt;header&gt;...&lt;/header&gt;</code><br><br>
+          <code>&lt;!-- and change this --&gt;</code><br>
+          <code>&lt;div id="content"&gt;...&lt;/div&gt;</code><br><br>
+          <code>&lt;!-- to this --&gt;</code><br>
+          <code>&lt;main&gt;...&lt;/main&gt;</code><br><br>
+          <code>&lt;!-- and finally this --&gt;</code><br>
+          <code>&lt;div id="footer"&gt;...&lt;/div&gt;</code><br><br>
+          <code>&lt;!-- to this --&gt;</code><br>
+          <code>&lt;footer&gt;...&lt;/footer&gt;</code>
+        </div>
+        <p>Also wrap your photo from Chapter 5 in a figure element and add a figcaption underneath it:</p>
+        <div class="code-block">
+          <code>&lt;figure&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;img src="images/myphoto.jpg" alt="A photo I chose" width="400" height="300" /&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;figcaption&gt;A photo I like.&lt;/figcaption&gt;</code><br>
+          <code>&lt;/figure&gt;</code>
+        </div>
+        <p>Now update your <strong>styles.css</strong> file — change #header to header, #content to main, and #footer to footer. Also add a style for figcaption:</p>
+        <div class="code-block">
+          <code>figcaption {</code><br>
+          <code>&nbsp;&nbsp;text-align: center;</code><br>
+          <code>&nbsp;&nbsp;font-size: 0.85em;</code><br>
+          <code>&nbsp;&nbsp;color: #888888;</code><br>
+          <code>&nbsp;&nbsp;margin-top: 5px;</code><br>
+          <code>}</code>
+        </div>
+        <p>Save both files and refresh. Your photo now has a proper caption underneath it, and your page structure is fully semantic from top to bottom!</p>
+
+        <!-- BROWSER PREVIEW -->
+        <div class="browser-preview">
+          <div class="browser-bar">
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+            <span class="browser-url">file:///C:/Users/Home/index.html</span>
+          </div>
+          <div class="browser-content" style="background-color: #1a1a1a;">
+            <div style="width: 180px; height: 130px; background-color: #dddddd; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin: 15px auto; box-shadow: 0px 0px 15px rgba(0,212,255,0.3);">
+              <p style="color: #666666; font-family: Arial, sans-serif; font-size: 0.75rem; text-align: center;">Your photo</p>
+            </div>
+            <p style="text-align: center; font-size: 0.85em; color: #888888; font-family: Arial, sans-serif; margin-top: 5px;">A photo I like.</p>
+          </div>
+        </div>
+        <p class="preview-note">👆 Your image now has a proper caption — semantic and styled!</p>
+
+        <div class="full-code">
+          <h3>✅ Your index.html structure should now look like this at the top level:</h3>
+          <div class="code-block">
+            <code>&lt;body&gt;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;&lt;header&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;...your header content...</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;&lt;/header&gt;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;&lt;main&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;...all your main content...</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;&lt;/main&gt;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;&lt;footer&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;&amp;copy; My First Webpage 2024&lt;/p&gt;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;&lt;/footer&gt;</code><br>
+            <code>&lt;/body&gt;</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIZ SECTION -->
+    <section class="quiz-section">
+      <h2>Chapter 17 Quiz</h2>
+      <p class="quiz-intro">Only move on when you can answer all of these confidently without looking!</p>
+
+      <div class="quiz-question">
+        <p class="question">1. What is the main difference between using a div and using HTML5 layout elements like header and section?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) HTML5 elements load faster than divs</li>
+          <li onclick="checkAnswer(this, true)">b) HTML5 elements describe the kind of content they contain, making the markup more meaningful</li>
+          <li onclick="checkAnswer(this, false)">c) Divs can't be styled with CSS but HTML5 elements can</li>
+          <li onclick="checkAnswer(this, false)">d) There is no difference</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">2. Which HTML5 element would you use for the main site navigation?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) menu</li>
+          <li onclick="checkAnswer(this, false)">b) links</li>
+          <li onclick="checkAnswer(this, true)">c) nav</li>
+          <li onclick="checkAnswer(this, false)">d) section</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">3. What makes content suitable for an article element?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) It contains images</li>
+          <li onclick="checkAnswer(this, false)">b) It is longer than a paragraph</li>
+          <li onclick="checkAnswer(this, true)">c) It could stand alone and be republished independently</li>
+          <li onclick="checkAnswer(this, false)">d) It sits in the sidebar</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">4. What are the two uses of the aside element?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) For images and captions</li>
+          <li onclick="checkAnswer(this, true)">b) Inside an article for related but non-essential content; outside an article for page-wide sidebar content</li>
+          <li onclick="checkAnswer(this, false)">c) For navigation and footers</li>
+          <li onclick="checkAnswer(this, false)">d) For headings and subheadings</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">5. What is the purpose of the figcaption element?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) It replaces the alt attribute on images</li>
+          <li onclick="checkAnswer(this, true)">b) It provides a visible caption for the content inside a figure element</li>
+          <li onclick="checkAnswer(this, false)">c) It adds a border around an image</li>
+          <li onclick="checkAnswer(this, false)">d) It links an image to another page</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">6. Is div still useful in HTML5, or should it be avoided entirely?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) It should be avoided entirely now</li>
+          <li onclick="checkAnswer(this, true)">b) It's still useful as a generic styling container when no semantic element fits</li>
+          <li onclick="checkAnswer(this, false)">c) It only works in older browsers</li>
+          <li onclick="checkAnswer(this, false)">d) It has been replaced entirely by section</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+    </section>
+
+    <!-- NEXT CHAPTER -->
+    <section class="next-chapter">
+      <div class="coming-up">
+        <h3>Coming Up Next — Chapter 18: Process and Design</h3>
+        <p>In the next chapter we step back from code for a moment and look at how to plan a website properly — understanding your audience, organising information, and design theory.</p>
+      </div>
+      <a href="chapter18.html" class="next-btn" style="border-color: #00d4ff; color: #00d4ff;">Next Up: Process and Design →</a>
+    </section>
+
+    <script>
+      localStorage.setItem('visited_' + location.pathname.split('/html/')[1].replace('.html', '') + '.html', 'true');
+function toggleGenie() {
+        const bubble = document.getElementById('genieBubble');
+        bubble.classList.toggle('visible');
+      }
+
+      function toggleNav() {
+        const dropdown = document.getElementById('navDropdown');
+        dropdown.classList.toggle('open');
+      }
+
+      document.addEventListener('click', function(e) {
+        const nav = document.querySelector('.chapter-nav');
+        if (!nav.contains(e.target)) {
+          document.getElementById('navDropdown').classList.remove('open');
+        }
+      });
+
+      function checkAnswer(element, isCorrect) {
+        const options = element.parentElement.querySelectorAll('li');
+        options.forEach(option => {
+          option.style.pointerEvents = 'none';
+        });
+        if (isCorrect) {
+          element.classList.add('correct');
+        } else {
+          element.classList.add('incorrect');
+        }
+        const resetBtn = element.parentElement.nextElementSibling;
+        if (resetBtn && resetBtn.classList.contains('reset-btn')) {
+          resetBtn.style.display = 'inline-block';
+        }
+      }
+
+      function resetQuestion(button) {
+        const options = button.previousElementSibling.querySelectorAll('li');
+        options.forEach(option => {
+          option.classList.remove('correct', 'incorrect');
+          option.style.pointerEvents = 'auto';
+        });
+        button.style.display = 'none';
+      }
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 7: Forms</title>
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+
+    <!-- HEADER -->
+    <header class="chapter-header">
+      <a href="../index.html" class="home-btn">← Home</a>
+      <div class="chapter-title">
+        <span class="chapter-label">Chapter 7</span>
+        <h1>Forms</h1>
+      </div>
+      <div class="header-right">
+        <div class="chapter-nav">
+          <button class="nav-toggle" onclick="toggleNav()">Chapters ▼</button>
+          <div class="nav-dropdown" id="navDropdown">
+            <a href="chapter1.html">Chapter 1 — HTML</a>
+            <a href="chapter2.html">Chapter 2 — Text</a>
+            <a href="chapter3.html">Chapter 3 — Lists</a>
+            <a href="chapter4.html">Chapter 4 — Links</a>
+            <a href="chapter5.html">Chapter 5 — Images</a>
+            <a href="chapter6.html">Chapter 6 — Tables</a>
+            <a href="chapter7.html">Chapter 7 — Forms</a>
+            <a href="chapter8.html">Chapter 8 — Extra Markup</a>
+            <a href="chapter9.html">Chapter 9 — Video and Audio</a>
+            <hr style="border-color: #333333;">
+            <a href="cheatsheet-basic.html">HTML Cheat Sheet</a>
+          </div>
+        </div>
+        <div class="genie-container">
+          <img src="../images/xgenfutbot.png" alt="XGENFUTBOT" class="genie-icon" id="genieBtn" onclick="toggleGenie()" />
+          <div class="genie-bubble" id="genieBubble">
+            <p>Seven chapters in. Quiz before you move on though — you know the rules. 👀</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CHAPTER CONTENT -->
+    <main class="chapter-content">
+
+      <section class="content-section">
+        <h2>What is a Form?</h2>
+        <p>Traditionally the word form referred to a printed document with spaces for you to fill in. HTML borrows this idea — a form on a webpage is a way of collecting information from your visitors. Whether it's a simple search box or a full sign-up page, forms give you the tools to gather data from your users.</p>
+        <p>The best known form on the web is probably the search box sitting right in the middle of Google's homepage.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>How Forms Work</h2>
+        <p>A user fills in a form and clicks a button to submit the information to the server. Here's what happens step by step:</p>
+        <ul class="content-list">
+          <li>The user fills in the form and hits submit</li>
+          <li>The name of each form control is sent to the server along with the value the user entered</li>
+          <li>The server processes the information</li>
+          <li>The server creates a new page to send back based on the information received</li>
+        </ul>
+        <p>Each form control is given a name, and the data is sent in name/value pairs — for example username=Sarah or vote=yes.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Form Structure</h2>
+        <p>All form controls live inside a form element. It should always carry an action attribute and will usually have a method attribute too.</p>
+        <ul class="content-list">
+          <li><code>action</code> — the URL of the page on the server that will receive the information</li>
+          <li><code>method</code> — get or post. Use get for short forms and simple data retrieval. Use post for sensitive data, file uploads, or long forms</li>
+        </ul>
+        <div class="code-block">
+          <code>&lt;form action="http://www.example.com/subscribe.php" method="get"&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;p&gt;This is where the form controls will appear.&lt;/p&gt;</code><br>
+          <code>&lt;/form&gt;</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Text Input</h2>
+        <p>The input element is used to create several different form controls. The type attribute determines what kind of input it creates. type="text" creates a single-line text input.</p>
+        <div class="code-block">
+          <code>&lt;form action="http://www.example.com/login.php"&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;p&gt;Username:</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" name="username" maxlength="30" /&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;/p&gt;</code><br>
+          <code>&lt;/form&gt;</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Password Input</h2>
+        <p>type="password" works just like a text input except the characters are hidden as you type. Remember though — this doesn't mean the data is sent securely. For real security the server needs to use SSL.</p>
+        <div class="code-block">
+          <code>&lt;input type="password" name="password" maxlength="30" /&gt;</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Text Area</h2>
+        <p>textarea is used for multi-line text input — things like comments or messages. Unlike input it is not an empty element, so it needs both an opening and a closing tag.</p>
+        <div class="code-block">
+          <code>&lt;textarea name="comments"&gt;Enter your comments...&lt;/textarea&gt;</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Radio Buttons</h2>
+        <p>Radio buttons let the user pick just one option from a group. All radio buttons in the same group must share the same name attribute. Each one needs a different value so the server knows which option was chosen.</p>
+        <div class="code-block">
+          <code>&lt;input type="radio" name="genre" value="rock" checked="checked" /&gt; Rock</code><br>
+          <code>&lt;input type="radio" name="genre" value="pop" /&gt; Pop</code><br>
+          <code>&lt;input type="radio" name="genre" value="jazz" /&gt; Jazz</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Checkboxes</h2>
+        <p>Checkboxes let users select and deselect one or more options. Like radio buttons, all checkboxes answering the same question share the same name.</p>
+        <div class="code-block">
+          <code>&lt;input type="checkbox" name="service" value="itunes" checked="checked" /&gt; iTunes</code><br>
+          <code>&lt;input type="checkbox" name="service" value="spotify" /&gt; Spotify</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Drop-Down List</h2>
+        <p>A drop-down list lets users pick one option from a list. Use radio buttons when you want users to see all options at once. Use a drop-down when the list is long.</p>
+        <div class="code-block">
+          <code>&lt;select name="devices"&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;option value="ipod"&gt;iPod&lt;/option&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;option value="radio"&gt;Radio&lt;/option&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;option value="computer"&gt;Computer&lt;/option&gt;</code><br>
+          <code>&lt;/select&gt;</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Submit Button</h2>
+        <p>The submit button sends the form data to the server. Use the value attribute to control the text that appears on the button.</p>
+        <div class="code-block">
+          <code>&lt;input type="submit" name="subscribe" value="Subscribe" /&gt;</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Labelling Form Controls</h2>
+        <p>Each form control should have a label element to tell users what information to enter. This also makes forms accessible to screen readers. A label can wrap around the form control, or be linked using the for attribute — its value should match the id of the form control.</p>
+        <div class="code-block">
+          <code>&lt;label&gt;Age: &lt;input type="text" name="age" /&gt;&lt;/label&gt;</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Grouping Form Elements</h2>
+        <p>You can group related form controls together using fieldset. Most browsers draw a line around the group. The legend element sits directly after the opening fieldset tag and gives the group a caption.</p>
+        <div class="code-block">
+          <code>&lt;fieldset&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;legend&gt;Contact details&lt;/legend&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;label&gt;Email:&lt;br /&gt;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" name="email" /&gt;&lt;/label&gt;</code><br>
+          <code>&lt;/fieldset&gt;</code>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- NOW LET'S BUILD -->
+    <section class="build-section">
+      <div class="build-content">
+        <h2>🔨 Now Let's Build!</h2>
+        <p>Open your <strong>index.html</strong> file in Notepad. We're going to add a simple contact form. Add the following code after your existing content inside the body tags:</p>
+        <div class="code-block">
+          <code>&lt;h2&gt;Contact Me&lt;/h2&gt;</code><br>
+          <code>&lt;form action="mailto:your@email.com" method="get"&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;fieldset&gt;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;legend&gt;Your Details&lt;/legend&gt;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&gt;Name:&lt;br /&gt;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" name="name" maxlength="100" /&gt;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/label&gt;&lt;br /&gt;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&gt;Email:&lt;br /&gt;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" name="email" maxlength="100" /&gt;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/label&gt;&lt;br /&gt;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&gt;Message:&lt;br /&gt;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;textarea name="message"&gt;&lt;/textarea&gt;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/label&gt;&lt;br /&gt;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="submit" value="Send Message" /&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;/fieldset&gt;</code><br>
+          <code>&lt;/form&gt;</code>
+        </div>
+        <p>Save and refresh your browser. You should see a simple contact form on your page! 🚀</p>
+
+        <!-- BROWSER PREVIEW -->
+        <div class="browser-preview">
+          <div class="browser-bar">
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+            <span class="browser-url">file:///C:/Users/Home/index.html</span>
+          </div>
+          <div class="browser-content">
+            <h2 style="font-size: 1.2rem; color: #000000; font-family: serif; margin-bottom: 5px;">Contact Me</h2>
+            <fieldset style="border: 1px solid #000000; padding: 10px; font-family: serif; color: #000000;">
+              <legend>Your Details</legend>
+              <label>Name:<br><input type="text" style="border: 1px solid #999999; padding: 3px;" disabled /></label><br><br>
+              <label>Email:<br><input type="text" style="border: 1px solid #999999; padding: 3px;" disabled /></label><br><br>
+              <label>Message:<br><textarea style="border: 1px solid #999999; padding: 3px;" disabled></textarea></label><br><br>
+              <input type="submit" value="Send Message" style="padding: 5px 10px;" disabled />
+            </fieldset>
+          </div>
+        </div>
+        <p class="preview-note">👆 This is roughly what your form should look like!</p>
+
+        <div class="full-code">
+          <h3>✅ Your full file should now look like this:</h3>
+          <div class="code-block">
+            <code>&lt;!DOCTYPE html&gt;</code><br>
+            <code>&lt;html&gt;</code><br>
+            <code>&nbsp;&nbsp;&lt;head&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;My First Webpage&lt;/title&gt;</code><br>
+            <code>&nbsp;&nbsp;&lt;/head&gt;</code><br>
+            <code>&nbsp;&nbsp;&lt;body&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1 id="top"&gt;Welcome to My Page&lt;/h1&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;I am learning to code and this is my first webpage!&lt;/p&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;About Me&lt;/h2&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;My name is &lt;strong&gt;[your name]&lt;/strong&gt; and I am learning HTML.&lt;/p&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;hr /&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;My Favourite Things&lt;/h2&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;I love &lt;em&gt;coding&lt;/em&gt; and late nights.&lt;/p&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Did you know water is H&lt;sub&gt;2&lt;/sub&gt;O?&lt;/p&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Coding&lt;/li&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Late nights&lt;/li&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Learning new things&lt;/li&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;How to Make Tea&lt;/h2&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;ol&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Boil the kettle&lt;/li&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Add a teabag to your mug&lt;/li&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Pour in the hot water&lt;/li&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Add milk and sugar to taste&lt;/li&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ol&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Useful Links&lt;/h2&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;&lt;a href="http://www.w3schools.com"&gt;W3Schools&lt;/a&gt; — free HTML tutorials&lt;/p&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;&lt;a href="http://www.freecodecamp.org"&gt;freeCodeCamp&lt;/a&gt; — free coding challenges&lt;/p&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;&lt;a href="mailto:your@email.com"&gt;Contact Me&lt;/a&gt;&lt;/p&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;&lt;a href="#top"&gt;Back to top&lt;/a&gt;&lt;/p&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;A Photo I Like&lt;/h2&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="images/myphoto.jpg" alt="A photo I chose" width="400" height="300" /&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;My Weekly Schedule&lt;/h2&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;table&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;&lt;th&gt;Day&lt;/th&gt;&lt;th&gt;Activity&lt;/th&gt;&lt;/tr&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;&lt;td&gt;Monday&lt;/td&gt;&lt;td&gt;HTML&lt;/td&gt;&lt;/tr&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;&lt;td&gt;Tuesday&lt;/td&gt;&lt;td&gt;CSS&lt;/td&gt;&lt;/tr&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;&lt;td&gt;Wednesday&lt;/td&gt;&lt;td&gt;JavaScript&lt;/td&gt;&lt;/tr&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/table&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Contact Me&lt;/h2&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;form action="mailto:your@email.com" method="get"&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;fieldset&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;legend&gt;Your Details&lt;/legend&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&gt;Name:&lt;br /&gt;&lt;input type="text" name="name" /&gt;&lt;/label&gt;&lt;br /&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&gt;Email:&lt;br /&gt;&lt;input type="text" name="email" /&gt;&lt;/label&gt;&lt;br /&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&gt;Message:&lt;br /&gt;&lt;textarea name="message"&gt;&lt;/textarea&gt;&lt;/label&gt;&lt;br /&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="submit" value="Send Message" /&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/fieldset&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/form&gt;</code><br>
+            <code>&nbsp;&nbsp;&lt;/body&gt;</code><br>
+            <code>&lt;/html&gt;</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIZ SECTION -->
+    <section class="quiz-section">
+      <h2>Chapter 7 Quiz</h2>
+      <p class="quiz-intro">Only move on when you can answer all of these confidently without looking!</p>
+
+      <div class="quiz-question">
+        <p class="question">1. Which element do all form controls live inside?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) &lt;input&gt;</li>
+          <li onclick="checkAnswer(this, false)">b) &lt;fieldset&gt;</li>
+          <li onclick="checkAnswer(this, true)">c) &lt;form&gt;</li>
+          <li onclick="checkAnswer(this, false)">d) &lt;label&gt;</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">2. What does the action attribute on a form element do?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Decides whether to use get or post</li>
+          <li onclick="checkAnswer(this, true)">b) Specifies the URL that will receive the form data</li>
+          <li onclick="checkAnswer(this, false)">c) Labels the form controls</li>
+          <li onclick="checkAnswer(this, false)">d) Groups related form fields together</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">3. Which input type would you use to collect a password?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) type="text"</li>
+          <li onclick="checkAnswer(this, false)">b) type="hidden"</li>
+          <li onclick="checkAnswer(this, false)">c) type="secret"</li>
+          <li onclick="checkAnswer(this, true)">d) type="password"</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">4. What is the difference between radio buttons and checkboxes?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) There is no difference</li>
+          <li onclick="checkAnswer(this, true)">b) Radio buttons let you pick one option; checkboxes let you pick one or more</li>
+          <li onclick="checkAnswer(this, false)">c) Checkboxes let you pick one option; radio buttons let you pick many</li>
+          <li onclick="checkAnswer(this, false)">d) Radio buttons don't need a name attribute</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">5. Which element is used to group related form controls together?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) &lt;group&gt;</li>
+          <li onclick="checkAnswer(this, false)">b) &lt;section&gt;</li>
+          <li onclick="checkAnswer(this, true)">c) &lt;fieldset&gt;</li>
+          <li onclick="checkAnswer(this, false)">d) &lt;label&gt;</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+    </section>
+
+    <!-- NEXT CHAPTER -->
+    <section class="next-chapter">
+      <div class="coming-up">
+        <h3>Coming Up Next — Chapter 8: Extra Markup</h3>
+        <p>In the next chapter we look at some extra HTML bits and pieces — doctypes, comments, div and span, escape characters, and a bit of HTML history.</p>
+      </div>
+      <a href="chapter8.html" class="next-btn">Next Up: Extra Markup →</a>
+    </section>
+
+    <script>
+      localStorage.setItem('visited_' + location.pathname.split('/html/')[1].replace('.html', '') + '.html', 'true');
+function toggleGenie() {
+        const bubble = document.getElementById('genieBubble');
+        bubble.classList.toggle('visible');
+      }
+
+      function toggleNav() {
+        const dropdown = document.getElementById('navDropdown');
+        dropdown.classList.toggle('open');
+      }
+
+      document.addEventListener('click', function(e) {
+        const nav = document.querySelector('.chapter-nav');
+        if (!nav.contains(e.target)) {
+          document.getElementById('navDropdown').classList.remove('open');
+        }
+      });
+
+      function checkAnswer(element, isCorrect) {
+        const options = element.parentElement.querySelectorAll('li');
+        options.forEach(option => {
+          option.style.pointerEvents = 'none';
+        });
+        if (isCorrect) {
+          element.classList.add('correct');
+        } else {
+          element.classList.add('incorrect');
+        }
+        const resetBtn = element.parentElement.nextElementSibling;
+        if (resetBtn && resetBtn.classList.contains('reset-btn')) {
+          resetBtn.style.display = 'inline-block';
+        }
+      }
+
+      function resetQuestion(button) {
+        const options = button.previousElementSibling.querySelectorAll('li');
+        options.forEach(option => {
+          option.classList.remove('correct', 'incorrect');
+          option.style.pointerEvents = 'auto';
+        });
+        button.style.display = 'none';
+      }
+    </script>
+
+  </body>
+</html>

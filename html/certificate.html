@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate of Completion</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+      body {
+        background-color: #0a0a0a;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 20px;
+        font-family: 'Courier New', monospace;
+      }
+
+      .certificate-wrapper {
+        max-width: 800px;
+        width: 100%;
+      }
+
+      .certificate {
+        background-color: #0f0f0f;
+        border: 3px solid #ff2d78;
+        border-radius: 20px;
+        padding: 60px;
+        text-align: center;
+        position: relative;
+        box-shadow:
+          0 0 30px rgba(255, 45, 120, 0.3),
+          0 0 60px rgba(0, 212, 255, 0.1),
+          0 0 90px rgba(0, 255, 136, 0.05);
+      }
+
+      .certificate::before {
+        content: '';
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        border: 1px solid #333333;
+        border-radius: 15px;
+        pointer-events: none;
+      }
+
+      .cert-top {
+        margin-bottom: 30px;
+      }
+
+      .cert-guide-name {
+        font-size: 0.7rem;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: #555555;
+        margin-bottom: 5px;
+      }
+
+      .cert-bot {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 20px auto;
+        filter: drop-shadow(0 0 10px rgba(255, 45, 120, 0.5));
+      }
+
+      .cert-title {
+        font-size: 0.75rem;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        color: #888888;
+        margin-bottom: 5px;
+      }
+
+      .cert-main-title {
+        font-size: 2rem;
+        color: #ffffff;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 0;
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+      }
+
+      .cert-divider {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin: 30px 0;
+      }
+
+      .cert-divider-line {
+        flex: 1;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #ff2d78, #00d4ff, #00ff88, transparent);
+      }
+
+      .cert-divider-star {
+        color: #ff2d78;
+        font-size: 1.2rem;
+      }
+
+      .cert-presented {
+        font-size: 0.75rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: #555555;
+        margin-bottom: 15px;
+      }
+
+      .cert-name {
+        font-size: 2.8rem;
+        color: #ff2d78;
+        text-shadow: 0 0 20px rgba(255, 45, 120, 0.5);
+        margin-bottom: 5px;
+        letter-spacing: 2px;
+      }
+
+      .cert-name-input {
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid #333333;
+        color: #ff2d78;
+        font-family: 'Courier New', monospace;
+        font-size: 2.8rem;
+        text-align: center;
+        width: 100%;
+        outline: none;
+        text-shadow: 0 0 20px rgba(255, 45, 120, 0.5);
+        letter-spacing: 2px;
+      }
+
+      .cert-name-input::placeholder {
+        color: #333333;
+        font-size: 1.2rem;
+      }
+
+      .cert-name-input:focus {
+        border-bottom-color: #ff2d78;
+      }
+
+      .cert-body {
+        font-size: 0.9rem;
+        color: #888888;
+        line-height: 1.8;
+        margin: 20px 0;
+      }
+
+      .cert-body strong {
+        color: #ffffff;
+      }
+
+      .cert-subjects {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin: 25px 0;
+        flex-wrap: wrap;
+      }
+
+      .cert-subject {
+        padding: 8px 20px;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+
+      .cert-subject.html {
+        border: 1px solid #ff2d78;
+        color: #ff2d78;
+        background-color: rgba(255, 45, 120, 0.1);
+      }
+
+      .cert-subject.css {
+        border: 1px solid #00d4ff;
+        color: #00d4ff;
+        background-color: rgba(0, 212, 255, 0.1);
+      }
+
+      .cert-subject.js {
+        border: 1px solid #00ff88;
+        color: #00ff88;
+        background-color: rgba(0, 255, 136, 0.1);
+      }
+
+      .cert-divider2 {
+        margin: 25px 0;
+        border: none;
+        border-top: 1px solid #1a1a1a;
+      }
+
+      .cert-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-top: 30px;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .cert-signature {
+        text-align: left;
+      }
+
+      .cert-signature-name {
+        font-size: 1.2rem;
+        color: #ffffff;
+        border-bottom: 1px solid #333333;
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+        font-style: italic;
+      }
+
+      .cert-signature-title {
+        font-size: 0.65rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #555555;
+      }
+
+      .cert-date {
+        text-align: right;
+      }
+
+      .cert-date-value {
+        font-size: 1rem;
+        color: #ffffff;
+        border-bottom: 1px solid #333333;
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+      }
+
+      .cert-date-label {
+        font-size: 0.65rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #555555;
+      }
+
+      .cert-disclaimer {
+        margin-top: 30px;
+        font-size: 0.65rem;
+        color: #333333;
+        line-height: 1.6;
+        border-top: 1px solid #1a1a1a;
+        padding-top: 15px;
+      }
+
+      .cert-actions {
+        margin-top: 30px;
+        text-align: center;
+      }
+
+      .print-btn {
+        background-color: transparent;
+        border: 2px solid #ff2d78;
+        color: #ff2d78;
+        padding: 12px 30px;
+        border-radius: 8px;
+        font-family: 'Courier New', monospace;
+        font-size: 0.9rem;
+        cursor: pointer;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+        margin: 5px;
+      }
+
+      .print-btn:hover {
+        background-color: #ff2d78;
+        color: #000000;
+        box-shadow: 0 0 20px rgba(255, 45, 120, 0.4);
+      }
+
+      .home-btn-cert {
+        background-color: transparent;
+        border: 2px solid #333333;
+        color: #555555;
+        padding: 12px 30px;
+        border-radius: 8px;
+        font-family: 'Courier New', monospace;
+        font-size: 0.9rem;
+        cursor: pointer;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+        margin: 5px;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .home-btn-cert:hover {
+        border-color: #555555;
+        color: #ffffff;
+      }
+
+      @media print {
+        body { background-color: #0a0a0a; }
+        .cert-actions { display: none; }
+        .cert-name-input { border-bottom: none; }
+      }
+
+      @media (max-width: 600px) {
+        .certificate { padding: 30px 20px; }
+        .cert-main-title { font-size: 1.3rem; }
+        .cert-name { font-size: 1.8rem; }
+        .cert-name-input { font-size: 1.8rem; }
+        .cert-footer { flex-direction: column; align-items: center; text-align: center; }
+        .cert-signature { text-align: center; }
+        .cert-date { text-align: center; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="certificate-wrapper">
+      <div class="certificate" id="certificate">
+
+        <div class="cert-top">
+          <p class="cert-guide-name">Beginner's Coding Guide</p>
+          <img src="../images/xgenfutbot.png" alt="XGENFUTBOT" class="cert-bot" />
+          <p class="cert-title">proudly presents this</p>
+          <h1 class="cert-main-title">Certificate of Completion</h1>
+        </div>
+
+        <div class="cert-divider">
+          <div class="cert-divider-line"></div>
+          <span class="cert-divider-star">★</span>
+          <div class="cert-divider-line"></div>
+        </div>
+
+        <p class="cert-presented">This certificate is awarded to</p>
+
+        <input
+          type="text"
+          class="cert-name-input"
+          id="certName"
+          placeholder="Enter your name here"
+          maxlength="40"
+        />
+
+        <p class="cert-body">
+          for successfully completing the <strong>Beginner's Coding Guide</strong> free section,
+          demonstrating knowledge and practical skills in the following subjects:
+        </p>
+
+        <div class="cert-subjects">
+          <span class="cert-subject html">HTML</span>
+          <span class="cert-subject css">CSS</span>
+          <span class="cert-subject js">JavaScript</span>
+        </div>
+
+        <p class="cert-body">
+          This achievement reflects dedication, curiosity, and the willingness to learn something new.
+          Building real things from scratch is no small feat — and you did it.
+        </p>
+
+        <hr class="cert-divider2">
+
+        <div class="cert-footer">
+          <div class="cert-signature">
+            <p class="cert-signature-name">XGENFUTBOT</p>
+            <p class="cert-signature-title">Chief Guide — Beginner's Coding Guide</p>
+          </div>
+          <div class="cert-date">
+            <p class="cert-date-value" id="certDate"></p>
+            <p class="cert-date-label">Date of Completion</p>
+          </div>
+        </div>
+
+        <p class="cert-disclaimer">
+          This certificate confirms personal completion of the Beginner's Coding Guide free section and is awarded as a recognition of individual achievement. It is not an accredited qualification and does not represent a formal academic or professional credential. It cannot be used as proof of qualification for employment, academic admission, or any regulated profession.
+        </p>
+
+      </div>
+
+      <div class="cert-actions">
+        <button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+        <a href="../index.html" class="home-btn-cert">← Back to Guide</a>
+      </div>
+    </div>
+
+    <script>
+      // Set today's date
+      var today = new Date();
+      var options = { year: 'numeric', month: 'long', day: 'numeric' };
+      document.getElementById('certDate').textContent = today.toLocaleDateString('en-GB', options);
+
+      // Try to load name from localStorage
+      var savedName = localStorage.getItem('userName');
+      if (savedName) {
+        document.getElementById('certName').value = savedName;
+      }
+
+      // Save name as user types
+      document.getElementById('certName').addEventListener('input', function() {
+        localStorage.setItem('userName', this.value);
+      });
+    </script>
+
+  </body>
+</html>

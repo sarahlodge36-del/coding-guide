@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 8: Extra Markup</title>
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+
+    <!-- HEADER -->
+    <header class="chapter-header">
+      <a href="../index.html" class="home-btn">← Home</a>
+      <div class="chapter-title">
+        <span class="chapter-label">Chapter 8</span>
+        <h1>Extra Markup</h1>
+      </div>
+      <div class="header-right">
+        <div class="chapter-nav">
+          <button class="nav-toggle" onclick="toggleNav()">Chapters ▼</button>
+          <div class="nav-dropdown" id="navDropdown">
+            <a href="chapter1.html">Chapter 1 — HTML</a>
+            <a href="chapter2.html">Chapter 2 — Text</a>
+            <a href="chapter3.html">Chapter 3 — Lists</a>
+            <a href="chapter4.html">Chapter 4 — Links</a>
+            <a href="chapter5.html">Chapter 5 — Images</a>
+            <a href="chapter6.html">Chapter 6 — Tables</a>
+            <a href="chapter7.html">Chapter 7 — Forms</a>
+            <a href="chapter8.html">Chapter 8 — Extra Markup</a>
+            <a href="chapter9.html">Chapter 9 — Video and Audio</a>
+            <hr style="border-color: #333333;">
+            <a href="cheatsheet-basic.html">HTML Cheat Sheet</a>
+          </div>
+        </div>
+        <div class="genie-container">
+          <img src="../images/xgenfutbot.png" alt="XGENFUTBOT" class="genie-icon" id="genieBtn" onclick="toggleGenie()" />
+          <div class="genie-bubble" id="genieBubble">
+            <p>Eight chapters in. Nearly at the end of HTML. Don't drop the ball now — quiz first. 👀</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CHAPTER CONTENT -->
+    <main class="chapter-content">
+
+      <section class="content-section">
+        <h2>A Bit of History</h2>
+        <p>Since the web was first created there have been several versions of HTML. Each new version was designed to be an improvement on the last.</p>
+        <ul class="content-list">
+          <li><strong>HTML 4</strong> (1997) — contained most of the elements you've seen in this guide</li>
+          <li><strong>XHTML 1.0</strong> (2000) — a stricter version that followed XML rules. Every element needed a closing tag and attribute values had to sit inside quotation marks</li>
+          <li><strong>HTML5</strong> — the version we use today. Still evolving and widely supported</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Doctypes</h2>
+        <p>Because there have been several versions of HTML, each web page should start with a DOCTYPE declaration. This tells the browser which version of HTML the page is using. For HTML5 the doctype is nice and simple:</p>
+        <div class="code-block">
+          <code>&lt;!DOCTYPE html&gt;</code>
+        </div>
+        <p>You'll see this at the very top of every modern HTML page — including the ones you've been building!</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Comments in HTML</h2>
+        <p>You can add comments to your HTML that won't show up in the browser. This is really useful for leaving notes for yourself explaining what different sections do. Remember those &lt;!-- --&gt; things you might have noticed in code examples? That's what they are!</p>
+        <div class="code-block">
+          <code>&lt;!-- This is a comment --&gt;</code><br><br>
+          <code>&lt;!-- start of main content --&gt;</code><br>
+          <code>&lt;h1&gt;Welcome&lt;/h1&gt;</code><br>
+          <code>&lt;!-- end of main content --&gt;</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Block Elements</h2>
+        <p>Some elements always start on a new line in the browser. These are called block level elements. Examples include h1, p, ul, and li.</p>
+        <div class="code-block">
+          <code>&lt;h1&gt;Coding Guide&lt;/h1&gt;</code><br>
+          <code>&lt;p&gt;Welcome to chapter 8.&lt;/p&gt;</code><br>
+          <code>&lt;ul&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;li&gt;HTML&lt;/li&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;li&gt;CSS&lt;/li&gt;</code><br>
+          <code>&lt;/ul&gt;</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Inline Elements</h2>
+        <p>Inline elements continue on the same line as their neighbouring elements rather than starting on a new line. Examples include a, b, em, and img.</p>
+        <div class="code-block">
+          <code>&lt;p&gt;I love &lt;b&gt;coding&lt;/b&gt; and &lt;em&gt;late nights&lt;/em&gt;.&lt;/p&gt;</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Grouping Elements — div and span</h2>
+        <p>The div element lets you group a set of elements together into one block-level box. On its own it doesn't change how things look, but it becomes really powerful when you add CSS.</p>
+        <p>span is the inline equivalent of div. It lets you wrap a section of text so you can style it with CSS later. On its own span does nothing — its purpose is to give you a hook to apply styles to specific inline content.</p>
+        <div class="code-block">
+          <code>&lt;div id="header"&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;h1&gt;My Site&lt;/h1&gt;</code><br>
+          <code>&lt;/div&gt;</code><br><br>
+          <code>&lt;p&gt;Studied at &lt;span class="school"&gt;Milton Keynes College&lt;/span&gt;&lt;/p&gt;</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Escape Characters</h2>
+        <p>Some characters are reserved by HTML — the angled brackets are a good example, since the browser would try to read them as tags. To display these characters on your page you need to use escape codes. You've actually already seen these in the code examples throughout this guide — now you know what they are!</p>
+        <ul class="content-list">
+          <li><code>&amp;lt;</code> — displays &lt;</li>
+          <li><code>&amp;gt;</code> — displays &gt;</li>
+          <li><code>&amp;amp;</code> — displays &amp;</li>
+          <li><code>&amp;copy;</code> — displays ©</li>
+          <li><code>&amp;nbsp;</code> — adds a non-breaking space</li>
+        </ul>
+        <div class="code-block">
+          <code>&lt;p&gt;The &amp;lt;p&amp;gt; tag creates a paragraph.&lt;/p&gt;</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Semantic HTML5 Elements</h2>
+        <p>So far we've used div to group sections of our page — and that works perfectly well. But HTML5 introduced some extra elements that do the same job as div while also telling the browser (and screen readers) what kind of content is inside them. These are called semantic elements.</p>
+        <ul class="content-list">
+          <li><code>&lt;header&gt;</code> — used for introductory content, usually at the top of a page</li>
+          <li><code>&lt;nav&gt;</code> — used to wrap navigation links</li>
+          <li><code>&lt;main&gt;</code> — used for the main unique content of the page</li>
+          <li><code>&lt;section&gt;</code> — used to group related content together</li>
+          <li><code>&lt;article&gt;</code> — used for self-contained content like a blog post</li>
+          <li><code>&lt;footer&gt;</code> — used for closing content, usually at the bottom of a page</li>
+        </ul>
+        <p>You don't have to use these instead of div — div still works fine and you'll see plenty of real websites that mix both. But using semantic elements where it makes sense is considered best practice, because it gives extra meaning to your page without changing how anything looks.</p>
+        <div class="code-block">
+          <code>&lt;header&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;h1&gt;My Site&lt;/h1&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;nav&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/nav&gt;</code><br>
+          <code>&lt;/header&gt;</code><br><br>
+          <code>&lt;footer&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;p&gt;&amp;copy; My Site 2024&lt;/p&gt;</code><br>
+          <code>&lt;/footer&gt;</code>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- NOW LET'S BUILD -->
+    <section class="build-section">
+      <div class="build-content">
+        <h2>🔨 Now Let's Build!</h2>
+        <p>Open your <strong>index.html</strong> file in Notepad. We're going to tidy it up and add some structure using div elements and comments. Wrap your existing content in divs like this:</p>
+        <div class="code-block">
+          <code>&lt;!-- start header --&gt;</code><br>
+          <code>&lt;div id="header"&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;h1 id="top"&gt;Welcome to My Page&lt;/h1&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;p&gt;I am learning to code and this is my first webpage!&lt;/p&gt;</code><br>
+          <code>&lt;/div&gt;</code><br>
+          <code>&lt;!-- end header --&gt;</code><br><br>
+          <code>&lt;!-- start content --&gt;</code><br>
+          <code>&lt;div id="content"&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;!-- all your existing content goes here --&gt;</code><br>
+          <code>&lt;/div&gt;</code><br>
+          <code>&lt;!-- end content --&gt;</code><br><br>
+          <code>&lt;!-- start footer --&gt;</code><br>
+          <code>&lt;div id="footer"&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;p&gt;&amp;copy; My First Webpage 2024&lt;/p&gt;</code><br>
+          <code>&lt;/div&gt;</code><br>
+          <code>&lt;!-- end footer --&gt;</code>
+        </div>
+        <p>Save and refresh. The page won't look different yet but the structure is much cleaner — and that matters when CSS arrives! 🚀</p>
+
+        <!-- BROWSER PREVIEW -->
+        <div class="browser-preview">
+          <div class="browser-bar">
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+            <span class="browser-url">file:///C:/Users/Home/index.html</span>
+          </div>
+          <div class="browser-content">
+            <p style="color: #666666; font-family: serif; font-size: 0.85rem; font-style: italic;">Your page will look the same as before — the div elements and comments are invisible in the browser. But your code is now much better structured and ready for CSS!</p>
+            <p style="color: #000000; font-family: serif; margin-top: 10px;">© My First Webpage 2024</p>
+          </div>
+        </div>
+        <p class="preview-note">👆 The divs are invisible but your footer copyright notice should appear at the bottom!</p>
+
+        <div class="full-code">
+          <h3>✅ Your full file should now look like this:</h3>
+          <div class="code-block">
+            <code>&lt;!DOCTYPE html&gt;</code><br>
+            <code>&lt;html&gt;</code><br>
+            <code>&nbsp;&nbsp;&lt;head&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;My First Webpage&lt;/title&gt;</code><br>
+            <code>&nbsp;&nbsp;&lt;/head&gt;</code><br>
+            <code>&nbsp;&nbsp;&lt;body&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- start header --&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="header"&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1 id="top"&gt;Welcome to My Page&lt;/h1&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;I am learning to code and this is my first webpage!&lt;/p&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- end header --&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- start content --&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="content"&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;About Me&lt;/h2&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;My name is &lt;strong&gt;[your name]&lt;/strong&gt; and I am learning HTML.&lt;/p&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;hr /&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;My Favourite Things&lt;/h2&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;I love &lt;em&gt;coding&lt;/em&gt; and late nights.&lt;/p&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Did you know water is H&lt;sub&gt;2&lt;/sub&gt;O?&lt;/p&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Coding&lt;/li&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Late nights&lt;/li&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Learning new things&lt;/li&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;How to Make Tea&lt;/h2&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ol&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Boil the kettle&lt;/li&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Add a teabag to your mug&lt;/li&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Pour in the hot water&lt;/li&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Add milk and sugar to taste&lt;/li&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ol&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Useful Links&lt;/h2&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;&lt;a href="http://www.w3schools.com"&gt;W3Schools&lt;/a&gt; — free HTML tutorials&lt;/p&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;&lt;a href="http://www.freecodecamp.org"&gt;freeCodeCamp&lt;/a&gt; — free coding challenges&lt;/p&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;&lt;a href="mailto:your@email.com"&gt;Contact Me&lt;/a&gt;&lt;/p&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;&lt;a href="#top"&gt;Back to top&lt;/a&gt;&lt;/p&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;A Photo I Like&lt;/h2&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="images/myphoto.jpg" alt="A photo I chose" width="400" height="300" /&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;My Weekly Schedule&lt;/h2&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;table&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;&lt;th&gt;Day&lt;/th&gt;&lt;th&gt;Activity&lt;/th&gt;&lt;/tr&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;&lt;td&gt;Monday&lt;/td&gt;&lt;td&gt;HTML&lt;/td&gt;&lt;/tr&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;&lt;td&gt;Tuesday&lt;/td&gt;&lt;td&gt;CSS&lt;/td&gt;&lt;/tr&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;&lt;td&gt;Wednesday&lt;/td&gt;&lt;td&gt;JavaScript&lt;/td&gt;&lt;/tr&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/table&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Contact Me&lt;/h2&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;form action="mailto:your@email.com" method="get"&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;fieldset&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;legend&gt;Your Details&lt;/legend&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&gt;Name:&lt;br /&gt;&lt;input type="text" name="name" /&gt;&lt;/label&gt;&lt;br /&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&gt;Email:&lt;br /&gt;&lt;input type="text" name="email" /&gt;&lt;/label&gt;&lt;br /&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&gt;Message:&lt;br /&gt;&lt;textarea name="message"&gt;&lt;/textarea&gt;&lt;/label&gt;&lt;br /&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="submit" value="Send Message" /&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/fieldset&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/form&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- end content --&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- start footer --&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="footer"&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;&amp;copy; My First Webpage 2024&lt;/p&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- end footer --&gt;</code><br>
+            <code>&nbsp;&nbsp;&lt;/body&gt;</code><br>
+            <code>&lt;/html&gt;</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIZ SECTION -->
+    <section class="quiz-section">
+      <h2>Chapter 8 Quiz</h2>
+      <p class="quiz-intro">Only move on when you can answer all of these confidently without looking!</p>
+
+      <div class="quiz-question">
+        <p class="question">1. What does a DOCTYPE declaration do?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Adds a title to the page</li>
+          <li onclick="checkAnswer(this, true)">b) Tells the browser which version of HTML you are using</li>
+          <li onclick="checkAnswer(this, false)">c) Creates the structure of the page</li>
+          <li onclick="checkAnswer(this, false)">d) Links to a CSS stylesheet</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">2. How do you write a comment in HTML?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) // this is a comment</li>
+          <li onclick="checkAnswer(this, false)">b) ** this is a comment **</li>
+          <li onclick="checkAnswer(this, true)">c) &lt;!-- this is a comment --&gt;</li>
+          <li onclick="checkAnswer(this, false)">d) ## this is a comment</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">3. Which of these is a block level element?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) &lt;span&gt;</li>
+          <li onclick="checkAnswer(this, false)">b) &lt;em&gt;</li>
+          <li onclick="checkAnswer(this, false)">c) &lt;a&gt;</li>
+          <li onclick="checkAnswer(this, true)">d) &lt;p&gt;</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">4. What is the purpose of the div element?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) To make text bold</li>
+          <li onclick="checkAnswer(this, false)">b) To create a link</li>
+          <li onclick="checkAnswer(this, true)">c) To group block-level elements together</li>
+          <li onclick="checkAnswer(this, false)">d) To add an image</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">5. Which escape code would you use to display a copyright symbol?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) &amp;reg;</li>
+          <li onclick="checkAnswer(this, true)">b) &amp;copy;</li>
+          <li onclick="checkAnswer(this, false)">c) &amp;amp;</li>
+          <li onclick="checkAnswer(this, false)">d) &amp;trade;</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">6. Which of these is a semantic HTML5 element?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) &lt;div&gt;</li>
+          <li onclick="checkAnswer(this, false)">b) &lt;span&gt;</li>
+          <li onclick="checkAnswer(this, true)">c) &lt;footer&gt;</li>
+          <li onclick="checkAnswer(this, false)">d) &lt;box&gt;</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+    </section>
+
+    <!-- NEXT CHAPTER -->
+    <section class="next-chapter">
+      <div class="coming-up">
+        <h3>Coming Up Next — Chapter 9: Video and Audio</h3>
+        <p>In the next chapter we look at how to add video and audio to your pages using HTML5 — and why Flash is ancient history.</p>
+      </div>
+      <a href="chapter9.html" class="next-btn">Next Up: Video and Audio →</a>
+    </section>
+
+    <script>
+      localStorage.setItem('visited_' + location.pathname.split('/html/')[1].replace('.html', '') + '.html', 'true');
+function toggleGenie() {
+        const bubble = document.getElementById('genieBubble');
+        bubble.classList.toggle('visible');
+      }
+
+      function toggleNav() {
+        const dropdown = document.getElementById('navDropdown');
+        dropdown.classList.toggle('open');
+      }
+
+      document.addEventListener('click', function(e) {
+        const nav = document.querySelector('.chapter-nav');
+        if (!nav.contains(e.target)) {
+          document.getElementById('navDropdown').classList.remove('open');
+        }
+      });
+
+      function checkAnswer(element, isCorrect) {
+        const options = element.parentElement.querySelectorAll('li');
+        options.forEach(option => {
+          option.style.pointerEvents = 'none';
+        });
+        if (isCorrect) {
+          element.classList.add('correct');
+        } else {
+          element.classList.add('incorrect');
+        }
+        const resetBtn = element.parentElement.nextElementSibling;
+        if (resetBtn && resetBtn.classList.contains('reset-btn')) {
+          resetBtn.style.display = 'inline-block';
+        }
+      }
+
+      function resetQuestion(button) {
+        const options = button.previousElementSibling.querySelectorAll('li');
+        options.forEach(option => {
+          option.classList.remove('correct', 'incorrect');
+          option.style.pointerEvents = 'auto';
+        });
+        button.style.display = 'none';
+      }
+    </script>
+
+  </body>
+</html>

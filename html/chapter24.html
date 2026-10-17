@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 24: Document Object Model</title>
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+
+    <!-- HEADER -->
+    <header class="chapter-header" style="border-bottom: 2px solid #00ff88;">
+      <a href="../index.html" class="home-btn" style="color: #00ff88;">← Home</a>
+      <div class="chapter-title">
+        <span class="chapter-label" style="color: #00ff88;">Chapter 24</span>
+        <h1 style="color: #00ff88;">Document Object Model</h1>
+      </div>
+      <div class="header-right">
+        <div class="chapter-nav">
+          <button class="nav-toggle" onclick="toggleNav()" style="border-color: #00ff88; color: #00ff88;">Chapters ▼</button>
+          <div class="nav-dropdown" id="navDropdown">
+            <a href="chapter20.html">Chapter 20 — The ABC of Programming</a>
+            <a href="chapter21.html">Chapter 21 — Basic JS Instructions</a>
+            <a href="chapter22.html">Chapter 22 — Functions, Methods and Objects</a>
+            <a href="chapter23.html">Chapter 23 — Decisions and Loops</a>
+            <a href="chapter24.html">Chapter 24 — Document Object Model</a>
+            <a href="chapter25.html">Chapter 25 — Events</a>
+          </div>
+        </div>
+        <div class="genie-container">
+          <img src="../images/xgenfutbot.png" alt="XGENFUTBOT" class="genie-icon" id="genieBtn" onclick="toggleGenie()" />
+          <div class="genie-bubble" id="genieBubble" style="border-color: #00ff88; color: #00ff88;">
+            <p>The DOM is how JavaScript talks to your HTML. Master this and you can change anything on the page. Anything. 😎</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CHAPTER CONTENT -->
+    <main class="chapter-content">
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">What is the DOM?</h2>
+        <p>When a browser loads an HTML page it creates a model of that page in memory. This model is called the Document Object Model — or DOM. It represents every element on the page as an object, arranged in a tree structure with the document at the top.</p>
+        <p>JavaScript can read this model and change it. When JavaScript changes the DOM, the browser updates what's displayed on screen instantly — without reloading the page. This is how every interactive webpage works.</p>
+        <p>You've actually been using the DOM since Chapter 20 — every time you wrote document.getElementById() you were accessing the DOM. Now we're going to understand properly what's happening and learn more of what it can do.</p>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">The DOM Tree</h2>
+        <p>The DOM represents your HTML as a tree of nodes. Every element, attribute, and piece of text is a node. The document is the root node, html sits below it, then head and body, then everything inside those.</p>
+        <p>Understanding this tree structure helps you navigate the DOM and target exactly the elements you want to change.</p>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>document          // the root</code><br>
+          <code>&nbsp;&nbsp;html            // the html element</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;head          // the head element</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;body          // the body element</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;h1        // a heading</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p         // a paragraph</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div       // a div</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p     // a paragraph inside the div</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Accessing Elements</h2>
+        <p>There are several ways to select elements from the DOM. The most common ones are:</p>
+        <ul class="content-list">
+          <li><code>document.getElementById('id')</code> — selects one element by its id. Returns a single element.</li>
+          <li><code>document.getElementsByClassName('class')</code> — selects all elements with that class. Returns a collection.</li>
+          <li><code>document.getElementsByTagName('tag')</code> — selects all elements of that tag type. Returns a collection.</li>
+          <li><code>document.querySelector('selector')</code> — selects the first element that matches a CSS selector.</li>
+          <li><code>document.querySelectorAll('selector')</code> — selects all elements that match a CSS selector. Returns a collection.</li>
+        </ul>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>var title = document.getElementById('title');</code><br>
+          <code>var buttons = document.getElementsByTagName('button');</code><br>
+          <code>var firstGreen = document.querySelector('.green');</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Reading and Changing Content</h2>
+        <p>Once you have an element you can read or change its content using these properties:</p>
+        <ul class="content-list">
+          <li><code>element.textContent</code> — gets or sets the text content of an element. Safe — treats everything as plain text.</li>
+          <li><code>element.innerHTML</code> — gets or sets the HTML content of an element. Powerful — can insert actual HTML tags. Use carefully.</li>
+        </ul>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>var title = document.getElementById('title');</code><br><br>
+          <code>// Read the content</code><br>
+          <code>console.log(title.textContent);</code><br><br>
+          <code>// Change the content</code><br>
+          <code>title.textContent = 'New Title';</code><br><br>
+          <code>// Insert HTML</code><br>
+          <code>title.innerHTML = '&lt;em&gt;New Title&lt;/em&gt;';</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Changing Styles</h2>
+        <p>You can change the CSS styles of any element using the style property. CSS property names in JavaScript use camelCase instead of hyphens — so background-color becomes backgroundColor and font-size becomes fontSize.</p>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>var title = document.getElementById('title');</code><br><br>
+          <code>title.style.color = '#00ff88';</code><br>
+          <code>title.style.fontSize = '2rem';</code><br>
+          <code>title.style.display = 'none';    // hides the element</code><br>
+          <code>title.style.display = 'block';   // shows it again</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Working with Classes</h2>
+        <p>Rather than changing individual styles, it's often better to add or remove CSS classes. This keeps your styling in your CSS file where it belongs and lets JavaScript just toggle behaviour.</p>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>var element = document.getElementById('game');</code><br><br>
+          <code>element.classList.add('active');      // adds a class</code><br>
+          <code>element.classList.remove('active');   // removes a class</code><br>
+          <code>element.classList.toggle('active');   // adds if absent, removes if present</code><br>
+          <code>element.classList.contains('active'); // returns true or false</code>
+        </div>
+        <p>You've actually already seen classList.toggle in action — it's how the XGENFUTBOT speech bubble on this very guide works when you click the genie icon!</p>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Creating and Adding Elements</h2>
+        <p>JavaScript can create brand new HTML elements and add them to the page dynamically — without any HTML being written beforehand.</p>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>// Create a new element</code><br>
+          <code>var newParagraph = document.createElement('p');</code><br><br>
+          <code>// Give it some content</code><br>
+          <code>newParagraph.textContent = 'This paragraph was created by JavaScript!';</code><br><br>
+          <code>// Add it to the page</code><br>
+          <code>document.getElementById('game').appendChild(newParagraph);</code>
+        </div>
+        <p>appendChild adds the new element as the last child of the target element. You've already been using createElement and appendChild in the game — that's how the choice buttons get built dynamically each time showChoices() runs.</p>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Reading Attributes</h2>
+        <p>You can get and set any HTML attribute on an element using getAttribute and setAttribute.</p>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>var btn = document.getElementById('startBtn');</code><br><br>
+          <code>// Read an attribute</code><br>
+          <code>btn.getAttribute('id');              // 'startBtn'</code><br><br>
+          <code>// Set an attribute</code><br>
+          <code>btn.setAttribute('disabled', true);  // disables the button</code><br><br>
+          <code>// You've already used this in the game!</code><br>
+          <code>choices.setAttribute('data-mode', 'question');</code>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- NOW LET'S BUILD -->
+    <section class="build-section" style="border-color: #00ff88;">
+      <div class="build-content">
+        <h2 style="color: #00ff88;">🔨 Now Let's Build!</h2>
+        <p>Open your Code Machine Quest CodePen. In this chapter we're giving the game a proper polished interface — a health bar that updates as lives are lost, a cleaner layout, and an inventory display that shows the items you've collected as icons.</p>
+
+        <div class="tip-box" style="border-color: #00ff88;">
+          <h3 style="color: #00ff88;">⚡ Complete Code for All Three Files</h3>
+          <p>As always — below is the complete code for all three files. Everything from Chapter 23 is still here, plus the new DOM improvements.</p>
+          <p style="margin-top: 10px;"><strong>Remember the rule from last chapter:</strong> in index.html, only replace what's <strong>between the &lt;body&gt; and &lt;/body&gt; tags</strong>. The skeleton — the DOCTYPE, the &lt;head&gt;, the stylesheet link, and the &lt;script src="./script.js"&gt; line at the bottom — stays exactly as it is.</p>
+        </div>
+
+        <h3 style="color: #00ff88; margin-top: 30px;">index.html — replace everything <em>inside the &lt;body&gt; tags</em> with this:</h3>
+        <p>Delete your old game code from between <code>&lt;body&gt;</code> and <code>&lt;/body&gt;</code> and type this in its place. Leave the rest of the file alone.</p>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>&lt;div id="game"&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;h1 id="title"&gt;THE CODE MACHINE QUEST&lt;/h1&gt;</code><br><br>
+          <code>&nbsp;&nbsp;&lt;!-- Health bar --&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;div id="health-bar" style="display:none"&gt;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;span id="heart1"&gt;❤️&lt;/span&gt;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;span id="heart2"&gt;❤️&lt;/span&gt;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;span id="heart3"&gt;❤️&lt;/span&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;/div&gt;</code><br><br>
+          <code>&nbsp;&nbsp;&lt;!-- Story text --&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;p id="story"&gt;The legendary Code Machine has been dismantled. Five components are hidden across five dangerous digital realms. Only a coder who has mastered HTML and CSS is worthy of retrieving them.&lt;/p&gt;</code><br><br>
+          <code>&nbsp;&nbsp;&lt;!-- Name input --&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;div id="input-area"&gt;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" id="nameInput" placeholder="Enter your name..." /&gt;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;button id="startBtn"&gt;Begin the Quest&lt;/button&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;/div&gt;</code><br><br>
+          <code>&nbsp;&nbsp;&lt;!-- Choice buttons --&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;div id="choices"&gt;&lt;/div&gt;</code><br><br>
+          <code>&nbsp;&nbsp;&lt;!-- Message --&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;p id="message"&gt;&lt;/p&gt;</code><br><br>
+          <code>&nbsp;&nbsp;&lt;!-- Inventory --&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;div id="inventory-panel" style="display:none"&gt;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;p id="inventory-title"&gt;INVENTORY&lt;/p&gt;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="inventory-items"&gt;&lt;/div&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;/div&gt;</code><br><br>
+          <code>&nbsp;&nbsp;&lt;!-- Score --&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;p id="score-display" style="display:none"&gt;&lt;/p&gt;</code><br>
+          <code>&lt;/div&gt;</code>
+        </div>
+
+        <h3 style="color: #00ff88; margin-top: 30px;">style.css — replace everything with this:</h3>
+        <p>This file is all yours — select everything, delete it, and type this in:</p>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>body {</code><br>
+          <code>&nbsp;&nbsp;background-color: #0a0a0a;</code><br>
+          <code>&nbsp;&nbsp;color: #f0f0f0;</code><br>
+          <code>&nbsp;&nbsp;font-family: 'Courier New', monospace;</code><br>
+          <code>&nbsp;&nbsp;display: flex;</code><br>
+          <code>&nbsp;&nbsp;justify-content: center;</code><br>
+          <code>&nbsp;&nbsp;align-items: center;</code><br>
+          <code>&nbsp;&nbsp;min-height: 100vh;</code><br>
+          <code>&nbsp;&nbsp;margin: 0;</code><br>
+          <code>&nbsp;&nbsp;padding: 20px;</code><br>
+          <code>}</code><br><br>
+          <code>#game {</code><br>
+          <code>&nbsp;&nbsp;max-width: 620px;</code><br>
+          <code>&nbsp;&nbsp;width: 100%;</code><br>
+          <code>&nbsp;&nbsp;text-align: center;</code><br>
+          <code>&nbsp;&nbsp;padding: 40px;</code><br>
+          <code>&nbsp;&nbsp;border: 2px solid #00ff88;</code><br>
+          <code>&nbsp;&nbsp;border-radius: 15px;</code><br>
+          <code>&nbsp;&nbsp;box-shadow: 0 0 30px rgba(0,255,136,0.2);</code><br>
+          <code>}</code><br><br>
+          <code>h1 {</code><br>
+          <code>&nbsp;&nbsp;color: #00ff88;</code><br>
+          <code>&nbsp;&nbsp;font-size: 1.6rem;</code><br>
+          <code>&nbsp;&nbsp;letter-spacing: 3px;</code><br>
+          <code>&nbsp;&nbsp;text-shadow: 0 0 10px #00ff88;</code><br>
+          <code>&nbsp;&nbsp;margin-bottom: 15px;</code><br>
+          <code>}</code><br><br>
+          <code>#health-bar {</code><br>
+          <code>&nbsp;&nbsp;font-size: 1.5rem;</code><br>
+          <code>&nbsp;&nbsp;margin-bottom: 15px;</code><br>
+          <code>&nbsp;&nbsp;letter-spacing: 5px;</code><br>
+          <code>}</code><br><br>
+          <code>.heart-lost {</code><br>
+          <code>&nbsp;&nbsp;opacity: 0.2;</code><br>
+          <code>&nbsp;&nbsp;filter: grayscale(100%);</code><br>
+          <code>}</code><br><br>
+          <code>#story {</code><br>
+          <code>&nbsp;&nbsp;color: #cccccc;</code><br>
+          <code>&nbsp;&nbsp;line-height: 1.7;</code><br>
+          <code>&nbsp;&nbsp;margin-bottom: 20px;</code><br>
+          <code>&nbsp;&nbsp;font-size: 0.95rem;</code><br>
+          <code>}</code><br><br>
+          <code>input {</code><br>
+          <code>&nbsp;&nbsp;background-color: #111111;</code><br>
+          <code>&nbsp;&nbsp;border: 2px solid #00ff88;</code><br>
+          <code>&nbsp;&nbsp;border-radius: 8px;</code><br>
+          <code>&nbsp;&nbsp;padding: 10px 15px;</code><br>
+          <code>&nbsp;&nbsp;color: #ffffff;</code><br>
+          <code>&nbsp;&nbsp;font-family: 'Courier New', monospace;</code><br>
+          <code>&nbsp;&nbsp;font-size: 1rem;</code><br>
+          <code>&nbsp;&nbsp;width: 200px;</code><br>
+          <code>&nbsp;&nbsp;margin: 10px;</code><br>
+          <code>}</code><br><br>
+          <code>button {</code><br>
+          <code>&nbsp;&nbsp;background-color: transparent;</code><br>
+          <code>&nbsp;&nbsp;border: 2px solid #00ff88;</code><br>
+          <code>&nbsp;&nbsp;border-radius: 8px;</code><br>
+          <code>&nbsp;&nbsp;padding: 10px 20px;</code><br>
+          <code>&nbsp;&nbsp;color: #00ff88;</code><br>
+          <code>&nbsp;&nbsp;font-family: 'Courier New', monospace;</code><br>
+          <code>&nbsp;&nbsp;font-size: 0.85rem;</code><br>
+          <code>&nbsp;&nbsp;cursor: pointer;</code><br>
+          <code>&nbsp;&nbsp;margin: 6px;</code><br>
+          <code>&nbsp;&nbsp;letter-spacing: 1px;</code><br>
+          <code>&nbsp;&nbsp;text-transform: uppercase;</code><br>
+          <code>&nbsp;&nbsp;display: block;</code><br>
+          <code>&nbsp;&nbsp;width: 100%;</code><br>
+          <code>&nbsp;&nbsp;transition: all 0.2s ease;</code><br>
+          <code>}</code><br><br>
+          <code>button:hover {</code><br>
+          <code>&nbsp;&nbsp;background-color: #00ff88;</code><br>
+          <code>&nbsp;&nbsp;color: #000000;</code><br>
+          <code>&nbsp;&nbsp;box-shadow: 0 0 15px rgba(0,255,136,0.4);</code><br>
+          <code>}</code><br><br>
+          <code>#choices {</code><br>
+          <code>&nbsp;&nbsp;margin: 20px 0;</code><br>
+          <code>}</code><br><br>
+          <code>#message {</code><br>
+          <code>&nbsp;&nbsp;color: #00ff88;</code><br>
+          <code>&nbsp;&nbsp;font-size: 0.95rem;</code><br>
+          <code>&nbsp;&nbsp;margin-top: 15px;</code><br>
+          <code>&nbsp;&nbsp;min-height: 25px;</code><br>
+          <code>&nbsp;&nbsp;font-style: italic;</code><br>
+          <code>}</code><br><br>
+          <code>#inventory-panel {</code><br>
+          <code>&nbsp;&nbsp;margin-top: 20px;</code><br>
+          <code>&nbsp;&nbsp;border-top: 1px solid #333333;</code><br>
+          <code>&nbsp;&nbsp;padding-top: 15px;</code><br>
+          <code>}</code><br><br>
+          <code>#inventory-title {</code><br>
+          <code>&nbsp;&nbsp;color: #555555;</code><br>
+          <code>&nbsp;&nbsp;font-size: 0.7rem;</code><br>
+          <code>&nbsp;&nbsp;letter-spacing: 3px;</code><br>
+          <code>&nbsp;&nbsp;margin-bottom: 10px;</code><br>
+          <code>}</code><br><br>
+          <code>#inventory-items {</code><br>
+          <code>&nbsp;&nbsp;display: flex;</code><br>
+          <code>&nbsp;&nbsp;justify-content: center;</code><br>
+          <code>&nbsp;&nbsp;flex-wrap: wrap;</code><br>
+          <code>&nbsp;&nbsp;gap: 10px;</code><br>
+          <code>}</code><br><br>
+          <code>.inventory-item {</code><br>
+          <code>&nbsp;&nbsp;background-color: #111111;</code><br>
+          <code>&nbsp;&nbsp;border: 1px solid #00ff88;</code><br>
+          <code>&nbsp;&nbsp;border-radius: 8px;</code><br>
+          <code>&nbsp;&nbsp;padding: 8px 12px;</code><br>
+          <code>&nbsp;&nbsp;font-size: 0.75rem;</code><br>
+          <code>&nbsp;&nbsp;color: #00ff88;</code><br>
+          <code>&nbsp;&nbsp;white-space: nowrap;</code><br>
+          <code>}</code><br><br>
+          <code>#score-display {</code><br>
+          <code>&nbsp;&nbsp;color: #555555;</code><br>
+          <code>&nbsp;&nbsp;font-size: 0.8rem;</code><br>
+          <code>&nbsp;&nbsp;margin-top: 10px;</code><br>
+          <code>}</code>
+        </div>
+
+        <h3 style="color: #00ff88; margin-top: 30px;">script.js — replace everything with this:</h3>
+        <p>Same again — this file is all yours. Select everything, delete it, and type this in:</p>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>// ==============================</code><br>
+          <code>// GAME VARIABLES</code><br>
+          <code>// ==============================</code><br>
+          <code>var playerName = '';</code><br>
+          <code>var playerHealth = 3;</code><br>
+          <code>var playerScore = 0;</code><br>
+          <code>var inventory = [];</code><br>
+          <code>var currentRealm = 0;</code><br><br>
+          <code>// ==============================</code><br>
+          <code>// REALM DATA</code><br>
+          <code>// ==============================</code><br>
+          <code>var realms = [</code><br>
+          <code>&nbsp;&nbsp;{</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;name: 'The HTML Vault',</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;guardian: 'The Tag Keeper',</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;reward: 'Structure Crystal',</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;rewardIcon: '💎',</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;question: 'What does HTML stand for?',</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;options: ['Hypertext Markup Language', 'High Transfer Machine Language', 'Hypertext Making Language', 'Hyper Transfer Markup Language'],</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;correct: 0</code><br>
+          <code>&nbsp;&nbsp;},</code><br>
+          <code>&nbsp;&nbsp;{</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;name: 'The CSS Labyrinth',</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;guardian: 'The Style Witch',</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;reward: 'Style Gem',</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;rewardIcon: '🔮',</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;question: 'Which CSS property makes text bold?',</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;options: ['font-style: bold', 'text-weight: bold', 'font-weight: bold', 'bold: true'],</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;correct: 2</code><br>
+          <code>&nbsp;&nbsp;},</code><br>
+          <code>&nbsp;&nbsp;{</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;name: 'The JavaScript Jungle',</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;guardian: 'The Logic Beast',</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;reward: 'Logic Core',</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;rewardIcon: '⚡',</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;question: 'What is the correct way to declare a variable in JavaScript?',</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;options: ['variable name = 5', 'var name = 5', 'v name = 5', 'declare name = 5'],</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;correct: 1</code><br>
+          <code>&nbsp;&nbsp;},</code><br>
+          <code>&nbsp;&nbsp;{</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;name: 'The Server Caves',</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;guardian: 'The Dark Server',</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;reward: 'Power Cell',</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;rewardIcon: '🔋',</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;question: 'What does DOM stand for?',</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;options: ['Document Object Model', 'Data Object Method', 'Document Oriented Markup', 'Dynamic Object Model'],</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;correct: 0</code><br>
+          <code>&nbsp;&nbsp;},</code><br>
+          <code>&nbsp;&nbsp;{</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;name: 'The Cloud Tower',</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;guardian: 'The Glitch',</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;reward: 'Cloud Key',</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;rewardIcon: '🗝️',</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;question: 'Which event fires when a user clicks a button?',</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;options: ['onpress', 'ontouch', 'click', 'onbutton'],</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;correct: 2</code><br>
+          <code>&nbsp;&nbsp;}</code><br>
+          <code>];</code><br><br>
+          <code>// ==============================</code><br>
+          <code>// DOM FUNCTIONS</code><br>
+          <code>// ==============================</code><br><br>
+          <code>function showMessage(text) {</code><br>
+          <code>&nbsp;&nbsp;document.getElementById('message').textContent = text;</code><br>
+          <code>}</code><br><br>
+          <code>function showStory(text) {</code><br>
+          <code>&nbsp;&nbsp;document.getElementById('story').textContent = text;</code><br>
+          <code>}</code><br><br>
+          <code>function updateHealthBar() {</code><br>
+          <code>&nbsp;&nbsp;for (var i = 1; i &lt;= 3; i++) {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;var heart = document.getElementById('heart' + i);</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;if (i &lt;= playerHealth) {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;heart.classList.remove('heart-lost');</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;} else {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;heart.classList.add('heart-lost');</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;}</code><br>
+          <code>&nbsp;&nbsp;}</code><br>
+          <code>}</code><br><br>
+          <code>function updateInventory() {</code><br>
+          <code>&nbsp;&nbsp;var itemsDiv = document.getElementById('inventory-items');</code><br>
+          <code>&nbsp;&nbsp;itemsDiv.innerHTML = '';</code><br>
+          <code>&nbsp;&nbsp;for (var i = 0; i &lt; inventory.length; i++) {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;var item = document.createElement('span');</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;item.className = 'inventory-item';</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;item.textContent = inventory[i].icon + ' ' + inventory[i].name;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;itemsDiv.appendChild(item);</code><br>
+          <code>&nbsp;&nbsp;}</code><br>
+          <code>}</code><br><br>
+          <code>function updateScore() {</code><br>
+          <code>&nbsp;&nbsp;document.getElementById('score-display').textContent = 'Score: ' + playerScore;</code><br>
+          <code>}</code><br><br>
+          <code>function showChoices(choices) {</code><br>
+          <code>&nbsp;&nbsp;var choicesDiv = document.getElementById('choices');</code><br>
+          <code>&nbsp;&nbsp;choicesDiv.innerHTML = '';</code><br>
+          <code>&nbsp;&nbsp;for (var i = 0; i &lt; choices.length; i++) {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;var btn = document.createElement('button');</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;btn.textContent = choices[i];</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;btn.setAttribute('data-index', i);</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;choicesDiv.appendChild(btn);</code><br>
+          <code>&nbsp;&nbsp;}</code><br>
+          <code>}</code><br><br>
+          <code>// ==============================</code><br>
+          <code>// GAME FUNCTIONS</code><br>
+          <code>// ==============================</code><br><br>
+          <code>function startGame() {</code><br>
+          <code>&nbsp;&nbsp;var nameInput = document.getElementById('nameInput').value;</code><br>
+          <code>&nbsp;&nbsp;if (nameInput === '') {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;showMessage('You need to enter your name, coder!');</code><br>
+          <code>&nbsp;&nbsp;} else {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;playerName = nameInput;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('input-area').style.display = 'none';</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('health-bar').style.display = 'block';</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('inventory-panel').style.display = 'block';</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('score-display').style.display = 'block';</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;updateHealthBar();</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;updateScore();</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;showStory('Welcome, ' + playerName + '. I am XGENFUTBOT — your guide, your conscience, and occasionally your biggest critic. The Code Machine has been dismantled and its five components scattered across five dangerous realms. You must retrieve them all. Do you have what it takes?');</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;showMessage('');</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;showChoices(['I was born ready. Let\'s go.', 'I\'m terrified but let\'s do this anyway.']);</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('choices').setAttribute('data-mode', 'intro');</code><br>
+          <code>&nbsp;&nbsp;}</code><br>
+          <code>}</code><br><br>
+          <code>function enterRealm() {</code><br>
+          <code>&nbsp;&nbsp;var realm = realms[currentRealm];</code><br>
+          <code>&nbsp;&nbsp;showStory('You enter ' + realm.name + '. The ' + realm.guardian + ' blocks your path. "Answer my question and the ' + realm.reward + ' is yours," it growls.');</code><br>
+          <code>&nbsp;&nbsp;showMessage(realm.question);</code><br>
+          <code>&nbsp;&nbsp;showChoices(realm.options);</code><br>
+          <code>&nbsp;&nbsp;document.getElementById('choices').setAttribute('data-mode', 'question');</code><br>
+          <code>}</code><br><br>
+          <code>function handleAnswer(index) {</code><br>
+          <code>&nbsp;&nbsp;var realm = realms[currentRealm];</code><br>
+          <code>&nbsp;&nbsp;if (index === realm.correct) {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;inventory.push({ name: realm.reward, icon: realm.rewardIcon });</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;playerScore += 100;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;updateInventory();</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;updateScore();</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;currentRealm++;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;if (currentRealm &lt; realms.length) {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;showStory('Correct! The ' + realm.reward + ' ' + realm.rewardIcon + ' is yours. XGENFUTBOT nods approvingly. "Not bad. But there are ' + (realms.length - currentRealm) + ' realm' + (realms.length - currentRealm === 1 ? '' : 's') + ' left. Don\'t celebrate yet."');</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;showMessage('');</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;showChoices(['Continue to the next realm']);</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('choices').setAttribute('data-mode', 'continue');</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;} else {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;endGame();</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;}</code><br>
+          <code>&nbsp;&nbsp;} else {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;playerHealth--;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;updateHealthBar();</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;if (playerHealth === 0) {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gameOver();</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;} else {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;showStory('Hmm — not quite. But that\'s completely fine. Nobody gets everything first time. The important thing is that now you\'ve seen the right answer, it\'ll stick. You have ' + playerHealth + ' ' + (playerHealth === 1 ? 'life' : 'lives') + ' remaining. Try again!');</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;showMessage(realm.question);</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;showChoices(realm.options);</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('choices').setAttribute('data-mode', 'question');</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;}</code><br>
+          <code>&nbsp;&nbsp;}</code><br>
+          <code>}</code><br><br>
+          <code>function gameOver() {</code><br>
+          <code>&nbsp;&nbsp;showStory('Hey — don\'t feel bad about this. Seriously. The fact that you got this far means you\'re already doing brilliantly. The section that tripped you up is worth one more read — not because you\'re behind, but because once it clicks it clicks forever.');</code><br>
+          <code>&nbsp;&nbsp;showMessage('XGENFUTBOT tips his fedora. "Every developer has been exactly where you are right now. Every single one."');</code><br>
+          <code>&nbsp;&nbsp;showChoices(['Try again from the beginning']);</code><br>
+          <code>&nbsp;&nbsp;document.getElementById('choices').setAttribute('data-mode', 'restart');</code><br>
+          <code>}</code><br><br>
+          <code>function endGame() {</code><br>
+          <code>&nbsp;&nbsp;var ending;</code><br>
+          <code>&nbsp;&nbsp;if (playerHealth === 3) {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;ending = 'PERFECT RUN! The Code Machine roars to life, all five components locked in. XGENFUTBOT does an actual victory dance. "I knew you had it. Full marks, full lives, full brilliance. You are ready for what comes next."';</code><br>
+          <code>&nbsp;&nbsp;} else if (playerHealth === 2) {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;ending = 'The Code Machine activates — a few sparks fly but it works. XGENFUTBOT nods. "Solid run. One stumble does not a failure make. You\'re ready."';</code><br>
+          <code>&nbsp;&nbsp;} else {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;ending = 'The Code Machine splutters to life. XGENFUTBOT raises an eyebrow. "It works. Barely. But it works. Go back and review the bits that caught you out — then you\'ll be genuinely ready."';</code><br>
+          <code>&nbsp;&nbsp;}</code><br>
+          <code>&nbsp;&nbsp;showStory(ending);</code><br>
+          <code>&nbsp;&nbsp;showMessage('🎉 Quest Complete! Final Score: ' + playerScore);</code><br>
+          <code>&nbsp;&nbsp;document.getElementById('choices').innerHTML = '';</code><br>
+          <code>}</code><br><br>
+          <code>// ==============================</code><br>
+          <code>// EVENT LISTENERS</code><br>
+          <code>// ==============================</code><br><br>
+          <code>document.getElementById('startBtn').addEventListener('click', startGame);</code><br><br>
+          <code>document.getElementById('choices').addEventListener('click', function(e) {</code><br>
+          <code>&nbsp;&nbsp;if (e.target.tagName !== 'BUTTON') return;</code><br>
+          <code>&nbsp;&nbsp;var mode = document.getElementById('choices').getAttribute('data-mode');</code><br>
+          <code>&nbsp;&nbsp;var index = parseInt(e.target.getAttribute('data-index'));</code><br>
+          <code>&nbsp;&nbsp;if (mode === 'intro') {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;enterRealm();</code><br>
+          <code>&nbsp;&nbsp;} else if (mode === 'question') {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;handleAnswer(index);</code><br>
+          <code>&nbsp;&nbsp;} else if (mode === 'continue') {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;enterRealm();</code><br>
+          <code>&nbsp;&nbsp;} else if (mode === 'restart') {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;playerHealth = 3;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;playerScore = 0;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;inventory = [];</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;currentRealm = 0;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;updateHealthBar();</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;updateInventory();</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;updateScore();</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;enterRealm();</code><br>
+          <code>&nbsp;&nbsp;}</code><br>
+          <code>});</code>
+        </div>
+
+        <p>Once all three files are done, test it. You should now see hearts appearing at the top that fade out as you lose lives, inventory items appearing as colourful tags as you collect components, and a score counter tracking your progress. 🚀</p>
+
+        <div class="tip-box" style="border-color: #00ff88;">
+          <h3 style="color: #00ff88;">🛠️ Game not working? Check this first</h3>
+          <p>If the page has gone plain and unstyled, or the buttons do nothing, you've probably replaced too much in index.html. Check the file still starts with <code>&lt;!DOCTYPE html&gt;</code>, still has the <code>&lt;link&gt;</code> to style.css in the head, and still has <code>&lt;script src="./script.js"&gt;&lt;/script&gt;</code> just before <code>&lt;/body&gt;</code>. If any of those are missing, add them back and everything springs back to life.</p>
+        </div>
+
+        <div class="tip-box" style="border-color: #00ff88;">
+          <h3 style="color: #00ff88;">⚡ What the DOM is doing here</h3>
+          <p>Look at the updateHealthBar() function — it uses a for loop to select each heart element by id and adds or removes a CSS class depending on the player's health. That's the DOM and classList working together.</p>
+          <p style="margin-top: 10px;">The updateInventory() function clears the inventory panel using innerHTML = '' and then uses createElement and appendChild to build new item tags dynamically every time a component is collected. The page is rebuilding part of itself in real time.</p>
+          <p style="margin-top: 10px;">Every visual update in this game — every story change, every heart fading, every inventory item appearing — is JavaScript talking to the DOM and the DOM updating what you see on screen.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- QUIZ SECTION -->
+    <section class="quiz-section">
+      <h2 style="color: #00ff88;">Chapter 24 Quiz</h2>
+      <p class="quiz-intro">Only move on when you can answer all of these confidently without looking!</p>
+
+      <div class="quiz-question">
+        <p class="question">1. What is the DOM?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) A type of CSS selector</li>
+          <li onclick="checkAnswer(this, false)">b) A JavaScript framework</li>
+          <li onclick="checkAnswer(this, true)">c) A model the browser creates of the page in memory that JavaScript can read and change</li>
+          <li onclick="checkAnswer(this, false)">d) A HTML element used to store data</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">2. What is the difference between textContent and innerHTML?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) There is no difference</li>
+          <li onclick="checkAnswer(this, true)">b) textContent treats everything as plain text and is safer; innerHTML can insert actual HTML tags</li>
+          <li onclick="checkAnswer(this, false)">c) innerHTML is safer; textContent can insert HTML tags</li>
+          <li onclick="checkAnswer(this, false)">d) textContent only works on divs; innerHTML works on all elements</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">3. Why do CSS property names use camelCase in JavaScript?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) They don't — CSS property names are identical in JavaScript</li>
+          <li onclick="checkAnswer(this, true)">b) Because hyphens are not valid in JavaScript property names so background-color becomes backgroundColor</li>
+          <li onclick="checkAnswer(this, false)">c) Because JavaScript is case sensitive and CSS is not</li>
+          <li onclick="checkAnswer(this, false)">d) CamelCase is optional — either format works</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">4. What does classList.toggle() do?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Removes all classes from an element</li>
+          <li onclick="checkAnswer(this, false)">b) Adds a class permanently</li>
+          <li onclick="checkAnswer(this, true)">c) Adds the class if it's absent, removes it if it's present</li>
+          <li onclick="checkAnswer(this, false)">d) Checks whether a class exists and returns true or false</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">5. What does appendChild() do?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Removes a child element from its parent</li>
+          <li onclick="checkAnswer(this, false)">b) Creates a new HTML element</li>
+          <li onclick="checkAnswer(this, true)">c) Adds a new element as the last child of the target element</li>
+          <li onclick="checkAnswer(this, false)">d) Selects a child element by its index</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">6. What does document.querySelector('.green') do?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Selects all elements with the class green</li>
+          <li onclick="checkAnswer(this, true)">b) Selects the first element that has the class green</li>
+          <li onclick="checkAnswer(this, false)">c) Creates a new element with the class green</li>
+          <li onclick="checkAnswer(this, false)">d) Removes the class green from all elements</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+    </section>
+
+    <!-- NEXT CHAPTER -->
+    <section class="next-chapter" style="border-top: 2px solid #00ff88;">
+      <div class="coming-up">
+        <h3 style="color: #00ff88;">Coming Up Next — Chapter 25: Events</h3>
+        <p>The final chapter of the JavaScript section. We look at how events work in depth — click events, keyboard events, and form events. The game gets its final polish and you'll have a fully complete, fully shareable adventure game to show off.</p>
+      </div>
+      <a href="chapter25.html" class="next-btn" style="border-color: #00ff88; color: #00ff88;">Next Up: Events →</a>
+    </section>
+
+    <script>
+      localStorage.setItem('visited_' + location.pathname.split('/html/')[1].replace('.html', '') + '.html', 'true');
+function toggleGenie() {
+        const bubble = document.getElementById('genieBubble');
+        bubble.classList.toggle('visible');
+      }
+
+      function toggleNav() {
+        const dropdown = document.getElementById('navDropdown');
+        dropdown.classList.toggle('open');
+      }
+
+      document.addEventListener('click', function(e) {
+        const nav = document.querySelector('.chapter-nav');
+        if (nav && !nav.contains(e.target)) {
+          document.getElementById('navDropdown').classList.remove('open');
+        }
+      });
+
+      function checkAnswer(element, isCorrect) {
+        const options = element.parentElement.querySelectorAll('li');
+        options.forEach(option => {
+          option.style.pointerEvents = 'none';
+        });
+        if (isCorrect) {
+          element.classList.add('correct');
+        } else {
+          element.classList.add('incorrect');
+        }
+        const resetBtn = element.parentElement.nextElementSibling;
+        if (resetBtn && resetBtn.classList.contains('reset-btn')) {
+          resetBtn.style.display = 'inline-block';
+        }
+      }
+
+      function resetQuestion(button) {
+        const options = button.previousElementSibling.querySelectorAll('li');
+        options.forEach(option => {
+          option.classList.remove('correct', 'incorrect');
+          option.style.pointerEvents = 'auto';
+        });
+        button.style.display = 'none';
+      }
+    </script>
+
+  </body>
+</html>

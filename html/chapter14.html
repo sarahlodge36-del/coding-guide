@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 14: Lists, Tables and Forms</title>
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+
+    <!-- HEADER -->
+    <header class="chapter-header">
+      <a href="../index.html" class="home-btn">← Home</a>
+      <div class="chapter-title">
+        <span class="chapter-label">Chapter 14</span>
+        <h1>Lists, Tables and Forms</h1>
+      </div>
+      <div class="header-right">
+        <div class="chapter-nav">
+          <button class="nav-toggle" onclick="toggleNav()">Chapters ▼</button>
+          <div class="nav-dropdown" id="navDropdown">
+            <a href="chapter10.html">Chapter 10 — Introducing CSS</a>
+            <a href="chapter11.html">Chapter 11 — Colour</a>
+            <a href="chapter12.html">Chapter 12 — Text</a>
+            <a href="chapter13.html">Chapter 13 — Boxes</a>
+            <a href="chapter14.html">Chapter 14 — Lists, Tables and Forms</a>
+            <a href="chapter15.html">Chapter 15 — Layout</a>
+            <a href="chapter16.html">Chapter 16 — Images</a>
+            <a href="chapter17.html">Chapter 17 — HTML5 Layout</a>
+            <a href="chapter18.html">Chapter 18 — Process and Design</a>
+            <a href="chapter19.html">Chapter 19 — Practical Information</a>
+            <hr style="border-color: #333333;">
+            <a href="css-cheatsheet.html">CSS Cheat Sheet</a>
+            <a href="css-final-quiz.html">CSS Final Quiz</a>
+          </div>
+        </div>
+        <div class="genie-container">
+          <img src="../images/xgenfutbot.png" alt="XGENFUTBOT" class="genie-icon" id="genieBtn" onclick="toggleGenie()" />
+          <div class="genie-bubble" id="genieBubble">
+            <p>Time to make your bullet points, tables, and forms stop looking like a 1990s intranet page. 😎</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CHAPTER CONTENT -->
+    <main class="chapter-content">
+
+      <section class="content-section">
+        <h2>Finer Control Over Specific Elements</h2>
+        <p>There are several CSS properties that were created to work with specific types of HTML elements, such as lists, tables, and forms. In this chapter we look at how to take finer control over each of these.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Bullet Point Styles — list-style-type</h2>
+        <p>The list-style-type property lets you control the shape or style of the bullet point on unordered lists, and the numbering style on ordered lists.</p>
+        <div class="code-block">
+          <code>ul { list-style-type: none; }</code><br>
+          <code>ul { list-style-type: disc; }</code><br>
+          <code>ul { list-style-type: square; }</code><br>
+          <code>ol { list-style-type: decimal; }</code><br>
+          <code>ol { list-style-type: lower-alpha; }</code><br>
+          <code>ol { list-style-type: upper-roman; }</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Positioning the Marker — list-style-position</h2>
+        <p>By default the bullet or number sits outside the main flow of text. You can bring it inside using list-style-position.</p>
+        <div class="code-block">
+          <code>ul { list-style-position: outside; }</code><br>
+          <code>ul { list-style-position: inside; }</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Table Proportions — width, padding</h2>
+        <p>Setting a width on the table and padding on the cells gives the table more breathing room and makes it easier to read.</p>
+        <div class="code-block">
+          <code>table { width: 600px; }</code><br>
+          <code>th, td { padding: 10px; }</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Gaps Between Cells — border-collapse</h2>
+        <p>By default browsers leave a small gap between table cells. If you'd rather have no gap at all — so borders between adjacent cells merge into one — use border-collapse.</p>
+        <div class="code-block">
+          <code>table { border-collapse: collapse; }</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Styling Forms</h2>
+        <p>Forms are notoriously tricky to style because different browsers render form controls differently. CSS gives you some control but it's rarely perfect across every browser. The key is to focus on making forms clear and easy to use.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Styling Text Inputs</h2>
+        <div class="code-block">
+          <code>input {</code><br>
+          <code>&nbsp;&nbsp;font-size: 100%;</code><br>
+          <code>&nbsp;&nbsp;background-color: #f2f2f2;</code><br>
+          <code>&nbsp;&nbsp;border: 1px solid #bdbdbd;</code><br>
+          <code>&nbsp;&nbsp;border-radius: 5px;</code><br>
+          <code>&nbsp;&nbsp;padding: 8px;</code><br>
+          <code>}</code><br><br>
+          <code>input:focus {</code><br>
+          <code>&nbsp;&nbsp;background-color: #ffffff;</code><br>
+          <code>&nbsp;&nbsp;border: 1px solid #00d4ff;</code><br>
+          <code>}</code>
+        </div>
+        <p>The :focus pseudo-class lets you change the appearance of the input when the user clicks into it — a nice touch that helps users see which field they're in.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Styling Submit Buttons</h2>
+        <div class="code-block">
+          <code>input[type="submit"] {</code><br>
+          <code>&nbsp;&nbsp;background-color: #ee3e80;</code><br>
+          <code>&nbsp;&nbsp;color: #ffffff;</code><br>
+          <code>&nbsp;&nbsp;padding: 10px 20px;</code><br>
+          <code>&nbsp;&nbsp;border: none;</code><br>
+          <code>&nbsp;&nbsp;border-radius: 5px;</code><br>
+          <code>&nbsp;&nbsp;cursor: pointer;</code><br>
+          <code>}</code>
+        </div>
+        <p>Using the attribute selector input[type="submit"] means these styles only target the submit button and not every input on the page.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Cursor Styles — cursor</h2>
+        <p>The cursor property lets you control what the mouse pointer looks like when it hovers over an element.</p>
+        <div class="code-block">
+          <code>a &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ cursor: pointer; }</code><br>
+          <code>input &nbsp;&nbsp;{ cursor: text; }</code><br>
+          <code>div &nbsp;&nbsp;&nbsp;&nbsp;{ cursor: move; }</code>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- NOW LET'S BUILD -->
+    <section class="build-section">
+      <div class="build-content">
+        <h2>🔨 Now Let's Build!</h2>
+        <p>Open your <strong>styles.css</strong> file in Notepad. We're going to style your list, table, and form properly. Add this to your stylesheet:</p>
+        <div class="code-block">
+          <code>ul {</code><br>
+          <code>&nbsp;&nbsp;list-style-type: square;</code><br>
+          <code>}</code><br><br>
+          <code>table {</code><br>
+          <code>&nbsp;&nbsp;border-collapse: collapse;</code><br>
+          <code>&nbsp;&nbsp;width: 100%;</code><br>
+          <code>}</code><br><br>
+          <code>th, td {</code><br>
+          <code>&nbsp;&nbsp;padding: 10px;</code><br>
+          <code>&nbsp;&nbsp;border: 1px solid #444444;</code><br>
+          <code>&nbsp;&nbsp;text-align: left;</code><br>
+          <code>}</code><br><br>
+          <code>th {</code><br>
+          <code>&nbsp;&nbsp;background-color: #ee3e80;</code><br>
+          <code>&nbsp;&nbsp;color: #ffffff;</code><br>
+          <code>}</code><br><br>
+          <code>input, textarea {</code><br>
+          <code>&nbsp;&nbsp;background-color: #2a2a2a;</code><br>
+          <code>&nbsp;&nbsp;border: 1px solid #444444;</code><br>
+          <code>&nbsp;&nbsp;border-radius: 5px;</code><br>
+          <code>&nbsp;&nbsp;padding: 8px;</code><br>
+          <code>&nbsp;&nbsp;color: #f0f0f0;</code><br>
+          <code>}</code><br><br>
+          <code>input[type="submit"] {</code><br>
+          <code>&nbsp;&nbsp;background-color: #ee3e80;</code><br>
+          <code>&nbsp;&nbsp;color: #ffffff;</code><br>
+          <code>&nbsp;&nbsp;border: none;</code><br>
+          <code>&nbsp;&nbsp;padding: 10px 20px;</code><br>
+          <code>&nbsp;&nbsp;cursor: pointer;</code><br>
+          <code>}</code>
+        </div>
+        <p>Save and refresh your browser. Your table now has a pink header row with proper borders, your form fields have a dark styled background that matches your page, and your submit button looks like an actual clickable button!</p>
+
+        <!-- BROWSER PREVIEW -->
+        <div class="browser-preview">
+          <div class="browser-bar">
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+            <span class="browser-url">file:///C:/Users/Home/index.html</span>
+          </div>
+          <div class="browser-content" style="background-color: #1a1a1a;">
+            <table style="border-collapse: collapse; width: 100%; font-family: Arial, sans-serif; margin-bottom: 15px;">
+              <tr>
+                <th style="background-color: #ee3e80; color: #ffffff; padding: 8px; border: 1px solid #444444; text-align: left;">Day</th>
+                <th style="background-color: #ee3e80; color: #ffffff; padding: 8px; border: 1px solid #444444; text-align: left;">Activity</th>
+              </tr>
+              <tr>
+                <td style="color: #f0f0f0; padding: 8px; border: 1px solid #444444;">Monday</td>
+                <td style="color: #f0f0f0; padding: 8px; border: 1px solid #444444;">HTML</td>
+              </tr>
+            </table>
+            <input type="text" placeholder="Name" style="background-color: #2a2a2a; border: 1px solid #444444; border-radius: 5px; padding: 6px; color: #f0f0f0; margin-bottom: 8px; display: block;" disabled />
+            <input type="submit" value="Send Message" style="background-color: #ee3e80; color: #ffffff; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer;" disabled />
+          </div>
+        </div>
+        <p class="preview-note">👆 Tables and forms looking properly designed now!</p>
+
+        <div class="full-code">
+          <h3>✅ Your styles.css file should now look like this (newest additions highlighted):</h3>
+          <div class="code-block">
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">ul {</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;list-style-type: square;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">}</code><br><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">table {</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;border-collapse: collapse;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;width: 100%;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">}</code><br><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">th, td {</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;padding: 10px;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;border: 1px solid #444444;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;text-align: left;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">}</code><br><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">th {</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;background-color: #ee3e80;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;color: #ffffff;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">}</code><br><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">input, textarea {</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;background-color: #2a2a2a;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;border: 1px solid #444444;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;border-radius: 5px;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;padding: 8px;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;color: #f0f0f0;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">}</code><br><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">input[type="submit"] {</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;background-color: #ee3e80;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;color: #ffffff;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;border: none;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;padding: 10px 20px;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;cursor: pointer;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">}</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIZ SECTION -->
+    <section class="quiz-section">
+      <h2>Chapter 14 Quiz</h2>
+      <p class="quiz-intro">Only move on when you can answer all of these confidently without looking!</p>
+
+      <div class="quiz-question">
+        <p class="question">1. Which CSS property controls the style of bullet points on an unordered list?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) list-style-image</li>
+          <li onclick="checkAnswer(this, false)">b) list-style-position</li>
+          <li onclick="checkAnswer(this, true)">c) list-style-type</li>
+          <li onclick="checkAnswer(this, false)">d) bullet-style</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">2. What does border-collapse: collapse do on a table?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Removes all borders from the table</li>
+          <li onclick="checkAnswer(this, true)">b) Merges adjacent cell borders so there is no gap between them</li>
+          <li onclick="checkAnswer(this, false)">c) Hides empty cells</li>
+          <li onclick="checkAnswer(this, false)">d) Makes the table collapse to zero height</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">3. Why is it better to use input[type="submit"] rather than just input when styling a submit button?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) It makes the button look better</li>
+          <li onclick="checkAnswer(this, true)">b) It targets only the submit button without affecting every other input on the page</li>
+          <li onclick="checkAnswer(this, false)">c) It is the only way to style a submit button</li>
+          <li onclick="checkAnswer(this, false)">d) It works in older browsers</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">4. Which pseudo-class would you use to change the appearance of a text input when the user clicks into it?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) :hover</li>
+          <li onclick="checkAnswer(this, false)">b) :active</li>
+          <li onclick="checkAnswer(this, false)">c) :visited</li>
+          <li onclick="checkAnswer(this, true)">d) :focus</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">5. What does the cursor property do?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Controls the size of the mouse pointer</li>
+          <li onclick="checkAnswer(this, true)">b) Controls what the mouse pointer looks like when hovering over an element</li>
+          <li onclick="checkAnswer(this, false)">c) Makes an element clickable</li>
+          <li onclick="checkAnswer(this, false)">d) Changes the colour of the mouse pointer</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+    </section>
+
+    <!-- NEXT CHAPTER -->
+    <section class="next-chapter">
+      <div class="coming-up">
+        <h3>Coming Up Next — Chapter 15: Layout</h3>
+        <p>In the next chapter we look at how to position elements on the page using normal flow, relative positioning, absolute positioning, and floats.</p>
+      </div>
+      <a href="chapter15.html" class="next-btn" style="border-color: #00d4ff; color: #00d4ff;">Next Up: Layout →</a>
+    </section>
+
+    <script>
+      localStorage.setItem('visited_' + location.pathname.split('/html/')[1].replace('.html', '') + '.html', 'true');
+function toggleGenie() {
+        const bubble = document.getElementById('genieBubble');
+        bubble.classList.toggle('visible');
+      }
+
+      function toggleNav() {
+        const dropdown = document.getElementById('navDropdown');
+        dropdown.classList.toggle('open');
+      }
+
+      document.addEventListener('click', function(e) {
+        const nav = document.querySelector('.chapter-nav');
+        if (!nav.contains(e.target)) {
+          document.getElementById('navDropdown').classList.remove('open');
+        }
+      });
+
+      function checkAnswer(element, isCorrect) {
+        const options = element.parentElement.querySelectorAll('li');
+        options.forEach(option => {
+          option.style.pointerEvents = 'none';
+        });
+        if (isCorrect) {
+          element.classList.add('correct');
+        } else {
+          element.classList.add('incorrect');
+        }
+        const resetBtn = element.parentElement.nextElementSibling;
+        if (resetBtn && resetBtn.classList.contains('reset-btn')) {
+          resetBtn.style.display = 'inline-block';
+        }
+      }
+
+      function resetQuestion(button) {
+        const options = button.previousElementSibling.querySelectorAll('li');
+        options.forEach(option => {
+          option.classList.remove('correct', 'incorrect');
+          option.style.pointerEvents = 'auto';
+        });
+        button.style.display = 'none';
+      }
+    </script>
+
+  </body>
+</html>

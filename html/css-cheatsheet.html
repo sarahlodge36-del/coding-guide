@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Cheat Sheet</title>
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+
+    <!-- HEADER -->
+    <header class="chapter-header">
+      <a href="../index.html" class="home-btn">← Home</a>
+      <div class="chapter-title">
+        <span class="chapter-label">CSS</span>
+        <h1>Basic Cheat Sheet</h1>
+      </div>
+      <div class="header-right">
+        <div class="chapter-nav">
+          <button class="nav-toggle" onclick="toggleNav()">Chapters ▼</button>
+          <div class="nav-dropdown" id="navDropdown">
+            <a href="chapter10.html">Chapter 10 — Introducing CSS</a>
+            <a href="chapter11.html">Chapter 11 — Colour</a>
+            <a href="chapter12.html">Chapter 12 — Text</a>
+            <a href="chapter13.html">Chapter 13 — Boxes</a>
+            <a href="chapter14.html">Chapter 14 — Lists, Tables and Forms</a>
+            <a href="chapter15.html">Chapter 15 — Layout</a>
+            <a href="chapter16.html">Chapter 16 — Images</a>
+            <a href="chapter17.html">Chapter 17 — HTML5 Layout</a>
+            <a href="chapter18.html">Chapter 18 — Process and Design</a>
+            <a href="chapter19.html">Chapter 19 — Practical Information</a>
+            <hr style="border-color: #333333;">
+            <a href="css-cheatsheet.html">CSS Cheat Sheet</a>
+            <a href="css-final-quiz.html">CSS Final Quiz</a>
+          </div>
+        </div>
+        <div class="genie-container">
+          <img src="../images/xgenfutbot.png" alt="XGENFUTBOT" class="genie-icon" id="genieBtn" onclick="toggleGenie()" />
+          <div class="genie-bubble" id="genieBubble">
+            <p>Everything you've learnt in CSS in one place. You're welcome. Again. 😎</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CHEAT SHEET CONTENT -->
+    <main class="chapter-content">
+
+      <section class="content-section">
+        <h2>CSS Basics</h2>
+        <ul class="content-list">
+          <li><code>selector { property: value; }</code> — the basic structure of a CSS rule</li>
+          <li><code>/* comment */</code> — CSS comment, ignored by the browser</li>
+          <li><code>&lt;link rel="stylesheet" href="css/styles.css" /&gt;</code> — links an external CSS file</li>
+          <li><code>&lt;style&gt; ... &lt;/style&gt;</code> — internal CSS in the head of the HTML file</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Selectors</h2>
+        <ul class="content-list">
+          <li><code>*</code> — universal selector, targets every element</li>
+          <li><code>p</code> — type selector, targets all p elements</li>
+          <li><code>.classname</code> — class selector, targets elements with that class</li>
+          <li><code>#idname</code> — id selector, targets the element with that id</li>
+          <li><code>h1, h2, h3</code> — targets multiple elements at once</li>
+          <li><code>p a</code> — descendant selector, targets a elements inside p elements</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Colour</h2>
+        <ul class="content-list">
+          <li><code>color: #ee3e80;</code> — sets text colour using hex</li>
+          <li><code>color: rgb(255, 0, 0);</code> — sets text colour using RGB</li>
+          <li><code>color: red;</code> — sets text colour using a colour name</li>
+          <li><code>background-color: #1a1a1a;</code> — sets background colour</li>
+          <li><code>opacity: 0.5;</code> — makes element and children semi-transparent</li>
+          <li><code>background-color: rgba(0,0,0,0.5);</code> — semi-transparent background only</li>
+          <li><code>color: hsl(0, 100%, 50%);</code> — colour using hue, saturation, lightness</li>
+          <li><code>color: hsla(0, 100%, 50%, 0.5);</code> — HSL with transparency</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Text</h2>
+        <ul class="content-list">
+          <li><code>font-family: Arial, sans-serif;</code> — sets typeface with fallback stack</li>
+          <li><code>font-size: 16px;</code> — sets font size in pixels</li>
+          <li><code>font-size: 1.2em;</code> — sets font size relative to parent</li>
+          <li><code>font-weight: bold;</code> — makes text bold</li>
+          <li><code>font-style: italic;</code> — makes text italic</li>
+          <li><code>text-transform: uppercase;</code> — transforms text to capitals</li>
+          <li><code>text-decoration: none;</code> — removes underline from links</li>
+          <li><code>text-decoration: underline;</code> — adds underline</li>
+          <li><code>line-height: 1.5em;</code> — sets vertical gap between lines</li>
+          <li><code>letter-spacing: 0.1em;</code> — sets gap between letters</li>
+          <li><code>word-spacing: 1em;</code> — sets gap between words</li>
+          <li><code>text-align: left / center / right / justify;</code> — aligns text</li>
+          <li><code>text-shadow: 2px 2px 5px #000000;</code> — adds shadow behind text</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Pseudo-Classes</h2>
+        <ul class="content-list">
+          <li><code>a:link</code> — unvisited link</li>
+          <li><code>a:visited</code> — visited link</li>
+          <li><code>a:hover</code> — element being hovered over</li>
+          <li><code>a:active</code> — element being clicked</li>
+          <li><code>input:focus</code> — input currently selected by user</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Boxes</h2>
+        <ul class="content-list">
+          <li><code>width: 300px;</code> — sets width of element</li>
+          <li><code>height: 150px;</code> — sets height of element</li>
+          <li><code>max-width: 800px;</code> — maximum width element can grow to</li>
+          <li><code>padding: 10px;</code> — space between content and border</li>
+          <li><code>margin: 20px;</code> — space outside the border</li>
+          <li><code>margin: 0 auto;</code> — centres a block element horizontally</li>
+          <li><code>border: 2px solid #ee3e80;</code> — shorthand border</li>
+          <li><code>border-radius: 10px;</code> — rounds corners</li>
+          <li><code>box-shadow: 5px 5px 10px #000000;</code> — adds shadow to box</li>
+          <li><code>display: block;</code> — makes element behave as block</li>
+          <li><code>display: inline;</code> — makes element behave as inline</li>
+          <li><code>display: inline-block;</code> — inline but accepts width and height</li>
+          <li><code>display: none;</code> — hides element completely</li>
+          <li><code>overflow: hidden;</code> — hides content that overflows the box</li>
+          <li><code>overflow: scroll;</code> — adds scrollbar for overflowing content</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Lists</h2>
+        <ul class="content-list">
+          <li><code>list-style-type: none;</code> — removes bullet points</li>
+          <li><code>list-style-type: square;</code> — square bullet points</li>
+          <li><code>list-style-type: decimal;</code> — numbered list</li>
+          <li><code>list-style-type: lower-alpha;</code> — a, b, c list</li>
+          <li><code>list-style-position: inside;</code> — bullet sits inside text flow</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Tables</h2>
+        <ul class="content-list">
+          <li><code>border-collapse: collapse;</code> — merges adjacent cell borders</li>
+          <li><code>width: 100%;</code> — makes table full width of container</li>
+          <li><code>padding: 10px;</code> — adds space inside cells</li>
+          <li><code>text-align: left;</code> — aligns cell content</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Layout</h2>
+        <ul class="content-list">
+          <li><code>position: static;</code> — default, normal flow</li>
+          <li><code>position: relative;</code> — moves from where it would have been</li>
+          <li><code>position: absolute;</code> — takes out of flow, positions to nearest positioned ancestor</li>
+          <li><code>position: fixed;</code> — stays in place when user scrolls</li>
+          <li><code>top / right / bottom / left: 0px;</code> — offset values for positioned elements</li>
+          <li><code>z-index: 10;</code> — controls stacking order of overlapping elements</li>
+          <li><code>float: left / right;</code> — floats element, text flows around it</li>
+          <li><code>clear: both;</code> — stops element sitting next to floated elements</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Images</h2>
+        <ul class="content-list">
+          <li><code>max-width: 100%;</code> — prevents image overflowing its container</li>
+          <li><code>display: block; margin: 0 auto;</code> — centres an image</li>
+          <li><code>background-image: url("images/photo.jpg");</code> — sets background image</li>
+          <li><code>background-repeat: no-repeat;</code> — shows image once only</li>
+          <li><code>background-position: center top;</code> — positions background image</li>
+          <li><code>background-image: linear-gradient(#ffffff, #ee3e80);</code> — CSS gradient</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Forms</h2>
+        <ul class="content-list">
+          <li><code>input[type="text"] { ... }</code> — targets text inputs only</li>
+          <li><code>input[type="submit"] { ... }</code> — targets submit button only</li>
+          <li><code>cursor: pointer;</code> — shows pointer cursor on hover</li>
+          <li><code>cursor: text;</code> — shows text cursor on hover</li>
+        </ul>
+      </section>
+
+    </main>
+
+    <!-- NEXT STEPS -->
+    <section class="next-chapter">
+      <div class="coming-up">
+        <h3>Ready to Test Yourself?</h3>
+        <p>Head to the CSS Final Quiz and see how much of this section you can answer without looking back at the chapters.</p>
+      </div>
+      <a href="css-final-quiz.html" class="next-btn" style="border-color: #00d4ff; color: #00d4ff;">CSS Final Quiz →</a>
+    </section>
+
+    <script>
+      localStorage.setItem('visited_' + location.pathname.split('/html/')[1].replace('.html', '') + '.html', 'true');
+function toggleGenie() {
+        const bubble = document.getElementById('genieBubble');
+        bubble.classList.toggle('visible');
+      }
+
+      function toggleNav() {
+        const dropdown = document.getElementById('navDropdown');
+        dropdown.classList.toggle('open');
+      }
+
+      document.addEventListener('click', function(e) {
+        const nav = document.querySelector('.chapter-nav');
+        if (!nav.contains(e.target)) {
+          document.getElementById('navDropdown').classList.remove('open');
+        }
+      });
+    </script>
+
+  </body>
+</html>

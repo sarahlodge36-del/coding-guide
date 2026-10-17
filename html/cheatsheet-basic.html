@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Cheat Sheet — Basic</title>
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+
+    <!-- HEADER -->
+    <header class="chapter-header">
+      <a href="../index.html" class="home-btn">← Home</a>
+      <div class="chapter-title">
+        <span class="chapter-label">HTML</span>
+        <h1>Basic Cheat Sheet</h1>
+      </div>
+      <div class="header-right">
+        <div class="chapter-nav">
+          <button class="nav-toggle" onclick="toggleNav()">Chapters ▼</button>
+          <div class="nav-dropdown" id="navDropdown">
+            <a href="chapter1.html">Chapter 1 — HTML</a>
+            <a href="chapter2.html">Chapter 2 — Text</a>
+            <a href="chapter3.html">Chapter 3 — Lists</a>
+            <a href="chapter4.html">Chapter 4 — Links</a>
+            <a href="chapter5.html">Chapter 5 — Images</a>
+            <a href="chapter6.html">Chapter 6 — Tables</a>
+            <a href="chapter7.html">Chapter 7 — Forms</a>
+            <a href="chapter8.html">Chapter 8 — Extra Markup</a>
+            <a href="chapter9.html">Chapter 9 — Video and Audio</a>
+            <hr style="border-color: #333333;">
+            <a href="cheatsheet-basic.html">HTML Cheat Sheet</a>
+          </div>
+        </div>
+        <div class="genie-container">
+          <img src="../images/xgenfutbot.png" alt="XGENFUTBOT" class="genie-icon" id="genieBtn" onclick="toggleGenie()" />
+          <div class="genie-bubble" id="genieBubble">
+            <p>Everything you've learned so far in one place. Bookmark this. You're welcome. 😎</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CHEAT SHEET CONTENT -->
+    <main class="chapter-content">
+
+      <section class="content-section">
+        <h2>Document Structure</h2>
+        <ul class="content-list">
+          <li><code>&lt;!DOCTYPE html&gt;</code> — declares the document as HTML5</li>
+          <li><code>&lt;html&gt;</code> — the root element of the page</li>
+          <li><code>&lt;head&gt;</code> — contains information about the page, not shown in the browser</li>
+          <li><code>&lt;title&gt;</code> — the title shown in the browser tab</li>
+          <li><code>&lt;body&gt;</code> — everything shown in the browser window</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Headings</h2>
+        <ul class="content-list">
+          <li><code>&lt;h1&gt;</code> — largest heading</li>
+          <li><code>&lt;h2&gt;</code> — subheading</li>
+          <li><code>&lt;h3&gt;</code> — smaller subheading</li>
+          <li><code>&lt;h4&gt;</code> — even smaller</li>
+          <li><code>&lt;h5&gt;</code> — smaller still</li>
+          <li><code>&lt;h6&gt;</code> — smallest heading</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Text</h2>
+        <ul class="content-list">
+          <li><code>&lt;p&gt;</code> — paragraph</li>
+          <li><code>&lt;b&gt;</code> — bold text (visual only)</li>
+          <li><code>&lt;i&gt;</code> — italic text (visual only)</li>
+          <li><code>&lt;strong&gt;</code> — bold — semantic importance</li>
+          <li><code>&lt;em&gt;</code> — italic — semantic emphasis</li>
+          <li><code>&lt;sup&gt;</code> — superscript (e.g. 10th, E=mc2)</li>
+          <li><code>&lt;sub&gt;</code> — subscript (e.g. H₂O)</li>
+          <li><code>&lt;br /&gt;</code> — line break</li>
+          <li><code>&lt;hr /&gt;</code> — horizontal rule / divider</li>
+          <li><code>&lt;blockquote&gt;</code> — long quote that takes up a whole paragraph</li>
+          <li><code>&lt;q&gt;</code> — short inline quote</li>
+          <li><code>&lt;abbr&gt;</code> — abbreviation with tooltip</li>
+          <li><code>&lt;cite&gt;</code> — citation</li>
+          <li><code>&lt;dfn&gt;</code> — defining instance of a new term</li>
+          <li><code>&lt;address&gt;</code> — contact details for page author</li>
+          <li><code>&lt;ins&gt;</code> — inserted content (underlined)</li>
+          <li><code>&lt;del&gt;</code> — deleted content (strikethrough)</li>
+          <li><code>&lt;s&gt;</code> — no longer relevant content</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Lists</h2>
+        <ul class="content-list">
+          <li><code>&lt;ul&gt;</code> — unordered list (bullet points)</li>
+          <li><code>&lt;ol&gt;</code> — ordered list (numbered)</li>
+          <li><code>&lt;li&gt;</code> — list item</li>
+          <li><code>&lt;dl&gt;</code> — definition list</li>
+          <li><code>&lt;dt&gt;</code> — definition term</li>
+          <li><code>&lt;dd&gt;</code> — definition description</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Links</h2>
+        <ul class="content-list">
+          <li><code>&lt;a href="URL"&gt;</code> — hyperlink to a URL</li>
+          <li><code>&lt;a href="mailto:?"&gt;</code> — email link</li>
+          <li><code>&lt;a href="#id"&gt;</code> — link to anchor on same page</li>
+          <li><code>&lt;a target="_blank"&gt;</code> — opens link in a new tab</li>
+          <li><code>id="name"</code> — creates an anchor target on any element</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Images</h2>
+        <ul class="content-list">
+          <li><code>&lt;img src=? alt=?&gt;</code> — embeds an image</li>
+          <li><code>src</code> — path to the image file</li>
+          <li><code>alt</code> — text description for screen readers and SEO</li>
+          <li><code>title</code> — tooltip shown on hover</li>
+          <li><code>width</code> and <code>height</code> — size in pixels</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Tables</h2>
+        <ul class="content-list">
+          <li><code>&lt;table&gt;</code> — creates the table</li>
+          <li><code>&lt;tr&gt;</code> — table row</li>
+          <li><code>&lt;td&gt;</code> — table data cell</li>
+          <li><code>&lt;th&gt;</code> — table header cell (bold, centred)</li>
+          <li><code>&lt;thead&gt;</code> — table header group</li>
+          <li><code>&lt;tbody&gt;</code> — table body group</li>
+          <li><code>&lt;tfoot&gt;</code> — table footer group</li>
+          <li><code>colspan=?</code> — cell spanning multiple columns</li>
+          <li><code>rowspan=?</code> — cell spanning multiple rows</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Forms</h2>
+        <ul class="content-list">
+          <li><code>&lt;form action=? method=?&gt;</code> — form container</li>
+          <li><code>&lt;input type="text"&gt;</code> — single-line text input</li>
+          <li><code>&lt;input type="password"&gt;</code> — password input (masked)</li>
+          <li><code>&lt;input type="radio"&gt;</code> — radio button (one from group)</li>
+          <li><code>&lt;input type="checkbox"&gt;</code> — checkbox</li>
+          <li><code>&lt;input type="submit"&gt;</code> — submit button</li>
+          <li><code>&lt;textarea&gt;</code> — multi-line text input</li>
+          <li><code>&lt;select&gt;</code> — dropdown list</li>
+          <li><code>&lt;option&gt;</code> — option within a dropdown</li>
+          <li><code>&lt;label&gt;</code> — label linked to an input</li>
+          <li><code>&lt;fieldset&gt;</code> — groups related form fields</li>
+          <li><code>&lt;legend&gt;</code> — caption for a fieldset</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Extra Markup</h2>
+        <ul class="content-list">
+          <li><code>&lt;!DOCTYPE html&gt;</code> — always at the top of every HTML page</li>
+          <li><code>&lt;!-- comment --&gt;</code> — HTML comment, not shown in browser</li>
+          <li><code>&lt;div&gt;</code> — block level container (no semantic meaning)</li>
+          <li><code>&lt;span&gt;</code> — inline container (no semantic meaning)</li>
+          <li><code>&amp;lt;</code> — displays &lt;</li>
+          <li><code>&amp;gt;</code> — displays &gt;</li>
+          <li><code>&amp;amp;</code> — displays &amp;</li>
+          <li><code>&amp;copy;</code> — displays ©</li>
+          <li><code>&amp;nbsp;</code> — non-breaking space</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Video and Audio</h2>
+        <ul class="content-list">
+          <li><code>&lt;video&gt;</code> — embeds a video player</li>
+          <li><code>&lt;audio&gt;</code> — embeds an audio player</li>
+          <li><code>&lt;source src=? type=?&gt;</code> — media source within video/audio</li>
+          <li><code>controls</code> — shows built-in play/pause controls</li>
+          <li><code>autoplay</code> — plays automatically on load</li>
+          <li><code>loop</code> — loops when finished</li>
+          <li><code>poster</code> — image shown before video plays</li>
+          <li><code>preload</code> — none, auto, or metadata</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Key Attributes</h2>
+        <ul class="content-list">
+          <li><code>id="name"</code> — unique identifier for an element</li>
+          <li><code>class="name"</code> — CSS class (reusable)</li>
+          <li><code>href="URL"</code> — link destination</li>
+          <li><code>src="path"</code> — source file path</li>
+          <li><code>alt="text"</code> — alternative text description</li>
+          <li><code>name="name"</code> — name of a form control</li>
+          <li><code>value="value"</code> — value sent to server from form control</li>
+          <li><code>target="_blank"</code> — opens link in new tab</li>
+          <li><code>action="URL"</code> — where form data is sent</li>
+          <li><code>method="get/post"</code> — how form data is sent</li>
+          <li><code>maxlength="n"</code> — maximum characters in an input</li>
+          <li><code>checked</code> — pre-selects a checkbox or radio button</li>
+          <li><code>selected</code> — pre-selects a dropdown option</li>
+        </ul>
+      </section>
+
+    </main>
+
+    <!-- NEXT STEPS -->
+    <section class="next-chapter">
+      <div class="coming-up">
+        <h3>Ready for the Final Test?</h3>
+        <p>Head to the HTML Final Quiz and see how much of the HTML section you can answer without looking back at the chapters.</p>
+      </div>
+      <a href="html-final-quiz.html" class="next-btn" style="margin-right: 20px; border-color: #00ff88; color: #00ff88;">HTML Final Quiz →</a>
+      <a href="cssintro.html" class="next-btn" style="border-color: #00d4ff; color: #00d4ff;">Welcome to CSS →</a>
+    </section>
+
+    <script>
+      localStorage.setItem('visited_' + location.pathname.split('/html/')[1].replace('.html', '') + '.html', 'true');
+function toggleGenie() {
+        const bubble = document.getElementById('genieBubble');
+        bubble.classList.toggle('visible');
+      }
+
+      function toggleNav() {
+        const dropdown = document.getElementById('navDropdown');
+        dropdown.classList.toggle('open');
+      }
+
+      document.addEventListener('click', function(e) {
+        const nav = document.querySelector('.chapter-nav');
+        if (!nav.contains(e.target)) {
+          document.getElementById('navDropdown').classList.remove('open');
+        }
+      });
+    </script>
+
+  </body>
+</html>

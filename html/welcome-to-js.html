@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to JavaScript</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+      .js-glow-text {
+        text-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88, 0 0 40px #00ff88;
+        color: #00ff88;
+      }
+
+      .js-section h2 {
+        color: #00ff88;
+      }
+
+      .demo-box {
+        background-color: #0a0a0a;
+        border: 2px solid #00ff88;
+        border-radius: 15px;
+        padding: 30px;
+        margin: 30px 0;
+        text-align: center;
+        box-shadow: 0 0 30px rgba(0, 255, 136, 0.2);
+      }
+
+      .demo-box h3 {
+        color: #00ff88;
+        font-size: 1rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+      }
+
+      .demo-output {
+        font-size: 1.4rem;
+        color: #ffffff;
+        min-height: 50px;
+        margin: 20px 0;
+        padding: 15px;
+        background-color: #111111;
+        border-radius: 10px;
+        border: 1px solid #333333;
+        transition: all 0.3s ease;
+      }
+
+      .js-btn {
+        display: inline-block;
+        padding: 12px 30px;
+        background-color: transparent;
+        border: 2px solid #00ff88;
+        color: #00ff88;
+        font-family: 'Courier New', monospace;
+        font-size: 0.9rem;
+        font-weight: bold;
+        letter-spacing: 2px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin: 5px;
+        text-transform: uppercase;
+      }
+
+      .js-btn:hover {
+        background-color: #00ff88;
+        color: #000000;
+        box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+        transform: scale(1.05);
+      }
+
+      .js-btn:active {
+        transform: scale(0.98);
+      }
+
+      .colour-box {
+        width: 100%;
+        height: 80px;
+        border-radius: 10px;
+        margin: 15px 0;
+        transition: background-color 0.5s ease;
+        background-color: #00ff88;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Courier New', monospace;
+        font-weight: bold;
+        color: #000000;
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+      }
+
+      .counter-display {
+        font-size: 4rem;
+        font-weight: bold;
+        color: #00ff88;
+        font-family: 'Courier New', monospace;
+        text-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+        margin: 10px 0;
+        transition: all 0.2s ease;
+      }
+
+      .name-input {
+        background-color: #111111;
+        border: 2px solid #00ff88;
+        border-radius: 8px;
+        padding: 10px 15px;
+        color: #ffffff;
+        font-family: 'Courier New', monospace;
+        font-size: 1rem;
+        width: 200px;
+        margin: 10px;
+        outline: none;
+      }
+
+      .name-input:focus {
+        box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+      }
+
+      .progress-section {
+        background-color: #0a0a0a;
+        border: 2px solid #00ff88;
+        border-radius: 15px;
+        padding: 25px;
+        margin: 20px 0;
+      }
+
+      .progress-label {
+        color: #00ff88;
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+
+      .progress-bar-outer {
+        background-color: #1a1a1a;
+        border-radius: 20px;
+        height: 20px;
+        margin-bottom: 15px;
+        overflow: hidden;
+        border: 1px solid #333333;
+      }
+
+      .progress-bar-inner {
+        height: 100%;
+        border-radius: 20px;
+        background: linear-gradient(90deg, #00ff88, #00d4ff);
+        width: 0%;
+        transition: width 1s ease;
+        box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+      }
+
+      .tag-line {
+        color: #00ff88;
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+        opacity: 0.7;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- HEADER -->
+    <header class="chapter-header" style="border-bottom: 2px solid #00ff88;">
+      <a href="../index.html" class="home-btn" style="color: #00ff88;">← Home</a>
+      <div class="chapter-title">
+        <span class="chapter-label" style="color: #00ff88;">New Section</span>
+        <h1 class="js-glow-text">Welcome to JavaScript</h1>
+      </div>
+      <div class="genie-container">
+        <img src="../images/xgenfutbot.png" alt="XGENFUTBOT" class="genie-icon" id="genieBtn" onclick="toggleGenie()" />
+        <div class="genie-bubble" id="genieBubble" style="border-color: #00ff88; color: #00ff88;">
+          <p>HTML built it. CSS made it beautiful. Now JavaScript makes it actually DO things. Buckle up. 😎</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- CONTENT -->
+    <main class="chapter-content js-section">
+
+      <section class="content-section">
+        <h2>This is Where Everything Changes</h2>
+        <p>You've built a webpage. You've styled it until it looks genuinely impressive. But here's the thing — everything you've built so far is static. It sits there. It looks good. But it doesn't respond. It doesn't react. It doesn't think.</p>
+        <p>JavaScript changes all of that.</p>
+        <p>JavaScript is the programming language of the web. It's what makes pages interactive — buttons that do things, forms that validate themselves, content that updates without reloading, games you can play, animations that respond to your mouse. If HTML is the bones and CSS is the skin, JavaScript is the nervous system.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Before You Read Another Word — Try This</h2>
+        <p>Everything below is powered by JavaScript. You haven't learned any of it yet. But try it out — because in a few chapters you'll know exactly how every single one of these works.</p>
+
+        <!-- DEMO 1: NAME GREETER -->
+        <div class="demo-box">
+          <h3>⚡ Demo 1 — JavaScript Knows Your Name</h3>
+          <p style="color: #888888; font-size: 0.9rem; margin-bottom: 15px;">Type your name and hit the button.</p>
+          <input type="text" class="name-input" id="nameInput" placeholder="Your name..." />
+          <br>
+          <button class="js-btn" onclick="greetUser()">Say Hello</button>
+          <div class="demo-output" id="greetOutput">Your greeting will appear here...</div>
+          <p style="color: #555555; font-size: 0.75rem; margin-top: 10px; font-style: italic;">That's JavaScript reading what you typed and writing back to the page in real time.</p>
+        </div>
+
+        <!-- DEMO 2: COLOUR CHANGER -->
+        <div class="demo-box">
+          <h3>⚡ Demo 2 — JavaScript Controls the Page</h3>
+          <p style="color: #888888; font-size: 0.9rem; margin-bottom: 15px;">Click the button to change the colour of the box below.</p>
+          <button class="js-btn" onclick="changeColour()">Change Colour</button>
+          <div class="colour-box" id="colourBox">#00ff88</div>
+          <p style="color: #555555; font-size: 0.75rem; margin-top: 10px; font-style: italic;">That's JavaScript picking a random colour and applying it to an element on the page instantly.</p>
+        </div>
+
+        <!-- DEMO 3: COUNTER -->
+        <div class="demo-box">
+          <h3>⚡ Demo 3 — JavaScript Remembers Things</h3>
+          <p style="color: #888888; font-size: 0.9rem; margin-bottom: 15px;">Click the buttons and watch JavaScript keep track.</p>
+          <div class="counter-display" id="counterDisplay">0</div>
+          <button class="js-btn" onclick="changeCounter(-1)">− Decrease</button>
+          <button class="js-btn" onclick="changeCounter(1)">+ Increase</button>
+          <button class="js-btn" onclick="resetCounter()" style="border-color: #ff2d78; color: #ff2d78;">Reset</button>
+          <p style="color: #555555; font-size: 0.75rem; margin-top: 15px; font-style: italic;">That's JavaScript storing a number in memory and updating the display every time you click.</p>
+        </div>
+
+        <!-- DEMO 4: PROGRESS BARS -->
+        <div class="demo-box">
+          <h3>⚡ Demo 4 — JavaScript Animates Things</h3>
+          <p style="color: #888888; font-size: 0.9rem; margin-bottom: 15px;">Click the button and watch what happens.</p>
+          <button class="js-btn" onclick="runProgress()">Run Progress</button>
+          <div class="progress-section" style="margin-top: 20px;">
+            <p class="progress-label">HTML</p>
+            <div class="progress-bar-outer"><div class="progress-bar-inner" id="bar1"></div></div>
+            <p class="progress-label">CSS</p>
+            <div class="progress-bar-outer"><div class="progress-bar-inner" id="bar2"></div></div>
+            <p class="progress-label">JavaScript</p>
+            <div class="progress-bar-outer"><div class="progress-bar-inner" id="bar3"></div></div>
+          </div>
+          <p style="color: #555555; font-size: 0.75rem; margin-top: 10px; font-style: italic;">That's JavaScript animating elements on the page using timing functions.</p>
+        </div>
+
+      </section>
+
+      <section class="content-section">
+        <h2>What You Just Played With</h2>
+        <p>Every single one of those demos was written in JavaScript — and none of it required reloading the page, downloading anything, or connecting to a server. It all happened instantly, right there in your browser.</p>
+        <p>The greeter read what you typed and responded to it. The colour changer picked a random value and applied it to an element. The counter stored a number and updated it. The progress bars animated on a timer.</p>
+        <p>By the end of this section you will know exactly how to build all of that yourself — and much more.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>A New Tool — CodePen</h2>
+        <p>Up until now you've been writing your code in Notepad and opening it in a browser. For JavaScript we're switching to a better tool — <strong>CodePen</strong>.</p>
+        <p>CodePen is a free website where you write HTML, CSS, and JavaScript in three separate panels and see the result update live in a fourth panel below. No saving. No refreshing. Just instant feedback.</p>
+        <p>Go to <strong>codepen.io</strong> — you don't even need an account to start. When you get there you'll see three panels at the top (HTML, CSS, JS) and a preview panel below. That's your new workbench for this section.</p>
+        <div class="tip-box" style="border-color: #00ff88;">
+          <h3 style="color: #00ff88;">⚡ Quick Note on CodePen</h3>
+          <p>In CodePen you don't need to write your full HTML boilerplate — no DOCTYPE, no html tag, no head, no body. CodePen handles all of that for you. Just write the content that would normally go inside your body tags in the HTML panel, your CSS rules in the CSS panel, and your JavaScript in the JS panel.</p>
+          <p style="margin-top: 10px;">If you want to save your work, create a free account and hit Save. Otherwise your work lives in the browser tab — close it and it's gone.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>What You're Going to Build</h2>
+        <p>The HTML section had you build a personal webpage. The CSS section had you style it. For JavaScript — we're building something completely different.</p>
+        <p>Over the course of this section you're going to build a <strong>text-based adventure game</strong>. A real one. With choices, consequences, inventory items, different endings, and a story that reacts to what the player does.</p>
+        <p>It'll start simple — just a title screen and a first choice. But by the end it will be a fully playable game built entirely from scratch in JavaScript. Something you can share. Something people will actually want to play.</p>
+        <p>Every chapter adds a new feature to the game while teaching you a new JavaScript concept. By the time you finish you won't just have learned JavaScript — you'll have proof that you can use it to build something real.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>One Last Thing Before We Start</h2>
+        <p>JavaScript is a real programming language. Not a markup language like HTML. Not a styling language like CSS. An actual programming language with logic, memory, and the ability to make decisions.</p>
+        <p>That means it's a step up in complexity. Some concepts will click immediately. Others will take a moment to settle. That's completely normal — it's supposed to feel slightly harder than what came before. The same rule applies as always: only move on when you actually understand it, not just when you've copied it.</p>
+        <p>Take your time. Use the quizzes. Build the game chapter by chapter. And remember — every professional JavaScript developer once sat exactly where you are now, looking at their first line of code wondering what on earth was going on.</p>
+        <p>Let's go. 🚀</p>
+      </section>
+
+    </main>
+
+    <!-- NEXT -->
+    <section class="next-chapter" style="border-top: 2px solid #00ff88;">
+      <div class="coming-up">
+        <h3 style="color: #00ff88;">Coming Up — Chapter 20: Introduction to JavaScript</h3>
+        <p>Your first JavaScript chapter. Variables, data types, and your first line of real code. Open CodePen and let's go.</p>
+      </div>
+      <a href="chapter20.html" class="next-btn" style="border-color: #00ff88; color: #00ff88;">Start Chapter 20: Introduction to JavaScript →</a>
+    </section>
+
+    <script>
+      localStorage.setItem('visited_' + location.pathname.split('/html/')[1].replace('.html', '') + '.html', 'true');
+function toggleGenie() {
+        const bubble = document.getElementById('genieBubble');
+        bubble.classList.toggle('visible');
+      }
+
+      // DEMO 1 - Name Greeter
+      function greetUser() {
+        const name = document.getElementById('nameInput').value.trim();
+        const output = document.getElementById('greetOutput');
+        if (name === '') {
+          output.textContent = 'You need to type your name first! 😄';
+          output.style.color = '#ff2d78';
+        } else {
+          const greetings = [
+            `Well hello there, ${name}! JavaScript sees you. 👀`,
+            `${name}! You made it to JavaScript. XGENFUTBOT is impressed. 😎`,
+            `Greetings, ${name}. Your coding journey just levelled up. 🚀`,
+            `${name} has entered the chat. JavaScript says hi. ⚡`,
+            `Welcome, ${name}. The fun is just getting started. 😄`
+          ];
+          const random = greetings[Math.floor(Math.random() * greetings.length)];
+          output.textContent = random;
+          output.style.color = '#00ff88';
+        }
+      }
+
+      // Allow Enter key on name input
+      document.getElementById('nameInput').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') greetUser();
+      });
+
+      // DEMO 2 - Colour Changer
+      const colours = [
+        { hex: '#00ff88', name: '#00ff88' },
+        { hex: '#ff2d78', name: '#ff2d78' },
+        { hex: '#00d4ff', name: '#00d4ff' },
+        { hex: '#ffbe0b', name: '#ffbe0b' },
+        { hex: '#fb5607', name: '#fb5607' },
+        { hex: '#8338ec', name: '#8338ec' },
+        { hex: '#3a86ff', name: '#3a86ff' },
+        { hex: '#ff006e', name: '#ff006e' },
+      ];
+
+      let lastColourIndex = 0;
+
+      function changeColour() {
+        let newIndex;
+        do {
+          newIndex = Math.floor(Math.random() * colours.length);
+        } while (newIndex === lastColourIndex);
+        lastColourIndex = newIndex;
+        const colour = colours[newIndex];
+        const box = document.getElementById('colourBox');
+        box.style.backgroundColor = colour.hex;
+        box.textContent = colour.name;
+        const isDark = ['#8338ec', '#3a86ff', '#ff006e', '#ff2d78'].includes(colour.hex);
+        box.style.color = isDark ? '#ffffff' : '#000000';
+      }
+
+      // DEMO 3 - Counter
+      let count = 0;
+
+      function changeCounter(amount) {
+        count += amount;
+        const display = document.getElementById('counterDisplay');
+        display.textContent = count;
+        if (count > 0) {
+          display.style.color = '#00ff88';
+          display.style.textShadow = '0 0 20px rgba(0, 255, 136, 0.5)';
+        } else if (count < 0) {
+          display.style.color = '#ff2d78';
+          display.style.textShadow = '0 0 20px rgba(255, 45, 120, 0.5)';
+        } else {
+          display.style.color = '#ffffff';
+          display.style.textShadow = 'none';
+        }
+      }
+
+      function resetCounter() {
+        count = 0;
+        const display = document.getElementById('counterDisplay');
+        display.textContent = '0';
+        display.style.color = '#ffffff';
+        display.style.textShadow = 'none';
+      }
+
+      // DEMO 4 - Progress Bars
+      function runProgress() {
+        const bar1 = document.getElementById('bar1');
+        const bar2 = document.getElementById('bar2');
+        const bar3 = document.getElementById('bar3');
+        bar1.style.width = '0%';
+        bar2.style.width = '0%';
+        bar3.style.width = '0%';
+        setTimeout(() => { bar1.style.width = '100%'; }, 100);
+        setTimeout(() => { bar2.style.width = '100%'; }, 600);
+        setTimeout(() => { bar3.style.width = '60%'; }, 1100);
+      }
+    </script>
+
+  </body>
+</html>

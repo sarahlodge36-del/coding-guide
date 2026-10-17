@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 10: Introducing CSS</title>
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+
+    <!-- HEADER -->
+    <header class="chapter-header">
+      <a href="../index.html" class="home-btn">← Home</a>
+      <div class="chapter-title">
+        <span class="chapter-label">Chapter 10</span>
+        <h1>Introducing CSS</h1>
+      </div>
+      <div class="header-right">
+        <div class="chapter-nav">
+          <button class="nav-toggle" onclick="toggleNav()">Chapters ▼</button>
+          <div class="nav-dropdown" id="navDropdown">
+            <a href="chapter10.html">Chapter 10 — Introducing CSS</a>
+            <a href="chapter11.html">Chapter 11 — Colour</a>
+            <a href="chapter12.html">Chapter 12 — Text</a>
+            <a href="chapter13.html">Chapter 13 — Boxes</a>
+            <a href="chapter14.html">Chapter 14 — Lists, Tables and Forms</a>
+            <a href="chapter15.html">Chapter 15 — Layout</a>
+            <a href="chapter16.html">Chapter 16 — Images</a>
+            <a href="chapter17.html">Chapter 17 — HTML5 Layout</a>
+            <a href="chapter18.html">Chapter 18 — Process and Design</a>
+            <a href="chapter19.html">Chapter 19 — Practical Information</a>
+            <hr style="border-color: #333333;">
+            <a href="css-cheatsheet.html">CSS Cheat Sheet</a>
+            <a href="css-final-quiz.html">CSS Final Quiz</a>
+          </div>
+        </div>
+        <div class="genie-container">
+          <img src="../images/xgenfutbot.png" alt="XGENFUTBOT" class="genie-icon" id="genieBtn" onclick="toggleGenie()" />
+          <div class="genie-bubble" id="genieBubble">
+            <p>Welcome to CSS, chapter one. This is where your page stops looking like a Word document from 1998. 😎</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CHAPTER CONTENT -->
+    <main class="chapter-content">
+
+      <section class="content-section">
+        <h2>What is CSS?</h2>
+        <p>CSS stands for Cascading Style Sheets. While HTML gives your page its structure and content, CSS is what makes it look good. It lets you control colours, fonts, sizes, spacing and layouts — basically everything to do with how your page appears.</p>
+        <p>The key to understanding how CSS works is to imagine that there is an invisible box around every HTML element. CSS lets you create rules that control how each of those boxes — and the content inside them — is displayed.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>CSS Rules</h2>
+        <p>A CSS rule has two parts: a selector and a declaration.</p>
+        <div class="code-block">
+          <code>p {</code><br>
+          <code>&nbsp;&nbsp;font-family: Arial;</code><br>
+          <code>}</code>
+        </div>
+        <p>The selector (p) tells the browser which element the rule applies to. The declaration (font-family: Arial;) tells the browser how to style it.</p>
+        <p>You can apply the same rule to more than one element by separating the element names with commas:</p>
+        <div class="code-block">
+          <code>h1, h2, h3 {</code><br>
+          <code>&nbsp;&nbsp;font-family: Arial;</code><br>
+          <code>&nbsp;&nbsp;color: yellow;</code><br>
+          <code>}</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Properties and Values</h2>
+        <p>Each declaration is made up of two parts: a property and a value, separated by a colon. Multiple declarations are separated by semicolons and all sit inside curly brackets.</p>
+        <p>The property is the aspect of the element you want to change — for example color, font-family, width, or border. The value is the setting you want to apply to that property — for example red, Arial, 400px.</p>
+        <div class="code-block">
+          <code>h1, h2 {</code><br>
+          <code>&nbsp;&nbsp;font-family: Arial;</code><br>
+          <code>&nbsp;&nbsp;color: yellow;</code><br>
+          <code>}</code>
+        </div>
+        <p>This rule tells the browser to display all h1 and h2 elements in Arial, in yellow.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Thinking Inside the Box</h2>
+        <p>The key to understanding CSS is remembering that every HTML element lives inside its own invisible box. Block level elements like h1, p, ul and div each start on a new line and take up their own box. Inline elements like a, b, em and img flow within the text and sit inside a smaller box within the line.</p>
+        <p>CSS lets you control both the box itself (its size, border, background colour) and the content inside it (its font, colour, text size).</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Using External CSS</h2>
+        <p>The best way to add CSS to your pages is to keep it in a separate file with a .css extension and link to it from your HTML. This is called an external stylesheet.</p>
+        <p>You link to it using the link element inside the head of your HTML page:</p>
+        <div class="code-block">
+          <code>&lt;!DOCTYPE html&gt;</code><br>
+          <code>&lt;html&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;head&gt;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;My Page&lt;/title&gt;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;link href="css/styles.css" type="text/css" rel="stylesheet" /&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;/head&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;body&gt;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Potatoes&lt;/h1&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;/body&gt;</code><br>
+          <code>&lt;/html&gt;</code>
+        </div>
+        <ul class="content-list">
+          <li><code>href</code> — the path to your CSS file</li>
+          <li><code>type</code> — the type of document being linked. For CSS this is always text/css</li>
+          <li><code>rel</code> — the relationship between the HTML page and the linked file. For a CSS file this is always stylesheet</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Using Internal CSS</h2>
+        <p>You can also write CSS rules directly inside your HTML page using the style element, which sits inside the head. This is called internal CSS.</p>
+        <div class="code-block">
+          <code>&lt;head&gt;</code><br>
+          <code>&nbsp;&nbsp;&lt;style type="text/css"&gt;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;body { font-family: arial; }</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;h1 { color: white; }</code><br>
+          <code>&nbsp;&nbsp;&lt;/style&gt;</code><br>
+          <code>&lt;/head&gt;</code>
+        </div>
+        <p>Internal CSS is fine for a single page, but if your site has more than one page you should always use an external stylesheet — that way one change updates every page at once.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>CSS Selectors</h2>
+        <p>There are several types of CSS selector that let you target different elements in different ways.</p>
+        <ul class="content-list">
+          <li><strong>Universal selector</strong> — targets every element on the page: <code>* { font-family: Arial; }</code></li>
+          <li><strong>Type selector</strong> — targets all elements of a specific type: <code>h1, h2, h3 { color: blue; }</code></li>
+          <li><strong>Class selector</strong> — targets any element with a matching class attribute, using a dot before the class name: <code>.note { color: grey; }</code></li>
+          <li><strong>ID selector</strong> — targets the element with a matching id attribute, using a hash before the id name: <code>#introduction { font-size: 120%; }</code></li>
+        </ul>
+        <p>CSS selectors are case sensitive, so they must match your HTML exactly.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>How CSS Rules Cascade</h2>
+        <p>CSS stands for Cascading Style Sheets — and the cascading part is important. When two or more rules apply to the same element, the browser needs to decide which one wins.</p>
+        <ul class="content-list">
+          <li><strong>Last rule</strong> — if two selectors are identical, the one that appears last in the stylesheet takes precedence</li>
+          <li><strong>Specificity</strong> — if one selector is more specific than another, the more specific rule wins</li>
+          <li><strong>Important</strong> — you can add !important after a property value to force it to take priority over other rules</li>
+        </ul>
+        <p>Understanding the cascade means you can write simpler stylesheets — set general rules for most elements and then override just the ones that need to look different.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Inheritance</h2>
+        <p>Some CSS properties are passed down from parent elements to their children — this is called inheritance. For example if you set font-family on the body element, most elements inside the body will inherit that font automatically.</p>
+        <p>Not everything is inherited though. Properties like background-color and border are not inherited — and that's a good thing, otherwise every element inside a styled div would end up with the same border and background!</p>
+      </section>
+
+    </main>
+
+    <!-- NOW LET'S BUILD -->
+    <section class="build-section">
+      <div class="build-content">
+        <h2>🔨 Now Let's Build!</h2>
+        <p>This is the big moment. Open your <strong>index.html</strong> file in Notepad. We're going to link it to a brand new CSS file for the first time.</p>
+        <p>First, create a new folder next to your index.html file called <strong>css</strong>. Inside that folder, create a new file in Notepad and save it as <strong>styles.css</strong> (choose All Files when saving).</p>
+        <p>Now go back to your index.html file and add this line inside your head tags, just before the closing &lt;/head&gt;:</p>
+        <div class="code-block">
+          <code>&lt;link href="css/styles.css" type="text/css" rel="stylesheet" /&gt;</code>
+        </div>
+        <p>Now open your new styles.css file and add this:</p>
+        <div class="code-block">
+          <code>body {</code><br>
+          <code>&nbsp;&nbsp;font-family: Arial, sans-serif;</code><br>
+          <code>&nbsp;&nbsp;background-color: #f0f0f0;</code><br>
+          <code>}</code><br><br>
+          <code>h1 {</code><br>
+          <code>&nbsp;&nbsp;color: #ee3e80;</code><br>
+          <code>}</code>
+        </div>
+        <p>Save both files and refresh your browser. Your page should now have a light grey background, a new font, and your h1 heading should be pink!</p>
+
+        <!-- BROWSER PREVIEW -->
+        <div class="browser-preview">
+          <div class="browser-bar">
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+            <span class="browser-url">file:///C:/Users/Home/index.html</span>
+          </div>
+          <div class="browser-content" style="background-color: #f0f0f0;">
+            <h1 style="font-size: 1.5rem; color: #ee3e80; font-family: Arial, sans-serif; margin-bottom: 10px;">Welcome to My Page</h1>
+            <p style="color: #000000; font-family: Arial, sans-serif;">I am learning to code and this is my first webpage!</p>
+          </div>
+        </div>
+        <p class="preview-note">👆 Same content as before — completely different feel. That's the power of CSS!</p>
+
+        <div class="full-code">
+          <h3>✅ Your index.html file should now look like this:</h3>
+          <div class="code-block">
+            <code>&lt;!DOCTYPE html&gt;</code><br>
+            <code>&lt;html&gt;</code><br>
+            <code>&nbsp;&nbsp;&lt;head&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;My First Webpage&lt;/title&gt;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;link href="css/styles.css" type="text/css" rel="stylesheet" /&gt;</code><br>
+            <code>&nbsp;&nbsp;&lt;/head&gt;</code><br>
+            <code>&nbsp;&nbsp;&lt;body&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1 id="top"&gt;Welcome to My Page&lt;/h1&gt;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;I am learning to code and this is my first webpage!&lt;/p&gt;</code><br>
+            <code>&nbsp;&nbsp;&lt;/body&gt;</code><br>
+            <code>&lt;/html&gt;</code>
+          </div>
+          <h3 style="margin-top: 20px;">✅ Your styles.css file should now look like this:</h3>
+          <div class="code-block">
+            <code>body {</code><br>
+            <code>&nbsp;&nbsp;font-family: Arial, sans-serif;</code><br>
+            <code>&nbsp;&nbsp;background-color: #f0f0f0;</code><br>
+            <code>}</code><br><br>
+            <code>h1 {</code><br>
+            <code>&nbsp;&nbsp;color: #ee3e80;</code><br>
+            <code>}</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIZ SECTION -->
+    <section class="quiz-section">
+      <h2>Chapter 10 Quiz</h2>
+      <p class="quiz-intro">Only move on when you can answer all of these confidently without looking!</p>
+
+      <div class="quiz-question">
+        <p class="question">1. What are the two parts of a CSS rule?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) A property and a value</li>
+          <li onclick="checkAnswer(this, true)">b) A selector and a declaration</li>
+          <li onclick="checkAnswer(this, false)">c) A tag and an attribute</li>
+          <li onclick="checkAnswer(this, false)">d) A class and an id</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">2. In this CSS rule — p { color: red; } — what is the selector?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) color</li>
+          <li onclick="checkAnswer(this, false)">b) red</li>
+          <li onclick="checkAnswer(this, true)">c) p</li>
+          <li onclick="checkAnswer(this, false)">d) { }</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">3. What does the href attribute do on a link element?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Sets the type of the linked file</li>
+          <li onclick="checkAnswer(this, false)">b) Defines the relationship between the files</li>
+          <li onclick="checkAnswer(this, true)">c) Specifies the path to the CSS file</li>
+          <li onclick="checkAnswer(this, false)">d) Adds a colour to the page</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">4. What is the difference between an external and an internal stylesheet?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) There is no difference</li>
+          <li onclick="checkAnswer(this, true)">b) External CSS is in a separate file linked with link; internal CSS sits inside a style element in the head</li>
+          <li onclick="checkAnswer(this, false)">c) Internal CSS is in a separate file; external CSS sits in the HTML</li>
+          <li onclick="checkAnswer(this, false)">d) External CSS only works on one page</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">5. Which CSS selector would you use to target an element with the id of "header"?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) .header</li>
+          <li onclick="checkAnswer(this, false)">b) header</li>
+          <li onclick="checkAnswer(this, false)">c) *header</li>
+          <li onclick="checkAnswer(this, true)">d) #header</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">6. What does the cascade mean in CSS?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) The page loads from top to bottom</li>
+          <li onclick="checkAnswer(this, false)">b) CSS files must be in a folder called cascade</li>
+          <li onclick="checkAnswer(this, true)">c) When rules conflict, the browser decides which one wins based on order and specificity</li>
+          <li onclick="checkAnswer(this, false)">d) All rules apply equally regardless of order</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">7. Which properties are inherited by child elements?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) All properties are inherited</li>
+          <li onclick="checkAnswer(this, false)">b) No properties are inherited</li>
+          <li onclick="checkAnswer(this, true)">c) Properties like font-family and color are inherited; background-color and border are not</li>
+          <li onclick="checkAnswer(this, false)">d) Only border and background-color are inherited</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+    </section>
+
+    <!-- NEXT CHAPTER -->
+    <section class="next-chapter">
+      <div class="coming-up">
+        <h3>Coming Up Next — Chapter 11: Colour</h3>
+        <p>In the next chapter we look at the different ways you can specify colour in CSS, what makes good contrast, and how opacity works.</p>
+      </div>
+      <a href="chapter11.html" class="next-btn" style="border-color: #00d4ff; color: #00d4ff;">Next Up: Colour →</a>
+    </section>
+
+    <script>
+      localStorage.setItem('visited_' + location.pathname.split('/html/')[1].replace('.html', '') + '.html', 'true');
+function toggleGenie() {
+        const bubble = document.getElementById('genieBubble');
+        bubble.classList.toggle('visible');
+      }
+
+      function toggleNav() {
+        const dropdown = document.getElementById('navDropdown');
+        dropdown.classList.toggle('open');
+      }
+
+      document.addEventListener('click', function(e) {
+        const nav = document.querySelector('.chapter-nav');
+        if (!nav.contains(e.target)) {
+          document.getElementById('navDropdown').classList.remove('open');
+        }
+      });
+
+      function checkAnswer(element, isCorrect) {
+        const options = element.parentElement.querySelectorAll('li');
+        options.forEach(option => {
+          option.style.pointerEvents = 'none';
+        });
+        if (isCorrect) {
+          element.classList.add('correct');
+        } else {
+          element.classList.add('incorrect');
+        }
+        const resetBtn = element.parentElement.nextElementSibling;
+        if (resetBtn && resetBtn.classList.contains('reset-btn')) {
+          resetBtn.style.display = 'inline-block';
+        }
+      }
+
+      function resetQuestion(button) {
+        const options = button.previousElementSibling.querySelectorAll('li');
+        options.forEach(option => {
+          option.classList.remove('correct', 'incorrect');
+          option.style.pointerEvents = 'auto';
+        });
+        button.style.display = 'none';
+      }
+    </script>
+
+  </body>
+</html>

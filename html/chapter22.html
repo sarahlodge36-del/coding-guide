@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 22: Functions, Methods and Objects</title>
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+
+    <!-- HEADER -->
+    <header class="chapter-header" style="border-bottom: 2px solid #00ff88;">
+      <a href="../index.html" class="home-btn" style="color: #00ff88;">← Home</a>
+      <div class="chapter-title">
+        <span class="chapter-label" style="color: #00ff88;">Chapter 22</span>
+        <h1 style="color: #00ff88;">Functions, Methods and Objects</h1>
+      </div>
+      <div class="header-right">
+        <div class="chapter-nav">
+          <button class="nav-toggle" onclick="toggleNav()" style="border-color: #00ff88; color: #00ff88;">Chapters ▼</button>
+          <div class="nav-dropdown" id="navDropdown">
+            <a href="chapter20.html">Chapter 20 — The ABC of Programming</a>
+            <a href="chapter21.html">Chapter 21 — Basic JS Instructions</a>
+            <a href="chapter22.html">Chapter 22 — Functions, Methods and Objects</a>
+            <a href="chapter23.html">Chapter 23 — Decisions and Loops</a>
+            <a href="chapter24.html">Chapter 24 — Document Object Model</a>
+            <a href="chapter25.html">Chapter 25 — Events</a>
+          </div>
+        </div>
+        <div class="genie-container">
+          <img src="../images/xgenfutbot.png" alt="XGENFUTBOT" class="genie-icon" id="genieBtn" onclick="toggleGenie()" />
+          <div class="genie-bubble" id="genieBubble" style="border-color: #00ff88; color: #00ff88;">
+            <p>Functions are reusable blocks of code. Write once, use everywhere. This is where things get elegant. 😎</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CHAPTER CONTENT -->
+    <main class="chapter-content">
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">What is a Function?</h2>
+        <p>A function is a group of statements that together perform a specific task. Instead of writing the same code over and over again, you write it once inside a function and then call that function whenever you need it.</p>
+        <p>Think of a function like a named recipe. You write the recipe once — "how to make tea" — and then whenever you want tea you just say "make tea" rather than listing every step again from scratch.</p>
+        <p>Functions are one of the most important concepts in JavaScript. Almost everything you build will use them.</p>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Declaring a Function</h2>
+        <p>To create a function you use the <code>function</code> keyword, give it a name, add parentheses, and then put the code it should run inside curly braces.</p>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>function sayHello() {</code><br>
+          <code>&nbsp;&nbsp;var greeting = 'Hello there!';</code><br>
+          <code>&nbsp;&nbsp;alert(greeting);</code><br>
+          <code>}</code>
+        </div>
+        <p>That function is now declared — but it won't do anything yet. It just sits there waiting to be called.</p>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Calling a Function</h2>
+        <p>To make a function actually run, you call it by writing its name followed by parentheses.</p>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>sayHello();</code>
+        </div>
+        <p>That one line runs all the code inside the sayHello function. You can call the same function as many times as you like from anywhere in your script.</p>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Functions with Parameters</h2>
+        <p>Functions can accept information when they're called. The named variables inside the parentheses of a function declaration are called <strong>parameters</strong>. When you call the function and pass values in, those values are called <strong>arguments</strong>.</p>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>function greetPlayer(name) {</code><br>
+          <code>&nbsp;&nbsp;alert('Welcome, ' + name + '!');</code><br>
+          <code>}</code><br><br>
+          <code>greetPlayer('Sarah');  // shows "Welcome, Sarah!"</code><br>
+          <code>greetPlayer('Jack');   // shows "Welcome, Jack!"</code>
+        </div>
+        <p>The same function works differently depending on what you pass in. That's what makes functions so powerful.</p>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Functions that Return a Value</h2>
+        <p>Some functions calculate something and send the result back. The <code>return</code> keyword does this. Once a function hits a return statement it stops running and sends the value back to wherever it was called from.</p>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>function calculateArea(width, height) {</code><br>
+          <code>&nbsp;&nbsp;var area = width * height;</code><br>
+          <code>&nbsp;&nbsp;return area;</code><br>
+          <code>}</code><br><br>
+          <code>var roomArea = calculateArea(5, 3);  // roomArea is now 15</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Variable Scope</h2>
+        <p>Variables declared inside a function are only available inside that function. This is called <strong>local scope</strong>. Variables declared outside any function are available anywhere in the script — this is called <strong>global scope</strong>.</p>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>var playerName = 'Sarah';  // global — available everywhere</code><br><br>
+          <code>function showScore() {</code><br>
+          <code>&nbsp;&nbsp;var bonus = 50;  // local — only exists inside this function</code><br>
+          <code>&nbsp;&nbsp;alert(playerName + ' scored ' + bonus + ' points!');</code><br>
+          <code>}</code>
+        </div>
+        <p>If you try to access a local variable outside its function, JavaScript won't know what you're talking about and will throw an error. This is actually a good thing — it keeps your code tidy and prevents variables from interfering with each other.</p>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Methods</h2>
+        <p>A method is simply a function that belongs to an object. You've already been using methods without realising it.</p>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>document.getElementById('title');    // getElementById is a method</code><br>
+          <code>console.log('Hello');                // log is a method of console</code><br>
+          <code>inventory.push('Structure Crystal'); // push is a method of arrays</code>
+        </div>
+        <p>The dot between the object and the method name is called dot notation. Object dot method. You'll see this pattern constantly — it's one of the most important patterns in JavaScript.</p>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Objects</h2>
+        <p>An object is a collection of related variables and functions grouped together under one name. The variables inside an object are called <strong>properties</strong> and the functions inside are called <strong>methods</strong>.</p>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>var player = {</code><br>
+          <code>&nbsp;&nbsp;name: 'Sarah',</code><br>
+          <code>&nbsp;&nbsp;health: 3,</code><br>
+          <code>&nbsp;&nbsp;score: 0,</code><br>
+          <code>&nbsp;&nbsp;inventory: [],</code><br>
+          <code>&nbsp;&nbsp;greet: function() {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;return 'Hello, ' + this.name + '!';</code><br>
+          <code>&nbsp;&nbsp;}</code><br>
+          <code>};</code>
+        </div>
+        <p>You access an object's properties and methods using dot notation:</p>
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>player.name;     // 'Sarah'</code><br>
+          <code>player.health;   // 3</code><br>
+          <code>player.greet();  // 'Hello, Sarah!'</code>
+        </div>
+        <p>The <code>this</code> keyword inside an object refers to the object itself. So <code>this.name</code> means "the name property of this object."</p>
+      </section>
+
+    </main>
+
+    <!-- NOW LET'S BUILD -->
+    <section class="build-section" style="border-color: #00ff88;">
+      <div class="build-content">
+        <h2 style="color: #00ff88;">🔨 Now Let's Build!</h2>
+        <p>Open your Code Machine Quest CodePen. We're going to reorganise the game using functions so each part of the game has its own job. This makes the code much cleaner and easier to build on in later chapters.</p>
+        <p>Replace everything in your <strong>JS panel</strong> with this:</p>
+
+        <div class="code-block" style="border-color: #00ff88;">
+          <code>// ==============================</code><br>
+          <code>// GAME VARIABLES</code><br>
+          <code>// ==============================</code><br>
+          <code>var playerName = '';</code><br>
+          <code>var playerHealth = 3;</code><br>
+          <code>var playerScore = 0;</code><br>
+          <code>var inventory = [];</code><br>
+          <code>var currentRealm = 0;</code><br><br>
+          <code>// ==============================</code><br>
+          <code>// FUNCTIONS</code><br>
+          <code>// ==============================</code><br><br>
+          <code>// Shows a message in the message box</code><br>
+          <code>function showMessage(text) {</code><br>
+          <code>&nbsp;&nbsp;document.getElementById('message').textContent = text;</code><br>
+          <code>}</code><br><br>
+          <code>// Updates the title on screen</code><br>
+          <code>function showTitle(text) {</code><br>
+          <code>&nbsp;&nbsp;document.getElementById('title').textContent = text;</code><br>
+          <code>}</code><br><br>
+          <code>// Shows the player's current stats</code><br>
+          <code>function showStats() {</code><br>
+          <code>&nbsp;&nbsp;return playerName + ' | Lives: ' + playerHealth + ' | Score: ' + playerScore;</code><br>
+          <code>}</code><br><br>
+          <code>// Starts the game when the button is clicked</code><br>
+          <code>function startGame() {</code><br>
+          <code>&nbsp;&nbsp;var nameInput = document.getElementById('nameInput').value;</code><br>
+          <code>&nbsp;&nbsp;if (nameInput === '') {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;showMessage('You need to enter your name, coder!');</code><br>
+          <code>&nbsp;&nbsp;} else {</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;playerName = nameInput;</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;showTitle('THE CODE MACHINE QUEST');</code><br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;showMessage('Welcome, ' + playerName + '. XGENFUTBOT is watching. The quest begins...');</code><br>
+          <code>&nbsp;&nbsp;}</code><br>
+          <code>}</code><br><br>
+          <code>// ==============================</code><br>
+          <code>// EVENT LISTENERS</code><br>
+          <code>// ==============================</code><br>
+          <code>document.getElementById('startBtn').addEventListener('click', startGame);</code>
+        </div>
+
+        <p>Notice what's changed — instead of writing all the code inside the button click directly, we now have separate functions that each do one specific job. <code>showMessage()</code> updates the message box. <code>showStats()</code> builds the stats string. <code>startGame()</code> runs when the button is clicked and calls the other functions to do the work.</p>
+        <p>Test it — type your name and click Begin the Quest. It should work exactly the same as before. But the code underneath is now much better organised. 🚀</p>
+
+        <!-- BROWSER PREVIEW -->
+        <div class="browser-preview">
+          <div class="browser-bar">
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+            <span class="browser-url">codepen.io — The Code Machine Quest</span>
+          </div>
+          <div class="browser-content" style="background-color: #0a0a0a; display: flex; justify-content: center; padding: 20px;">
+            <div style="max-width: 300px; text-align: center; border: 2px solid #00ff88; border-radius: 10px; padding: 20px; box-shadow: 0 0 20px rgba(0,255,136,0.2);">
+              <h1 style="color: #00ff88; font-family: 'Courier New', monospace; font-size: 1rem; letter-spacing: 2px; text-shadow: 0 0 8px #00ff88;">THE CODE MACHINE QUEST</h1>
+              <p style="color: #f0f0f0; font-family: 'Courier New', monospace; font-size: 0.7rem; margin-bottom: 10px;">What is your name, coder?</p>
+              <input type="text" value="Sarah" style="background-color: #111111; border: 1px solid #00ff88; border-radius: 5px; padding: 5px 8px; color: #ffffff; font-size: 0.7rem; width: 140px; font-family: 'Courier New', monospace;" disabled />
+              <br>
+              <button style="background-color: transparent; border: 1px solid #00ff88; border-radius: 5px; padding: 5px 12px; color: #00ff88; font-family: 'Courier New', monospace; font-size: 0.65rem; margin-top: 8px; letter-spacing: 1px;">BEGIN THE QUEST</button>
+              <p style="color: #00ff88; font-family: 'Courier New', monospace; font-size: 0.7rem; margin-top: 10px;">Welcome, Sarah. XGENFUTBOT is watching. The quest begins...</p>
+            </div>
+          </div>
+        </div>
+        <p class="preview-note">👆 Looks the same — but the code underneath is now properly organised with functions!</p>
+
+        <div class="full-code">
+          <h3 style="color: #00ff88;">✅ Your full JS panel should now look like this:</h3>
+          <div class="code-block" style="border-color: #00ff88;">
+            <code>// GAME VARIABLES</code><br>
+            <code>var playerName = '';</code><br>
+            <code>var playerHealth = 3;</code><br>
+            <code>var playerScore = 0;</code><br>
+            <code>var inventory = [];</code><br>
+            <code>var currentRealm = 0;</code><br><br>
+            <code>// FUNCTIONS</code><br>
+            <code>function showMessage(text) {</code><br>
+            <code>&nbsp;&nbsp;document.getElementById('message').textContent = text;</code><br>
+            <code>}</code><br><br>
+            <code>function showTitle(text) {</code><br>
+            <code>&nbsp;&nbsp;document.getElementById('title').textContent = text;</code><br>
+            <code>}</code><br><br>
+            <code>function showStats() {</code><br>
+            <code>&nbsp;&nbsp;return playerName + ' | Lives: ' + playerHealth + ' | Score: ' + playerScore;</code><br>
+            <code>}</code><br><br>
+            <code>function startGame() {</code><br>
+            <code>&nbsp;&nbsp;var nameInput = document.getElementById('nameInput').value;</code><br>
+            <code>&nbsp;&nbsp;if (nameInput === '') {</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;showMessage('You need to enter your name, coder!');</code><br>
+            <code>&nbsp;&nbsp;} else {</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;playerName = nameInput;</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;showTitle('THE CODE MACHINE QUEST');</code><br>
+            <code>&nbsp;&nbsp;&nbsp;&nbsp;showMessage('Welcome, ' + playerName + '. XGENFUTBOT is watching. The quest begins...');</code><br>
+            <code>&nbsp;&nbsp;}</code><br>
+            <code>}</code><br><br>
+            <code>// EVENT LISTENERS</code><br>
+            <code>document.getElementById('startBtn').addEventListener('click', startGame);</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIZ SECTION -->
+    <section class="quiz-section">
+      <h2 style="color: #00ff88;">Chapter 22 Quiz</h2>
+      <p class="quiz-intro">Only move on when you can answer all of these confidently without looking!</p>
+
+      <div class="quiz-question">
+        <p class="question">1. What is a function?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) A type of variable</li>
+          <li onclick="checkAnswer(this, true)">b) A group of statements that together perform a specific task</li>
+          <li onclick="checkAnswer(this, false)">c) A CSS property</li>
+          <li onclick="checkAnswer(this, false)">d) A way of storing data in an array</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">2. What is the difference between a parameter and an argument?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) There is no difference — they mean the same thing</li>
+          <li onclick="checkAnswer(this, true)">b) A parameter is the named variable in the function declaration; an argument is the actual value passed in when the function is called</li>
+          <li onclick="checkAnswer(this, false)">c) An argument is declared in the function; a parameter is passed in when called</li>
+          <li onclick="checkAnswer(this, false)">d) Parameters are for methods; arguments are for functions</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">3. What does the return keyword do?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Sends the user back to the previous page</li>
+          <li onclick="checkAnswer(this, false)">b) Restarts the function from the beginning</li>
+          <li onclick="checkAnswer(this, true)">c) Stops the function and sends a value back to wherever the function was called from</li>
+          <li onclick="checkAnswer(this, false)">d) Declares a new variable</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">4. What is the difference between local scope and global scope?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) There is no difference</li>
+          <li onclick="checkAnswer(this, true)">b) Local scope means a variable only exists inside the function it was declared in; global scope means it's available everywhere in the script</li>
+          <li onclick="checkAnswer(this, false)">c) Global scope means a variable only exists inside a function; local scope means it's available everywhere</li>
+          <li onclick="checkAnswer(this, false)">d) Local variables are faster than global variables</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">5. What is a method?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) A type of variable that stores a list</li>
+          <li onclick="checkAnswer(this, false)">b) A way of declaring a function</li>
+          <li onclick="checkAnswer(this, true)">c) A function that belongs to an object</li>
+          <li onclick="checkAnswer(this, false)">d) A CSS property applied with JavaScript</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">6. What does the this keyword refer to inside an object?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) The global window object</li>
+          <li onclick="checkAnswer(this, false)">b) The previous function that was called</li>
+          <li onclick="checkAnswer(this, true)">c) The object itself</li>
+          <li onclick="checkAnswer(this, false)">d) The HTML element the script is attached to</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+    </section>
+
+    <!-- NEXT CHAPTER -->
+    <section class="next-chapter" style="border-top: 2px solid #00ff88;">
+      <div class="coming-up">
+        <h3 style="color: #00ff88;">Coming Up Next — Chapter 23: Decisions and Loops</h3>
+        <p>In the next chapter we look at how JavaScript makes decisions using if and else, and how loops let you repeat code. This is where the adventure game really comes alive — with branching story choices and repeated enemy encounters.</p>
+      </div>
+      <a href="chapter23.html" class="next-btn" style="border-color: #00ff88; color: #00ff88;">Next Up: Decisions and Loops →</a>
+    </section>
+
+    <script>
+      localStorage.setItem('visited_' + location.pathname.split('/html/')[1].replace('.html', '') + '.html', 'true');
+function toggleGenie() {
+        const bubble = document.getElementById('genieBubble');
+        bubble.classList.toggle('visible');
+      }
+
+      function toggleNav() {
+        const dropdown = document.getElementById('navDropdown');
+        dropdown.classList.toggle('open');
+      }
+
+      document.addEventListener('click', function(e) {
+        const nav = document.querySelector('.chapter-nav');
+        if (nav && !nav.contains(e.target)) {
+          document.getElementById('navDropdown').classList.remove('open');
+        }
+      });
+
+      function checkAnswer(element, isCorrect) {
+        const options = element.parentElement.querySelectorAll('li');
+        options.forEach(option => {
+          option.style.pointerEvents = 'none';
+        });
+        if (isCorrect) {
+          element.classList.add('correct');
+        } else {
+          element.classList.add('incorrect');
+        }
+        const resetBtn = element.parentElement.nextElementSibling;
+        if (resetBtn && resetBtn.classList.contains('reset-btn')) {
+          resetBtn.style.display = 'inline-block';
+        }
+      }
+
+      function resetQuestion(button) {
+        const options = button.previousElementSibling.querySelectorAll('li');
+        options.forEach(option => {
+          option.classList.remove('correct', 'incorrect');
+          option.style.pointerEvents = 'auto';
+        });
+        button.style.display = 'none';
+      }
+    </script>
+
+  </body>
+</html>

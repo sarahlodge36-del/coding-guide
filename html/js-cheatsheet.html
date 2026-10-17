@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Cheat Sheet</title>
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+
+    <!-- HEADER -->
+    <header class="chapter-header" style="border-bottom: 2px solid #00ff88;">
+      <a href="../index.html" class="home-btn" style="color: #00ff88;">← Home</a>
+      <div class="chapter-title">
+        <span class="chapter-label" style="color: #00ff88;">JavaScript</span>
+        <h1 style="color: #00ff88;">Basic Cheat Sheet</h1>
+      </div>
+      <div class="header-right">
+        <div class="chapter-nav">
+          <button class="nav-toggle" onclick="toggleNav()" style="border-color: #00ff88; color: #00ff88;">Chapters ▼</button>
+          <div class="nav-dropdown" id="navDropdown">
+            <a href="chapter20.html">Chapter 20 — The ABC of Programming</a>
+            <a href="chapter21.html">Chapter 21 — Basic JS Instructions</a>
+            <a href="chapter22.html">Chapter 22 — Functions, Methods and Objects</a>
+            <a href="chapter23.html">Chapter 23 — Decisions and Loops</a>
+            <a href="chapter24.html">Chapter 24 — Document Object Model</a>
+            <a href="chapter25.html">Chapter 25 — Events</a>
+            <hr style="border-color: #333333;">
+            <a href="js-cheatsheet.html">JS Cheat Sheet</a>
+            <a href="final-quiz.html">Final Quiz</a>
+          </div>
+        </div>
+        <div class="genie-container">
+          <img src="../images/xgenfutbot.png" alt="XGENFUTBOT" class="genie-icon" id="genieBtn" onclick="toggleGenie()" />
+          <div class="genie-bubble" id="genieBubble" style="border-color: #00ff88; color: #00ff88;">
+            <p>Everything from the JavaScript section in one place. You know the drill by now. 😎</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CHEAT SHEET CONTENT -->
+    <main class="chapter-content">
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">The Basics</h2>
+        <ul class="content-list">
+          <li><code>// single line comment</code></li>
+          <li><code>/* multi line comment */</code></li>
+          <li><code>var name = 'Sarah';</code> — declares a variable</li>
+          <li><code>let score = 0;</code> — modern variable, can be changed</li>
+          <li><code>const gameName = 'Quest';</code> — constant, never changes</li>
+          <li><code>console.log('hello');</code> — prints to the browser console</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Data Types</h2>
+        <ul class="content-list">
+          <li><code>var name = 'Sarah';</code> — string (text in quotes)</li>
+          <li><code>var score = 100;</code> — number</li>
+          <li><code>var gameOver = false;</code> — boolean (true or false)</li>
+          <li><code>var inventory = [];</code> — array (list of values)</li>
+          <li><code>var player = {};</code> — object</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Strings</h2>
+        <ul class="content-list">
+          <li><code>'Hello' + ' ' + 'World'</code> — concatenation joins strings</li>
+          <li><code>'Hello'.length</code> — number of characters</li>
+          <li><code>'hello'.toUpperCase()</code> — converts to uppercase</li>
+          <li><code>'HELLO'.toLowerCase()</code> — converts to lowercase</li>
+          <li><code>'hello world'.includes('world')</code> — returns true or false</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Numbers</h2>
+        <ul class="content-list">
+          <li><code>+</code> — addition</li>
+          <li><code>-</code> — subtraction</li>
+          <li><code>*</code> — multiplication</li>
+          <li><code>/</code> — division</li>
+          <li><code>++</code> — adds 1 to a variable</li>
+          <li><code>--</code> — subtracts 1 from a variable</li>
+          <li><code>+=</code> — adds a value to a variable: score += 10</li>
+          <li><code>Math.random()</code> — random number between 0 and 1</li>
+          <li><code>Math.floor()</code> — rounds down to nearest integer</li>
+          <li><code>parseInt('5')</code> — converts a string to a number</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Arrays</h2>
+        <ul class="content-list">
+          <li><code>var items = ['a', 'b', 'c'];</code> — creates an array</li>
+          <li><code>items[0]</code> — accesses first item (index starts at 0)</li>
+          <li><code>items.length</code> — number of items in the array</li>
+          <li><code>items.push('d')</code> — adds item to the end</li>
+          <li><code>items.pop()</code> — removes last item</li>
+          <li><code>items.join(', ')</code> — joins all items into a string</li>
+          <li><code>items.indexOf('b')</code> — finds index of an item</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Objects</h2>
+        <ul class="content-list">
+          <li><code>var player = &#123; name: 'Sarah', health: 3 &#125;;</code> — creates an object</li>
+          <li><code>player.name</code> — accesses a property using dot notation</li>
+          <li><code>player['name']</code> — accesses a property using bracket notation</li>
+          <li><code>player.health = 2;</code> — updates a property</li>
+          <li><code>this</code> — refers to the current object inside a method</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Functions</h2>
+        <ul class="content-list">
+          <li><code>function greet() &#123; &#125;</code> — declares a function</li>
+          <li><code>greet();</code> — calls a function</li>
+          <li><code>function greet(name) &#123; &#125;</code> — function with a parameter</li>
+          <li><code>greet('Sarah');</code> — calls with an argument</li>
+          <li><code>return value;</code> — sends a value back from the function</li>
+          <li><code>var result = greet('Sarah');</code> — stores the returned value</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Comparison Operators</h2>
+        <ul class="content-list">
+          <li><code>===</code> — strictly equal (same value AND type)</li>
+          <li><code>!==</code> — strictly not equal</li>
+          <li><code>&gt;</code> — greater than</li>
+          <li><code>&lt;</code> — less than</li>
+          <li><code>&gt;=</code> — greater than or equal to</li>
+          <li><code>&lt;=</code> — less than or equal to</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Logical Operators</h2>
+        <ul class="content-list">
+          <li><code>&&</code> — AND — both conditions must be true</li>
+          <li><code>||</code> — OR — at least one condition must be true</li>
+          <li><code>!</code> — NOT — reverses a boolean</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Conditionals</h2>
+        <ul class="content-list">
+          <li><code>if (condition) &#123; &#125;</code> — runs if condition is true</li>
+          <li><code>if (condition) &#123; &#125; else &#123; &#125;</code> — runs else if false</li>
+          <li><code>else if (condition) &#123; &#125;</code> — checks another condition</li>
+          <li><code>switch (value) &#123; case x: break; &#125;</code> — checks multiple cases</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Loops</h2>
+        <ul class="content-list">
+          <li><code>for (var i = 0; i &lt; 5; i++) &#123; &#125;</code> — runs a set number of times</li>
+          <li><code>while (condition) &#123; &#125;</code> — runs while condition is true</li>
+          <li><code>for (var i = 0; i &lt; arr.length; i++) &#123; &#125;</code> — loops through an array</li>
+          <li><code>break;</code> — exits a loop early</li>
+          <li><code>continue;</code> — skips the current iteration</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">DOM — Accessing Elements</h2>
+        <ul class="content-list">
+          <li><code>document.getElementById('id')</code> — selects by id</li>
+          <li><code>document.getElementsByClassName('class')</code> — selects by class</li>
+          <li><code>document.getElementsByTagName('tag')</code> — selects by tag</li>
+          <li><code>document.querySelector('selector')</code> — first matching element</li>
+          <li><code>document.querySelectorAll('selector')</code> — all matching elements</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">DOM — Changing Elements</h2>
+        <ul class="content-list">
+          <li><code>element.textContent = 'text';</code> — changes text content</li>
+          <li><code>element.innerHTML = '&lt;p&gt;text&lt;/p&gt;';</code> — changes HTML content</li>
+          <li><code>element.style.color = '#00ff88';</code> — changes a CSS style</li>
+          <li><code>element.style.display = 'none';</code> — hides an element</li>
+          <li><code>element.style.display = 'block';</code> — shows an element</li>
+          <li><code>element.classList.add('class');</code> — adds a CSS class</li>
+          <li><code>element.classList.remove('class');</code> — removes a CSS class</li>
+          <li><code>element.classList.toggle('class');</code> — toggles a CSS class</li>
+          <li><code>element.getAttribute('attr');</code> — reads an attribute</li>
+          <li><code>element.setAttribute('attr', 'value');</code> — sets an attribute</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">DOM — Creating Elements</h2>
+        <ul class="content-list">
+          <li><code>document.createElement('tag')</code> — creates a new element</li>
+          <li><code>element.appendChild(newElement)</code> — adds as last child</li>
+          <li><code>element.innerHTML = '';</code> — removes all child elements</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2 style="color: #00ff88;">Events</h2>
+        <ul class="content-list">
+          <li><code>element.addEventListener('click', function() &#123; &#125;);</code> — click listener</li>
+          <li><code>element.addEventListener('keypress', function(e) &#123; &#125;);</code> — key listener</li>
+          <li><code>e.target</code> — the element that triggered the event</li>
+          <li><code>e.target.tagName</code> — the tag name of the element</li>
+          <li><code>e.key</code> — the key that was pressed</li>
+          <li><code>e.preventDefault();</code> — stops default browser behaviour</li>
+          <li><code>setTimeout(function() &#123; &#125;, 300);</code> — runs after a delay in ms</li>
+        </ul>
+      </section>
+
+    </main>
+
+    <!-- NEXT STEPS -->
+    <section class="next-chapter" style="border-top: 2px solid #00ff88;">
+      <div class="coming-up">
+        <h3 style="color: #00ff88;">Ready for the Grand Finale?</h3>
+        <p>Head to the Grand Finale Quiz — 30 questions covering HTML, CSS, and JavaScript. Get a perfect score and something special happens!</p>
+      </div>
+      <a href="final-quiz.html" class="next-btn" style="border-color: #ff2d78; color: #ff2d78;">Grand Finale Quiz →</a>
+    </section>
+
+    <script>
+      localStorage.setItem('visited_' + location.pathname.split('/html/')[1].replace('.html', '') + '.html', 'true');
+function toggleGenie() {
+        const bubble = document.getElementById('genieBubble');
+        bubble.classList.toggle('visible');
+      }
+
+      function toggleNav() {
+        const dropdown = document.getElementById('navDropdown');
+        dropdown.classList.toggle('open');
+      }
+
+      document.addEventListener('click', function(e) {
+        const nav = document.querySelector('.chapter-nav');
+        if (nav && !nav.contains(e.target)) {
+          document.getElementById('navDropdown').classList.remove('open');
+        }
+      });
+    </script>
+
+  </body>
+</html>

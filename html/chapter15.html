@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 15: Layout</title>
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+
+    <!-- HEADER -->
+    <header class="chapter-header">
+      <a href="../index.html" class="home-btn">← Home</a>
+      <div class="chapter-title">
+        <span class="chapter-label">Chapter 15</span>
+        <h1>Layout</h1>
+      </div>
+      <div class="header-right">
+        <div class="chapter-nav">
+          <button class="nav-toggle" onclick="toggleNav()">Chapters ▼</button>
+          <div class="nav-dropdown" id="navDropdown">
+            <a href="chapter10.html">Chapter 10 — Introducing CSS</a>
+            <a href="chapter11.html">Chapter 11 — Colour</a>
+            <a href="chapter12.html">Chapter 12 — Text</a>
+            <a href="chapter13.html">Chapter 13 — Boxes</a>
+            <a href="chapter14.html">Chapter 14 — Lists, Tables and Forms</a>
+            <a href="chapter15.html">Chapter 15 — Layout</a>
+            <a href="chapter16.html">Chapter 16 — Images</a>
+            <a href="chapter17.html">Chapter 17 — HTML5 Layout</a>
+            <a href="chapter18.html">Chapter 18 — Process and Design</a>
+            <a href="chapter19.html">Chapter 19 — Practical Information</a>
+            <hr style="border-color: #333333;">
+            <a href="css-cheatsheet.html">CSS Cheat Sheet</a>
+            <a href="css-final-quiz.html">CSS Final Quiz</a>
+          </div>
+        </div>
+        <div class="genie-container">
+          <img src="../images/xgenfutbot.png" alt="XGENFUTBOT" class="genie-icon" id="genieBtn" onclick="toggleGenie()" />
+          <div class="genie-bubble" id="genieBubble">
+            <p>Positioning is where most beginners panic. Take your time with this one. I mean it. 😎</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CHAPTER CONTENT -->
+    <main class="chapter-content">
+
+      <section class="content-section">
+        <h2>Controlling Where Things Sit on the Page</h2>
+        <p>In this chapter we look at how to control where each element sits on a page. This involves understanding how to position elements using CSS, and how designers create attractive page layouts.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Normal Flow — position: static</h2>
+        <p>This is the default. You don't need to write it explicitly — it's what every element does unless you tell it otherwise. Each block element sits below the previous one, and inline elements sit within the text flow.</p>
+        <div class="code-block">
+          <code>p { position: static; }</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Relative Positioning — position: relative</h2>
+        <p>Moves an element relative to where it would have been in normal flow. The space it would have occupied is still reserved — other elements don't move to fill it.</p>
+        <div class="code-block">
+          <code>p {</code><br>
+          <code>&nbsp;&nbsp;position: relative;</code><br>
+          <code>&nbsp;&nbsp;top: 10px;</code><br>
+          <code>&nbsp;&nbsp;left: 100px;</code><br>
+          <code>}</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Absolute Positioning — position: absolute</h2>
+        <p>Takes the element completely out of normal flow. Other elements on the page behave as if it isn't there at all. The element is positioned relative to its nearest positioned ancestor — or the body if none exists.</p>
+        <div class="code-block">
+          <code>h1 {</code><br>
+          <code>&nbsp;&nbsp;position: absolute;</code><br>
+          <code>&nbsp;&nbsp;top: 0px;</code><br>
+          <code>&nbsp;&nbsp;left: 500px;</code><br>
+          <code>}</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Fixed Positioning — position: fixed</h2>
+        <p>A form of absolute positioning that positions the element relative to the browser window rather than the page. This means it stays in the same place even when the user scrolls. Useful for fixed headers and navigation bars.</p>
+        <div class="code-block">
+          <code>h1 {</code><br>
+          <code>&nbsp;&nbsp;position: fixed;</code><br>
+          <code>&nbsp;&nbsp;top: 0px;</code><br>
+          <code>&nbsp;&nbsp;left: 0px;</code><br>
+          <code>&nbsp;&nbsp;width: 100%;</code><br>
+          <code>}</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Overlapping Elements — z-index</h2>
+        <p>When elements are taken out of normal flow they can overlap each other. The z-index property controls which element sits on top. A higher z-index means the element sits in front.</p>
+        <div class="code-block">
+          <code>h1 { z-index: 10; }</code><br>
+          <code>p &nbsp;{ z-index: 5; }</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Floating Elements — float</h2>
+        <p>The float property takes an element out of normal flow and positions it to the far left or far right of its containing box. Other content then flows around it. You must also set a width on floated elements — otherwise they take up the full width of the container.</p>
+        <div class="code-block">
+          <code>img {</code><br>
+          <code>&nbsp;&nbsp;float: left;</code><br>
+          <code>&nbsp;&nbsp;width: 200px;</code><br>
+          <code>&nbsp;&nbsp;margin: 10px;</code><br>
+          <code>}</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Creating Multi-Column Layouts with Floats</h2>
+        <p>Float was the classic CSS technique for creating multi-column layouts before flexbox and grid came along. By floating multiple elements left you can get them to sit next to each other.</p>
+        <div class="code-block">
+          <code>.column {</code><br>
+          <code>&nbsp;&nbsp;float: left;</code><br>
+          <code>&nbsp;&nbsp;width: 45%;</code><br>
+          <code>&nbsp;&nbsp;margin: 10px;</code><br>
+          <code>}</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Clearing Floats — clear</h2>
+        <p>Once you start floating elements, things that follow can end up in unexpected places. The clear property tells an element to move below any floated elements to its left, right, or both sides.</p>
+        <div class="code-block">
+          <code>p { clear: left; }</code><br>
+          <code>p { clear: right; }</code><br>
+          <code>p { clear: both; }</code>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Fixed Width vs Liquid Layouts</h2>
+        <p>A fixed width layout sets the width of the page in pixels so it stays the same regardless of the browser window size. A liquid layout uses percentages for widths rather than pixels, so the page stretches and shrinks to fill the available browser window.</p>
+        <div class="code-block">
+          <code>/* Fixed width */</code><br>
+          <code>body { width: 960px; margin: 0 auto; }</code><br><br>
+          <code>/* Liquid */</code><br>
+          <code>body { width: 90%; margin: 0 auto; }</code>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- NOW LET'S BUILD -->
+    <section class="build-section">
+      <div class="build-content">
+        <h2>🔨 Now Let's Build!</h2>
+        <p>Open your <strong>styles.css</strong> file in Notepad. We're going to give your page an overall maximum width so it doesn't stretch endlessly on wide screens. Add this to your stylesheet:</p>
+        <div class="code-block">
+          <code>body {</code><br>
+          <code>&nbsp;&nbsp;max-width: 800px;</code><br>
+          <code>&nbsp;&nbsp;margin: 0 auto;</code><br>
+          <code>}</code><br><br>
+          <code>header {</code><br>
+          <code>&nbsp;&nbsp;position: relative;</code><br>
+          <code>}</code>
+        </div>
+        <p>Save and refresh your browser. Your whole page now sits centred with a maximum width — even on a huge monitor it won't stretch uncomfortably wide.</p>
+
+        <!-- BROWSER PREVIEW -->
+        <div class="browser-preview">
+          <div class="browser-bar">
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+            <span class="browser-url">file:///C:/Users/Home/index.html</span>
+          </div>
+          <div class="browser-content" style="background-color: #1a1a1a; display: flex; justify-content: center;">
+            <div style="max-width: 250px; width: 100%; padding: 15px; border-radius: 10px; background-color: #222222;">
+              <h1 style="font-size: 1.2rem; color: #ee3e80; font-family: Arial, sans-serif; margin-bottom: 8px;">Welcome to My Page</h1>
+              <p style="color: #f0f0f0; font-family: Arial, sans-serif; font-size: 0.85rem; margin: 0;">Now centred and constrained to a sensible width!</p>
+            </div>
+          </div>
+        </div>
+        <p class="preview-note">👆 Your whole page now sits nicely centred rather than stretching edge to edge!</p>
+
+        <div class="full-code">
+          <h3>✅ Your styles.css file should now look like this (newest additions highlighted):</h3>
+          <div class="code-block">
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">body {</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;max-width: 800px;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;margin: 0 auto;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">}</code><br><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">header {</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">&nbsp;&nbsp;position: relative;</code><br>
+            <code style="background-color: rgba(0, 212, 255, 0.4); display: inline-block; padding: 2px 6px; border-radius: 4px; border: 1px solid #00d4ff;">}</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIZ SECTION -->
+    <section class="quiz-section">
+      <h2>Chapter 15 Quiz</h2>
+      <p class="quiz-intro">Only move on when you can answer all of these confidently without looking!</p>
+
+      <div class="quiz-question">
+        <p class="question">1. What is normal flow?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) A CSS property that controls the layout</li>
+          <li onclick="checkAnswer(this, true)">b) The default way browsers lay out elements — block elements stacking on top of each other</li>
+          <li onclick="checkAnswer(this, false)">c) A type of float layout</li>
+          <li onclick="checkAnswer(this, false)">d) A fixed width layout technique</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">2. What is the difference between relative and absolute positioning?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) There is no difference</li>
+          <li onclick="checkAnswer(this, true)">b) Relative moves an element from where it would have been and keeps its space; absolute takes it out of normal flow entirely</li>
+          <li onclick="checkAnswer(this, false)">c) Absolute moves an element from where it would have been and keeps its space; relative takes it out of normal flow entirely</li>
+          <li onclick="checkAnswer(this, false)">d) Relative positioning only works on images</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">3. What does position: fixed do?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Fixes an element in place relative to its parent</li>
+          <li onclick="checkAnswer(this, false)">b) Removes an element from the page entirely</li>
+          <li onclick="checkAnswer(this, true)">c) Keeps an element in the same place in the browser window even when the user scrolls</li>
+          <li onclick="checkAnswer(this, false)">d) Prevents an element from being floated</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">4. What does the z-index property control?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) The width of an element</li>
+          <li onclick="checkAnswer(this, false)">b) The transparency of an element</li>
+          <li onclick="checkAnswer(this, true)">c) Which overlapping element sits on top</li>
+          <li onclick="checkAnswer(this, false)">d) The zoom level of the page</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">5. What must you always set on a floated element?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) A height</li>
+          <li onclick="checkAnswer(this, true)">b) A width</li>
+          <li onclick="checkAnswer(this, false)">c) A margin</li>
+          <li onclick="checkAnswer(this, false)">d) A z-index</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">6. What does clear: both do?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Removes all styles from an element</li>
+          <li onclick="checkAnswer(this, false)">b) Floats an element to both sides</li>
+          <li onclick="checkAnswer(this, true)">c) Tells an element to move below any floated elements on either side</li>
+          <li onclick="checkAnswer(this, false)">d) Clears the browser cache</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+      <div class="quiz-question">
+        <p class="question">7. What is the difference between a fixed width and a liquid layout?</p>
+        <ul class="quiz-options">
+          <li onclick="checkAnswer(this, false)">a) Fixed layouts use percentages; liquid layouts use pixels</li>
+          <li onclick="checkAnswer(this, true)">b) Fixed layouts use pixels and stay the same width; liquid layouts use percentages and stretch to fill the browser window</li>
+          <li onclick="checkAnswer(this, false)">c) Liquid layouts only work on mobile devices</li>
+          <li onclick="checkAnswer(this, false)">d) There is no practical difference</li>
+        </ul>
+        <button class="reset-btn" onclick="resetQuestion(this)" style="display:none">↺ Try Again</button>
+      </div>
+
+    </section>
+
+    <!-- NEXT CHAPTER -->
+    <section class="next-chapter">
+      <div class="coming-up">
+        <h3>Coming Up Next — Chapter 16: Images</h3>
+        <p>In the next chapter we look at controlling image size and alignment using CSS, background images, and CSS3 gradients.</p>
+      </div>
+      <a href="chapter16.html" class="next-btn" style="border-color: #00d4ff; color: #00d4ff;">Next Up: Images →</a>
+    </section>
+
+    <script>
+      localStorage.setItem('visited_' + location.pathname.split('/html/')[1].replace('.html', '') + '.html', 'true');
+function toggleGenie() {
+        const bubble = document.getElementById('genieBubble');
+        bubble.classList.toggle('visible');
+      }
+
+      function toggleNav() {
+        const dropdown = document.getElementById('navDropdown');
+        dropdown.classList.toggle('open');
+      }
+
+      document.addEventListener('click', function(e) {
+        const nav = document.querySelector('.chapter-nav');
+        if (!nav.contains(e.target)) {
+          document.getElementById('navDropdown').classList.remove('open');
+        }
+      });
+
+      function checkAnswer(element, isCorrect) {
+        const options = element.parentElement.querySelectorAll('li');
+        options.forEach(option => {
+          option.style.pointerEvents = 'none';
+        });
+        if (isCorrect) {
+          element.classList.add('correct');
+        } else {
+          element.classList.add('incorrect');
+        }
+        const resetBtn = element.parentElement.nextElementSibling;
+        if (resetBtn && resetBtn.classList.contains('reset-btn')) {
+          resetBtn.style.display = 'inline-block';
+        }
+      }
+
+      function resetQuestion(button) {
+        const options = button.previousElementSibling.querySelectorAll('li');
+        options.forEach(option => {
+          option.classList.remove('correct', 'incorrect');
+          option.style.pointerEvents = 'auto';
+        });
+        button.style.display = 'none';
+      }
+    </script>
+
+  </body>
+</html>

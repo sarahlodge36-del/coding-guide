@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beginner's Coding Guide</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+      /* PROGRESS TRACKER */
+      #progress {
+        padding: 60px 20px;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      #progress h2 {
+        text-align: center;
+        color: #ffffff;
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+        letter-spacing: 2px;
+      }
+
+      .progress-intro {
+        text-align: center;
+        color: #888888;
+        margin-bottom: 40px;
+        font-size: 0.95rem;
+      }
+
+      .progress-overall {
+        background-color: #111111;
+        border: 1px solid #333333;
+        border-radius: 15px;
+        padding: 20px 30px;
+        margin-bottom: 40px;
+        text-align: center;
+      }
+
+      .progress-overall-text {
+        color: #888888;
+        font-size: 0.85rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+
+      .progress-bar-outer {
+        background-color: #1a1a1a;
+        border-radius: 20px;
+        height: 20px;
+        overflow: hidden;
+        border: 1px solid #333333;
+        margin-bottom: 10px;
+      }
+
+      .progress-bar-inner {
+        height: 100%;
+        border-radius: 20px;
+        background: linear-gradient(90deg, #ff2d78, #00d4ff, #00ff88);
+        width: 0%;
+        transition: width 1s ease;
+        box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+      }
+
+      .progress-percentage {
+        color: #ffffff;
+        font-size: 1.2rem;
+        font-weight: bold;
+        letter-spacing: 2px;
+      }
+
+      .progress-sections {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 30px;
+      }
+
+      @media (max-width: 768px) {
+        .progress-sections {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .progress-section {
+        background-color: #111111;
+        border-radius: 15px;
+        padding: 25px;
+        border: 1px solid #222222;
+      }
+
+      .progress-section-title {
+        font-size: 0.75rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #222222;
+      }
+
+      .html-title { color: #ff2d78; border-color: #ff2d78 !important; }
+      .css-title { color: #00d4ff; border-color: #00d4ff !important; }
+      .js-title { color: #00ff88; border-color: #00ff88 !important; }
+
+      .progress-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 6px 0;
+        border-bottom: 1px solid #1a1a1a;
+        font-size: 0.85rem;
+        color: #666666;
+        transition: color 0.3s ease;
+      }
+
+      .progress-item:last-child {
+        border-bottom: none;
+      }
+
+      .progress-item.completed {
+        color: #f0f0f0;
+      }
+
+      .progress-tick {
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        border: 2px solid #333333;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.65rem;
+        flex-shrink: 0;
+        transition: all 0.3s ease;
+      }
+
+      .progress-item.completed .progress-tick {
+        background-color: #00ff88;
+        border-color: #00ff88;
+        color: #000000;
+      }
+
+      .progress-item.completed .progress-tick::after {
+        content: '✓';
+        font-weight: bold;
+      }
+
+      .progress-actions {
+        text-align: center;
+        margin-top: 30px;
+      }
+
+      .reset-progress-btn {
+        background-color: transparent;
+        border: 1px solid #333333;
+        color: #555555;
+        padding: 8px 20px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-family: 'Courier New', monospace;
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+      }
+
+      .reset-progress-btn:hover {
+        border-color: #ff2d78;
+        color: #ff2d78;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- HERO SECTION -->
+    <header id="hero">
+      <div class="hero-glow-box">
+
+        <!-- HERO TEXT -->
+        <div class="hero-bottom">
+          <h1>Learn to Code.<br>Build as You Go.<br>No Fluff.</h1>
+          <p class="hero-sub">From someone who learnt it exactly the way I'm about to teach you.</p>
+        </div>
+
+        <!-- XGENFUTBOT -->
+        <div class="hero-top">
+          <div class="bot-wrapper">
+            <img src="images/xgenfutbot.png" alt="XGENFUTBOT your coding guide" class="bot-image" />
+            <div class="speech-bubble">
+              <p>Welcome to the beginning of your coding journey. Take a moment to read the important information below before you start!</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- WHAT IS THIS SECTION -->
+    <section id="about">
+      <div class="section-content">
+        <h2>What Is This?</h2>
+        <p>This isn't another overwhelming coding platform with a thousand directions and no clear path. This is a structured, simple, step by step guide that takes you from your very first HTML tag all the way to a full working website — and beyond. From front end foundations right through to back end development, this guide grows with you.</p>
+        <p>As you work through each section you won't just be reading about code — you'll be building a real webpage together with me in real time. Every new concept you learn gets applied immediately. By the end you won't just understand how it works, you'll have actually built something with your own hands to prove it.</p>
+      </div>
+    </section>
+
+    <!-- WHY SECTION -->
+    <section id="why">
+      <div class="section-content">
+        <h2>Why This Guide?</h2>
+        <p>I learnt to code from scratch and the biggest problem I faced wasn't the code — it was the lack of structure. Too much information, not enough direction. So I built the guide I wish had existed.</p>
+        <p>No overwhelming platforms. No thousand directions. Just one clear path from zero to developer — explained simply, built practically, in your own time.</p>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS SECTION -->
+    <section id="how">
+      <div class="section-content">
+        <h2>How It Works</h2>
+        <div class="cards">
+          <a href="html/web-works.html" class="card html-card">
+            <h3>HTML</h3>
+            <p>The structure. Every webpage starts here.</p>
+          </a>
+          <a href="html/cssintro.html" class="card css-card">
+            <h3>CSS</h3>
+            <p>The style. This is where it starts looking good.</p>
+          </a>
+          <a href="html/welcome-to-js.html" class="card js-card">
+            <h3>JavaScript</h3>
+            <p>The behaviour. This is where it comes alive.</p>
+          </a>
+        </div>
+        <p class="cards-note">Each section is broken into chapters. Each chapter has three levels — Basic, Intermediate and Advanced. Basic gives you everything you need to build. The deeper levels are there when you want more.</p>
+      </div>
+    </section>
+<!-- BUY NOW SECTION -->
+<section id="unlock">
+  <div class="section-content center">
+    <h2 style="color: #00ff88;">Ready to Go Further?</h2>
+    <p style="color: #888888; margin-bottom: 10px;">The free tier covers HTML, CSS, and JavaScript. The full course goes all the way to full stack development.</p>
+    <p style="color: #888888; margin-bottom: 30px;">React, TypeScript, Git, Node, Express, SQL, Authentication — and more.</p>
+    <a href="https://payhip.com/b/9gmjN" target="_blank" style="
+      display: inline-block;
+      background-color: #00ff88;
+      color: #000000;
+      text-decoration: none;
+      border-radius: 8px;
+      padding: 15px 40px;
+      font-family: 'Courier New', monospace;
+      font-size: 1rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+      box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+    ">🚀 Unlock Full Course — £30 →</a>
+    <p style="color: #555555; font-size: 0.75rem; letter-spacing: 1px; margin-top: 15px;">Launch price — goes up to £45 in September. Lifetime access.</p>
+  </div>
+</section>
+    <!-- LEARNING RULES SECTION -->
+    <section id="rules">
+      <div class="rules-box">
+        <h2>Before You Begin</h2>
+        <ul>
+          <li>🚫 Do not rush through the sections.</li>
+          <li>✅ Only move to the next chapter when you can answer every question confidently without looking.</li>
+          <li>🔨 Build something with every new thing you learn.</li>
+        </ul>
+        <p class="rules-note">That repeated sequence — read it, quiz it, build it — is what makes it stick. Trust the process.</p>
+      </div>
+    </section>
+
+    <!-- PROGRESS TRACKER -->
+    <section id="progress">
+      <h2>Your Progress</h2>
+      <p class="progress-intro">Your progress is saved automatically as you work through the guide. Come back any time and pick up where you left off.</p>
+
+      <!-- OVERALL BAR -->
+      <div class="progress-overall">
+        <p class="progress-overall-text">Overall Completion</p>
+        <div class="progress-bar-outer">
+          <div class="progress-bar-inner" id="overallBar"></div>
+        </div>
+        <p class="progress-percentage" id="overallPercent">0%</p>
+      </div>
+
+      <!-- SECTION COLUMNS -->
+      <div class="progress-sections">
+
+        <!-- HTML COLUMN -->
+        <div class="progress-section">
+          <p class="progress-section-title html-title">HTML</p>
+          <div class="progress-item" data-page="html/web-works.html">
+            <div class="progress-tick"></div>
+            <span>How the Web Works</span>
+          </div>
+          <div class="progress-item" data-page="html/">
+            <div class="progress-tick"></div>
+            <span>Chapter 1 — HTML</span>
+          </div>
+          <div class="progress-item" data-page="html/chapter2.html">
+            <div class="progress-tick"></div>
+            <span>Chapter 2 — Text</span>
+          </div>
+          <div class="progress-item" data-page="html/chapter3.html">
+            <div class="progress-tick"></div>
+            <span>Chapter 3 — Lists</span>
+          </div>
+          <div class="progress-item" data-page="html/chapter4.html">
+            <div class="progress-tick"></div>
+            <span>Chapter 4 — Links</span>
+          </div>
+          <div class="progress-item" data-page="html/chapter5.html">
+            <div class="progress-tick"></div>
+            <span>Chapter 5 — Images</span>
+          </div>
+          <div class="progress-item" data-page="html/chapter6.html">
+            <div class="progress-tick"></div>
+            <span>Chapter 6 — Tables</span>
+          </div>
+          <div class="progress-item" data-page="html/chapter7.html">
+            <div class="progress-tick"></div>
+            <span>Chapter 7 — Forms</span>
+          </div>
+          <div class="progress-item" data-page="html/chapter8.html">
+            <div class="progress-tick"></div>
+            <span>Chapter 8 — Extra Markup</span>
+          </div>
+          <div class="progress-item" data-page="html/chapter9.html">
+            <div class="progress-tick"></div>
+            <span>Chapter 9 — Video and Audio</span>
+          </div>
+          <div class="progress-item" data-page="html/cheatsheet-basic.html">
+            <div class="progress-tick"></div>
+            <span>HTML Cheat Sheet</span>
+          </div>
+          <div class="progress-item" data-page="html/html-final-quiz.html">
+            <div class="progress-tick"></div>
+            <span>HTML Final Quiz</span>
+          </div>
+          <div class="progress-item" data-page="html/html-advanced.html">
+            <div class="progress-tick"></div>
+            <span>Advanced HTML</span>
+          </div>
+          <div class="progress-item" data-page="html/cheatsheet-advanced-html.html">
+            <div class="progress-tick"></div>
+            <span>Advanced HTML Cheat Sheet</span>
+          </div>
+        </div>
+
+        <!-- CSS COLUMN -->
+        <div class="progress-section">
+          <p class="progress-section-title css-title">CSS</p>
+          <div class="progress-item" data-page="html/cssintro.html">
+            <div class="progress-tick"></div>
+            <span>Welcome to CSS</span>
+          </div>
+          <div class="progress-item" data-page="html/chapter10.html">
+            <div class="progress-tick"></div>
+            <span>Chapter 10 — Introducing CSS</span>
+          </div>
+          <div class="progress-item" data-page="html/chapter11.html">
+            <div class="progress-tick"></div>
+            <span>Chapter 11 — Colour</span>
+          </div>
+          <div class="progress-item" data-page="html/chapter12.html">
+            <div class="progress-tick"></div>
+            <span>Chapter 12 — Text</span>
+          </div>
+          <div class="progress-item" data-page="html/chapter13.html">
+            <div class="progress-tick"></div>
+            <span>Chapter 13 — Boxes</span>
+          </div>
+          <div class="progress-item" data-page="html/chapter14.html">
+            <div class="progress-tick"></div>
+            <span>Chapter 14 — Lists, Tables and Forms</span>
+          </div>
+          <div class="progress-item" data-page="html/chapter15.html">
+            <div class="progress-tick"></div>
+            <span>Chapter 15 — Layout</span>
+          </div>
+          <div class="progress-item" data-page="html/chapter16.html">
+            <div class="progress-tick"></div>
+            <span>Chapter 16 — Images</span>
+          </div>
+          <div class="progress-item" data-page="html/chapter17.html">
+            <div class="progress-tick"></div>
+            <span>Chapter 17 — HTML5 Layout</span>
+          </div>
+          <div class="progress-item" data-page="html/chapter18.html">
+            <div class="progress-tick"></div>
+            <span>Chapter 18 — Process and Design</span>
+          </div>
+          <div class="progress-item" data-page="html/chapter19.html">
+            <div class="progress-tick"></div>
+            <span>Chapter 19 — Practical Information</span>
+          </div>
+          <div class="progress-item" data-page="html/css-cheatsheet.html">
+            <div class="progress-tick"></div>
+            <span>CSS Cheat Sheet</span>
+          </div>
+          <div class="progress-item" data-page="html/css-final-quiz.html">
+            <div class="progress-tick"></div>
+            <span>CSS Final Quiz</span>
+          </div>
+          <div class="progress-item" data-page="html/css-advanced.html">
+            <div class="progress-tick"></div>
+            <span>Advanced CSS</span>
+          </div>
+          <div class="progress-item" data-page="html/cheatsheet-advanced-css.html">
+            <div class="progress-tick"></div>
+            <span>Advanced CSS Cheat Sheet</span>
+          </div>
+        </div>
+
+        <!-- JAVASCRIPT COLUMN -->
+        <div class="progress-section">
+          <p class="progress-section-title js-title">JavaScript</p>
+          <div class="progress-item" data-page="html/welcome-to-js.html">
+            <div class="progress-tick"></div>
+            <span>Welcome to JavaScript</span>
+          </div>
+          <div class="progress-item" data-page="html/chapter20.html">
+            <div class="progress-tick"></div>
+            <span>Chapter 20 — ABC of Programming</span>
+          </div>
+          <div class="progress-item" data-page="html/chapter21.html">
+            <div class="progress-tick"></div>
+            <span>Chapter 21 — Basic JS Instructions</span>
+          </div>
+          <div class="progress-item" data-page="html/chapter22.html">
+            <div class="progress-tick"></div>
+            <span>Chapter 22 — Functions and Objects</span>
+          </div>
+          <div class="progress-item" data-page="html/chapter23.html">
+            <div class="progress-tick"></div>
+            <span>Chapter 23 — Decisions and Loops</span>
+          </div>
+          <div class="progress-item" data-page="html/chapter24.html">
+            <div class="progress-tick"></div>
+            <span>Chapter 24 — Document Object Model</span>
+          </div>
+          <div class="progress-item" data-page="html/chapter25.html">
+            <div class="progress-tick"></div>
+            <span>Chapter 25 — Events</span>
+          </div>
+          <div class="progress-item" data-page="html/js-cheatsheet.html">
+            <div class="progress-tick"></div>
+            <span>JS Cheat Sheet</span>
+          </div>
+          <div class="progress-item" data-page="html/js-advanced.html">
+            <div class="progress-tick"></div>
+            <span>Advanced JavaScript</span>
+          </div>
+          <div class="progress-item" data-page="html/cheatsheet-advanced-js.html">
+            <div class="progress-tick"></div>
+            <span>Advanced JS Cheat Sheet</span>
+          </div>
+          <div class="progress-item" data-page="html/final-quiz.html">
+            <div class="progress-tick"></div>
+            <span>🏆 Grand Finale Quiz</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RESET BUTTON -->
+      <div class="progress-actions">
+        <button class="reset-progress-btn" onclick="resetProgress()">↺ Reset Progress</button>
+      </div>
+
+    </section>
+
+    <!-- START HERE SECTION -->
+    <section id="start">
+      <div class="section-content center">
+        <h2>Ready?</h2>
+        <p>Your journey starts with a single tag. Let's go.</p>
+        <a href="html/web-works.html" class="start-btn">START HERE</a>
+      </div>
+    </section>
+
+    <script>
+      // ==============================
+      // SPEECH
+      // ==============================
+      window.addEventListener('load', () => {
+        if (!('speechSynthesis' in window)) return;
+
+        const message = new SpeechSynthesisUtterance(
+          "Welcome to the beginning of your coding journey. Take a moment to read the important information below before you start!"
+        );
+
+        message.pitch = 1.3;
+        message.rate = 1.05;
+        message.volume = 1;
+
+        const voices = window.speechSynthesis.getVoices();
+        const friendlyVoice = voices.find(v =>
+          v.name.includes('Google UK English Female') ||
+          v.name.includes('Samantha') ||
+          v.name.includes('Female')
+        );
+        if (friendlyVoice) message.voice = friendlyVoice;
+
+        window.speechSynthesis.speak(message);
+      });
+
+      // ==============================
+      // PROGRESS TRACKER
+      // ==============================
+      function loadProgress() {
+        var items = document.querySelectorAll('.progress-item');
+        var completed = 0;
+
+        items.forEach(function(item) {
+          var page = item.getAttribute('data-page');
+          if (localStorage.getItem('visited_' + page.replace('html/', '')) === 'true') {
+            item.classList.add('completed');
+            completed++;
+          }
+        });
+
+        var total = items.length;
+        var percentage = Math.round((completed / total) * 100);
+
+        document.getElementById('overallBar').style.width = percentage + '%';
+        document.getElementById('overallPercent').textContent = percentage + '%';
+      }
+
+      function resetProgress() {
+        if (confirm('Are you sure you want to reset all your progress? This cannot be undone.')) {
+          var items = document.querySelectorAll('.progress-item');
+          items.forEach(function(item) {
+            var page = item.getAttribute('data-page');
+            localStorage.removeItem('visited_' + page.replace('html/', ''));
+          });
+          location.reload();
+        }
+      }
+
+      loadProgress();
+    </script>
+
+  </body>
+</html>
