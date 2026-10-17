@@ -75,3 +75,6 @@ Improve the overall learning experience
 ## Project Status
 
 Personal learning project — developed as part of my journey towards becoming a junior web developer
+## Live Demo
+ 
+[View the Live Coding Guide](https://coding-guide-xgenfutbot.netlify.app/)
